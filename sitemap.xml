@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Main page (default/English) -->
+    <url>
+        <loc>https://astroindexer.com/</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://astroindexer.com/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://astroindexer.com/?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://astroindexer.com/"/>
+    </url>
+
+    <!-- German version -->
+    <url>
+        <loc>https://astroindexer.com/?lang=de</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://astroindexer.com/?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://astroindexer.com/"/>
+    </url>
+
+    <!-- Features section -->
+    <url>
+        <loc>https://astroindexer.com/#features</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pricing section -->
+    <url>
+        <loc>https://astroindexer.com/#pricing</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Documentation (future) -->
+    <url>
+        <loc>https://astroindexer.com/docs</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Support (future) -->
+    <url>
+        <loc>https://astroindexer.com/support</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- FAQ (future) -->
+    <url>
+        <loc>https://astroindexer.com/faq</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Privacy Policy (future) -->
+    <url>
+        <loc>https://astroindexer.com/privacy</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Terms of Service (future) -->
+    <url>
+        <loc>https://astroindexer.com/terms</loc>
+        <lastmod>2024-01-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

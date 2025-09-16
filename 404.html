@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | AstroIndexer</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/language-switcher.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-content {
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4dd0e1 0%, #7c4dff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .error-title {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .stars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: shooting 3s linear infinite;
+        }
+
+        @keyframes shooting {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-300px) translateY(300px);
+                opacity: 0;
+            }
+        }
+
+        .star:nth-child(1) { top: 20%; left: 100%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 40%; left: 100%; animation-delay: 1s; }
+        .star:nth-child(3) { top: 60%; left: 100%; animation-delay: 2s; }
+        .star:nth-child(4) { top: 80%; left: 100%; animation-delay: 0.5s; }
+        .star:nth-child(5) { top: 10%; left: 100%; animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="stars-animation">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title" data-i18n="error.404.title">Page Not Found</h1>
+            <p class="error-message" data-i18n="error.404.message">
+                The page you're looking for seems to have drifted into deep space.
+                Let's get you back on course.
+            </p>
+            <div class="error-buttons">
+                <a href="/" class="btn-primary btn-large" data-i18n="error.404.home">Go Home</a>
+                <a href="/#support" class="btn-secondary btn-large" data-i18n="error.404.support">Get Support</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add 404 translations to the language system
+        if (window.translations) {
+            window.translations.en.error = {
+                404: {
+                    title: "Page Not Found",
+                    message: "The page you're looking for seems to have drifted into deep space. Let's get you back on course.",
+                    home: "Go Home",
+                    support: "Get Support"
+                }
+            };
+
+            window.translations.de.error = {
+                404: {
+                    title: "Seite nicht gefunden",
+                    message: "Die gesuchte Seite scheint sich in den Weiten des Weltraums verloren zu haben. Bringen wir Sie zurück auf Kurs.",
+                    home: "Zur Startseite",
+                    support: "Hilfe erhalten"
+                }
+            };
+        }
+    </script>
+    <script src="/js/languages.js"></script>
+</body>
+</html>
