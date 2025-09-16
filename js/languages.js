@@ -71,7 +71,7 @@ const translations = {
             },
             personal: {
                 title: "Personal",
-                price: "$49",
+                price: "XXX",
                 duration: "one-time",
                 features: [
                     "Unlimited images",
@@ -84,7 +84,7 @@ const translations = {
             },
             professional: {
                 title: "Professional",
-                price: "$149",
+                price: "XXX",
                 duration: "one-time",
                 features: [
                     "Everything in Personal",
@@ -202,7 +202,7 @@ const translations = {
             },
             personal: {
                 title: "Persönlich",
-                price: "49€",
+                price: "XXX",
                 duration: "einmalig",
                 features: [
                     "Unbegrenzte Bilder",
@@ -215,7 +215,7 @@ const translations = {
             },
             professional: {
                 title: "Professionell",
-                price: "149€",
+                price: "XXX",
                 duration: "einmalig",
                 features: [
                     "Alles aus Persönlich",
