@@ -212,6 +212,33 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+/* Startup Showcase */
+.startup-showcase {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1f2e 0%, #0a0e1a 100%);
+}
+
+.startup-showcase .section-title {
+    font-size: 48px;
+    background: linear-gradient(135deg, #4dd0e1 0%, #7c4dff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.startup-image {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.showcase-image {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(77, 208, 225, 0.3);
+}
+
 /* Features Section */
 .features {
     padding: 80px 0;
