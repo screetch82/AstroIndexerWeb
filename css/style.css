@@ -340,6 +340,23 @@ body {
     }
 }
 
+/* ML Analytics Section */
+.ml-analytics {
+    padding: 80px 0;
+    background: #0a0e1a;
+}
+
+.ml-analytics .section-title {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.ml-analytics .feature-detail {
+    margin-bottom: 100px;
+}
+
 /* Pricing Section */
 .pricing {
     padding: 80px 0;
