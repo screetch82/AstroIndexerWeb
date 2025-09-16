@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroIndexer v19.6.0 - The Smart Astrophotography Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #0a0e27 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            width: 100%;
+            height: 54vh;
+            background: rgba(26, 26, 46, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(79, 189, 186, 0.3);
+            border: 1px solid rgba(79, 189, 186, 0.3);
+            display: grid;
+            grid-template-columns: 650px 1fr;
+            overflow: hidden;
+        }
+        
+        /* Left Side - Splash Screen */
+        .splash-section {
+            background: #0a1628;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-right: 1px solid rgba(79, 189, 186, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .splash-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Galaxy-themed gradient background */
+            background: radial-gradient(ellipse at center, #1a2a3e 0%, #0a1628 50%, #050a15 100%);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        
+        /* Right Side - Features */
+        .features-section {
+            padding: 20px 30px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section-header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4fbdba;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #4fbdba 0%, transparent 100%);
+            margin-left: 20px;
+        }
+        
+        .features-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            justify-content: space-between;
+        }
+        
+        .feature-category {
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+        
+        .category-title {
+            font-size: 17px;
+            color: #7ec8e3;
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-icon {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 26px;
+        }
+        
+        .feature-item {
+            margin-bottom: 5px;
+            color: #d0d0d0;
+            font-size: 12px;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .feature-item::before {
+            content: '▸';
+            position: absolute;
+            left: -20px;
+            color: #4fbdba;
+        }
+        
+        .highlight {
+            color: #4fbdba;
+            font-weight: 600;
+        }
+        
+        .new-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        
+        .cta-section {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(79, 189, 186, 0.2);
+            flex-shrink: 0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .cta-button {
+            flex: 1;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, #4fbdba 0%, #7ec8e3 100%);
+            color: #0a0e27;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 189, 186, 0.4);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid #4fbdba;
+            color: #4fbdba;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(79, 189, 186, 0.1);
+        }
+        
+        .contact-info {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 13px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 800px;
+            }
+            
+            .splash-section {
+                padding: 40px;
+                border-right: none;
+                border-bottom: 1px solid rgba(79, 189, 186, 0.2);
+            }
+            
+            .features-section {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Splash Screen -->
+        <div class="splash-section">
+            <div class="splash-image-container">
+                <div style="text-align: center; z-index: 10; position: relative;">
+                    <h1 style="font-size: 48px; font-weight: 700; color: #4fbdba; margin-bottom: 10px; text-shadow: 0 0 30px rgba(79, 189, 186, 0.5);">AstroIndexer</h1>
+                    <p style="font-size: 24px; color: #7ec8e3; margin-bottom: 5px;">v19.6</p>
+                    <p style="font-size: 16px; color: #a0a0a0;">Professional Astrophotography Management</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side - Features -->
+        <div class="features-section">
+            <h2 class="section-header">Professional Astrophotography Management</h2>
+            
+            <div class="features-content">
+                <div class="feature-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎯</span>
+                    Instant Intelligence
+                </h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="highlight">Visual Catalogue Tracking</span> - See your Messier/NGC/IC progress at a glance - no spreadsheets!
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">All-Catalog Summary Panel</span> <span class="new-badge">NEW</span> - View completion percentages for all catalogs in one view
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Smart Object Detection</span> - Knows "m31" = "Andromeda" = "NGC 224" automatically
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Smart Duplicate Finder</span> - Keeps only your best frames, saves gigabytes of space
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Interactive Sky Map</span> - Your entire imaging history plotted on the real sky
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-category">
+                <h3 class="category-title">
+                    <span class="category-icon">⚡</span>
+                    Blazing Performance
+                </h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="highlight">Multi-Core Speed Demon</span> - Analyze 10,000 files in 5 minutes (uses ALL your CPU cores)
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Virtual Scrolling Gallery</span> - Browse 100,000+ images without lag
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Real-Time Processing</span> - Watch live progress with accurate time estimates
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Background Operations</span> - Keep working while heavy tasks run
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🤖</span>
+                    ML-Powered Analysis <span class="new-badge">NEW</span>
+                </h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="highlight">Best Frame Selection</span> - ML selects optimal frames for stacking automatically
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Anomaly Detection</span> - Identifies problematic frames or equipment issues over time
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">9x9 Sensor Heatmaps</span> - See quality distribution across your entire sensor
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Pattern Recognition</span> - Discovers imaging trends and quality patterns in your data
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">AI-Powered Summaries</span> - Human-readable findings with actionable recommendations
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-category">
+                <h3 class="category-title">
+                    <span class="category-icon">📊</span>
+                    Professional Tools
+                </h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="highlight">Filter & Exposure Guide</span> - Recommendations for 3000+ objects based on your equipment
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Equipment Comparison Matrix</span> - Which telescope/camera combo performs best?
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">NINA Deep Integration</span> - Import all session data, weather, and guiding stats
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Session Planner</span> - Tonight's best targets with optimal imaging windows and moon avoidance for your equipment
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Quality Review Tool</span> - Compare images side-by-side across different setups
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎨</span>
+                    Beautiful Experience
+                </h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="highlight">Dark/Light Themes</span> - Easy on the eyes during late-night sessions
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Customizable Layouts</span> - Arrange panels your way
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Interactive Guided Tour</span> - Learn features step-by-step
+                    </li>
+                    <li class="feature-item">
+                        <span class="highlight">Cross-Platform Native</span> - Same experience on Windows and macOS
+                    </li>
+                </ul>
+            </div>
+            </div>
+            
+            <div class="cta-section">
+                <div class="cta-buttons">
+                    <a href="https://github.com/screetch82/AstroIndexer/releases" class="cta-button cta-primary">Download v19.6</a>
+                    <a href="https://github.com/screetch82/AstroIndexer/wiki" class="cta-button cta-secondary">View Documentation</a>
+                </div>
+                <div class="contact-info">
+                    Version 19.6 • Cross-platform: Windows & macOS<br>
+                    © 2025 AstroIndexer Team • <a href="https://github.com/screetch82/AstroIndexer" style="color: #7ec8e3;">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

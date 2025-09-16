@@ -267,6 +267,79 @@ body {
     line-height: 1.8;
 }
 
+/* Feature Details Section */
+.feature-details {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1f2e 0%, #0a0e1a 100%);
+}
+
+.feature-detail {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.feature-detail.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-content h3 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.feature-content p {
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-points {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-points li {
+    padding: 10px 0;
+    color: #4dd0e1;
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.feature-screenshot {
+    flex: 1;
+    position: relative;
+}
+
+.feature-screenshot img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 208, 225, 0.2);
+}
+
+@media (max-width: 768px) {
+    .feature-detail,
+    .feature-detail.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
 /* Pricing Section */
 .pricing {
     padding: 80px 0;
