@@ -57,13 +57,11 @@
         </div>
     </nav>
 
-    <!-- Landing Splash — first thing visitors see -->
-    <section id="landing" class="landing-splash" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-        <div class="landing-inner">
-            <img src="screenshots/startup_showcase.png" alt="AstroIndexer" class="landing-image">
-        </div>
-        <div class="landing-scroll-hint" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10l5 5 5-5"/></svg>
+    <!-- Landing Splash — immersive full-viewport entry -->
+    <section id="landing" class="landing-splash">
+        <img src="screenshots/startup_showcase.png" alt="AstroIndexer" class="landing-image">
+        <div class="landing-enter" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10l5 5 5-5"/></svg>
         </div>
     </section>
 
@@ -557,24 +555,32 @@
             });
         });
 
-        // Navbar: hide on landing splash, show + scroll-style elsewhere
-        const landingSection = document.getElementById('landing');
-        function updateNavbar() {
-            const landingBottom = landingSection ? landingSection.offsetTop + landingSection.offsetHeight : 0;
-            if (landingSection && window.scrollY < landingBottom - 60) {
+        // Landing splash: hide all chrome, reveal on scroll past
+        const landing = document.getElementById('landing');
+        document.body.classList.add('on-landing'); // immediately hide chrome
+
+        function updateChrome() {
+            const threshold = landing ? landing.offsetHeight * 0.5 : 0;
+            if (landing && window.scrollY < threshold) {
                 document.body.classList.add('on-landing');
             } else {
                 document.body.classList.remove('on-landing');
             }
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > landingBottom) {
+            if (window.scrollY > (landing ? landing.offsetHeight : 50)) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         }
-        window.addEventListener('scroll', updateNavbar);
-        updateNavbar(); // run on load
+        window.addEventListener('scroll', updateChrome);
+
+        // Click landing to enter site
+        if (landing) {
+            landing.addEventListener('click', function() {
+                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
