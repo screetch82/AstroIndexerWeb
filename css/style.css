@@ -251,30 +251,44 @@ body {
 
 /* ─── Landing Splash ─────────────────────── */
 .landing-splash {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px 40px;     /* top accounts for fixed navbar */
     position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Hide navbar when landing splash is in view */
+body.on-landing .navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar {
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .landing-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
 }
 
 .landing-image {
-    max-height: 65vh;
-    max-width: 90vw;
+    max-height: 80vh;
+    max-width: 85vw;
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 18px;
     filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.landing-splash:hover .landing-image {
+    transform: scale(1.01);
 }
 
 .landing-scroll-hint {
@@ -287,11 +301,7 @@ body {
     animation: bounce-hint 2s ease-in-out infinite;
     text-decoration: none;
     transition: opacity 0.3s ease;
-}
-
-.landing-scroll-hint:hover {
-    opacity: 1;
-    color: var(--teal);
+    pointer-events: none;
 }
 
 @keyframes bounce-hint {
@@ -743,13 +753,8 @@ body {
         display: none;
     }
 
-    .landing-splash {
-        min-height: 80vh;
-        padding: 70px 12px 30px;
-    }
-
     .landing-image {
-        max-height: 55vh;
+        max-height: 70vh;
     }
 
     .hero {

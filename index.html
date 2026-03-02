@@ -58,13 +58,13 @@
     </nav>
 
     <!-- Landing Splash — first thing visitors see -->
-    <section id="landing" class="landing-splash">
+    <section id="landing" class="landing-splash" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
         <div class="landing-inner">
             <img src="screenshots/startup_showcase.png" alt="AstroIndexer" class="landing-image">
         </div>
-        <a href="#about" class="landing-scroll-hint" aria-label="Scroll down">
+        <div class="landing-scroll-hint" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 10l5 5 5-5"/></svg>
-        </a>
+        </div>
     </section>
 
     <!-- About / Info Section -->
@@ -557,15 +557,24 @@
             });
         });
 
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function() {
+        // Navbar: hide on landing splash, show + scroll-style elsewhere
+        const landingSection = document.getElementById('landing');
+        function updateNavbar() {
+            const landingBottom = landingSection ? landingSection.offsetTop + landingSection.offsetHeight : 0;
+            if (landingSection && window.scrollY < landingBottom - 60) {
+                document.body.classList.add('on-landing');
+            } else {
+                document.body.classList.remove('on-landing');
+            }
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
+            if (window.scrollY > landingBottom) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
+        }
+        window.addEventListener('scroll', updateNavbar);
+        updateNavbar(); // run on load
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
