@@ -37,7 +37,7 @@
     top: calc(100% + 8px);
     right: 0;
     min-width: 160px;
-    background: #1a1f2e;
+    background: #121c28;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -65,8 +65,8 @@
 }
 
 .language-option:hover {
-    background: rgba(77, 208, 225, 0.1);
-    color: #4dd0e1;
+    background: rgba(73, 198, 191, 0.1);
+    color: #49c6bf;
 }
 
 .language-option:first-child {
@@ -111,20 +111,20 @@
 /* Dark theme adjustments */
 @media (prefers-color-scheme: dark) {
     .language-dropdown {
-        background: #0f1419;
+        background: #0f1620;
         border-color: rgba(255, 255, 255, 0.05);
     }
 }
 
 /* Language-specific adjustments */
 html[lang="de"] .language-option[data-lang="de"] {
-    background: rgba(77, 208, 225, 0.05);
-    color: #4dd0e1;
+    background: rgba(73, 198, 191, 0.05);
+    color: #49c6bf;
 }
 
 html[lang="en"] .language-option[data-lang="en"] {
-    background: rgba(77, 208, 225, 0.05);
-    color: #4dd0e1;
+    background: rgba(73, 198, 191, 0.05);
+    color: #49c6bf;
 }
 
 /* Smooth transitions for content changes */
