@@ -15,8 +15,9 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Professional Astrophotography Management",
             description: "Organize, analyze, and optimize your astrophotography workflow with powerful AI-driven tools",
+            platforms: "Available for",
             cta: {
-                download: "Download Now",
+                download: "Download Free",
                 learnMore: "Learn More"
             }
         },
@@ -51,6 +52,22 @@ const translations = {
                     description: "Seamless integration with PixInsight, N.I.N.A, and other tools"
                 }
             }
+        },
+
+        // Download Section
+        download: {
+            title: "Download AstroIndexer",
+            subtitle: "Free to try, works on all major platforms",
+            windows: {
+                detail: "Installer (.exe) \u00b7 Windows 10+"
+            },
+            macos: {
+                detail: "Universal (.zip) \u00b7 macOS 12+"
+            },
+            linux: {
+                detail: "Archive (.tar.gz) \u00b7 Ubuntu 22.04+"
+            },
+            note: "Free 30-day trial with full access. No account required."
         },
 
         // Pricing Section
@@ -127,7 +144,7 @@ const translations = {
                     terms: "Terms of Service"
                 }
             },
-            copyright: "© 2024 AstroIndexer. All rights reserved."
+            copyright: "© 2025 AstroIndexer. All rights reserved."
         }
     },
 
@@ -146,8 +163,9 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Professionelle Astrofotografie-Verwaltung",
             description: "Organisieren, analysieren und optimieren Sie Ihren Astrofotografie-Workflow mit leistungsstarken KI-gesteuerten Tools",
+            platforms: "Verf\u00fcgbar f\u00fcr",
             cta: {
-                download: "Jetzt herunterladen",
+                download: "Kostenlos herunterladen",
                 learnMore: "Mehr erfahren"
             }
         },
@@ -184,10 +202,26 @@ const translations = {
             }
         },
 
+        // Download Section
+        download: {
+            title: "AstroIndexer herunterladen",
+            subtitle: "Kostenlos testen, verf\u00fcgbar f\u00fcr alle Plattformen",
+            windows: {
+                detail: "Installer (.exe) \u00b7 Windows 10+"
+            },
+            macos: {
+                detail: "Universal (.zip) \u00b7 macOS 12+"
+            },
+            linux: {
+                detail: "Archiv (.tar.gz) \u00b7 Ubuntu 22.04+"
+            },
+            note: "30 Tage kostenlose Testversion mit vollem Zugang. Kein Konto erforderlich."
+        },
+
         // Pricing Section
         pricing: {
-            title: "Wählen Sie Ihren Plan",
-            subtitle: "Flexible Preise für Hobbyisten und Profis",
+            title: "W\u00e4hlen Sie Ihren Plan",
+            subtitle: "Flexible Preise f\u00fcr Hobbyisten und Profis",
             trial: {
                 title: "Kostenlose Testversion",
                 price: "Kostenlos",
