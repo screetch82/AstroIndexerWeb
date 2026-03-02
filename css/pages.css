@@ -1,0 +1,358 @@
+/* Shared styles for docs.html, faq.html subpages */
+
+/* ─── Page Header ────────────────────────── */
+.page-header {
+    padding: 130px 0 50px;
+    text-align: center;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ─── Doc Sections ───────────────────────── */
+.doc-section {
+    padding: 70px 0;
+}
+
+.doc-section.alt-bg {
+    background: rgba(15, 22, 32, 0.5);
+}
+
+.doc-section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.section-lead {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 720px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+kbd {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 13px;
+    font-family: inherit;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    color: var(--txt);
+}
+
+/* ─── Getting Started Steps ──────────────── */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+}
+
+.step-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    border-color: rgba(73, 198, 191, 0.3);
+    transform: translateY(-2px);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(73, 198, 191, 0.14);
+    color: var(--teal);
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.step-card h3 {
+    font-size: 18px;
+    font-weight: 750;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ─── Documentation Grid ─────────────────── */
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 8px;
+}
+
+.category-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(73, 198, 191, 0.2);
+}
+
+.doc-card {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.doc-card:last-child {
+    border-bottom: none;
+}
+
+.doc-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(73, 198, 191, 0.08);
+    color: var(--teal);
+}
+
+.doc-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--txt);
+}
+
+.doc-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ─── Formats Grid ───────────────────────── */
+.formats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.format-group {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.format-group h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 14px;
+}
+
+.format-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.format-group li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 5px 0;
+    line-height: 1.5;
+}
+
+/* ─── Integration Grid ───────────────────── */
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.integration-item {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.integration-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.integration-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ─── FAQ Styles ─────────────────────────── */
+.faq-container {
+    max-width: 800px;
+}
+
+.faq-category {
+    margin-bottom: 48px;
+}
+
+.faq-category h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+.faq-item {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    background: rgba(18, 28, 40, 0.5);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item[open] {
+    border-color: rgba(73, 198, 191, 0.25);
+    background: rgba(18, 28, 40, 0.8);
+}
+
+.faq-item summary {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+    color: var(--txt);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--teal);
+    flex-shrink: 0;
+    margin-left: 16px;
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '\2212';  /* minus sign */
+}
+
+.faq-item summary:hover {
+    color: var(--teal);
+}
+
+.faq-answer {
+    padding: 0 20px 18px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.faq-answer p {
+    margin-bottom: 10px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul, .faq-answer ol {
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+.faq-answer li {
+    padding: 3px 0;
+    line-height: 1.6;
+}
+
+.faq-answer code {
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--teal);
+}
+
+.faq-answer a {
+    color: var(--teal);
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* ─── Active nav link ────────────────────── */
+.nav-menu a.active {
+    color: var(--teal);
+}
+
+/* ─── Responsive ─────────────────────────── */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 110px 0 40px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .steps-grid,
+    .formats-grid,
+    .integration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doc-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}

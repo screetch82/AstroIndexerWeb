@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroIndexer Documentation - Learn about features, workflows, and capabilities">
+    <title>Documentation - AstroIndexer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">
+            <span class="flag" id="currentFlag">&#127468;&#127463;</span>
+            <span class="lang-code" id="currentLang">EN</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" class="language-option" data-lang="en">
+                <span class="flag">&#127468;&#127463;</span>
+                <span>English</span>
+            </a>
+            <a href="#" class="language-option" data-lang="de">
+                <span class="flag">&#127465;&#127466;</span>
+                <span>Deutsch</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+                    <img src="images/logo.png" alt="AstroIndexer" class="logo">
+                    <span>AstroIndexer</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="docs.html" class="active">Documentation</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Documentation</h1>
+            <p class="page-subtitle">Learn how AstroIndexer organizes, analyzes, and optimizes your astrophotography workflow</p>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section class="doc-section">
+        <div class="container">
+            <h2>Getting Started</h2>
+            <p class="section-lead">AstroIndexer indexes your astrophotography files, measures quality metrics with PixInsight-grade accuracy, detects patterns with ML analytics, and helps you plan your imaging season.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Install &amp; Launch</h3>
+                    <p>Download for your platform, install, and launch. A 30-day free trial gives full access to all features with no account required.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Scan Your Library</h3>
+                    <p>Point AstroIndexer at your image folders. The 7-stage scanner discovers FITS/XISF files, extracts metadata, normalizes targets and filters, and writes everything to the database.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Analyze &amp; Explore</h3>
+                    <p>Browse your library in the Gallery, run Quality Analysis to score every frame, explore patterns with ML Analytics, and plan future sessions with the Planner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Documentation -->
+    <section class="doc-section alt-bg">
+        <div class="container">
+            <h2>Feature Reference</h2>
+            <p class="section-lead">Each feature page in the built-in User Manual (press <kbd>F1</kbd> in the app) describes one capability with step-by-step instructions, mental models, and troubleshooting. Below is an overview of what each feature does.</p>
+
+            <div class="doc-grid">
+                <!-- Core Workflow -->
+                <div class="doc-category">
+                    <h3 class="category-title">Core Workflow</h3>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Folder Scanning</h4>
+                            <p>A 7-stage pipeline that discovers FITS/XISF files, extracts FITS header metadata, normalizes target names and filter identifiers, runs optional quality and ADU analysis, and writes results to the database. Supports case-insensitive extensions and handles files from all major capture software (NINA, SGPro, APT, Seestar, etc.).</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        </div>
+                        <div>
+                            <h4>Gallery</h4>
+                            <p>A 3-column hierarchical browser for navigating your image library: Catalogues and Targets on the left, Variants and Panels in the center, Filters and Files on the right. Supports virtual scrolling for libraries with 100,000+ images, quick-preview with FITS header data, and batch operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Equipment Manager</h4>
+                            <p>Manage telescope, camera, and filter setups. AstroIndexer auto-detects equipment from FITS headers (TELESCOP, INSTRUME, FILTER keywords) and tracks performance metrics across all your imaging train combinations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis & Quality -->
+                <div class="doc-category">
+                    <h3 class="category-title">Analysis &amp; Quality</h3>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <div>
+                            <h4>Quality Analysis</h4>
+                            <p>Measures FWHM (star sharpness), HFR (star size), SNR (signal-to-noise ratio), and eccentricity (star elongation) using Moffat PSF fitting. Produces a 0-100 quality score per frame with PixInsight-grade accuracy (within ~5% of SubframeSelector values). Automatically tags rejects and identifies best frames for stacking.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <h4>ML Analytics</h4>
+                            <p>Six machine learning modules discover patterns in your imaging data: environmental pattern recognition, exposure time optimization, sensor performance heatmaps, session quality analysis, quality pattern predictions, and AI-generated improvement insights. Includes a Stacking Advisor that recommends optimal frame selection.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                        </div>
+                        <div>
+                            <h4>Tagging System</h4>
+                            <p>Organize frames with quality tags (reject, needs work, ready, good, exceptional), warning tags (focus drift, trailing, cloud), and custom labels. Tags integrate with the Quality Analysis scoring system and can be used to filter in Gallery and Data Viewer.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <div>
+                            <h4>Statistics</h4>
+                            <p>Aggregated metrics and charts across your entire library. Equipment performance trends, session-over-session comparisons, imaging time breakdowns, and collection growth tracking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Planning & Atlas -->
+                <div class="doc-category">
+                    <h3 class="category-title">Planning &amp; Atlas</h3>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <h4>Session Planner V2</h4>
+                            <p>Manages the full imaging project lifecycle through 5 states: Queued, Planned, Scheduled, Active, and Completed. Includes target discovery with suitability scoring, equipment and exposure plan configuration, night scheduling with altitude/moon calculations, and NINA sequence export.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg>
+                        </div>
+                        <div>
+                            <h4>Sky Atlas</h4>
+                            <p>Interactive celestial map showing your imaging coverage, registered image overlays via plate solving, coverage heatmaps, and real-time position updates. Helps identify gaps in your collection and plan future targets.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div>
+                            <h4>Catalogue Completion</h4>
+                            <p>Track your progress through Messier, NGC, IC, Sharpless, and other astronomical catalogues with interactive visual grids. Shows completion percentage, identifies missing objects, and helps plan what to image next.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="doc-category">
+                    <h3 class="category-title">Tools &amp; Utilities</h3>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <h4>Data Viewer</h4>
+                            <p>Spreadsheet view of all file metadata with customizable columns, sorting, filtering, and CSV export. See every FITS header value, quality metric, and tag for your entire library in one table.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+                        </div>
+                        <div>
+                            <h4>Calibration Library</h4>
+                            <p>Manage master dark, flat, and bias frames with automatic temperature and exposure-time matching. Batch-apply calibration to your light frames and track calibration frame freshness.</p>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Quality Review &amp; Tools</h4>
+                            <p>Blink comparator for visual frame inspection, folder analysis for storage management, and object detector for identifying targets in untagged files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Formats -->
+    <section class="doc-section">
+        <div class="container">
+            <h2>Supported File Formats</h2>
+            <div class="formats-grid">
+                <div class="format-group">
+                    <h4>Full Support</h4>
+                    <ul>
+                        <li><strong>FITS</strong> &mdash; .fits, .fit, .fts (case-insensitive)</li>
+                        <li><strong>XISF</strong> &mdash; .xisf (PixInsight native format)</li>
+                        <li><strong>TIFF</strong> &mdash; .tif, .tiff (with metadata)</li>
+                    </ul>
+                </div>
+                <div class="format-group">
+                    <h4>Partial Support</h4>
+                    <ul>
+                        <li><strong>RAW</strong> &mdash; CR2, NEF, ARW via dcraw</li>
+                        <li><strong>JPEG/PNG</strong> &mdash; Limited metadata extraction</li>
+                    </ul>
+                </div>
+                <div class="format-group">
+                    <h4>Capture Software</h4>
+                    <ul>
+                        <li>N.I.N.A, SGPro, APT, Voyager</li>
+                        <li>Seestar S50, ASIair</li>
+                        <li>PixInsight, Siril</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration -->
+    <section class="doc-section alt-bg">
+        <div class="container">
+            <h2>Software Integration</h2>
+            <p class="section-lead">AstroIndexer integrates with the tools you already use.</p>
+            <div class="integration-grid">
+                <div class="integration-item">
+                    <h4>PixInsight</h4>
+                    <p>Export file lists for BatchPreprocessing, import SubframeSelector measurements, and compare quality scores with PixInsight's own analysis.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>N.I.N.A</h4>
+                    <p>Import NINA sequence files, read NINA metadata, and export target lists and exposure plans as NINA sequences directly from the Session Planner.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>Other Tools</h4>
+                    <p>Compatible with SGPro, APT, Voyager, and any software that writes standard FITS headers. CSV export works with any spreadsheet or analysis tool.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-App Help -->
+    <section class="doc-section">
+        <div class="container" style="text-align:center;max-width:700px">
+            <h2>In-App User Manual</h2>
+            <p>AstroIndexer ships with a comprehensive built-in User Manual covering every feature with step-by-step instructions, mental models, and troubleshooting. Press <kbd>F1</kbd> or go to <strong>Help &rarr; User Manual</strong> to access it.</p>
+            <a href="index.html#download" class="btn-primary btn-large" style="margin-top:24px">Download AstroIndexer</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="mailto:support@astroindexer.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AstroIndexer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+</body>
+</html>

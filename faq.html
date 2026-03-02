@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroIndexer FAQ - Frequently asked questions about installation, features, and troubleshooting">
+    <title>FAQ - AstroIndexer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">
+            <span class="flag" id="currentFlag">&#127468;&#127463;</span>
+            <span class="lang-code" id="currentLang">EN</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" class="language-option" data-lang="en">
+                <span class="flag">&#127468;&#127463;</span>
+                <span>English</span>
+            </a>
+            <a href="#" class="language-option" data-lang="de">
+                <span class="flag">&#127465;&#127466;</span>
+                <span>Deutsch</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+                    <img src="images/logo.png" alt="AstroIndexer" class="logo">
+                    <span>AstroIndexer</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p class="page-subtitle">Quick answers to common questions about AstroIndexer</p>
+        </div>
+    </section>
+
+    <!-- FAQ Sections -->
+    <section class="doc-section">
+        <div class="container faq-container">
+
+            <!-- General -->
+            <div class="faq-category">
+                <h2>General</h2>
+
+                <details class="faq-item" open>
+                    <summary>What is AstroIndexer?</summary>
+                    <div class="faq-answer">
+                        <p>AstroIndexer is a comprehensive astrophotography management and analysis application. It indexes your FITS and XISF files, measures quality metrics (FWHM, HFR, SNR, eccentricity) with PixInsight-grade accuracy, discovers patterns with 6 ML analytics modules, and helps you plan imaging sessions with a full-lifecycle planner.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What platforms does AstroIndexer support?</summary>
+                    <div class="faq-answer">
+                        <p>AstroIndexer runs on:</p>
+                        <ul>
+                            <li><strong>Windows</strong> 10 and later (64-bit)</li>
+                            <li><strong>macOS</strong> 12 (Monterey) and later (Apple Silicon &amp; Intel)</li>
+                            <li><strong>Linux</strong> Ubuntu 22.04+ and compatible distributions</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What file formats are supported?</summary>
+                    <div class="faq-answer">
+                        <p><strong>Full support:</strong> FITS (.fits, .fit, .fts), XISF (.xisf), TIFF (.tif, .tiff)</p>
+                        <p><strong>Partial support:</strong> RAW formats (CR2, NEF, ARW) via dcraw, JPEG, PNG (limited metadata)</p>
+                        <p>Extension matching is case-insensitive, so .FIT, .Fits, .XISF all work. Compatible with files from N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, and other capture software.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Does AstroIndexer modify my original files?</summary>
+                    <div class="faq-answer">
+                        <p><strong>No.</strong> AstroIndexer never modifies your original image files. It only reads metadata from files, creates thumbnails in its own directory, and stores analysis results in its local database. Your images remain untouched.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Installation -->
+            <div class="faq-category">
+                <h2>Installation &amp; Setup</h2>
+
+                <details class="faq-item">
+                    <summary>How do I install AstroIndexer?</summary>
+                    <div class="faq-answer">
+                        <p><strong>Windows:</strong> Download the installer (.exe), run it, and follow the wizard. You can choose both the install location and the data directory.</p>
+                        <p><strong>macOS:</strong> Download the .zip, extract, and drag AstroIndexer to Applications. On first launch, right-click &rarr; Open to bypass Gatekeeper.</p>
+                        <p><strong>Linux:</strong> Download the .tar.gz archive, extract, and run the included launcher.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why does Windows/macOS show a security warning?</summary>
+                    <div class="faq-answer">
+                        <p>This is normal for newly downloaded software.</p>
+                        <ul>
+                            <li><strong>Windows SmartScreen:</strong> Click "More info" then "Run anyway"</li>
+                            <li><strong>macOS Gatekeeper:</strong> Right-click the app &rarr; Open, or go to System Settings &rarr; Privacy &amp; Security &rarr; "Open Anyway"</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Where is my data stored?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\AstroIndexer\</code></li>
+                            <li><strong>macOS:</strong> <code>~/Library/Application Support/AstroIndexer/</code></li>
+                            <li><strong>Linux:</strong> <code>~/.local/share/AstroIndexer/</code></li>
+                        </ul>
+                        <p>The database (<code>astro_indexer.db</code>), thumbnails, and configuration are stored in this directory. On Windows, the installer lets you choose a custom data location.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I use images on external drives?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. AstroIndexer can catalog images on any accessible drive (USB, NAS, network share). The drive must be connected for viewing and analysis, but thumbnails are cached locally for offline browsing. If drive letters change, use "Update Paths" to reconcile.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Quality Analysis -->
+            <div class="faq-category">
+                <h2>Quality Analysis</h2>
+
+                <details class="faq-item">
+                    <summary>What is FWHM and why does it matter?</summary>
+                    <div class="faq-answer">
+                        <p>FWHM (Full Width at Half Maximum) measures star diameter in pixels. Lower values mean sharper stars and better focus/seeing:</p>
+                        <ul>
+                            <li><strong>Excellent:</strong> &lt; 2.0 px</li>
+                            <li><strong>Good:</strong> 2.0 &ndash; 2.5 px</li>
+                            <li><strong>Acceptable:</strong> 2.5 &ndash; 3.0 px</li>
+                            <li><strong>Poor:</strong> &gt; 3.0 px</li>
+                        </ul>
+                        <p>Note: these are general guidelines. AstroIndexer scores frames relative to your own equipment's typical performance, not fixed thresholds.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How is the Quality Score calculated?</summary>
+                    <div class="faq-answer">
+                        <p>The quality score (0&ndash;100) is a weighted combination of four metrics:</p>
+                        <ul>
+                            <li><strong>FWHM</strong> (40%) &mdash; star sharpness (lower is better)</li>
+                            <li><strong>SNR</strong> (30%) &mdash; signal-to-noise ratio (higher is better)</li>
+                            <li><strong>Star Count</strong> (20%) &mdash; number of detected stars (optimal range)</li>
+                            <li><strong>Eccentricity</strong> (10%) &mdash; star roundness (lower is better)</li>
+                        </ul>
+                        <p>Scoring bands: Reject (&lt;30), Needs Work (30&ndash;50), Ready (50&ndash;75), Good (75&ndash;90), Exceptional (90+).</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How does AstroIndexer compare to PixInsight SubframeSelector?</summary>
+                    <div class="faq-answer">
+                        <p>AstroIndexer's Quality Analysis uses Moffat PSF fitting and produces FWHM, HFR, eccentricity, and SNR measurements that are within ~5% of PixInsight SubframeSelector values. It processes frames in batch automatically, whereas SubframeSelector requires manual setup per session.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why does quality analysis fail on some images?</summary>
+                    <div class="faq-answer">
+                        <p>Common reasons:</p>
+                        <ul>
+                            <li>Image has no stars (clouds, daylight, calibration frames)</li>
+                            <li>Extremely out of focus (no detectable star shapes)</li>
+                            <li>Very short exposure (insufficient signal)</li>
+                            <li>Corrupted file data</li>
+                        </ul>
+                        <p>Calibration frames (darks, flats, bias) are automatically detected and skipped.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- ML Analytics -->
+            <div class="faq-category">
+                <h2>ML Analytics</h2>
+
+                <details class="faq-item">
+                    <summary>What ML modules are included?</summary>
+                    <div class="faq-answer">
+                        <p>AstroIndexer includes 6 specialized ML modules:</p>
+                        <ol>
+                            <li><strong>Environmental Patterns</strong> &mdash; correlates quality with temperature, humidity, altitude</li>
+                            <li><strong>Exposure Optimization</strong> &mdash; recommends sub-exposure times based on your equipment and conditions</li>
+                            <li><strong>Sensor Heatmap</strong> &mdash; maps quality across your sensor to find vignetting, dust, aberrations</li>
+                            <li><strong>Session Analysis</strong> &mdash; identifies quality trends within and across imaging sessions</li>
+                            <li><strong>Pattern Predictions</strong> &mdash; predicts quality based on conditions</li>
+                            <li><strong>AI Insights</strong> &mdash; generates personalized improvement recommendations</li>
+                        </ol>
+                        <p>Plus a <strong>Stacking Advisor</strong> that recommends optimal frame selection for each target.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How much data does ML need to be useful?</summary>
+                    <div class="faq-answer">
+                        <p>ML Analytics becomes increasingly useful as your library grows. Basic patterns emerge with 100+ analyzed frames. Environmental correlations and equipment recommendations are most accurate with 500+ frames across multiple sessions and conditions.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Session Planner -->
+            <div class="faq-category">
+                <h2>Session Planner</h2>
+
+                <details class="faq-item">
+                    <summary>What is the project lifecycle?</summary>
+                    <div class="faq-answer">
+                        <p>Every imaging project moves through 5 states:</p>
+                        <ol>
+                            <li><strong>Queued</strong> &mdash; on your wishlist, not yet configured</li>
+                            <li><strong>Planned</strong> &mdash; equipment, framing, exposure plan, and goal hours set</li>
+                            <li><strong>Scheduled</strong> &mdash; has specific night blocks on your calendar</li>
+                            <li><strong>Active</strong> &mdash; currently being imaged</li>
+                            <li><strong>Completed</strong> &mdash; imaging goal reached</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I export to N.I.N.A?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. The Session Planner can export projects as N.I.N.A sequence files, including target coordinates, exposure plans, and filter sequences. Set up your project in AstroIndexer, then export and load in N.I.N.A for automated imaging.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Integration -->
+            <div class="faq-category">
+                <h2>Integration</h2>
+
+                <details class="faq-item">
+                    <summary>Can I use AstroIndexer with PixInsight?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. You can export file lists for BatchPreprocessing, import PixInsight's SubframeSelector measurements, compare quality scores, and export selected frames to specific folders for processing.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What other software works with AstroIndexer?</summary>
+                    <div class="faq-answer">
+                        <p>AstroIndexer is compatible with any software that writes standard FITS headers. Tested with N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, Siril, and PixInsight. CSV export lets you use data in Excel, Google Sheets, or any analysis tool.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Licensing -->
+            <div class="faq-category">
+                <h2>Licensing &amp; Pricing</h2>
+
+                <details class="faq-item">
+                    <summary>Is there a free trial?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. AstroIndexer offers a 30-day free trial with full access to all features. No account or credit card required. Just download and start using it.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What happens when the trial expires?</summary>
+                    <div class="faq-answer">
+                        <p>The application enters read-only mode. You can still view and export your existing data, but new imports and analysis are disabled. All your data remains intact &mdash; nothing is deleted. Purchase a license to restore full access.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Are licenses one-time or subscription?</summary>
+                    <div class="faq-answer">
+                        <p>All licenses are <strong>one-time purchases</strong> with lifetime updates included. No subscription, no recurring fees.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="faq-category">
+                <h2>Troubleshooting</h2>
+
+                <details class="faq-item">
+                    <summary>AstroIndexer won't start</summary>
+                    <div class="faq-answer">
+                        <ol>
+                            <li>Check that your license is valid (or you're within the trial period)</li>
+                            <li>Run as Administrator (Windows) or check Security settings (macOS)</li>
+                            <li>Check if antivirus software is blocking the application</li>
+                            <li>Delete <code>config.json</code> in the data directory to reset settings</li>
+                            <li>Reinstall if the issue persists</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>The application is running slowly</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Go to Tools &rarr; Maintenance &rarr; Optimize to compact the database</li>
+                            <li>Reduce thumbnail size in preferences</li>
+                            <li>Limit gallery to 4&ndash;6 columns</li>
+                            <li>Close unused tabs</li>
+                            <li>Ensure adequate free disk space</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quality analysis takes a long time</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Reduce "Max stars to analyze" in QA settings (500&ndash;1000 is usually sufficient)</li>
+                            <li>Process in smaller batches</li>
+                            <li>Close other resource-intensive applications</li>
+                            <li>AstroIndexer uses adaptive thread pooling &mdash; more CPU cores = faster analysis</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I report a bug?</summary>
+                    <div class="faq-answer">
+                        <ol>
+                            <li>Note the exact steps to reproduce the issue</li>
+                            <li>Include any error messages shown</li>
+                            <li>Attach the log file from <code>logs/astroindexer.log</code> in your data directory</li>
+                            <li>Email <a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="doc-section alt-bg" style="text-align:center">
+        <div class="container" style="max-width:600px">
+            <h2>Still have questions?</h2>
+            <p style="color:var(--text-secondary);margin-bottom:24px">Email us at <a href="mailto:support@astroindexer.com" style="color:var(--teal)">support@astroindexer.com</a> and we'll get back to you.</p>
+            <a href="index.html#download" class="btn-primary btn-large">Download AstroIndexer</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="mailto:support@astroindexer.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AstroIndexer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+    <script>
+        // FAQ accordion - allow multiple open
+        // (native <details> handles this automatically)
+    </script>
+</body>
+</html>
