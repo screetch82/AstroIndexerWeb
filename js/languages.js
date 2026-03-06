@@ -50,7 +50,141 @@ const translations = {
                 integration: {
                     title: "Software Integration",
                     description: "Seamless integration with PixInsight, N.I.N.A, and other tools"
+                },
+                celestial: {
+                    title: "Celestial Map",
+                    description: "Interactive sky map showing your imaging coverage and future targets"
                 }
+            }
+        },
+
+        // Details Section (feature showcases)
+        details: {
+            title: "See AstroIndexer in Action",
+            subtitle: "Powerful tools designed for serious astrophotographers",
+            quality: {
+                title: "Advanced Quality Analysis",
+                description: "Comprehensive image quality metrics with FWHM, HFR, eccentricity, and star count analysis. Automatically grade and sort your images to identify the best frames for stacking.",
+                points: [
+                    "Real-time FWHM and HFR calculations",
+                    "Automatic quality scoring",
+                    "Batch analysis capabilities"
+                ]
+            },
+            equipment: {
+                title: "Equipment Performance Tracking",
+                description: "Track performance metrics across all your equipment combinations. Identify optimal configurations and monitor equipment degradation over time.",
+                points: [
+                    "Equipment profile management",
+                    "Performance trend analysis",
+                    "Setup comparison tools"
+                ]
+            },
+            planner: {
+                title: "Advanced Session Planning",
+                description: "Plan your imaging sessions with precision using yearly completion tracking, timeline views, and exposure planning tools.",
+                points: [
+                    "Yearly completion planner",
+                    "Timeline visualization",
+                    "Exposure plan optimization"
+                ]
+            },
+            catalogue: {
+                title: "Catalogue Completion Tracking",
+                description: "Track your progress through Messier, NGC, IC, and other astronomical catalogs with interactive visual grids.",
+                points: [
+                    "Visual grid for all catalog objects",
+                    "Progress tracking by catalog",
+                    "Missing object identification"
+                ]
+            },
+            gallery: {
+                title: "Gallery View",
+                description: "Browse your entire astrophotography collection with lightning-fast virtual scrolling. View thumbnails of 100,000+ images without lag.",
+                points: [
+                    "Virtual scrolling for unlimited images",
+                    "Quick preview with FITS header data",
+                    "Batch operations and tagging"
+                ]
+            },
+            index: {
+                title: "Index & Overview",
+                description: "Your command center for all imaging data. Get instant insights into your collection with smart categorization.",
+                points: [
+                    "Complete collection statistics",
+                    "Equipment performance metrics",
+                    "Quick access to recent sessions"
+                ]
+            },
+            celestial: {
+                title: "Interactive Celestial Map",
+                description: "Visualize your entire imaging collection on an interactive sky map. See coverage gaps, plan future sessions, and explore your astrophotography journey.",
+                points: [
+                    "Interactive 3D sky visualization",
+                    "Coverage heatmap overlay",
+                    "Object tracking and planning",
+                    "Real-time position updates"
+                ]
+            }
+        },
+
+        // ML Analytics Section
+        ml: {
+            title: "AI-Powered Analytics",
+            subtitle: "6 Specialized Machine Learning Modules for Advanced Astrophotography Analysis",
+            dashboard: {
+                title: "ML Analytics Dashboard",
+                description: "Comprehensive overview of all machine learning insights with real-time quality predictions and performance metrics.",
+                points: [
+                    "Real-time quality predictions",
+                    "Performance trend analysis",
+                    "Equipment recommendations"
+                ]
+            },
+            heatmap: {
+                title: "Sensor Performance Heatmap",
+                description: "Visualize sensor performance across your entire frame to identify vignetting, dust motes, and optical aberrations.",
+                points: [
+                    "Pixel-level quality mapping",
+                    "Dust and defect detection",
+                    "Vignetting analysis"
+                ]
+            },
+            exposure: {
+                title: "Exposure Time Optimization",
+                description: "AI-driven exposure time recommendations based on your equipment, target, and conditions.",
+                points: [
+                    "Optimal sub-exposure calculations",
+                    "Signal-to-noise predictions",
+                    "Total integration planning"
+                ]
+            },
+            patterns: {
+                title: "Quality Pattern Recognition",
+                description: "Machine learning identifies patterns in your imaging data to predict optimal conditions.",
+                points: [
+                    "Weather pattern analysis",
+                    "Seeing condition predictions",
+                    "Equipment behavior patterns"
+                ]
+            },
+            session: {
+                title: "Session Performance Analysis",
+                description: "Deep analysis of imaging sessions to identify trends and optimize future sessions.",
+                points: [
+                    "Session quality scoring",
+                    "Time-of-night analysis",
+                    "Equipment performance tracking"
+                ]
+            },
+            insights: {
+                title: "AI-Generated Insights",
+                description: "Actionable recommendations generated by analyzing your complete imaging history.",
+                points: [
+                    "Personalized improvement tips",
+                    "Equipment upgrade recommendations",
+                    "Workflow optimization suggestions"
+                ]
             }
         },
 
@@ -87,8 +221,8 @@ const translations = {
                 cta: "Start Free Trial"
             },
             personal: {
-                title: "Personal",
-                price: "XXX",
+                title: "Standard",
+                price: "€49",
                 duration: "one-time",
                 features: [
                     "Unlimited images",
@@ -101,10 +235,10 @@ const translations = {
             },
             professional: {
                 title: "Professional",
-                price: "XXX",
+                price: "€89",
                 duration: "one-time",
                 features: [
-                    "Everything in Personal",
+                    "Everything in Standard",
                     "Commercial use",
                     "Advanced ML features",
                     "Custom equipment profiles",
@@ -198,7 +332,141 @@ const translations = {
                 integration: {
                     title: "Software-Integration",
                     description: "Nahtlose Integration mit PixInsight, N.I.N.A und anderen Tools"
+                },
+                celestial: {
+                    title: "Himmelskarte",
+                    description: "Interaktive Himmelskarte mit Ihrer Aufnahmeabdeckung und zukünftigen Zielen"
                 }
+            }
+        },
+
+        // Details Section (feature showcases)
+        details: {
+            title: "AstroIndexer in Aktion",
+            subtitle: "Leistungsstarke Werkzeuge für ambitionierte Astrofotografen",
+            quality: {
+                title: "Erweiterte Qualitätsanalyse",
+                description: "Umfassende Bildqualitätsmetriken mit FWHM, HFR, Exzentrizität und Sternzählung. Automatische Bewertung und Sortierung Ihrer Bilder zur Identifikation der besten Einzelaufnahmen für das Stacking.",
+                points: [
+                    "FWHM- und HFR-Berechnungen in Echtzeit",
+                    "Automatische Qualitätsbewertung",
+                    "Stapelverarbeitung"
+                ]
+            },
+            equipment: {
+                title: "Equipment-Leistungsüberwachung",
+                description: "Verfolgen Sie Leistungsmetriken über all Ihre Equipment-Kombinationen. Identifizieren Sie optimale Konfigurationen und überwachen Sie Verschleiß über die Zeit.",
+                points: [
+                    "Equipment-Profilverwaltung",
+                    "Leistungstrend-Analyse",
+                    "Setup-Vergleichswerkzeuge"
+                ]
+            },
+            planner: {
+                title: "Erweiterte Sitzungsplanung",
+                description: "Planen Sie Ihre Aufnahmesitzungen präzise mit jährlicher Fortschrittsverfolgung, Zeitleisten-Ansichten und Belichtungsplanungs-Tools.",
+                points: [
+                    "Jährlicher Fortschrittsplaner",
+                    "Zeitleisten-Visualisierung",
+                    "Belichtungsplan-Optimierung"
+                ]
+            },
+            catalogue: {
+                title: "Katalog-Fortschrittsverfolgung",
+                description: "Verfolgen Sie Ihren Fortschritt durch Messier-, NGC-, IC- und andere astronomische Kataloge mit interaktiven visuellen Rastern.",
+                points: [
+                    "Visuelles Raster für alle Katalogobjekte",
+                    "Fortschrittsverfolgung pro Katalog",
+                    "Identifikation fehlender Objekte"
+                ]
+            },
+            gallery: {
+                title: "Galerie-Ansicht",
+                description: "Durchstöbern Sie Ihre gesamte Astrofotografie-Sammlung mit blitzschnellem virtuellem Scrollen. Betrachten Sie Vorschaubilder von über 100.000 Aufnahmen ohne Verzögerung.",
+                points: [
+                    "Virtuelles Scrollen für unbegrenzte Bilder",
+                    "Schnellvorschau mit FITS-Header-Daten",
+                    "Stapeloperationen und Tagging"
+                ]
+            },
+            index: {
+                title: "Übersicht & Index",
+                description: "Ihre Kommandozentrale für alle Aufnahmedaten. Erhalten Sie sofortige Einblicke in Ihre Sammlung mit intelligenter Kategorisierung.",
+                points: [
+                    "Vollständige Sammlungsstatistiken",
+                    "Equipment-Leistungsmetriken",
+                    "Schnellzugriff auf aktuelle Sitzungen"
+                ]
+            },
+            celestial: {
+                title: "Interaktive Himmelskarte",
+                description: "Visualisieren Sie Ihre gesamte Aufnahmesammlung auf einer interaktiven Himmelskarte. Erkennen Sie Abdeckungslücken, planen Sie zukünftige Sitzungen und erkunden Sie Ihre Astrofotografie-Reise.",
+                points: [
+                    "Interaktive 3D-Himmelsvisualisierung",
+                    "Abdeckungs-Heatmap-Overlay",
+                    "Objektverfolgung und -planung",
+                    "Positionsaktualisierungen in Echtzeit"
+                ]
+            }
+        },
+
+        // ML Analytics Section
+        ml: {
+            title: "KI-gestützte Analytik",
+            subtitle: "6 spezialisierte Machine-Learning-Module für fortgeschrittene Astrofotografie-Analyse",
+            dashboard: {
+                title: "ML-Analytik-Dashboard",
+                description: "Umfassende Übersicht aller Machine-Learning-Erkenntnisse mit Echtzeit-Qualitätsvorhersagen und Leistungsmetriken.",
+                points: [
+                    "Qualitätsvorhersagen in Echtzeit",
+                    "Leistungstrend-Analyse",
+                    "Equipment-Empfehlungen"
+                ]
+            },
+            heatmap: {
+                title: "Sensor-Leistungs-Heatmap",
+                description: "Visualisieren Sie die Sensorleistung über das gesamte Bild, um Vignettierung, Staubkörner und optische Aberrationen zu identifizieren.",
+                points: [
+                    "Pixelgenaue Qualitätskartierung",
+                    "Staub- und Defekterkennung",
+                    "Vignettierungsanalyse"
+                ]
+            },
+            exposure: {
+                title: "Belichtungszeit-Optimierung",
+                description: "KI-gestützte Belichtungszeit-Empfehlungen basierend auf Ihrer Ausrüstung, dem Zielobjekt und den Bedingungen.",
+                points: [
+                    "Optimale Einzelbelichtungs-Berechnung",
+                    "Signal-Rausch-Vorhersagen",
+                    "Gesamt-Integrationsplanung"
+                ]
+            },
+            patterns: {
+                title: "Qualitätsmuster-Erkennung",
+                description: "Machine Learning erkennt Muster in Ihren Aufnahmedaten zur Vorhersage optimaler Bedingungen.",
+                points: [
+                    "Wettermuster-Analyse",
+                    "Seeing-Vorhersagen",
+                    "Equipment-Verhaltensmuster"
+                ]
+            },
+            session: {
+                title: "Sitzungsleistungs-Analyse",
+                description: "Tiefgehende Analyse von Aufnahmesitzungen zur Erkennung von Trends und Optimierung zukünftiger Sitzungen.",
+                points: [
+                    "Sitzungs-Qualitätsbewertung",
+                    "Nachtzeit-Analyse",
+                    "Equipment-Leistungsverfolgung"
+                ]
+            },
+            insights: {
+                title: "KI-generierte Erkenntnisse",
+                description: "Umsetzbare Empfehlungen aus der Analyse Ihrer gesamten Aufnahmehistorie.",
+                points: [
+                    "Personalisierte Verbesserungstipps",
+                    "Equipment-Upgrade-Empfehlungen",
+                    "Workflow-Optimierungsvorschläge"
+                ]
             }
         },
 
@@ -235,8 +503,8 @@ const translations = {
                 cta: "Testversion starten"
             },
             personal: {
-                title: "Persönlich",
-                price: "XXX",
+                title: "Standard",
+                price: "49€",
                 duration: "einmalig",
                 features: [
                     "Unbegrenzte Bilder",
@@ -249,10 +517,10 @@ const translations = {
             },
             professional: {
                 title: "Professionell",
-                price: "XXX",
+                price: "89€",
                 duration: "einmalig",
                 features: [
-                    "Alles aus Persönlich",
+                    "Alles aus Standard",
                     "Kommerzielle Nutzung",
                     "Erweiterte ML-Funktionen",
                     "Benutzerdefinierte Equipment-Profile",
@@ -292,7 +560,7 @@ const translations = {
                     terms: "Nutzungsbedingungen"
                 }
             },
-            copyright: "© 2024 AstroIndexer. Alle Rechte vorbehalten."
+            copyright: "© 2025 AstroIndexer. Alle Rechte vorbehalten."
         }
     }
 };
