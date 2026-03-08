@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroIndexer Changelog - What's new in each release">
+    <title>Changelog - AstroIndexer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .changelog-container { max-width: 860px; }
+        .version-block { margin-bottom: 56px; }
+        .version-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+        .version-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0;
+            color: var(--teal);
+        }
+        .version-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .version-summary {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .change-category {
+            margin-bottom: 28px;
+        }
+        .change-category h3 {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--teal);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(73, 198, 191, 0.15);
+        }
+        .change-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .change-category li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 7px 0;
+            line-height: 1.65;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .change-category li:last-child { border-bottom: none; }
+        .change-category li strong {
+            color: var(--txt);
+            font-weight: 650;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-right: 6px;
+            position: relative;
+            top: -1px;
+        }
+        .tag-new {
+            background: rgba(73, 198, 191, 0.15);
+            color: var(--teal);
+        }
+        .tag-improved {
+            background: rgba(255, 194, 71, 0.15);
+            color: #ffc247;
+        }
+        .tag-fix {
+            background: rgba(255, 100, 100, 0.12);
+            color: #ff8888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">
+            <span class="flag" id="currentFlag">&#127468;&#127463;</span>
+            <span class="lang-code" id="currentLang">EN</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" class="language-option" data-lang="en">
+                <span class="flag">&#127468;&#127463;</span>
+                <span>English</span>
+            </a>
+            <a href="#" class="language-option" data-lang="de">
+                <span class="flag">&#127465;&#127466;</span>
+                <span>Deutsch</span>
+            </a>
+            <a href="#" class="language-option" data-lang="es">
+                <span class="flag">&#127466;&#127480;</span>
+                <span>Espanol</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+                    <img src="images/logo.png" alt="AstroIndexer" class="logo">
+                    <span>AstroIndexer</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="changelog.html" class="active">Changelog</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Changelog</h1>
+            <p class="page-subtitle">Everything new, improved, and fixed across AstroIndexer releases.</p>
+        </div>
+    </section>
+
+    <!-- Changelog Content -->
+    <section class="doc-section">
+        <div class="container changelog-container">
+
+            <!-- v22 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>v22.0</h2>
+                    <span class="version-date">March 2026</span>
+                </div>
+                <p class="version-summary">
+                    Major release introducing AstroBin integration, smart telescope support, a complete theme redesign, and multi-language UI.
+                </p>
+
+                <div class="change-category">
+                    <h3>AstroBin Integration</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>AstroBin Manager</strong> &mdash; full AstroBin module with Connection Status, Gallery Sync, Acquisition Push, and Equipment Presets cards</li>
+                        <li><span class="tag tag-new">New</span> <strong>One-click gallery sync</strong> &mdash; sync your AstroBin gallery with automatic catalogue-ID matching (M, NGC, IC, SH2, Abell, and more)</li>
+                        <li><span class="tag tag-new">New</span> <strong>Published badges</strong> &mdash; gallery thumbnails show a badge when the target has a matched AstroBin published image</li>
+                        <li><span class="tag tag-new">New</span> <strong>AstroBin column</strong> in Index Overview showing published status per object</li>
+                        <li><span class="tag tag-new">New</span> <strong>Equipment Presets</strong> &mdash; import telescope, camera, mount, filter, and accessory setups from your AstroBin profile</li>
+                        <li><span class="tag tag-new">New</span> <strong>Clickable image links</strong> &mdash; open matched AstroBin images directly in your browser</li>
+                        <li><span class="tag tag-new">New</span> <strong>AstroBin credentials</strong> in Welcome Screen and Settings for easy onboarding</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Smart Telescope Support</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>SeeStar S50, S30, S30 Pro</strong> &mdash; automatic detection from FITS headers with correct aperture, focal length, and sensor identification</li>
+                        <li><span class="tag tag-new">New</span> <strong>SeeStar filter classification</strong> &mdash; IRCUT recognized as broadband, LP correctly identified as dual-narrowband (Ha + OIII), not light-pollution</li>
+                        <li><span class="tag tag-new">New</span> <strong>Stacked-image pass-through</strong> &mdash; SeeStar stacked files (STACKCNT &gt; 1) automatically categorized as PROCESSED with target name preserved</li>
+                        <li><span class="tag tag-new">New</span> <strong>Built-in QE curves</strong> for IMX585, IMX662, and IMX462 sensors used in the SeeStar family</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Theme &amp; Visual Design</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>Proposal D palette</strong> &mdash; complete theme redesign with neutral dark backgrounds and brighter accent colors</li>
+                        <li><span class="tag tag-new">New</span> <strong>Visual hierarchy selectors</strong> &mdash; accent-colored card titles (teal), count badges (gold), and sidebar section headers across all tabs</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Gallery cards</strong> &mdash; consistent vertical name alignment across the grid, cleaner subtitle with exposure time only</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Glass-card styling</strong> &mdash; semi-transparent backgrounds replacing solid teal in gallery cards</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Unified token system</strong> &mdash; all 30+ inline-styled files migrated to centralized theme tokens; one file controls all colors</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Multi-Language</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>German and Spanish</strong> &mdash; 1,875+ translated interface strings covering every tab and dialog</li>
+                        <li><span class="tag tag-new">New</span> <strong>Language switcher</strong> in Settings for runtime language changes</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Tools &amp; Utilities</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>Blink Comparator</strong> &mdash; rapid frame-by-frame comparison with LINEAR, LOG, ASINH, and AUTO_STF stretch modes and adjustable playback speed</li>
+                        <li><span class="tag tag-new">New</span> <strong>XISF thumbnail extraction</strong> &mdash; view embedded thumbnails without loading the full file</li>
+                        <li><span class="tag tag-new">New</span> <strong>Multi-HDU batch keyword editing</strong> &mdash; edit FITS keywords across multiple HDU extensions at once</li>
+                        <li><span class="tag tag-new">New</span> <strong>CSV export</strong> &mdash; export your full database or filtered views to CSV</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Quality Fixes</h3>
+                    <ul>
+                        <li><span class="tag tag-fix">Fix</span> Autopilot dialog no longer auto-starts before you can configure QA/ML checkboxes</li>
+                        <li><span class="tag tag-fix">Fix</span> Folder catalogue detection no longer overwrites FITS header target names</li>
+                        <li><span class="tag tag-fix">Fix</span> Catalogue grid no longer overlaps the summary panel</li>
+                        <li><span class="tag tag-fix">Fix</span> Planner equipment match column now refreshes when equipment changes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v21 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>v21.0</h2>
+                    <span class="version-date">January &ndash; February 2026</span>
+                </div>
+                <p class="version-summary">
+                    Focused on quality analysis accuracy, ML intelligence, stacking workflow, and the Session Planner V2.
+                </p>
+
+                <div class="change-category">
+                    <h3>Quality Analysis</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>V4 Quality Scorer</strong> &mdash; phase-space residual scoring with 32+ metrics per frame and 10 automatic defect detectors (fog, cloud, trailing, gradient, tilt, coma, vignetting, hot pixels, blank frames, underexposure)</li>
+                        <li><span class="tag tag-new">New</span> <strong>9 quality multipliers</strong> &mdash; star shape, seeing, transparency, star density, SNR weight, sky background, signal floor, PSF signal weight, and sharpness</li>
+                        <li><span class="tag tag-new">New</span> <strong>Adaptive baselines</strong> &mdash; per-equipment-per-filter baselines with multi-level shrinkage (target &gt; equipment &gt; cohort fallback)</li>
+                        <li><span class="tag tag-new">New</span> <strong>"Why is this X?" score breakdown</strong> &mdash; click any quality score to see exactly which multipliers affected it</li>
+                        <li><span class="tag tag-new">New</span> <strong>QA header bar</strong> on gallery cards replacing pill badges, with 5-metric grid (FWHM, SNR, eccentricity, stars, score)</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight parity</strong> &mdash; FWHM measurements now match PixInsight SubframeSelector within 1.5% using Moffat beta=4 fitting</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>ML Analytics &amp; AI</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>48 ML patterns</strong> (up from 40) &mdash; added 8 physics-based patterns using signal efficiency, scatter index, and star efficiency</li>
+                        <li><span class="tag tag-new">New</span> <strong>AI-powered summaries</strong> &mdash; human-readable pattern insights with actionable recommendations, powered by GPT-4o or Claude</li>
+                        <li><span class="tag tag-new">New</span> <strong>Local ML models</strong> &mdash; 5 trained models with a training UI tab for offline pattern analysis</li>
+                        <li><span class="tag tag-new">New</span> <strong>ML + QA in Autopilot</strong> &mdash; added ML Analytics (Step 7) and PixInsight Auto-Stack (Step 8) to the autopilot pipeline</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Stacking &amp; Processing</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>AutoIntegrate Combination Recommender</strong> &mdash; intelligent palette selection from 11 options (SHO, HOO, LRGB, Dynamic SHO, Natural HOO, and more) based on your filters and object type</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>SHO + RGB Stars</strong> as the standard narrowband recommendation</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking Advisor</strong> &mdash; PixInsight-aligned Winsorized Sigma at 2.2, PSF Signal Weight ranking</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>QE Sensor Curves</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>QE Curve Widget</strong> &mdash; display your camera sensor's quantum efficiency response with filter bandpass overlays</li>
+                        <li><span class="tag tag-new">New</span> <strong>QE-aware SNR</strong> &mdash; signal-to-noise calculations now account for actual sensor sensitivity at each filter's wavelength</li>
+                        <li><span class="tag tag-new">New</span> <strong>Auto-import QE</strong> &mdash; QE data automatically loaded from the built-in library when creating a camera model</li>
+                        <li><span class="tag tag-new">New</span> <strong>SPCC sensor import</strong> &mdash; import QE data from PixInsight's Spectrophotometric Color Calibration database</li>
+                        <li><span class="tag tag-new">New</span> <strong>9 built-in sensors</strong> &mdash; IMX183, IMX294, IMX455, IMX533, IMX571, IMX585, IMX662, IMX462, MN34230</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Session Planner V2</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>5-state pipeline</strong> &mdash; Queued &gt; Planned &gt; Scheduled &gt; Active &gt; Complete with automatic state transitions</li>
+                        <li><span class="tag tag-new">New</span> <strong>Equipment-aware suitability scoring</strong> &mdash; targets ranked by your focal length, sensor FOV, altitude, moon phase, and filter-specific safe zones</li>
+                        <li><span class="tag tag-new">New</span> <strong>Annual Timeline</strong> &mdash; capacity-aware multi-month scheduler with visual timeline bars</li>
+                        <li><span class="tag tag-new">New</span> <strong>NINA sequence export</strong> &mdash; export planned sessions directly to NINA</li>
+                        <li><span class="tag tag-new">New</span> <strong>Catalogue Completion tracking</strong> with progress through Messier, Caldwell, NGC, IC, and custom lists</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>UX &amp; Onboarding</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>242 help tooltips</strong> across 14 UI panels (from 13% to 70% tooltip coverage)</li>
+                        <li><span class="tag tag-new">New</span> <strong>User Manual</strong> accessible from Help menu (F1) with searchable in-app help</li>
+                        <li><span class="tag tag-new">New</span> <strong>Trial license auto-download</strong> &mdash; 14-day trial activates automatically on first launch</li>
+                        <li><span class="tag tag-new">New</span> <strong>Configurable install directory</strong> &mdash; choose where your data is stored</li>
+                        <li><span class="tag tag-new">New</span> <strong>Autopilot Quick Setup</strong> &mdash; one-click scanning, equipment detection, and quality analysis with configurable options</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Performance</h3>
+                    <ul>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Native C median filter</strong> with OpenMP parallelization for up to 3x faster QA processing</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>SMT-aware concurrency</strong> &mdash; automatic CPU affinity partitioning and dynamic worker priority</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Galaxy mask caching</strong> with pier-side grouping for meridian-flip awareness</li>
+                        <li><span class="tag tag-fix">Fix</span> Tree view 6.7-second stall on large libraries eliminated</li>
+                        <li><span class="tag tag-fix">Fix</span> XISF memory-mapped file leak causing UI freeze resolved</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="mailto:support@astroindexer.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AstroIndexer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+</body>
+</html>
