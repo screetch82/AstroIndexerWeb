@@ -162,7 +162,8 @@ const translations = {
                     "One-click gallery sync with auto-matching",
                     "Published badges on gallery thumbnails",
                     "Push sub-frame counts and filter data to AstroBin",
-                    "Offline browsing with cached data"
+                    "Offline browsing with cached data",
+                    "Equipment Presets — sync telescope, camera, mount, filter, and accessory setups from your AstroBin profile"
                 ]
             },
             stacking: {
@@ -484,7 +485,8 @@ const translations = {
                     "Ein-Klick Galerie-Synchronisation mit Auto-Zuordnung",
                     "Veröffentlichungs-Badges auf Galerie-Vorschaubildern",
                     "Sub-Frame-Anzahlen und Filterdaten an AstroBin senden",
-                    "Offline-Browsing mit zwischengespeicherten Daten"
+                    "Offline-Browsing mit zwischengespeicherten Daten",
+                    "Equipment-Presets — Teleskop-, Kamera-, Montierungs-, Filter- und Zubehör-Setups aus Ihrem AstroBin-Profil synchronisieren"
                 ]
             },
             stacking: {
@@ -816,7 +818,8 @@ const translations = {
                     "Sincronización de galería con un clic y auto-coincidencia",
                     "Insignias de publicación en miniaturas de galería",
                     "Envío de recuentos de sub-frames y datos de filtros a AstroBin",
-                    "Navegación offline con datos en caché"
+                    "Navegación offline con datos en caché",
+                    "Equipment Presets — sincronice configuraciones de telescopio, cámara, montura, filtros y accesorios desde su perfil AstroBin"
                 ]
             },
             stacking: {
