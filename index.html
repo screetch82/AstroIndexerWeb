@@ -188,8 +188,26 @@
                 </div>
             </div>
 
-            <!-- Quality Analysis -->
+            <!-- Autopilot Setup -->
             <div class="feature-detail">
+                <div class="feature-content">
+                    <h3 data-i18n="details.autopilot.title">One-Click Autopilot Setup</h3>
+                    <p data-i18n="details.autopilot.description">Point AstroIndexer at your imaging folder and let Autopilot handle everything: scanning, equipment detection, tagging, calibration set creation, gain/offset setup, quality analysis, and ML analytics -- all in one automated pipeline.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="details.autopilot.points.0">Scans and indexes all FITS/XISF files automatically</li>
+                        <li data-i18n="details.autopilot.points.1">Auto-detects equipment, creates calibration sets, populates gain/offset</li>
+                        <li data-i18n="details.autopilot.points.2">Optional Quality Analysis (FWHM, HFR, star detection) in the same run</li>
+                        <li data-i18n="details.autopilot.points.3">Optional ML Analytics (pattern discovery, stacking recommendations)</li>
+                        <li data-i18n="details.autopilot.points.4">Optional PixInsight Auto-Stack via AutoIntegrate</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/autopilot.png" alt="Autopilot Setup Screenshot">
+                </div>
+            </div>
+
+            <!-- Quality Analysis -->
+            <div class="feature-detail reverse">
                 <div class="feature-content">
                     <h3 data-i18n="details.quality.title">Advanced Quality Analysis</h3>
                     <p data-i18n="details.quality.description">Comprehensive image quality metrics with FWHM, HFR, eccentricity, and star count analysis. Automatically grade and sort your images to identify the best frames for stacking.</p>
@@ -205,7 +223,7 @@
             </div>
 
             <!-- Equipment Manager -->
-            <div class="feature-detail reverse">
+            <div class="feature-detail">
                 <div class="feature-content">
                     <h3 data-i18n="details.equipment.title">Equipment Manager</h3>
                     <p data-i18n="details.equipment.description">Auto-discovers telescopes, cameras, and filters from your FITS headers. Automatic filter recognition, gain/offset detection, QE sensor curves, calibration library with target linking, and observing site configuration.</p>
@@ -223,7 +241,7 @@
             </div>
 
             <!-- Session Planner -->
-            <div class="feature-detail">
+            <div class="feature-detail reverse">
                 <div class="feature-content">
                     <h3 data-i18n="details.planner.title">Session Planner V2</h3>
                     <p data-i18n="details.planner.description">Recommends suitable targets based on your equipment capabilities, observing location, time of year, and sky conditions. 5-state project pipeline with Smart Plan scoring.</p>
@@ -241,7 +259,7 @@
             </div>
 
             <!-- Sky Atlas -->
-            <div class="feature-detail reverse">
+            <div class="feature-detail">
                 <div class="feature-content">
                     <h3 data-i18n="details.skyatlas.title">Sky Atlas</h3>
                     <p data-i18n="details.skyatlas.description">Interactive sky atlas with field-of-view overlays showing exactly what your equipment captures. Plan mosaic panels, check framing, and discover new targets.</p>
@@ -258,7 +276,7 @@
             </div>
 
             <!-- Celestial Map -->
-            <div class="feature-detail">
+            <div class="feature-detail reverse">
                 <div class="feature-content">
                     <h3 data-i18n="details.celestial.title">Interactive Celestial Map</h3>
                     <p data-i18n="details.celestial.description">Visualize your entire imaging collection on an interactive sky map. See coverage gaps, plan future sessions, and explore your astrophotography journey.</p>
@@ -275,7 +293,7 @@
             </div>
 
             <!-- AstroBin Integration -->
-            <div class="feature-detail reverse">
+            <div class="feature-detail">
                 <div class="feature-content">
                     <h3 data-i18n="details.astrobin.title">AstroBin Integration</h3>
                     <p data-i18n="details.astrobin.description">Sync your AstroBin gallery with automatic catalogue-ID matching. See which targets you have published, push acquisition data, and display published badges in your local gallery.</p>
@@ -292,7 +310,7 @@
             </div>
 
             <!-- Stacking Advisor -->
-            <div class="feature-detail">
+            <div class="feature-detail reverse">
                 <div class="feature-content">
                     <h3 data-i18n="details.stacking.title">Stacking Advisor</h3>
                     <p data-i18n="details.stacking.description">PixInsight-aligned frame selection with Winsorized Sigma Clipping at threshold 2.2. AutoIntegrate Combination Recommender selects the optimal palette from 11 options based on your filters and object type.</p>
@@ -309,7 +327,7 @@
             </div>
 
             <!-- Catalogue Completion -->
-            <div class="feature-detail reverse">
+            <div class="feature-detail">
                 <div class="feature-content">
                     <h3 data-i18n="details.catalogue.title">Catalogue Completion Tracking</h3>
                     <p data-i18n="details.catalogue.description">Track your progress through Messier, NGC, IC, and other astronomical catalogs with interactive visual grids.</p>

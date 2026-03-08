@@ -82,6 +82,17 @@ const translations = {
                     "Quick access to recent scanning sessions"
                 ]
             },
+            autopilot: {
+                title: "One-Click Autopilot Setup",
+                description: "Point AstroIndexer at your imaging folder and let Autopilot handle everything: scanning, equipment detection, tagging, calibration set creation, gain/offset setup, quality analysis, and ML analytics -- all in one automated pipeline.",
+                points: [
+                    "Scans and indexes all FITS/XISF files automatically",
+                    "Auto-detects equipment, creates calibration sets, populates gain/offset",
+                    "Optional Quality Analysis (FWHM, HFR, star detection) in the same run",
+                    "Optional ML Analytics (pattern discovery, stacking recommendations)",
+                    "Optional PixInsight Auto-Stack via AutoIntegrate"
+                ]
+            },
             quality: {
                 title: "Quality Analysis",
                 description: "Measures 32+ quality metrics per frame using Moffat 7-parameter PSF fitting with 3-phase outlier removal. V4 scorer with fatal defect pre-gate catches fog, clouds, and defocus before scoring.",
@@ -402,6 +413,17 @@ const translations = {
                     "Schnellzugriff auf aktuelle Scan-Sitzungen"
                 ]
             },
+            autopilot: {
+                title: "Ein-Klick Autopilot-Einrichtung",
+                description: "Richten Sie AstroIndexer auf Ihren Aufnahmeordner und lassen Sie den Autopilot alles erledigen: Scannen, Equipment-Erkennung, Tagging, Kalibrationsset-Erstellung, Gain/Offset-Setup, Qualitätsanalyse und ML-Analytik -- alles in einer automatisierten Pipeline.",
+                points: [
+                    "Scannt und indexiert alle FITS/XISF-Dateien automatisch",
+                    "Auto-Erkennung von Equipment, Erstellung von Kalibrationssets, Gain/Offset-Befüllung",
+                    "Optionale Qualitätsanalyse (FWHM, HFR, Sternerkennung) im gleichen Durchlauf",
+                    "Optionale ML-Analytik (Mustererkennung, Stacking-Empfehlungen)",
+                    "Optionales PixInsight Auto-Stacking via AutoIntegrate"
+                ]
+            },
             quality: {
                 title: "Qualitätsanalyse",
                 description: "Misst 32+ Qualitätsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting und 3-Phasen Ausreißer-Entfernung. V4-Scorer mit fataler Defekt-Vorprüfung erkennt Nebel, Wolken und Defokussierung vor der Bewertung.",
@@ -720,6 +742,17 @@ const translations = {
                     "Resumen de rendimiento de equipos por configuración",
                     "Estado de publicación AstroBin para cada objetivo",
                     "Acceso rápido a sesiones de escaneo recientes"
+                ]
+            },
+            autopilot: {
+                title: "Configuración Autopilot con Un Clic",
+                description: "Apunte AstroIndexer a su carpeta de imágenes y deje que Autopilot se encargue de todo: escaneo, detección de equipos, etiquetado, creación de sets de calibración, configuración de ganancia/offset, análisis de calidad y analítica ML -- todo en un pipeline automatizado.",
+                points: [
+                    "Escanea e indexa todos los archivos FITS/XISF automáticamente",
+                    "Auto-detección de equipos, creación de sets de calibración, configuración de ganancia/offset",
+                    "Análisis de Calidad opcional (FWHM, HFR, detección de estrellas) en la misma ejecución",
+                    "Analítica ML opcional (descubrimiento de patrones, recomendaciones de apilado)",
+                    "Auto-apilado PixInsight opcional vía AutoIntegrate"
                 ]
             },
             quality: {
