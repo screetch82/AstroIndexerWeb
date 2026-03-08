@@ -45,7 +45,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "5-state project pipeline with Smart Plan engine, QE-aware SNR scheduling, altitude charts, moon impact analysis, and NINA export."
+                    description: "Equipment-aware target recommendations based on your optics, location, season, and sky conditions. 5-state pipeline with Smart Plan, moon analysis, and NINA export."
                 },
                 integration: {
                     title: "AstroBin & PixInsight",
@@ -105,10 +105,11 @@ const translations = {
             },
             planner: {
                 title: "Session Planner V2",
-                description: "Plan imaging sessions with a 5-state project pipeline: Queued, Planned, Scheduled, Active, Completed. Smart Plan engine considers object type, equipment, moon phase, and QE-aware SNR.",
+                description: "Recommends suitable targets based on your equipment capabilities, observing location, time of year, and sky conditions. 5-state project pipeline (Queued, Planned, Scheduled, Active, Completed) with Smart Plan scoring.",
                 points: [
-                    "Yearly completion view for target discovery",
-                    "Timeline hub with capacity planning",
+                    "Equipment-aware suitability scoring: matches targets to your focal length, sensor, and FOV",
+                    "Location and season-aware: altitude, visibility windows, and best-month calculations",
+                    "Moon impact analysis with filter-specific safe-zone thresholds",
                     "QE-aware exposure recommendations per filter",
                     "NINA XML export and Telescopius CSV export"
                 ]
@@ -364,7 +365,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "5-Stufen-Projekt-Pipeline mit Smart Plan Engine, QE-basierter SNR-Planung, Höhencharts, Mondeinfluss-Analyse und NINA-Export."
+                    description: "Equipment-bewusste Zielempfehlungen basierend auf Ihrer Optik, Standort, Jahreszeit und Himmelsbedingungen. 5-Stufen-Pipeline mit Smart Plan, Mondanalyse und NINA-Export."
                 },
                 integration: {
                     title: "AstroBin & PixInsight",
@@ -424,10 +425,11 @@ const translations = {
             },
             planner: {
                 title: "Session Planner V2",
-                description: "Planen Sie Aufnahmesitzungen mit einer 5-Stufen-Projekt-Pipeline: Warteschlange, Geplant, Terminiert, Aktiv, Abgeschlossen. Smart Plan Engine berücksichtigt Objekttyp, Equipment, Mondphase und QE-basierte SNR.",
+                description: "Empfiehlt geeignete Ziele basierend auf Ihren Equipment-Fähigkeiten, Beobachtungsstandort, Jahreszeit und Himmelsbedingungen. 5-Stufen-Projekt-Pipeline mit Smart Plan Bewertung.",
                 points: [
-                    "Jahresübersicht zur Ziel-Entdeckung",
-                    "Timeline-Hub mit Kapazitätsplanung",
+                    "Equipment-bewusste Eignungsbewertung: Abgleich von Zielen mit Brennweite, Sensor und Gesichtsfeld",
+                    "Standort- und saisonbewusst: Höhe, Sichtbarkeitsfenster und Beste-Monat-Berechnung",
+                    "Mondeinfluss-Analyse mit filterspezifischen Sicherheits-Schwellenwerten",
                     "QE-basierte Belichtungsempfehlungen pro Filter",
                     "NINA XML-Export und Telescopius CSV-Export"
                 ]
@@ -683,7 +685,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "Pipeline de proyectos de 5 estados con motor Smart Plan, planificación SNR con QE, gráficos de altitud, análisis de impacto lunar y exportación NINA."
+                    description: "Recomendaciones de objetivos basadas en su equipo, ubicación, época del año y condiciones del cielo. Pipeline de 5 estados con Smart Plan, análisis lunar y exportación NINA."
                 },
                 integration: {
                     title: "AstroBin y PixInsight",
@@ -743,10 +745,11 @@ const translations = {
             },
             planner: {
                 title: "Session Planner V2",
-                description: "Planifique sesiones de imagen con un pipeline de 5 estados: Cola, Planificado, Programado, Activo, Completado. El motor Smart Plan considera tipo de objeto, equipo, fase lunar y SNR basado en QE.",
+                description: "Recomienda objetivos adecuados según las capacidades de su equipo, ubicación de observación, época del año y condiciones del cielo. Pipeline de 5 estados con puntuación Smart Plan.",
                 points: [
-                    "Vista de completitud anual para descubrir objetivos",
-                    "Hub de línea temporal con planificación de capacidad",
+                    "Puntuación de idoneidad por equipo: coincidencia de objetivos con distancia focal, sensor y campo de visión",
+                    "Consciente de ubicación y temporada: altitud, ventanas de visibilidad y cálculo del mejor mes",
+                    "Análisis de impacto lunar con umbrales de zona segura por filtro",
                     "Recomendaciones de exposición basadas en QE por filtro",
                     "Exportación NINA XML y Telescopius CSV"
                 ]
