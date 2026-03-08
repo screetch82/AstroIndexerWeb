@@ -45,7 +45,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "Equipment-aware target recommendations based on your optics, location, season, and sky conditions. 5-state pipeline with Smart Plan, moon analysis, and NINA export."
+                    description: "Equipment-aware target recommendations based on your optics, location, season, and sky conditions. 5-state project pipeline with Smart Plan scoring and moon analysis."
                 },
                 integration: {
                     title: "AstroBin & PixInsight",
@@ -365,7 +365,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "Equipment-bewusste Zielempfehlungen basierend auf Ihrer Optik, Standort, Jahreszeit und Himmelsbedingungen. 5-Stufen-Pipeline mit Smart Plan, Mondanalyse und NINA-Export."
+                    description: "Equipment-bewusste Zielempfehlungen basierend auf Ihrer Optik, Standort, Jahreszeit und Himmelsbedingungen. 5-Stufen-Projekt-Pipeline mit Smart Plan Bewertung und Mondanalyse."
                 },
                 integration: {
                     title: "AstroBin & PixInsight",
@@ -685,7 +685,7 @@ const translations = {
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "Recomendaciones de objetivos basadas en su equipo, ubicación, época del año y condiciones del cielo. Pipeline de 5 estados con Smart Plan, análisis lunar y exportación NINA."
+                    description: "Recomendaciones de objetivos basadas en su equipo, ubicación, época del año y condiciones del cielo. Pipeline de proyectos de 5 estados con puntuación Smart Plan y análisis lunar."
                 },
                 integration: {
                     title: "AstroBin y PixInsight",
