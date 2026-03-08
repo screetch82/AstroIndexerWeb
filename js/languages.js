@@ -250,7 +250,8 @@ const translations = {
             linux: {
                 detail: "Archive (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "Free 30-day trial with full access. No account required."
+            note: "Free 30-day trial with full access. No account required.",
+            trialLicense: "Download Trial License"
         },
 
         // Pricing Section
@@ -581,7 +582,8 @@ const translations = {
             linux: {
                 detail: "Archiv (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "30 Tage kostenlose Testversion mit vollem Zugang. Kein Konto erforderlich."
+            note: "30 Tage kostenlose Testversion mit vollem Zugang. Kein Konto erforderlich.",
+            trialLicense: "Testlizenz herunterladen"
         },
 
         // Pricing Section
@@ -912,7 +914,8 @@ const translations = {
             linux: {
                 detail: "Archivo (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "Prueba gratuita de 30 días con acceso completo. Sin necesidad de cuenta."
+            note: "Prueba gratuita de 30 días con acceso completo. Sin necesidad de cuenta.",
+            trialLicense: "Descargar Licencia de Prueba"
         },
 
         // Pricing Section

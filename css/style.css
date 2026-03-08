@@ -578,6 +578,17 @@ body.on-landing .language-switcher {
     font-size: 14px;
 }
 
+.trial-license-link {
+    color: var(--acc);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+}
+
+.trial-license-link:hover {
+    opacity: 0.8;
+}
+
 /* ─── Pricing Section ─────────────────────── */
 .pricing {
     padding: 80px 0;
