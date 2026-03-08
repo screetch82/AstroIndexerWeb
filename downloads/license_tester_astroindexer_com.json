@@ -1,0 +1,19 @@
+{
+  "data": {
+    "key": "ASTRO-4FGY-F3BJ-BYOC-H41J",
+    "customer": "tester_latest",
+    "email": "tester@astroindexer.com",
+    "type": "trial",
+    "expires": "2026-04-02T16:37:43.614717",
+    "features": {
+      "max_images": -1,
+      "ml_analysis": true,
+      "batch_processing": true,
+      "export_formats": [
+        "fits",
+        "tiff"
+      ]
+    }
+  },
+  "signature": "YVf3tEtW0TDlcW5eyE3xsOjnnNGIPROX5VqoReA8gVKhbAWzPLfqrR2BXbyQhjUc37nL51/PEwPg53/+AMlhn+F8Za7Z/BzMI4lKhSgiRoIQpUCJ+jcoO5Fe/qGuyhsd+5jJ1tWeIQaVE5i3//FFx+9JjpCyz6ZgqIYhjMbDst2V/u0V07UszKt2Y8JXWhZHKc6LkxTr/zIMrRtsI0Gd/23myJUDGkolLx9udXNwMxGqsXweNPk10mYmnpn0geE5cqZT48m0Cn5Kgqzif8ur+tVjHytvhSBO4X7h/u0zeIZ45W9GLcL7lOATfPflBnEm0EtsbMGQhgC6LHOWTkozcQ=="
+}
