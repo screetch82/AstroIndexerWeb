@@ -37,7 +37,7 @@ const translations = {
                 },
                 equipment: {
                     title: "Equipment Manager",
-                    description: "Auto-discovery from FITS headers, QE sensor curves for 9 pre-loaded sensors, and SeeStar S50/S30/S30 Pro smart telescope support."
+                    description: "Auto-discovery from FITS headers with automatic filter recognition, gain/offset detection, QE sensor curves, calibration library, and Bortle sky brightness settings."
                 },
                 ml: {
                     title: "ML Analytics",
@@ -94,12 +94,13 @@ const translations = {
             },
             equipment: {
                 title: "Equipment Manager",
-                description: "Auto-discovers telescopes, cameras, and filters from your FITS headers. Import QE sensor curves from 9 pre-loaded references to enable QE-aware SNR diagnostics.",
+                description: "Auto-discovers telescopes, cameras, and filters from your FITS headers. Automatic filter recognition, gain/offset detection, QE sensor curves, calibration library with target linking, and observing site configuration.",
                 points: [
-                    "QE curves for IMX183, IMX294, IMX455, IMX585, and 5 more sensors",
-                    "SeeStar S50, S30, and S30 Pro smart telescope support",
-                    "Per-equipment-per-filter adaptive quality baselines",
-                    "Side-by-side equipment setup comparison"
+                    "Automatic filter recognition (broadband, narrowband, special) and gain/offset detection from FITS headers",
+                    "QE curves for IMX183, IMX294, IMX455, IMX585, and 5 more sensors with auto-import",
+                    "Calibration library: auto-created sets with temperature/gain matching, linked to imaging targets",
+                    "Location settings with Bortle class (1-9), SQM calculation, and AstroBin equipment sync",
+                    "SeeStar S50, S30, and S30 Pro smart telescope support"
                 ]
             },
             planner: {
@@ -355,7 +356,7 @@ const translations = {
                 },
                 equipment: {
                     title: "Equipment Manager",
-                    description: "Auto-Erkennung aus FITS-Headern, QE-Sensorkurven für 9 vorinstallierte Sensoren und SeeStar S50/S30/S30 Pro Smart-Teleskop-Unterstützung."
+                    description: "Auto-Erkennung aus FITS-Headern mit automatischer Filtererkennung, Gain/Offset-Erkennung, QE-Sensorkurven, Kalibrationsbibliothek und Bortle Himmelshelligkeit-Einstellungen."
                 },
                 ml: {
                     title: "ML-Analytik",
@@ -412,12 +413,13 @@ const translations = {
             },
             equipment: {
                 title: "Equipment Manager",
-                description: "Auto-Erkennung von Teleskopen, Kameras und Filtern aus Ihren FITS-Headern. Importieren Sie QE-Sensorkurven aus 9 vorinstallierten Referenzen für QE-basierte SNR-Diagnostik.",
+                description: "Auto-Erkennung von Teleskopen, Kameras und Filtern aus Ihren FITS-Headern. Automatische Filtererkennung, Gain/Offset-Erkennung, QE-Sensorkurven, Kalibrationsbibliothek mit Zielverknüpfung und Standort-Konfiguration.",
                 points: [
-                    "QE-Kurven für IMX183, IMX294, IMX455, IMX585 und 5 weitere Sensoren",
-                    "SeeStar S50, S30 und S30 Pro Smart-Teleskop-Unterstützung",
-                    "Adaptive Qualitäts-Basislinien pro Equipment und Filter",
-                    "Seite-an-Seite Equipment-Setup-Vergleich"
+                    "Automatische Filtererkennung (Breitband, Schmalband, Spezial) und Gain/Offset-Erkennung aus FITS-Headern",
+                    "QE-Kurven für IMX183, IMX294, IMX455, IMX585 und 5 weitere Sensoren mit Auto-Import",
+                    "Kalibrationsbibliothek: Automatisch erstellte Sets mit Temperatur/Gain-Abgleich, verknüpft mit Aufnahmezielen",
+                    "Standort-Einstellungen mit Bortle-Klasse (1-9), SQM-Berechnung und AstroBin Equipment-Sync",
+                    "SeeStar S50, S30 und S30 Pro Smart-Teleskop-Unterstützung"
                 ]
             },
             planner: {
@@ -673,7 +675,7 @@ const translations = {
                 },
                 equipment: {
                     title: "Gestor de Equipos",
-                    description: "Auto-detección desde cabeceras FITS, curvas QE de sensores para 9 sensores precargados y soporte para telescopios inteligentes SeeStar S50/S30/S30 Pro."
+                    description: "Auto-detección desde cabeceras FITS con reconocimiento automático de filtros, detección de ganancia/offset, curvas QE, biblioteca de calibración y configuración de brillo Bortle."
                 },
                 ml: {
                     title: "Analítica ML",
@@ -730,12 +732,13 @@ const translations = {
             },
             equipment: {
                 title: "Gestor de Equipos",
-                description: "Auto-detección de telescopios, cámaras y filtros desde sus cabeceras FITS. Importe curvas QE de 9 referencias precargadas para diagnósticos SNR basados en QE.",
+                description: "Auto-detección de telescopios, cámaras y filtros desde sus cabeceras FITS. Reconocimiento automático de filtros, detección de ganancia/offset, curvas QE, biblioteca de calibración vinculada a objetivos y configuración del sitio de observación.",
                 points: [
-                    "Curvas QE para IMX183, IMX294, IMX455, IMX585 y 5 sensores más",
-                    "Soporte para telescopios inteligentes SeeStar S50, S30 y S30 Pro",
-                    "Líneas base de calidad adaptativas por equipo y filtro",
-                    "Comparación de configuraciones de equipo lado a lado"
+                    "Reconocimiento automático de filtros (banda ancha, banda estrecha, especial) y detección de ganancia/offset desde cabeceras FITS",
+                    "Curvas QE para IMX183, IMX294, IMX455, IMX585 y 5 sensores más con auto-importación",
+                    "Biblioteca de calibración: sets auto-creados con coincidencia de temperatura/ganancia, vinculados a objetivos de imagen",
+                    "Configuración de ubicación con clase Bortle (1-9), cálculo SQM y sincronización de equipos AstroBin",
+                    "Soporte para telescopios inteligentes SeeStar S50, S30 y S30 Pro"
                 ]
             },
             planner: {
