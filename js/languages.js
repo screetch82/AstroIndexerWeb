@@ -29,31 +29,31 @@ const translations = {
             items: {
                 organization: {
                     title: "Smart Organization",
-                    description: "Automatically organize your FITS and XISF files with intelligent cataloging"
+                    description: "7-stage scanning pipeline extracts 93+ fields from FITS and XISF headers. Supports SeeStar smart telescopes, NINA CSV integration, and stacked-image detection."
                 },
                 quality: {
                     title: "Quality Analysis",
-                    description: "Advanced image quality metrics including FWHM, HFR, and star detection"
+                    description: "32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations."
                 },
                 equipment: {
-                    title: "Equipment Profiling",
-                    description: "Track and optimize performance across all your imaging equipment"
+                    title: "Equipment Manager",
+                    description: "Auto-discovery from FITS headers, QE sensor curves for 9 pre-loaded sensors, and SeeStar S50/S30/S30 Pro smart telescope support."
                 },
                 ml: {
                     title: "ML Analytics",
-                    description: "Machine learning insights to improve your imaging sessions"
+                    description: "40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor."
                 },
                 planning: {
-                    title: "Session Planning",
-                    description: "Plan optimal imaging sessions based on weather and target visibility"
+                    title: "Session Planner V2",
+                    description: "5-state project pipeline with Smart Plan engine, QE-aware SNR scheduling, altitude charts, moon impact analysis, and NINA export."
                 },
                 integration: {
-                    title: "Software Integration",
-                    description: "Seamless integration with PixInsight, N.I.N.A, and other tools"
+                    title: "AstroBin & PixInsight",
+                    description: "AstroBin gallery sync with published badges and acquisition push. PixInsight AutoIntegrate export with combination mode selection."
                 },
                 celestial: {
-                    title: "Celestial Map",
-                    description: "Interactive sky map showing your imaging coverage and future targets"
+                    title: "Sky Atlas & Celestial Map",
+                    description: "Interactive sky atlas with FOV overlays and mosaic positioning, plus a celestial map showing your imaging coverage across the sky."
                 }
             }
         },
@@ -62,68 +62,104 @@ const translations = {
         details: {
             title: "See AstroIndexer in Action",
             subtitle: "Powerful tools designed for serious astrophotographers",
-            quality: {
-                title: "Advanced Quality Analysis",
-                description: "Comprehensive image quality metrics with FWHM, HFR, eccentricity, and star count analysis. Automatically grade and sort your images to identify the best frames for stacking.",
-                points: [
-                    "Real-time FWHM and HFR calculations",
-                    "Automatic quality scoring",
-                    "Batch analysis capabilities"
-                ]
-            },
-            equipment: {
-                title: "Equipment Performance Tracking",
-                description: "Track performance metrics across all your equipment combinations. Identify optimal configurations and monitor equipment degradation over time.",
-                points: [
-                    "Equipment profile management",
-                    "Performance trend analysis",
-                    "Setup comparison tools"
-                ]
-            },
-            planner: {
-                title: "Advanced Session Planning",
-                description: "Plan your imaging sessions with precision using yearly completion tracking, timeline views, and exposure planning tools.",
-                points: [
-                    "Yearly completion planner",
-                    "Timeline visualization",
-                    "Exposure plan optimization"
-                ]
-            },
-            catalogue: {
-                title: "Catalogue Completion Tracking",
-                description: "Track your progress through Messier, NGC, IC, and other astronomical catalogs with interactive visual grids.",
-                points: [
-                    "Visual grid for all catalog objects",
-                    "Progress tracking by catalog",
-                    "Missing object identification"
-                ]
-            },
             gallery: {
-                title: "Gallery View",
-                description: "Browse your entire astrophotography collection with lightning-fast virtual scrolling. View thumbnails of 100,000+ images without lag.",
+                title: "Gallery & File Browser",
+                description: "Browse your entire astrophotography collection with lightning-fast virtual scrolling. 6-level drill-down from catalogues to individual files, smart filters by quality, equipment, moon phase, and more.",
                 points: [
-                    "Virtual scrolling for unlimited images",
-                    "Quick preview with FITS header data",
-                    "Batch operations and tagging"
+                    "Virtual scrolling for 100,000+ images without lag",
+                    "Smart filters with hierarchical categories",
+                    "AstroBin published badges on target cards",
+                    "Quality, calibration, and filter badges at a glance"
                 ]
             },
             index: {
                 title: "Index & Overview",
-                description: "Your command center for all imaging data. Get instant insights into your collection with smart categorization.",
+                description: "Your command center for all imaging data. See collection statistics, equipment performance, recent sessions, and AstroBin sync status at a glance.",
                 points: [
-                    "Complete collection statistics",
-                    "Equipment performance metrics",
-                    "Quick access to recent sessions"
+                    "Complete collection statistics with target counts",
+                    "Equipment performance overview per setup",
+                    "AstroBin published status for each target",
+                    "Quick access to recent scanning sessions"
+                ]
+            },
+            quality: {
+                title: "Quality Analysis",
+                description: "Measures 32+ quality metrics per frame using Moffat 7-parameter PSF fitting with 3-phase outlier removal. V4 scorer with fatal defect pre-gate catches fog, clouds, and defocus before scoring.",
+                points: [
+                    "Within 1.5% of PixInsight SubframeSelector accuracy",
+                    "10 automatic defect detectors (fog, trailing, gradients, tilt, coma)",
+                    "9 quality multipliers with adaptive per-equipment baselines",
+                    "Sensor heatmaps showing FWHM, SNR, and aberration across the field"
+                ]
+            },
+            equipment: {
+                title: "Equipment Manager",
+                description: "Auto-discovers telescopes, cameras, and filters from your FITS headers. Import QE sensor curves from 9 pre-loaded references to enable QE-aware SNR diagnostics.",
+                points: [
+                    "QE curves for IMX183, IMX294, IMX455, IMX585, and 5 more sensors",
+                    "SeeStar S50, S30, and S30 Pro smart telescope support",
+                    "Per-equipment-per-filter adaptive quality baselines",
+                    "Side-by-side equipment setup comparison"
+                ]
+            },
+            planner: {
+                title: "Session Planner V2",
+                description: "Plan imaging sessions with a 5-state project pipeline: Queued, Planned, Scheduled, Active, Completed. Smart Plan engine considers object type, equipment, moon phase, and QE-aware SNR.",
+                points: [
+                    "Yearly completion view for target discovery",
+                    "Timeline hub with capacity planning",
+                    "QE-aware exposure recommendations per filter",
+                    "NINA XML export and Telescopius CSV export"
+                ]
+            },
+            catalogue: {
+                title: "Catalogue Completion",
+                description: "Track your progress through 26+ astronomical catalogues including Messier (110), NGC (7,840), IC (5,386), Caldwell, Sharpless, and more with color-coded visual grids.",
+                points: [
+                    "Green = processed, yellow = raw only, gray = not imaged",
+                    "Cross-catalogue alias resolution (M42 = NGC 1976)",
+                    "Context menu: preview, open in gallery, SIMBAD lookup",
+                    "Completion percentage per catalogue"
                 ]
             },
             celestial: {
                 title: "Interactive Celestial Map",
-                description: "Visualize your entire imaging collection on an interactive sky map. See coverage gaps, plan future sessions, and explore your astrophotography journey.",
+                description: "Visualize your entire imaging collection on an interactive sky map. See coverage gaps, plan future sessions, and explore your astrophotography journey across the sky.",
                 points: [
                     "Interactive 3D sky visualization",
                     "Coverage heatmap overlay",
                     "Object tracking and planning",
                     "Real-time position updates"
+                ]
+            },
+            skyatlas: {
+                title: "Sky Atlas",
+                description: "Interactive sky atlas with field-of-view overlays showing exactly what your equipment captures. Plan mosaic panels, check framing, and discover new targets.",
+                points: [
+                    "FOV overlay matching your exact equipment",
+                    "Mosaic panel positioning and planning",
+                    "Plate solving integration",
+                    "Target search with catalogue cross-reference"
+                ]
+            },
+            astrobin: {
+                title: "AstroBin Integration",
+                description: "Sync your AstroBin gallery with automatic catalogue-ID matching. See which targets you have published, push acquisition data, and display published badges in your local gallery.",
+                points: [
+                    "One-click gallery sync with auto-matching",
+                    "Published badges on gallery thumbnails",
+                    "Push sub-frame counts and filter data to AstroBin",
+                    "Offline browsing with cached data"
+                ]
+            },
+            stacking: {
+                title: "Stacking Advisor",
+                description: "PixInsight-aligned frame selection with Winsorized Sigma Clipping at threshold 2.2. AutoIntegrate Combination Recommender selects the optimal palette from 11 options based on your filters and object type.",
+                points: [
+                    "Intelligent palette selection: SHO, HOO, LRGB, Dynamic SHO, and more",
+                    "Frame quality tiers: Excellent, Good, Poor with per-filter balance",
+                    "StarXTerminator + RGB broadband star recombination workflow",
+                    "One-click export to PixInsight AutoIntegrate JSON"
                 ]
             }
         },
@@ -131,59 +167,59 @@ const translations = {
         // ML Analytics Section
         ml: {
             title: "AI-Powered Analytics",
-            subtitle: "6 Specialized Machine Learning Modules for Advanced Astrophotography Analysis",
+            subtitle: "40 ML Patterns Across 9 Categories -- Discover What Your Data Reveals",
             dashboard: {
-                title: "ML Analytics Dashboard",
-                description: "Comprehensive overview of all machine learning insights with real-time quality predictions and performance metrics.",
+                title: "Pattern Discovery Dashboard",
+                description: "40 machine learning patterns across seasonal, moon, equipment, focus, thermal, atmospheric, optical, and optimization categories. Every pattern includes confidence scores and actionable recommendations.",
                 points: [
-                    "Real-time quality predictions",
-                    "Performance trend analysis",
-                    "Equipment recommendations"
+                    "40 patterns discovered from YOUR imaging history",
+                    "Confidence-scored insights with specific actions",
+                    "AI-powered summaries via GPT-4o or Claude"
                 ]
             },
             heatmap: {
                 title: "Sensor Performance Heatmap",
-                description: "Visualize sensor performance across your entire frame to identify vignetting, dust motes, and optical aberrations.",
+                description: "Spatial quality maps across your sensor reveal tilt, coma, astigmatism, and vignetting patterns that are invisible in single-metric views.",
                 points: [
-                    "Pixel-level quality mapping",
-                    "Dust and defect detection",
-                    "Vignetting analysis"
+                    "FWHM, SNR, and star density maps across the field",
+                    "Aberration detection: coma, astigmatism, field curvature",
+                    "Dead pixel and vignetting analysis"
                 ]
             },
             exposure: {
-                title: "Exposure Time Optimization",
-                description: "AI-driven exposure time recommendations based on your equipment, target, and conditions.",
+                title: "Exposure & SNR Analysis",
+                description: "QE-aware exposure recommendations using your sensor's actual quantum efficiency at each filter wavelength. Data-driven, not rule-of-thumb.",
                 points: [
-                    "Optimal sub-exposure calculations",
-                    "Signal-to-noise predictions",
-                    "Total integration planning"
+                    "QE-aware signal-to-noise calculations",
+                    "Per-filter exposure optimization",
+                    "Integration time planning per target"
                 ]
             },
             patterns: {
-                title: "Quality Pattern Recognition",
-                description: "Machine learning identifies patterns in your imaging data to predict optimal conditions.",
+                title: "Environmental & Optical Patterns",
+                description: "Discovers seeing bimodality, cloud cover impact, sky gradient trends, field curvature signatures, sensor tilt, and optical degradation over time.",
                 points: [
-                    "Weather pattern analysis",
-                    "Seeing condition predictions",
-                    "Equipment behavior patterns"
+                    "Bimodal seeing detection and thresholds",
+                    "Moon impact analysis: broadband vs narrowband",
+                    "Optical quality trending across sessions"
                 ]
             },
             session: {
-                title: "Session Performance Analysis",
-                description: "Deep analysis of imaging sessions to identify trends and optimize future sessions.",
+                title: "Session & Equipment Analysis",
+                description: "Compare session-by-session quality, track equipment performance over time, and identify your peak imaging hours and best equipment configurations.",
                 points: [
-                    "Session quality scoring",
-                    "Time-of-night analysis",
-                    "Equipment performance tracking"
+                    "Peak imaging hours identification",
+                    "Equipment degradation trending",
+                    "Weekday vs weekend quality analysis"
                 ]
             },
             insights: {
                 title: "AI-Generated Insights",
-                description: "Actionable recommendations generated by analyzing your complete imaging history.",
+                description: "Human-readable summaries of your most impactful patterns, generated by GPT-4o or Claude. Actionable recommendations specific to your equipment and imaging style.",
                 points: [
-                    "Personalized improvement tips",
-                    "Equipment upgrade recommendations",
-                    "Workflow optimization suggestions"
+                    "Personalized improvement recommendations",
+                    "Equipment-specific optimization tips",
+                    "Filter and target strategy guidance"
                 ]
             }
         },
@@ -311,31 +347,31 @@ const translations = {
             items: {
                 organization: {
                     title: "Intelligente Organisation",
-                    description: "Automatische Organisation Ihrer FITS- und XISF-Dateien mit intelligenter Katalogisierung"
+                    description: "7-stufige Scan-Pipeline extrahiert 93+ Felder aus FITS- und XISF-Headern. Unterstützt SeeStar Smart-Teleskope, NINA CSV-Integration und Stacked-Image-Erkennung."
                 },
                 quality: {
                     title: "Qualitätsanalyse",
-                    description: "Erweiterte Bildqualitätsmetriken einschließlich FWHM, HFR und Sternerkennung"
+                    description: "32+ Qualitätsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting innerhalb von 1,5% PixInsight-Genauigkeit. 10 automatische Defektdetektoren erkennen Nebel, Nachführfehler, Gradienten und optische Aberrationen."
                 },
                 equipment: {
-                    title: "Equipment-Profile",
-                    description: "Verfolgen und optimieren Sie die Leistung all Ihrer Imaging-Ausrüstung"
+                    title: "Equipment Manager",
+                    description: "Auto-Erkennung aus FITS-Headern, QE-Sensorkurven für 9 vorinstallierte Sensoren und SeeStar S50/S30/S30 Pro Smart-Teleskop-Unterstützung."
                 },
                 ml: {
                     title: "ML-Analytik",
-                    description: "Machine-Learning-Einblicke zur Verbesserung Ihrer Aufnahmesitzungen"
+                    description: "40-Muster-Erkennung in 9 Kategorien, AutoIntegrate Kombinations-Empfehlung mit 11 Paletten und PixInsight-kompatibler Stacking-Advisor."
                 },
                 planning: {
-                    title: "Sitzungsplanung",
-                    description: "Planen Sie optimale Aufnahmesitzungen basierend auf Wetter und Zielsichtbarkeit"
+                    title: "Session Planner V2",
+                    description: "5-Stufen-Projekt-Pipeline mit Smart Plan Engine, QE-basierter SNR-Planung, Höhencharts, Mondeinfluss-Analyse und NINA-Export."
                 },
                 integration: {
-                    title: "Software-Integration",
-                    description: "Nahtlose Integration mit PixInsight, N.I.N.A und anderen Tools"
+                    title: "AstroBin & PixInsight",
+                    description: "AstroBin Galerie-Synchronisation mit Veröffentlichungs-Badges und Aufnahmedaten-Push. PixInsight AutoIntegrate Export mit Kombinationsmodus-Auswahl."
                 },
                 celestial: {
-                    title: "Himmelskarte",
-                    description: "Interaktive Himmelskarte mit Ihrer Aufnahmeabdeckung und zukünftigen Zielen"
+                    title: "Himmelsatlas & Sternkarte",
+                    description: "Interaktiver Himmelsatlas mit FOV-Overlays und Mosaik-Positionierung, plus Sternkarte mit Ihrer Aufnahmeabdeckung am Himmel."
                 }
             }
         },
@@ -344,62 +380,68 @@ const translations = {
         details: {
             title: "AstroIndexer in Aktion",
             subtitle: "Leistungsstarke Werkzeuge für ambitionierte Astrofotografen",
-            quality: {
-                title: "Erweiterte Qualitätsanalyse",
-                description: "Umfassende Bildqualitätsmetriken mit FWHM, HFR, Exzentrizität und Sternzählung. Automatische Bewertung und Sortierung Ihrer Bilder zur Identifikation der besten Einzelaufnahmen für das Stacking.",
-                points: [
-                    "FWHM- und HFR-Berechnungen in Echtzeit",
-                    "Automatische Qualitätsbewertung",
-                    "Stapelverarbeitung"
-                ]
-            },
-            equipment: {
-                title: "Equipment-Leistungsüberwachung",
-                description: "Verfolgen Sie Leistungsmetriken über all Ihre Equipment-Kombinationen. Identifizieren Sie optimale Konfigurationen und überwachen Sie Verschleiß über die Zeit.",
-                points: [
-                    "Equipment-Profilverwaltung",
-                    "Leistungstrend-Analyse",
-                    "Setup-Vergleichswerkzeuge"
-                ]
-            },
-            planner: {
-                title: "Erweiterte Sitzungsplanung",
-                description: "Planen Sie Ihre Aufnahmesitzungen präzise mit jährlicher Fortschrittsverfolgung, Zeitleisten-Ansichten und Belichtungsplanungs-Tools.",
-                points: [
-                    "Jährlicher Fortschrittsplaner",
-                    "Zeitleisten-Visualisierung",
-                    "Belichtungsplan-Optimierung"
-                ]
-            },
-            catalogue: {
-                title: "Katalog-Fortschrittsverfolgung",
-                description: "Verfolgen Sie Ihren Fortschritt durch Messier-, NGC-, IC- und andere astronomische Kataloge mit interaktiven visuellen Rastern.",
-                points: [
-                    "Visuelles Raster für alle Katalogobjekte",
-                    "Fortschrittsverfolgung pro Katalog",
-                    "Identifikation fehlender Objekte"
-                ]
-            },
             gallery: {
-                title: "Galerie-Ansicht",
-                description: "Durchstöbern Sie Ihre gesamte Astrofotografie-Sammlung mit blitzschnellem virtuellem Scrollen. Betrachten Sie Vorschaubilder von über 100.000 Aufnahmen ohne Verzögerung.",
+                title: "Galerie & Dateibrowser",
+                description: "Durchstöbern Sie Ihre gesamte Astrofotografie-Sammlung mit blitzschnellem virtuellem Scrollen. 6-stufiger Drill-Down von Katalogen zu einzelnen Dateien, intelligente Filter nach Qualität, Equipment, Mondphase und mehr.",
                 points: [
-                    "Virtuelles Scrollen für unbegrenzte Bilder",
-                    "Schnellvorschau mit FITS-Header-Daten",
-                    "Stapeloperationen und Tagging"
+                    "Virtuelles Scrollen für 100.000+ Bilder ohne Verzögerung",
+                    "Intelligente Filter mit hierarchischen Kategorien",
+                    "AstroBin Veröffentlichungs-Badges auf Zielkarten",
+                    "Qualitäts-, Kalibrations- und Filter-Badges auf einen Blick"
                 ]
             },
             index: {
                 title: "Übersicht & Index",
-                description: "Ihre Kommandozentrale für alle Aufnahmedaten. Erhalten Sie sofortige Einblicke in Ihre Sammlung mit intelligenter Kategorisierung.",
+                description: "Ihre Kommandozentrale für alle Aufnahmedaten. Sammlungsstatistiken, Equipment-Leistung, letzte Sitzungen und AstroBin-Sync-Status auf einen Blick.",
                 points: [
-                    "Vollständige Sammlungsstatistiken",
-                    "Equipment-Leistungsmetriken",
-                    "Schnellzugriff auf aktuelle Sitzungen"
+                    "Vollständige Sammlungsstatistiken mit Zielanzahlen",
+                    "Equipment-Leistungsübersicht pro Setup",
+                    "AstroBin Veröffentlichungsstatus für jedes Ziel",
+                    "Schnellzugriff auf aktuelle Scan-Sitzungen"
+                ]
+            },
+            quality: {
+                title: "Qualitätsanalyse",
+                description: "Misst 32+ Qualitätsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting und 3-Phasen Ausreißer-Entfernung. V4-Scorer mit fataler Defekt-Vorprüfung erkennt Nebel, Wolken und Defokussierung vor der Bewertung.",
+                points: [
+                    "Innerhalb von 1,5% der PixInsight SubframeSelector Genauigkeit",
+                    "10 automatische Defektdetektoren (Nebel, Nachführfehler, Gradienten, Tilt, Koma)",
+                    "9 Qualitätsmultiplikatoren mit adaptiven Equipment-spezifischen Basislinien",
+                    "Sensor-Heatmaps mit FWHM, SNR und Aberrationen über das Feld"
+                ]
+            },
+            equipment: {
+                title: "Equipment Manager",
+                description: "Auto-Erkennung von Teleskopen, Kameras und Filtern aus Ihren FITS-Headern. Importieren Sie QE-Sensorkurven aus 9 vorinstallierten Referenzen für QE-basierte SNR-Diagnostik.",
+                points: [
+                    "QE-Kurven für IMX183, IMX294, IMX455, IMX585 und 5 weitere Sensoren",
+                    "SeeStar S50, S30 und S30 Pro Smart-Teleskop-Unterstützung",
+                    "Adaptive Qualitäts-Basislinien pro Equipment und Filter",
+                    "Seite-an-Seite Equipment-Setup-Vergleich"
+                ]
+            },
+            planner: {
+                title: "Session Planner V2",
+                description: "Planen Sie Aufnahmesitzungen mit einer 5-Stufen-Projekt-Pipeline: Warteschlange, Geplant, Terminiert, Aktiv, Abgeschlossen. Smart Plan Engine berücksichtigt Objekttyp, Equipment, Mondphase und QE-basierte SNR.",
+                points: [
+                    "Jahresübersicht zur Ziel-Entdeckung",
+                    "Timeline-Hub mit Kapazitätsplanung",
+                    "QE-basierte Belichtungsempfehlungen pro Filter",
+                    "NINA XML-Export und Telescopius CSV-Export"
+                ]
+            },
+            skyatlas: {
+                title: "Himmelsatlas",
+                description: "Interaktiver Himmelsatlas mit Gesichtsfeld-Overlays, die genau zeigen, was Ihr Equipment aufnimmt. Planen Sie Mosaik-Panels, prüfen Sie den Bildausschnitt und entdecken Sie neue Ziele.",
+                points: [
+                    "FOV-Overlay passend zu Ihrem Equipment",
+                    "Mosaik-Panel-Positionierung und -Planung",
+                    "Plate-Solving Integration",
+                    "Zielsuche mit Katalog-Kreuzreferenz"
                 ]
             },
             celestial: {
-                title: "Interaktive Himmelskarte",
+                title: "Interaktive Sternkarte",
                 description: "Visualisieren Sie Ihre gesamte Aufnahmesammlung auf einer interaktiven Himmelskarte. Erkennen Sie Abdeckungslücken, planen Sie zukünftige Sitzungen und erkunden Sie Ihre Astrofotografie-Reise.",
                 points: [
                     "Interaktive 3D-Himmelsvisualisierung",
@@ -407,65 +449,95 @@ const translations = {
                     "Objektverfolgung und -planung",
                     "Positionsaktualisierungen in Echtzeit"
                 ]
+            },
+            astrobin: {
+                title: "AstroBin Integration",
+                description: "Synchronisieren Sie Ihre AstroBin-Galerie mit automatischer Katalog-ID-Zuordnung. Sehen Sie, welche Ziele veröffentlicht sind, pushen Sie Aufnahmedaten und zeigen Sie Veröffentlichungs-Badges in Ihrer lokalen Galerie.",
+                points: [
+                    "Ein-Klick Galerie-Synchronisation mit Auto-Zuordnung",
+                    "Veröffentlichungs-Badges auf Galerie-Vorschaubildern",
+                    "Sub-Frame-Anzahlen und Filterdaten an AstroBin senden",
+                    "Offline-Browsing mit zwischengespeicherten Daten"
+                ]
+            },
+            stacking: {
+                title: "Stacking Advisor",
+                description: "PixInsight-kompatible Frame-Auswahl mit Winsorized Sigma Clipping bei Schwellenwert 2,2. AutoIntegrate Kombinations-Empfehlung wählt die optimale Palette aus 11 Optionen basierend auf Ihren Filtern und dem Objekttyp.",
+                points: [
+                    "Intelligente Paletten-Auswahl: SHO, HOO, LRGB, Dynamic SHO und mehr",
+                    "Frame-Qualitätsstufen: Exzellent, Gut, Schlecht mit Filter-Balance",
+                    "StarXTerminator + RGB Breitband-Stern-Rekombination Workflow",
+                    "Ein-Klick Export zu PixInsight AutoIntegrate JSON"
+                ]
+            },
+            catalogue: {
+                title: "Katalog-Fortschrittsverfolgung",
+                description: "Verfolgen Sie Ihren Fortschritt durch 26+ astronomische Kataloge inkl. Messier (110), NGC (7.840), IC (5.386), Caldwell, Sharpless und mehr mit farbkodierten Rastern.",
+                points: [
+                    "Grün = bearbeitet, Gelb = nur Rohdaten, Grau = nicht aufgenommen",
+                    "Katalogübergreifende Alias-Auflösung (M42 = NGC 1976)",
+                    "Kontextmenü: Vorschau, in Galerie öffnen, SIMBAD-Abfrage",
+                    "Fortschrittsprozent pro Katalog"
+                ]
             }
         },
 
         // ML Analytics Section
         ml: {
             title: "KI-gestützte Analytik",
-            subtitle: "6 spezialisierte Machine-Learning-Module für fortgeschrittene Astrofotografie-Analyse",
+            subtitle: "40 ML-Muster in 9 Kategorien -- Entdecken Sie, was Ihre Daten verraten",
             dashboard: {
-                title: "ML-Analytik-Dashboard",
-                description: "Umfassende Übersicht aller Machine-Learning-Erkenntnisse mit Echtzeit-Qualitätsvorhersagen und Leistungsmetriken.",
+                title: "Muster-Erkennungs-Dashboard",
+                description: "40 Machine-Learning-Muster in den Kategorien Saisonalität, Mond, Equipment, Fokus, Temperatur, Atmosphäre, Optik und Optimierung. Jedes Muster enthält Konfidenzwerte und umsetzbare Empfehlungen.",
                 points: [
-                    "Qualitätsvorhersagen in Echtzeit",
-                    "Leistungstrend-Analyse",
-                    "Equipment-Empfehlungen"
+                    "40 Muster aus IHRER Aufnahmehistorie erkannt",
+                    "Konfidenz-bewertete Erkenntnisse mit konkreten Maßnahmen",
+                    "KI-gestützte Zusammenfassungen via GPT-4o oder Claude"
                 ]
             },
             heatmap: {
                 title: "Sensor-Leistungs-Heatmap",
-                description: "Visualisieren Sie die Sensorleistung über das gesamte Bild, um Vignettierung, Staubkörner und optische Aberrationen zu identifizieren.",
+                description: "Räumliche Qualitätskarten über Ihren Sensor zeigen Tilt, Koma, Astigmatismus und Vignettierungsmuster, die in Einzelmetrik-Ansichten unsichtbar sind.",
                 points: [
-                    "Pixelgenaue Qualitätskartierung",
-                    "Staub- und Defekterkennung",
-                    "Vignettierungsanalyse"
+                    "FWHM-, SNR- und Sterndichte-Karten über das Feld",
+                    "Aberrationserkennung: Koma, Astigmatismus, Feldkrümmung",
+                    "Defekte-Pixel- und Vignettierungsanalyse"
                 ]
             },
             exposure: {
-                title: "Belichtungszeit-Optimierung",
-                description: "KI-gestützte Belichtungszeit-Empfehlungen basierend auf Ihrer Ausrüstung, dem Zielobjekt und den Bedingungen.",
+                title: "Belichtungs- & SNR-Analyse",
+                description: "QE-basierte Belichtungsempfehlungen unter Verwendung der tatsächlichen Quanteneffizienz Ihres Sensors bei jeder Filterwellenlänge. Datenbasiert, nicht aus Faustregeln.",
                 points: [
-                    "Optimale Einzelbelichtungs-Berechnung",
-                    "Signal-Rausch-Vorhersagen",
-                    "Gesamt-Integrationsplanung"
+                    "QE-basierte Signal-Rausch-Berechnungen",
+                    "Belichtungsoptimierung pro Filter",
+                    "Integrationszeit-Planung pro Ziel"
                 ]
             },
             patterns: {
-                title: "Qualitätsmuster-Erkennung",
-                description: "Machine Learning erkennt Muster in Ihren Aufnahmedaten zur Vorhersage optimaler Bedingungen.",
+                title: "Umgebungs- & Optik-Muster",
+                description: "Erkennt bimodale Seeing-Verteilungen, Wolkendecke-Einfluss, Himmelshintergrund-Trends, Feldkrümmungs-Signaturen, Sensor-Tilt und optische Degradation über Zeit.",
                 points: [
-                    "Wettermuster-Analyse",
-                    "Seeing-Vorhersagen",
-                    "Equipment-Verhaltensmuster"
+                    "Bimodale Seeing-Erkennung und Schwellenwerte",
+                    "Mondeinfluss-Analyse: Breitband vs. Schmalband",
+                    "Optische Qualitätsentwicklung über Sitzungen"
                 ]
             },
             session: {
-                title: "Sitzungsleistungs-Analyse",
-                description: "Tiefgehende Analyse von Aufnahmesitzungen zur Erkennung von Trends und Optimierung zukünftiger Sitzungen.",
+                title: "Sitzungs- & Equipment-Analyse",
+                description: "Vergleichen Sie Sitzung für Sitzung die Qualität, verfolgen Sie Equipment-Leistung über Zeit und identifizieren Sie Ihre besten Aufnahmezeiten und Equipment-Konfigurationen.",
                 points: [
-                    "Sitzungs-Qualitätsbewertung",
-                    "Nachtzeit-Analyse",
-                    "Equipment-Leistungsverfolgung"
+                    "Identifikation optimaler Aufnahmezeiten",
+                    "Equipment-Degradations-Tracking",
+                    "Wochentag- vs. Wochenend-Qualitätsanalyse"
                 ]
             },
             insights: {
                 title: "KI-generierte Erkenntnisse",
-                description: "Umsetzbare Empfehlungen aus der Analyse Ihrer gesamten Aufnahmehistorie.",
+                description: "Verständliche Zusammenfassungen Ihrer wichtigsten Muster, generiert von GPT-4o oder Claude. Umsetzbare Empfehlungen spezifisch für Ihr Equipment und Ihren Aufnahmestil.",
                 points: [
-                    "Personalisierte Verbesserungstipps",
-                    "Equipment-Upgrade-Empfehlungen",
-                    "Workflow-Optimierungsvorschläge"
+                    "Personalisierte Verbesserungsempfehlungen",
+                    "Equipment-spezifische Optimierungstipps",
+                    "Filter- und Zielstrategie-Beratung"
                 ]
             }
         },
@@ -562,6 +634,324 @@ const translations = {
             },
             copyright: "© 2025 AstroIndexer. Alle Rechte vorbehalten."
         }
+    },
+
+    es: {
+        // Navigation
+        nav: {
+            features: "Funciones",
+            pricing: "Precios",
+            documentation: "Documentación",
+            support: "Soporte",
+            download: "Descargar"
+        },
+
+        // Hero Section
+        hero: {
+            title: "AstroIndexer",
+            subtitle: "Gestión Profesional de Astrofotografía",
+            description: "Organice, analice y optimice su flujo de trabajo de astrofotografía con potentes herramientas impulsadas por IA",
+            platforms: "Disponible para",
+            cta: {
+                download: "Descarga Gratuita",
+                learnMore: "Más Información"
+            }
+        },
+
+        // Features Section
+        features: {
+            title: "Funciones Avanzadas para Astrofotógrafos",
+            subtitle: "Todo lo que necesita para gestionar sus datos de imagen astronómica",
+            items: {
+                organization: {
+                    title: "Organización Inteligente",
+                    description: "Pipeline de escaneo de 7 etapas que extrae 93+ campos de cabeceras FITS y XISF. Compatible con telescopios inteligentes SeeStar, integración CSV de NINA y detección de imágenes apiladas."
+                },
+                quality: {
+                    title: "Análisis de Calidad",
+                    description: "32+ métricas de calidad por frame con ajuste PSF Moffat de 7 parámetros con precisión del 1,5% respecto a PixInsight. 10 detectores automáticos de defectos identifican niebla, trazos, gradientes y aberraciones ópticas."
+                },
+                equipment: {
+                    title: "Gestor de Equipos",
+                    description: "Auto-detección desde cabeceras FITS, curvas QE de sensores para 9 sensores precargados y soporte para telescopios inteligentes SeeStar S50/S30/S30 Pro."
+                },
+                ml: {
+                    title: "Analítica ML",
+                    description: "Descubrimiento de 40 patrones en 9 categorías, Recomendador de Combinación AutoIntegrate con 11 paletas y asesor de apilado compatible con PixInsight."
+                },
+                planning: {
+                    title: "Session Planner V2",
+                    description: "Pipeline de proyectos de 5 estados con motor Smart Plan, planificación SNR con QE, gráficos de altitud, análisis de impacto lunar y exportación NINA."
+                },
+                integration: {
+                    title: "AstroBin y PixInsight",
+                    description: "Sincronización de galería AstroBin con insignias de publicación y envío de datos de adquisición. Exportación a PixInsight AutoIntegrate con selección de modo de combinación."
+                },
+                celestial: {
+                    title: "Atlas Celeste y Mapa Estelar",
+                    description: "Atlas celeste interactivo con superposiciones FOV y posicionamiento de mosaicos, más un mapa estelar que muestra su cobertura de imagen en el cielo."
+                }
+            }
+        },
+
+        // Details Section (feature showcases)
+        details: {
+            title: "Vea AstroIndexer en Acción",
+            subtitle: "Herramientas potentes diseñadas para astrofotógrafos serios",
+            gallery: {
+                title: "Galería y Explorador de Archivos",
+                description: "Explore toda su colección de astrofotografía con desplazamiento virtual ultrarrápido. Navegación de 6 niveles desde catálogos hasta archivos individuales, filtros inteligentes por calidad, equipo, fase lunar y más.",
+                points: [
+                    "Desplazamiento virtual para 100.000+ imágenes sin retardo",
+                    "Filtros inteligentes con categorías jerárquicas",
+                    "Insignias de publicación AstroBin en tarjetas de objetivos",
+                    "Insignias de calidad, calibración y filtro de un vistazo"
+                ]
+            },
+            index: {
+                title: "Índice y Vista General",
+                description: "Su centro de control para todos los datos de imagen. Estadísticas de colección, rendimiento de equipos, sesiones recientes y estado de sincronización AstroBin de un vistazo.",
+                points: [
+                    "Estadísticas completas con recuentos de objetivos",
+                    "Resumen de rendimiento de equipos por configuración",
+                    "Estado de publicación AstroBin para cada objetivo",
+                    "Acceso rápido a sesiones de escaneo recientes"
+                ]
+            },
+            quality: {
+                title: "Análisis de Calidad",
+                description: "Mide 32+ métricas de calidad por frame con ajuste PSF Moffat de 7 parámetros y eliminación de valores atípicos en 3 fases. Evaluador V4 con pre-filtro de defectos fatales detecta niebla, nubes y desenfoque antes de puntuar.",
+                points: [
+                    "Precisión del 1,5% respecto a PixInsight SubframeSelector",
+                    "10 detectores automáticos de defectos (niebla, trazos, gradientes, tilt, coma)",
+                    "9 multiplicadores de calidad con líneas base adaptativas por equipo",
+                    "Mapas de calor del sensor mostrando FWHM, SNR y aberraciones"
+                ]
+            },
+            equipment: {
+                title: "Gestor de Equipos",
+                description: "Auto-detección de telescopios, cámaras y filtros desde sus cabeceras FITS. Importe curvas QE de 9 referencias precargadas para diagnósticos SNR basados en QE.",
+                points: [
+                    "Curvas QE para IMX183, IMX294, IMX455, IMX585 y 5 sensores más",
+                    "Soporte para telescopios inteligentes SeeStar S50, S30 y S30 Pro",
+                    "Líneas base de calidad adaptativas por equipo y filtro",
+                    "Comparación de configuraciones de equipo lado a lado"
+                ]
+            },
+            planner: {
+                title: "Session Planner V2",
+                description: "Planifique sesiones de imagen con un pipeline de 5 estados: Cola, Planificado, Programado, Activo, Completado. El motor Smart Plan considera tipo de objeto, equipo, fase lunar y SNR basado en QE.",
+                points: [
+                    "Vista de completitud anual para descubrir objetivos",
+                    "Hub de línea temporal con planificación de capacidad",
+                    "Recomendaciones de exposición basadas en QE por filtro",
+                    "Exportación NINA XML y Telescopius CSV"
+                ]
+            },
+            skyatlas: {
+                title: "Atlas Celeste",
+                description: "Atlas celeste interactivo con superposiciones de campo de visión que muestran exactamente lo que captura su equipo. Planifique paneles de mosaico, verifique el encuadre y descubra nuevos objetivos.",
+                points: [
+                    "Superposición FOV ajustada a su equipo exacto",
+                    "Posicionamiento y planificación de paneles de mosaico",
+                    "Integración de plate solving",
+                    "Búsqueda de objetivos con referencia cruzada de catálogos"
+                ]
+            },
+            celestial: {
+                title: "Mapa Celeste Interactivo",
+                description: "Visualice toda su colección de imágenes en un mapa celeste interactivo. Vea las brechas de cobertura, planifique futuras sesiones y explore su viaje en astrofotografía.",
+                points: [
+                    "Visualización 3D del cielo interactiva",
+                    "Superposición de mapa de calor de cobertura",
+                    "Seguimiento y planificación de objetos",
+                    "Actualizaciones de posición en tiempo real"
+                ]
+            },
+            astrobin: {
+                title: "Integración AstroBin",
+                description: "Sincronice su galería AstroBin con coincidencia automática de ID de catálogo. Vea qué objetivos ha publicado, envíe datos de adquisición y muestre insignias de publicación en su galería local.",
+                points: [
+                    "Sincronización de galería con un clic y auto-coincidencia",
+                    "Insignias de publicación en miniaturas de galería",
+                    "Envío de recuentos de sub-frames y datos de filtros a AstroBin",
+                    "Navegación offline con datos en caché"
+                ]
+            },
+            stacking: {
+                title: "Asesor de Apilado",
+                description: "Selección de frames compatible con PixInsight con Winsorized Sigma Clipping a umbral 2,2. El Recomendador de Combinación AutoIntegrate selecciona la paleta óptima de 11 opciones según sus filtros y tipo de objeto.",
+                points: [
+                    "Selección inteligente de paleta: SHO, HOO, LRGB, Dynamic SHO y más",
+                    "Niveles de calidad: Excelente, Bueno, Pobre con balance por filtro",
+                    "Flujo de recombinación de estrellas StarXTerminator + RGB banda ancha",
+                    "Exportación con un clic a PixInsight AutoIntegrate JSON"
+                ]
+            },
+            catalogue: {
+                title: "Seguimiento de Catálogos",
+                description: "Siga su progreso a través de 26+ catálogos astronómicos incluyendo Messier (110), NGC (7.840), IC (5.386), Caldwell, Sharpless y más con cuadrículas visuales codificadas por color.",
+                points: [
+                    "Verde = procesado, amarillo = solo datos brutos, gris = no capturado",
+                    "Resolución de alias entre catálogos (M42 = NGC 1976)",
+                    "Menú contextual: vista previa, abrir en galería, consulta SIMBAD",
+                    "Porcentaje de completitud por catálogo"
+                ]
+            }
+        },
+
+        // ML Analytics Section
+        ml: {
+            title: "Analítica Impulsada por IA",
+            subtitle: "40 Patrones ML en 9 Categorías -- Descubra lo que Revelan sus Datos",
+            dashboard: {
+                title: "Panel de Descubrimiento de Patrones",
+                description: "40 patrones de machine learning en categorías estacionales, lunares, de equipo, enfoque, térmicas, atmosféricas, ópticas y de optimización. Cada patrón incluye puntuaciones de confianza y recomendaciones accionables.",
+                points: [
+                    "40 patrones descubiertos de SU historial de imágenes",
+                    "Insights con puntuación de confianza y acciones específicas",
+                    "Resúmenes generados por IA vía GPT-4o o Claude"
+                ]
+            },
+            heatmap: {
+                title: "Mapa de Calor del Sensor",
+                description: "Mapas de calidad espacial del sensor revelan tilt, coma, astigmatismo y patrones de viñeteo invisibles en vistas de métrica única.",
+                points: [
+                    "Mapas de FWHM, SNR y densidad de estrellas del campo",
+                    "Detección de aberraciones: coma, astigmatismo, curvatura de campo",
+                    "Análisis de píxeles muertos y viñeteo"
+                ]
+            },
+            exposure: {
+                title: "Análisis de Exposición y SNR",
+                description: "Recomendaciones de exposición basadas en QE usando la eficiencia cuántica real de su sensor a cada longitud de onda del filtro. Basado en datos, no en reglas empíricas.",
+                points: [
+                    "Cálculos señal-ruido basados en QE",
+                    "Optimización de exposición por filtro",
+                    "Planificación de tiempo de integración por objetivo"
+                ]
+            },
+            patterns: {
+                title: "Patrones Ambientales y Ópticos",
+                description: "Descubre bimodalidad del seeing, impacto de cobertura nubosa, tendencias de gradiente del cielo, firmas de curvatura de campo, tilt del sensor y degradación óptica en el tiempo.",
+                points: [
+                    "Detección de seeing bimodal y umbrales",
+                    "Análisis de impacto lunar: banda ancha vs banda estrecha",
+                    "Tendencia de calidad óptica entre sesiones"
+                ]
+            },
+            session: {
+                title: "Análisis de Sesiones y Equipos",
+                description: "Compare la calidad sesión por sesión, rastree el rendimiento del equipo en el tiempo e identifique sus mejores horas de imagen y configuraciones de equipo.",
+                points: [
+                    "Identificación de horas óptimas de imagen",
+                    "Seguimiento de degradación de equipos",
+                    "Análisis de calidad entre semana vs fin de semana"
+                ]
+            },
+            insights: {
+                title: "Insights Generados por IA",
+                description: "Resúmenes legibles de sus patrones más impactantes, generados por GPT-4o o Claude. Recomendaciones accionables específicas para su equipo y estilo de imagen.",
+                points: [
+                    "Recomendaciones de mejora personalizadas",
+                    "Consejos de optimización específicos por equipo",
+                    "Orientación sobre estrategia de filtros y objetivos"
+                ]
+            }
+        },
+
+        // Download Section
+        download: {
+            title: "Descargar AstroIndexer",
+            subtitle: "Prueba gratuita, disponible para todas las plataformas",
+            windows: {
+                detail: "Instalador (.exe) \u00b7 Windows 10+"
+            },
+            macos: {
+                detail: "Universal (.zip) \u00b7 macOS 12+"
+            },
+            linux: {
+                detail: "Archivo (.tar.gz) \u00b7 Ubuntu 22.04+"
+            },
+            note: "Prueba gratuita de 30 días con acceso completo. Sin necesidad de cuenta."
+        },
+
+        // Pricing Section
+        pricing: {
+            title: "Elija su Plan",
+            subtitle: "Precios flexibles para aficionados y profesionales",
+            trial: {
+                title: "Prueba Gratuita",
+                price: "Gratis",
+                duration: "30 días",
+                features: [
+                    "Acceso completo a todas las funciones",
+                    "Hasta 1000 imágenes",
+                    "Soporte básico",
+                    "Todas las herramientas de análisis"
+                ],
+                cta: "Iniciar Prueba Gratuita"
+            },
+            personal: {
+                title: "Estándar",
+                price: "49€",
+                duration: "pago único",
+                features: [
+                    "Imágenes ilimitadas",
+                    "Todas las funciones incluidas",
+                    "Soporte prioritario",
+                    "Actualizaciones de por vida",
+                    "Licencia multi-ordenador"
+                ],
+                cta: "Comprar Ahora"
+            },
+            professional: {
+                title: "Profesional",
+                price: "89€",
+                duration: "pago único",
+                features: [
+                    "Todo lo de Estándar",
+                    "Uso comercial",
+                    "Funciones ML avanzadas",
+                    "Perfiles de equipo personalizados",
+                    "Acceso API",
+                    "Soporte premium"
+                ],
+                cta: "Contactar Ventas"
+            }
+        },
+
+        // Footer
+        footer: {
+            product: {
+                title: "Producto",
+                links: {
+                    features: "Funciones",
+                    pricing: "Precios",
+                    changelog: "Historial de Cambios",
+                    roadmap: "Hoja de Ruta"
+                }
+            },
+            support: {
+                title: "Soporte",
+                links: {
+                    documentation: "Documentación",
+                    guides: "Guías de Usuario",
+                    faq: "FAQ",
+                    contact: "Contacto"
+                }
+            },
+            company: {
+                title: "Empresa",
+                links: {
+                    about: "Acerca de",
+                    blog: "Blog",
+                    privacy: "Política de Privacidad",
+                    terms: "Términos de Servicio"
+                }
+            },
+            copyright: "© 2025 AstroIndexer. Todos los derechos reservados."
+        }
     }
 };
 
@@ -569,7 +959,7 @@ const translations = {
 class LanguageManager {
     constructor() {
         this.currentLang = 'en';
-        this.supportedLanguages = ['en', 'de'];
+        this.supportedLanguages = ['en', 'de', 'es'];
         this.init();
     }
 
@@ -632,6 +1022,17 @@ class LanguageManager {
 
             if (germanTimezones.includes(timezone)) {
                 this.currentLang = 'de';
+            }
+
+            // Spanish-speaking countries timezones
+            const spanishTimezones = [
+                'Europe/Madrid', 'Atlantic/Canary',
+                'America/Mexico_City', 'America/Bogota',
+                'America/Buenos_Aires', 'America/Santiago',
+                'America/Lima'
+            ];
+            if (spanishTimezones.includes(timezone)) {
+                this.currentLang = 'es';
             }
         }
     }
@@ -753,9 +1154,12 @@ class LanguageManager {
         // Update meta description
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
-            metaDesc.content = this.currentLang === 'de'
-                ? 'AstroIndexer - Professionelle Software zur Verwaltung und Analyse von Astrofotografie-Daten'
-                : 'AstroIndexer - Professional astrophotography data management and analysis software';
+            const descriptions = {
+                en: 'AstroIndexer - Professional astrophotography data management and analysis software',
+                de: 'AstroIndexer - Professionelle Software zur Verwaltung und Analyse von Astrofotografie-Daten',
+                es: 'AstroIndexer - Software profesional de gestión y análisis de datos de astrofotografía'
+            };
+            metaDesc.content = descriptions[this.currentLang] || descriptions.en;
         }
 
         // Update Open Graph tags
