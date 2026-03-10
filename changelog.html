@@ -145,6 +145,63 @@
     <section class="doc-section">
         <div class="container changelog-container">
 
+            <!-- v22.2 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>v22.2</h2>
+                    <span class="version-date">March 2026</span>
+                </div>
+                <p class="version-summary">
+                    Quality and reliability release &mdash; 21 bug fixes from a 72,000-file production audit,
+                    PixInsight measurement parity validation, and continuous code quality monitoring.
+                </p>
+
+                <div class="change-category">
+                    <h3>Quality &amp; Reliability</h3>
+                    <ul>
+                        <li><span class="tag tag-improved">Improved</span> <strong>72K-file production audit</strong> &mdash; 21 findings fixed across QA scoring, ML analytics, equipment detection, and scanner enrichment</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight QA parity</strong> &mdash; 16 automated tests now verify FWHM, HFR, eccentricity, and SNR match PixInsight SubframeSelector within tolerance</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Qodana code quality gate</strong> &mdash; continuous static analysis on every commit via GitHub Actions</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>104 real-data tests</strong> &mdash; test suite rebuilt from synthetic mocks to real FITS data across 6 domains</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Planner</h3>
+                    <ul>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment Match filter</strong> now correctly filters targets by match percentage (&ge;50%, &ge;80%)</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment pill</strong> visibility improved &mdash; clearer background, border, and hover state</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>ML Analytics</h3>
+                    <ul>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment switch</strong> no longer triggers unnecessary ML re-analysis when all files are already analyzed</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Portrait sensor heatmap</strong> &mdash; SeeStar and other portrait-oriented sensors now display correctly oriented grid</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Scanner &amp; Data Integrity</h3>
+                    <ul>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Filter name normalization</strong> &mdash; consistent casing for OIII, H-alpha, and SII across all vendors</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Enrichment preservation</strong> &mdash; rescanning folders no longer overwrites existing QA and ML scores</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>SNR clamping</strong> &mdash; extreme outlier values (e.g. 9.6 trillion) now clamped at 10,000</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Phantom equipment cleanup</strong> &mdash; auto-generated placeholder setups are now deactivated on startup</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>FWHM zero guard</strong> &mdash; physically meaningless FWHM=0.0 values are no longer written to the database</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Performance</h3>
+                    <ul>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Startup wizard</strong> deferred to prevent crash after welcome dialog</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Telemetry ring buffer</strong> now persists snapshots to disk instead of losing data on overflow</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v22 -->
             <div class="version-block">
                 <div class="version-header">
