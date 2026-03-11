@@ -16,18 +16,18 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Understand Your Astrophotography",
             description: "AstroIndexer analyzes your imaging history to reveal equipment performance, seeing patterns, and what actually improves your results.",
-            platforms: "Runs on",
+            platforms: "Runs locally on your computer",
             cta: {
                 download: "Download Free",
                 learnMore: "Learn More"
             },
-            priceTeaser: "One-time purchase from €49 · Free 30-day trial"
+            priceTeaser: "One-time purchase from \u20ac49 \u00b7 Free 30-day trial"
         },
 
         // Features Section
         features: {
             title: "Powerful Features for Astrophotographers",
-            subtitle: "Everything you need to manage your astronomical imaging data",
+            subtitle: "Everything you need to organize, analyze, and understand your astronomical imaging data",
             badge: {
                 standard: "Standard",
                 pro: "Pro"
@@ -289,32 +289,32 @@ const translations = {
                 frames: {
                     value: "1,909",
                     label: "Frames Indexed",
-                    detail: "Every frame builds a smarter analysis"
+                    detail: "Every frame contributes to a deeper performance profile."
                 },
                 sessions: {
                     value: "62",
                     label: "Imaging Nights",
-                    detail: "Every night contributes to your performance profile"
+                    detail: "Every session adds context to your long-term results."
                 },
                 seeing: {
                     value: '1.9"',
                     label: "Best Seeing",
-                    detail: "Automatically tracked across all sessions"
+                    detail: "Automatically tracked across your imaging history."
                 },
                 fwhm: {
                     value: '2.7"',
                     label: "Average FWHM",
-                    detail: "Measured via Moffat PSF fitting on every frame"
+                    detail: "Measured via Moffat PSF fitting across all analyzed frames."
                 },
                 setup: {
                     value: "APO 94mm + QHY268M",
                     label: "Most Productive Setup",
-                    detail: "Ranked by quality-weighted imaging hours"
+                    detail: "Ranked by quality-weighted imaging hours."
                 },
                 months: {
                     value: "May, Jun, Sep",
                     label: "Best Imaging Months",
-                    detail: "Based on your historical quality scores"
+                    detail: "Based on your historical quality scores."
                 }
             },
             caption: "Your insights are generated from your own sessions. No manual data entry required."
@@ -322,7 +322,7 @@ const translations = {
 
         problem: {
             lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
-            question: "But which nights produced your best results?"
+            question: "But which nights produced your best results? Which setup performs best? Which filters deliver the highest quality data?"
         },
         // Real Dataset
         realdata: {
@@ -338,27 +338,33 @@ const translations = {
         },
         equipperf: {
             title: "Compare Your Setups Across Years of Data",
-            subtitle: "AstroIndexer analyzes thousands of frames across multiple sessions and equipment setups. Compare telescope performance, filter efficiency, and image quality metrics across your entire dataset.",
+            subtitle: "AstroIndexer analyzes thousands of frames across multiple sessions and equipment combinations, so you can compare performance across your entire dataset instead of judging one night at a time.",
             comparison: {
                 label: "Equipment Performance Comparison",
-                desc: "FWHM, ellipticity, SNR, star counts, tracking RMS, and moon phase impact \u2014 compared across every setup you own."
+                desc: "Compare FWHM, ellipticity, SNR, star counts, tracking RMS, and moon phase impact across every setup you own."
             },
             baseline: {
                 label: "Baseline Metrics Comparison",
-                desc: "Statistical baselines with standard deviations for each telescope and camera combination. See exactly which setup produces the sharpest stars."
+                desc: "See statistical baselines and variation ranges for each telescope and camera combination to understand what consistently performs best."
             },
             callout: {
                 title: "Best Performing Combination",
-                desc: "AstroIndexer automatically identifies your best-performing telescope, camera, and filter combination based on quality-weighted analysis across all sessions."
+                desc: "AstroIndexer automatically identifies your strongest telescope, camera, and filter combination based on quality-weighted analysis across all sessions."
             }
         },
         audience: {
             title: "Who AstroIndexer Is Built For",
+            labels: [
+                "Astrophotographers",
+                "Capture Workflow Users",
+                "Processing-Focused Imagers",
+                "Observatory Owners"
+            ],
             items: [
-                "Astrophotographers managing thousands of frames across years of imaging",
-                "Users running NINA, Voyager, or APT capture workflows who need data intelligence",
-                "Imagers who process in PixInsight or AstroPixelProcessor and want frame-level quality insights",
-                "Home observatories and remote setups tracking equipment performance over time"
+                "Managing thousands of frames across years of imaging.",
+                "Running NINA, Voyager, or APT and needing real data intelligence.",
+                "Using PixInsight or AstroPixelProcessor and wanting frame-level quality insights.",
+                "Tracking equipment performance across home or remote setups over time."
             ]
         },
         ecosystem: {
@@ -378,7 +384,7 @@ const translations = {
                 "How has my imaging improved over time?"
             ],
             text2: "AstroIndexer analyzes your entire imaging history to reveal those answers automatically.",
-            builder: "Built by an astrophotographer who wanted to understand years of imaging data instead of managing folders and spreadsheets."
+            builder: "Built by an astrophotographer who wanted insight from years of imaging data \u2014 not more folders, spreadsheets, and guesswork."
         },
         trust: {
             title: "Built for Privacy and Ownership",
@@ -497,7 +503,7 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Verstehe deine Astrofotografie",
             description: "AstroIndexer analysiert deine Aufnahmehistorie und zeigt Equipment-Performance, Seeing-Muster und was deine Ergebnisse wirklich verbessert.",
-            platforms: "L\u00e4uft auf",
+            platforms: "L\u00e4uft lokal auf deinem Computer",
             cta: {
                 download: "Kostenlos herunterladen",
                 learnMore: "Mehr erfahren"
@@ -508,7 +514,7 @@ const translations = {
         // Features Section
         features: {
             title: "Leistungsstarke Funktionen für Astrofotografen",
-            subtitle: "Alles, was Sie zur Verwaltung Ihrer astronomischen Bilddaten benötigen",
+            subtitle: "Alles, was Sie brauchen, um Ihre astronomischen Bilddaten zu organisieren, analysieren und verstehen",
             badge: {
                 standard: "Standard",
                 pro: "Pro"
@@ -770,32 +776,32 @@ const translations = {
                 frames: {
                     value: "1.909",
                     label: "Frames indexiert",
-                    detail: "Jedes Frame verbessert die Analyse"
+                    detail: "Jedes Frame tr\u00e4gt zu einem tieferen Leistungsprofil bei."
                 },
                 sessions: {
                     value: "62",
                     label: "Aufnahmen\u00e4chte",
-                    detail: "Jede Nacht tr\u00e4gt zu Ihrem Leistungsprofil bei"
+                    detail: "Jede Session f\u00fcgt Kontext zu Ihren Langzeitergebnissen hinzu."
                 },
                 seeing: {
                     value: '1,9"',
                     label: "Bestes Seeing",
-                    detail: "Automatisch \u00fcber alle Sessions erfasst"
+                    detail: "Automatisch \u00fcber Ihre gesamte Aufnahmehistorie erfasst."
                 },
                 fwhm: {
                     value: '2,7"',
                     label: "Durchschnittlicher FWHM",
-                    detail: "Gemessen per Moffat-PSF-Fitting an jedem Frame"
+                    detail: "Gemessen per Moffat-PSF-Fitting \u00fcber alle analysierten Frames."
                 },
                 setup: {
                     value: "APO 94mm + QHY268M",
                     label: "Produktivstes Setup",
-                    detail: "Nach qualit\u00e4tsgewichteten Aufnahmestunden"
+                    detail: "Nach qualit\u00e4tsgewichteten Aufnahmestunden."
                 },
                 months: {
                     value: "Mai, Jun, Sep",
                     label: "Beste Aufnahmemonate",
-                    detail: "Basierend auf historischen Qualit\u00e4tswerten"
+                    detail: "Basierend auf historischen Qualit\u00e4tswerten."
                 }
             },
             caption: "Ihre Insights werden aus Ihren eigenen Sessions generiert. Keine manuelle Dateneingabe n\u00f6tig."
@@ -803,7 +809,7 @@ const translations = {
 
         problem: {
             lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
-            question: "But which nights produced your best results?"
+            question: "Aber welche N\u00e4chte lieferten die besten Ergebnisse? Welches Setup performt am besten? Welche Filter liefern die h\u00f6chste Datenqualit\u00e4t?"
         },
         realdata: {
             title: "Analyse eines realen Bilddatensatzes",
@@ -818,27 +824,33 @@ const translations = {
         },
         equipperf: {
             title: "Vergleiche deine Setups \u00fcber Jahre hinweg",
-            subtitle: "AstroIndexer analysiert Tausende von Frames \u00fcber mehrere Sessions und Equipment-Setups. Vergleiche Teleskop-Performance, Filter-Effizienz und Bildqualit\u00e4t \u00fcber deinen gesamten Datensatz.",
+            subtitle: "AstroIndexer analysiert Tausende von Frames \u00fcber mehrere Sessions und Equipment-Kombinationen, sodass du die Performance \u00fcber deinen gesamten Datensatz vergleichen kannst \u2014 statt jede Nacht einzeln zu beurteilen.",
             comparison: {
                 label: "Equipment-Performance-Vergleich",
-                desc: "FWHM, Elliptizit\u00e4t, SNR, Sternanzahl, Tracking-RMS und Mondphasen-Einfluss \u2014 verglichen \u00fcber alle deine Setups."
+                desc: "Vergleiche FWHM, Elliptizit\u00e4t, SNR, Sternanzahl, Tracking-RMS und Mondphasen-Einfluss \u00fcber jedes Setup, das du besitzt."
             },
             baseline: {
                 label: "Baseline-Metrik-Vergleich",
-                desc: "Statistische Baselines mit Standardabweichungen f\u00fcr jede Teleskop-Kamera-Kombination. Sieh genau, welches Setup die sch\u00e4rfsten Sterne liefert."
+                desc: "Statistische Baselines und Variationsbereiche f\u00fcr jede Teleskop- und Kamera-Kombination, um zu verstehen, was konstant am besten performt."
             },
             callout: {
                 title: "Beste Equipment-Kombination",
-                desc: "AstroIndexer identifiziert automatisch deine leistungsst\u00e4rkste Teleskop-, Kamera- und Filter-Kombination basierend auf qualit\u00e4tsgewichteter Analyse aller Sessions."
+                desc: "AstroIndexer identifiziert automatisch deine st\u00e4rkste Teleskop-, Kamera- und Filter-Kombination basierend auf qualit\u00e4tsgewichteter Analyse \u00fcber alle Sessions."
             }
         },
         audience: {
             title: "F\u00fcr wen AstroIndexer entwickelt wurde",
+            labels: [
+                "Astrofotografen",
+                "Aufnahme-Workflow-Nutzer",
+                "Verarbeitungsorientierte Imager",
+                "Sternwarten-Besitzer"
+            ],
             items: [
-                "Astrofotografen, die Tausende von Frames \u00fcber Jahre verwalten",
-                "Nutzer von NINA, Voyager oder APT, die Daten-Intelligenz brauchen",
-                "Bildbearbeiter mit PixInsight oder AstroPixelProcessor, die Frame-Qualit\u00e4t verstehen wollen",
-                "Heim-Sternwarten und Remote-Setups, die Equipment-Performance \u00fcber die Zeit verfolgen"
+                "Verwalten Tausende von Frames \u00fcber Jahre hinweg.",
+                "Nutzen NINA, Voyager oder APT und brauchen echte Daten-Intelligenz.",
+                "Verarbeiten in PixInsight oder AstroPixelProcessor und wollen Frame-Level-Qualit\u00e4tseinblicke.",
+                "Verfolgen Equipment-Performance \u00fcber Heim- oder Remote-Setups \u00fcber die Zeit."
             ]
         },
         ecosystem: {
@@ -858,7 +870,7 @@ const translations = {
                 "Wie hat sich meine Bildqualit\u00e4t \u00fcber die Zeit verbessert?"
             ],
             text2: "AstroIndexer analysiert deine gesamte Aufnahmehistorie und liefert diese Antworten automatisch.",
-            builder: "Entwickelt von einem Astrofotografen, der seine jahrelangen Aufnahmedaten verstehen wollte \u2014 statt Ordner und Tabellen zu verwalten."
+            builder: "Entwickelt von einem Astrofotografen, der Erkenntnisse aus jahrelangen Aufnahmedaten wollte \u2014 nicht noch mehr Ordner, Tabellen und Ratespiele."
         },
         trust: {
             title: "Privatsph\u00e4re und Eigenverantwortung",
@@ -977,7 +989,7 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Comprende tu astrofotograf\u00eda",
             description: "AstroIndexer analiza tu historial de imagen para revelar rendimiento de equipo, patrones de seeing y lo que realmente mejora tus resultados.",
-            platforms: "Funciona en",
+            platforms: "Funciona localmente en tu ordenador",
             cta: {
                 download: "Descarga Gratuita",
                 learnMore: "Más Información"
@@ -988,7 +1000,7 @@ const translations = {
         // Features Section
         features: {
             title: "Funciones Avanzadas para Astrofotógrafos",
-            subtitle: "Todo lo que necesita para gestionar sus datos de imagen astronómica",
+            subtitle: "Todo lo que necesitas para organizar, analizar y comprender tus datos de imagen astron\u00f3mica",
             badge: {
                 standard: "Est\u00e1ndar",
                 pro: "Pro"
@@ -1250,32 +1262,32 @@ const translations = {
                 frames: {
                     value: "1.909",
                     label: "Frames Indexados",
-                    detail: "Cada frame mejora el an\u00e1lisis"
+                    detail: "Cada frame contribuye a un perfil de rendimiento m\u00e1s profundo."
                 },
                 sessions: {
                     value: "62",
                     label: "Noches de Imagen",
-                    detail: "Cada noche contribuye a tu perfil de rendimiento"
+                    detail: "Cada sesi\u00f3n a\u00f1ade contexto a tus resultados a largo plazo."
                 },
                 seeing: {
                     value: '1,9"',
                     label: "Mejor Seeing",
-                    detail: "Rastreado autom\u00e1ticamente en todas las sesiones"
+                    detail: "Rastreado autom\u00e1ticamente a lo largo de tu historial de imagen."
                 },
                 fwhm: {
                     value: '2,7"',
                     label: "FWHM Promedio",
-                    detail: "Medido mediante ajuste Moffat PSF en cada frame"
+                    detail: "Medido mediante ajuste Moffat PSF en todos los frames analizados."
                 },
                 setup: {
                     value: "APO 94mm + QHY268M",
                     label: "Setup M\u00e1s Productivo",
-                    detail: "Clasificado por horas de imagen ponderadas por calidad"
+                    detail: "Clasificado por horas de imagen ponderadas por calidad."
                 },
                 months: {
                     value: "May, Jun, Sep",
                     label: "Mejores Meses de Imagen",
-                    detail: "Basado en tus puntuaciones hist\u00f3ricas de calidad"
+                    detail: "Basado en tus puntuaciones hist\u00f3ricas de calidad."
                 }
             },
             caption: "Tus insights se generan a partir de tus propias sesiones. Sin entrada manual de datos."
@@ -1283,7 +1295,7 @@ const translations = {
 
         problem: {
             lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
-            question: "But which nights produced your best results?"
+            question: "\u00bfPero qu\u00e9 noches produjeron los mejores resultados? \u00bfQu\u00e9 configuraci\u00f3n funciona mejor? \u00bfQu\u00e9 filtros entregan la mayor calidad de datos?"
         },
         realdata: {
             title: "An\u00e1lisis de un conjunto de datos real",
@@ -1298,27 +1310,33 @@ const translations = {
         },
         equipperf: {
             title: "Compara tus configuraciones a lo largo de a\u00f1os de datos",
-            subtitle: "AstroIndexer analiza miles de frames a trav\u00e9s de m\u00faltiples sesiones y configuraciones de equipo. Compara rendimiento de telescopios, eficiencia de filtros y m\u00e9tricas de calidad de imagen en todo tu conjunto de datos.",
+            subtitle: "AstroIndexer analiza miles de frames a trav\u00e9s de m\u00faltiples sesiones y combinaciones de equipo, para que puedas comparar el rendimiento en todo tu conjunto de datos en lugar de juzgar una noche a la vez.",
             comparison: {
                 label: "Comparaci\u00f3n de rendimiento de equipo",
-                desc: "FWHM, elipticidad, SNR, conteo de estrellas, RMS de seguimiento e impacto de fase lunar \u2014 comparados en todas tus configuraciones."
+                desc: "Compara FWHM, elipticidad, SNR, conteo de estrellas, RMS de seguimiento e impacto de fase lunar en cada configuraci\u00f3n que poseas."
             },
             baseline: {
                 label: "Comparaci\u00f3n de m\u00e9tricas base",
-                desc: "L\u00edneas base estad\u00edsticas con desviaciones est\u00e1ndar para cada combinaci\u00f3n de telescopio y c\u00e1mara. Ve exactamente qu\u00e9 configuraci\u00f3n produce las estrellas m\u00e1s n\u00edtidas."
+                desc: "L\u00edneas base estad\u00edsticas y rangos de variaci\u00f3n para cada combinaci\u00f3n de telescopio y c\u00e1mara para entender qu\u00e9 funciona mejor de forma consistente."
             },
             callout: {
                 title: "Mejor combinaci\u00f3n de rendimiento",
-                desc: "AstroIndexer identifica autom\u00e1ticamente tu mejor combinaci\u00f3n de telescopio, c\u00e1mara y filtro basada en an\u00e1lisis ponderado por calidad de todas las sesiones."
+                desc: "AstroIndexer identifica autom\u00e1ticamente tu combinaci\u00f3n m\u00e1s fuerte de telescopio, c\u00e1mara y filtro bas\u00e1ndose en an\u00e1lisis ponderado por calidad en todas las sesiones."
             }
         },
         audience: {
             title: "\u00bfPara qui\u00e9n est\u00e1 hecho AstroIndexer?",
+            labels: [
+                "Astrof\u00f3t\u00f3grafos",
+                "Usuarios de flujos de captura",
+                "Imagers enfocados en procesado",
+                "Propietarios de observatorios"
+            ],
             items: [
-                "Astrof\u00f3tografos que gestionan miles de frames a lo largo de a\u00f1os",
-                "Usuarios de NINA, Voyager o APT que necesitan inteligencia de datos",
-                "Procesadores con PixInsight o AstroPixelProcessor que quieren an\u00e1lisis de calidad por frame",
-                "Observatorios dom\u00e9sticos y configuraciones remotas que rastrean el rendimiento del equipo"
+                "Gestionando miles de frames a lo largo de a\u00f1os de imagen.",
+                "Usando NINA, Voyager o APT y necesitando inteligencia de datos real.",
+                "Usando PixInsight o AstroPixelProcessor y buscando insights de calidad por frame.",
+                "Rastreando rendimiento de equipo en observatorios dom\u00e9sticos o remotos a lo largo del tiempo."
             ]
         },
         ecosystem: {
@@ -1338,7 +1356,7 @@ const translations = {
                 "\u00bfC\u00f3mo ha mejorado mi imagen con el tiempo?"
             ],
             text2: "AstroIndexer analiza todo tu historial de imagen para revelar esas respuestas autom\u00e1ticamente.",
-            builder: "Creado por un astrof\u00f3tografo que quer\u00eda entender a\u00f1os de datos de imagen en lugar de gestionar carpetas y hojas de c\u00e1lculo."
+            builder: "Creado por un astrof\u00f3tografo que quer\u00eda conocimiento real de a\u00f1os de datos de imagen \u2014 no m\u00e1s carpetas, hojas de c\u00e1lculo y conjeturas."
         },
         trust: {
             title: "Privacidad y propiedad garantizadas",
