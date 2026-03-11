@@ -13,8 +13,8 @@ const translations = {
         // Hero Section
         hero: {
             title: "AstroIndexer",
-            subtitle: "Professional Astrophotography Management",
-            description: "Organize, analyze, and optimize your astrophotography workflow with powerful AI-driven tools",
+            subtitle: "Understand Your Astrophotography",
+            description: "AstroIndexer analyzes your imaging history to reveal equipment performance, seeing patterns, and what actually improves your results.",
             platforms: "Available for",
             cta: {
                 download: "Download Free",
@@ -322,6 +322,10 @@ const translations = {
             }
         },
 
+        problem: {
+            lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
+            question: "But which nights produced your best results?"
+        },
         // Real Dataset
         realdata: {
             title: "Real Imaging Dataset Analysis",
@@ -475,8 +479,8 @@ const translations = {
         // Hero Section
         hero: {
             title: "AstroIndexer",
-            subtitle: "Professionelle Astrofotografie-Verwaltung",
-            description: "Organisieren, analysieren und optimieren Sie Ihren Astrofotografie-Workflow mit leistungsstarken KI-gesteuerten Tools",
+            subtitle: "Verstehe deine Astrofotografie",
+            description: "AstroIndexer analysiert deine Aufnahmehistorie und zeigt Equipment-Performance, Seeing-Muster und was deine Ergebnisse wirklich verbessert.",
             platforms: "Verf\u00fcgbar f\u00fcr",
             cta: {
                 download: "Kostenlos herunterladen",
@@ -784,6 +788,10 @@ const translations = {
             }
         },
 
+        problem: {
+            lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
+            question: "But which nights produced your best results?"
+        },
         realdata: {
             title: "Analyse eines realen Bilddatensatzes",
             subtitle: "Datensatz analysiert mit AstroIndexer",
@@ -936,8 +944,8 @@ const translations = {
         // Hero Section
         hero: {
             title: "AstroIndexer",
-            subtitle: "Gestión Profesional de Astrofotografía",
-            description: "Organice, analice y optimice su flujo de trabajo de astrofotografía con potentes herramientas impulsadas por IA",
+            subtitle: "Comprende tu astrofotograf\u00eda",
+            description: "AstroIndexer analiza tu historial de imagen para revelar rendimiento de equipo, patrones de seeing y lo que realmente mejora tus resultados.",
             platforms: "Disponible para",
             cta: {
                 download: "Descarga Gratuita",
@@ -1245,6 +1253,10 @@ const translations = {
             }
         },
 
+        problem: {
+            lead: "Thousands of frames. Dozens of imaging sessions. Years of data.",
+            question: "But which nights produced your best results?"
+        },
         realdata: {
             title: "An\u00e1lisis de un conjunto de datos real",
             subtitle: "Conjunto de datos analizado con AstroIndexer",

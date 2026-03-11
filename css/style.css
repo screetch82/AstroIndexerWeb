@@ -1328,3 +1328,28 @@ body.on-landing .language-switcher {
         grid-template-columns: 1fr;
     }
 }
+
+/* ─── Problem Section ─────────────────────── */
+.problem-section {
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.problem-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.problem-lead {
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.problem-question {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1.4;
+}
