@@ -1353,3 +1353,103 @@ body.on-landing .language-switcher {
     color: var(--teal);
     line-height: 1.4;
 }
+
+/* ─── Equipment Performance Section ───────── */
+.equipment-perf-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.equipment-perf-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.equipment-perf-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 48px 0 40px;
+}
+
+.equipment-perf-item {
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.equipment-perf-item:hover {
+    border-color: rgba(73, 198, 191, 0.3);
+    box-shadow: 0 8px 32px rgba(73, 198, 191, 0.08);
+}
+
+.equipment-perf-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 8px;
+}
+
+.equipment-perf-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.equipment-perf-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.equipment-perf-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: var(--card-bg-flat);
+    border: 1px solid rgba(240, 180, 41, 0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 24px 28px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.equipment-perf-callout-icon {
+    font-size: 24px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.equipment-perf-callout-text strong {
+    font-size: 16px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.equipment-perf-callout-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .equipment-perf-callout {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

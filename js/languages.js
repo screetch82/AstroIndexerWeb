@@ -338,6 +338,22 @@ const translations = {
             months: { value: "May, Jun, Sep", label: "Best Imaging Months" },
             caption: "All metrics extracted automatically from FITS headers and quality analysis. No manual data entry."
         },
+        equipperf: {
+            title: "Discover What Your Data Reveals",
+            subtitle: "AstroIndexer analyzes thousands of frames across multiple sessions and equipment setups. Compare telescope performance, filter efficiency, and image quality metrics across your entire dataset.",
+            comparison: {
+                label: "Equipment Performance Comparison",
+                desc: "FWHM, ellipticity, SNR, star counts, tracking RMS, and moon phase impact \u2014 compared across every setup you own."
+            },
+            baseline: {
+                label: "Baseline Metrics Comparison",
+                desc: "Statistical baselines with standard deviations for each telescope and camera combination. See exactly which setup produces the sharpest stars."
+            },
+            callout: {
+                title: "Best Performing Combination",
+                desc: "AstroIndexer automatically identifies your best-performing telescope, camera, and filter combination based on quality-weighted analysis across all sessions."
+            }
+        },
         audience: {
             title: "Who AstroIndexer Is Built For",
             items: [
@@ -803,6 +819,22 @@ const translations = {
             months: { value: "Mai, Jun, Sep", label: "Beste Aufnahmemonate" },
             caption: "Alle Messwerte automatisch aus FITS-Headern und Qualit\u00e4tsanalyse extrahiert. Keine manuelle Dateneingabe."
         },
+        equipperf: {
+            title: "Entdecke, was deine Daten verraten",
+            subtitle: "AstroIndexer analysiert Tausende von Frames \u00fcber mehrere Sessions und Equipment-Setups. Vergleiche Teleskop-Performance, Filter-Effizienz und Bildqualit\u00e4t \u00fcber deinen gesamten Datensatz.",
+            comparison: {
+                label: "Equipment-Performance-Vergleich",
+                desc: "FWHM, Elliptizit\u00e4t, SNR, Sternanzahl, Tracking-RMS und Mondphasen-Einfluss \u2014 verglichen \u00fcber alle deine Setups."
+            },
+            baseline: {
+                label: "Baseline-Metrik-Vergleich",
+                desc: "Statistische Baselines mit Standardabweichungen f\u00fcr jede Teleskop-Kamera-Kombination. Sieh genau, welches Setup die sch\u00e4rfsten Sterne liefert."
+            },
+            callout: {
+                title: "Beste Equipment-Kombination",
+                desc: "AstroIndexer identifiziert automatisch deine leistungsst\u00e4rkste Teleskop-, Kamera- und Filter-Kombination basierend auf qualit\u00e4tsgewichteter Analyse aller Sessions."
+            }
+        },
         audience: {
             title: "F\u00fcr wen AstroIndexer entwickelt wurde",
             items: [
@@ -1267,6 +1299,22 @@ const translations = {
             setup: { value: "APO 94mm + QHY268M", label: "Setup m\u00e1s productivo" },
             months: { value: "May, Jun, Sep", label: "Mejores meses de imagen" },
             caption: "Todas las m\u00e9tricas extra\u00eddas autom\u00e1ticamente de cabeceras FITS y an\u00e1lisis de calidad. Sin entrada manual de datos."
+        },
+        equipperf: {
+            title: "Descubre lo que tus datos revelan",
+            subtitle: "AstroIndexer analiza miles de frames a trav\u00e9s de m\u00faltiples sesiones y configuraciones de equipo. Compara rendimiento de telescopios, eficiencia de filtros y m\u00e9tricas de calidad de imagen en todo tu conjunto de datos.",
+            comparison: {
+                label: "Comparaci\u00f3n de rendimiento de equipo",
+                desc: "FWHM, elipticidad, SNR, conteo de estrellas, RMS de seguimiento e impacto de fase lunar \u2014 comparados en todas tus configuraciones."
+            },
+            baseline: {
+                label: "Comparaci\u00f3n de m\u00e9tricas base",
+                desc: "L\u00edneas base estad\u00edsticas con desviaciones est\u00e1ndar para cada combinaci\u00f3n de telescopio y c\u00e1mara. Ve exactamente qu\u00e9 configuraci\u00f3n produce las estrellas m\u00e1s n\u00edtidas."
+            },
+            callout: {
+                title: "Mejor combinaci\u00f3n de rendimiento",
+                desc: "AstroIndexer identifica autom\u00e1ticamente tu mejor combinaci\u00f3n de telescopio, c\u00e1mara y filtro basada en an\u00e1lisis ponderado por calidad de todas las sesiones."
+            }
         },
         audience: {
             title: "\u00bfPara qui\u00e9n est\u00e1 hecho AstroIndexer?",
