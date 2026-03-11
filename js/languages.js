@@ -3,7 +3,7 @@ const translations = {
     en: {
         // Navigation
         nav: {
-            insights: "Insights",
+            whatis: "What Is AstroIndexer?",
             features: "Features",
             pricing: "Pricing",
             documentation: "Documentation",
@@ -487,7 +487,7 @@ const translations = {
     de: {
         // Navigation
         nav: {
-            insights: "Einblicke",
+            whatis: "Was ist AstroIndexer?",
             features: "Funktionen",
             pricing: "Preise",
             documentation: "Dokumentation",
@@ -970,7 +970,7 @@ const translations = {
     es: {
         // Navigation
         nav: {
-            insights: "Perspectivas",
+            whatis: "¿Qué es AstroIndexer?",
             features: "Funciones",
             pricing: "Precios",
             documentation: "Documentación",
