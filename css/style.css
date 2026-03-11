@@ -1373,8 +1373,8 @@ body.on-landing .language-switcher {
 
 .equipment-perf-showcase {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     margin: 48px 0 40px;
 }
 
@@ -1448,6 +1448,9 @@ body.on-landing .language-switcher {
 }
 
 @media (max-width: 768px) {
+    .equipment-perf-showcase {
+        grid-template-columns: 1fr;
+    }
     .equipment-perf-callout {
         flex-direction: column;
         gap: 8px;

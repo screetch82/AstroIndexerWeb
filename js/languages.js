@@ -3,6 +3,7 @@ const translations = {
     en: {
         // Navigation
         nav: {
+            insights: "Insights",
             features: "Features",
             pricing: "Pricing",
             documentation: "Documentation",
@@ -485,6 +486,7 @@ const translations = {
     de: {
         // Navigation
         nav: {
+            insights: "Einblicke",
             features: "Funktionen",
             pricing: "Preise",
             documentation: "Dokumentation",
@@ -966,6 +968,7 @@ const translations = {
     es: {
         // Navigation
         nav: {
+            insights: "Perspectivas",
             features: "Funciones",
             pricing: "Precios",
             documentation: "Documentación",
