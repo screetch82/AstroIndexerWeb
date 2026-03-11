@@ -950,3 +950,381 @@ body.on-landing .language-switcher {
         font-size: 28px;
     }
 }
+
+/* ─── Real Dataset Section ────────────────── */
+.real-data-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.real-data-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.real-data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 48px 0 32px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.real-data-card {
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.real-data-card:hover {
+    border-color: rgba(73, 198, 191, 0.3);
+    transform: translateY(-2px);
+}
+
+.real-data-card.highlight {
+    border-color: rgba(73, 198, 191, 0.4);
+    background: linear-gradient(180deg, rgba(73, 198, 191, 0.06), var(--card-bg-flat));
+}
+
+.real-data-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 6px;
+}
+
+.real-data-label {
+    font-size: 13px;
+    color: var(--mut);
+    font-weight: 500;
+}
+
+.real-data-caption {
+    text-align: center;
+    font-size: 13px;
+    color: var(--mut);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ─── Audience Section ────────────────────── */
+.audience-section {
+    padding: 80px 0;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.audience-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+    border-color: rgba(73, 198, 191, 0.3);
+    transform: translateY(-2px);
+}
+
+.audience-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.audience-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ─── Ecosystem Section ───────────────────── */
+.ecosystem-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.ecosystem-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.ecosystem-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.ecosystem-step {
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 32px;
+    text-align: center;
+    min-width: 180px;
+    transition: all 0.3s ease;
+}
+
+.ecosystem-step:hover {
+    transform: translateY(-2px);
+}
+
+.ecosystem-step.highlight {
+    border-color: var(--teal);
+    background: linear-gradient(180deg, rgba(73, 198, 191, 0.08), var(--card-bg-flat));
+}
+
+.ecosystem-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mut);
+    margin-bottom: 8px;
+}
+
+.ecosystem-step.highlight .ecosystem-label {
+    color: var(--teal);
+}
+
+.ecosystem-tools {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--txt);
+}
+
+.ecosystem-arrow {
+    color: var(--mut);
+    flex-shrink: 0;
+}
+
+/* ─── Why Section ─────────────────────────── */
+.why-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.why-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.why-content {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.why-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.why-questions {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.why-questions li {
+    font-size: 16px;
+    color: var(--txt);
+    padding: 8px 0 8px 28px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.why-questions li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.why-builder {
+    margin-top: 40px;
+    padding: 24px;
+    background-color: var(--card-bg-flat);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    border-left: 3px solid var(--teal);
+}
+
+.why-builder-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ─── Trust Signals Section ───────────────── */
+.trust-section {
+    padding: 60px 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+}
+
+.trust-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.trust-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ─── Workflow Section ────────────────────── */
+.workflow-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.workflow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    text-align: center;
+    padding: 16px;
+    max-width: 160px;
+}
+
+.workflow-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), rgba(73, 198, 191, 0.6));
+    color: var(--bg0);
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.workflow-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.workflow-connector {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), rgba(73, 198, 191, 0.3));
+    flex-shrink: 0;
+}
+
+/* ─── Responsive: Credibility Sections ────── */
+@media (max-width: 768px) {
+    .real-data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+    .ecosystem-flow {
+        flex-direction: column;
+    }
+    .ecosystem-arrow {
+        transform: rotate(90deg);
+    }
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .workflow-steps {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .workflow-connector {
+        width: 2px;
+        height: 24px;
+        background: linear-gradient(180deg, var(--teal), rgba(73, 198, 191, 0.3));
+    }
+}
+
+@media (max-width: 480px) {
+    .real-data-grid {
+        grid-template-columns: 1fr;
+    }
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}

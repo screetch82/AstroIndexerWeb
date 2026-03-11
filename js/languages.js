@@ -322,6 +322,68 @@ const translations = {
             }
         },
 
+        // Real Dataset
+        realdata: {
+            title: "Real Imaging Dataset Analysis",
+            subtitle: "Dataset analyzed with AstroIndexer",
+            frames: { label: "Frames Indexed" },
+            nights: { label: "Imaging Nights" },
+            seeing: { label: "Best Seeing" },
+            fwhm: { label: "Average FWHM" },
+            setup: { value: "APO 94mm + QHY268M", label: "Most Productive Setup" },
+            months: { value: "May, Jun, Sep", label: "Best Imaging Months" },
+            caption: "All metrics extracted automatically from FITS headers and quality analysis. No manual data entry."
+        },
+        audience: {
+            title: "Who AstroIndexer Is Built For",
+            items: [
+                "Astrophotographers managing thousands of frames across years of imaging",
+                "Users running NINA, Voyager, or APT capture workflows who need data intelligence",
+                "Imagers who process in PixInsight or AstroPixelProcessor and want frame-level quality insights",
+                "Home observatories and remote setups tracking equipment performance over time"
+            ]
+        },
+        ecosystem: {
+            title: "Works With Your Existing Workflow",
+            subtitle: "AstroIndexer complements the tools you already use",
+            capture: { label: "Capture", tools: "NINA \u00b7 Voyager \u00b7 APT" },
+            process: { label: "Process", tools: "PixInsight \u00b7 APP \u00b7 Siril" },
+            intelligence: { label: "Data Intelligence" }
+        },
+        why: {
+            title: "Why AstroIndexer Exists",
+            text1: "Astrophotographers accumulate thousands of frames across years of imaging. But answering simple questions is surprisingly difficult:",
+            questions: [
+                "Which nights had the best seeing?",
+                "Which telescope and camera combination performs best?",
+                "Which filters produce the highest quality data?",
+                "How has my imaging improved over time?"
+            ],
+            text2: "AstroIndexer analyzes your entire imaging history to reveal those answers automatically.",
+            builder: "Built by an astrophotographer who wanted to understand years of imaging data instead of managing folders and spreadsheets."
+        },
+        trust: {
+            items: [
+                "One-time purchase \u2014 no subscription",
+                "Runs locally on your computer",
+                "No cloud upload \u2014 your data stays private",
+                "No internet required \u2014 works at remote dark sites",
+                "Continuous development \u2014 new features released regularly",
+                "Community feedback shapes the roadmap"
+            ]
+        },
+        workflow: {
+            title: "From Folders to Insights in 5 Steps",
+            steps: [
+                "Point AstroIndexer at your imaging folders",
+                "Autopilot scans and indexes all frames",
+                "Quality analysis scores every image",
+                "ML analytics discovers hidden patterns",
+                "Insights reveal your best setups and conditions"
+            ]
+        },
+
+
         // Pricing Section
         pricing: {
             title: "Choose Your Plan",
@@ -722,6 +784,67 @@ const translations = {
             }
         },
 
+        realdata: {
+            title: "Analyse eines realen Bilddatensatzes",
+            subtitle: "Datensatz analysiert mit AstroIndexer",
+            frames: { label: "Frames indexiert" },
+            nights: { label: "Aufnahmen\u00e4chte" },
+            seeing: { label: "Bestes Seeing" },
+            fwhm: { label: "Durchschnittlicher FWHM" },
+            setup: { value: "APO 94mm + QHY268M", label: "Produktivstes Setup" },
+            months: { value: "Mai, Jun, Sep", label: "Beste Aufnahmemonate" },
+            caption: "Alle Messwerte automatisch aus FITS-Headern und Qualit\u00e4tsanalyse extrahiert. Keine manuelle Dateneingabe."
+        },
+        audience: {
+            title: "F\u00fcr wen AstroIndexer entwickelt wurde",
+            items: [
+                "Astrofotografen, die Tausende von Frames \u00fcber Jahre verwalten",
+                "Nutzer von NINA, Voyager oder APT, die Daten-Intelligenz brauchen",
+                "Bildbearbeiter mit PixInsight oder AstroPixelProcessor, die Frame-Qualit\u00e4t verstehen wollen",
+                "Heim-Sternwarten und Remote-Setups, die Equipment-Performance \u00fcber die Zeit verfolgen"
+            ]
+        },
+        ecosystem: {
+            title: "Arbeitet mit deinem bestehenden Workflow",
+            subtitle: "AstroIndexer erg\u00e4nzt die Tools, die du bereits nutzt",
+            capture: { label: "Aufnahme", tools: "NINA \u00b7 Voyager \u00b7 APT" },
+            process: { label: "Verarbeitung", tools: "PixInsight \u00b7 APP \u00b7 Siril" },
+            intelligence: { label: "Daten-Intelligenz" }
+        },
+        why: {
+            title: "Warum AstroIndexer existiert",
+            text1: "Astrofotografen sammeln Tausende von Aufnahmen \u00fcber Jahre. Aber einfache Fragen zu beantworten ist \u00fcberraschend schwierig:",
+            questions: [
+                "Welche N\u00e4chte hatten das beste Seeing?",
+                "Welche Teleskop-Kamera-Kombination liefert die besten Ergebnisse?",
+                "Welche Filter erzeugen die h\u00f6chste Datenqualit\u00e4t?",
+                "Wie hat sich meine Bildqualit\u00e4t \u00fcber die Zeit verbessert?"
+            ],
+            text2: "AstroIndexer analysiert deine gesamte Aufnahmehistorie und liefert diese Antworten automatisch.",
+            builder: "Entwickelt von einem Astrofotografen, der seine jahrelangen Aufnahmedaten verstehen wollte \u2014 statt Ordner und Tabellen zu verwalten."
+        },
+        trust: {
+            items: [
+                "Einmaliger Kauf \u2014 kein Abo",
+                "L\u00e4uft lokal auf deinem Computer",
+                "Kein Cloud-Upload \u2014 deine Daten bleiben privat",
+                "Kein Internet erforderlich \u2014 funktioniert an entlegenen Beobachtungsorten",
+                "Kontinuierliche Weiterentwicklung \u2014 regelm\u00e4\u00dfig neue Features",
+                "Community-Feedback bestimmt die Roadmap"
+            ]
+        },
+        workflow: {
+            title: "Von Ordnern zu Erkenntnissen in 5 Schritten",
+            steps: [
+                "AstroIndexer auf deine Aufnahmeordner zeigen",
+                "Autopilot scannt und indexiert alle Frames",
+                "Qualit\u00e4tsanalyse bewertet jedes Bild",
+                "ML-Analytik entdeckt verborgene Muster",
+                "Einblicke zeigen deine besten Setups und Bedingungen"
+            ]
+        },
+
+
         // Pricing Section
         pricing: {
             title: "W\u00e4hlen Sie Ihren Plan",
@@ -1121,6 +1244,67 @@ const translations = {
                 button: "Probar Gratis"
             }
         },
+
+        realdata: {
+            title: "An\u00e1lisis de un conjunto de datos real",
+            subtitle: "Conjunto de datos analizado con AstroIndexer",
+            frames: { label: "Frames indexados" },
+            nights: { label: "Noches de imagen" },
+            seeing: { label: "Mejor Seeing" },
+            fwhm: { label: "FWHM promedio" },
+            setup: { value: "APO 94mm + QHY268M", label: "Setup m\u00e1s productivo" },
+            months: { value: "May, Jun, Sep", label: "Mejores meses de imagen" },
+            caption: "Todas las m\u00e9tricas extra\u00eddas autom\u00e1ticamente de cabeceras FITS y an\u00e1lisis de calidad. Sin entrada manual de datos."
+        },
+        audience: {
+            title: "\u00bfPara qui\u00e9n est\u00e1 hecho AstroIndexer?",
+            items: [
+                "Astrof\u00f3tografos que gestionan miles de frames a lo largo de a\u00f1os",
+                "Usuarios de NINA, Voyager o APT que necesitan inteligencia de datos",
+                "Procesadores con PixInsight o AstroPixelProcessor que quieren an\u00e1lisis de calidad por frame",
+                "Observatorios dom\u00e9sticos y configuraciones remotas que rastrean el rendimiento del equipo"
+            ]
+        },
+        ecosystem: {
+            title: "Funciona con tu flujo de trabajo actual",
+            subtitle: "AstroIndexer complementa las herramientas que ya usas",
+            capture: { label: "Captura", tools: "NINA \u00b7 Voyager \u00b7 APT" },
+            process: { label: "Procesamiento", tools: "PixInsight \u00b7 APP \u00b7 Siril" },
+            intelligence: { label: "Inteligencia de datos" }
+        },
+        why: {
+            title: "Por qu\u00e9 existe AstroIndexer",
+            text1: "Los astrof\u00f3tografos acumulan miles de frames a lo largo de a\u00f1os. Pero responder preguntas simples es sorprendentemente dif\u00edcil:",
+            questions: [
+                "\u00bfQu\u00e9 noches tuvieron el mejor seeing?",
+                "\u00bfQu\u00e9 combinaci\u00f3n de telescopio y c\u00e1mara rinde mejor?",
+                "\u00bfQu\u00e9 filtros producen los datos de mayor calidad?",
+                "\u00bfC\u00f3mo ha mejorado mi imagen con el tiempo?"
+            ],
+            text2: "AstroIndexer analiza todo tu historial de imagen para revelar esas respuestas autom\u00e1ticamente.",
+            builder: "Creado por un astrof\u00f3tografo que quer\u00eda entender a\u00f1os de datos de imagen en lugar de gestionar carpetas y hojas de c\u00e1lculo."
+        },
+        trust: {
+            items: [
+                "Compra \u00fanica \u2014 sin suscripci\u00f3n",
+                "Funciona localmente en tu ordenador",
+                "Sin subida a la nube \u2014 tus datos permanecen privados",
+                "Sin internet necesario \u2014 funciona en sitios remotos oscuros",
+                "Desarrollo continuo \u2014 nuevas funciones regularmente",
+                "El feedback de la comunidad define la hoja de ruta"
+            ]
+        },
+        workflow: {
+            title: "De carpetas a insights en 5 pasos",
+            steps: [
+                "Apunta AstroIndexer a tus carpetas de imagen",
+                "Autopilot escanea e indexa todos los frames",
+                "El an\u00e1lisis de calidad puntua cada imagen",
+                "La anal\u00edtica ML descubre patrones ocultos",
+                "Los insights revelan tus mejores configuraciones y condiciones"
+            ]
+        },
+
 
         // Pricing Section
         pricing: {
