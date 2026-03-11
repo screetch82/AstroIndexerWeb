@@ -106,58 +106,99 @@
             <p class="section-subtitle" data-i18n="features.subtitle">Everything you need to manage your astronomical imaging data</p>
 
             <div class="features-grid">
+                <!-- Row 1: Core workflow -->
                 <div class="feature-card">
                     <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
                     <div class="feature-icon">📁</div>
                     <h3 data-i18n="features.items.organization.title">Smart Organization</h3>
-                    <p data-i18n="features.items.organization.description">Automatically organize your FITS and XISF files with intelligent cataloging</p>
+                    <p data-i18n="features.items.organization.description">7-stage scanning pipeline extracts 93+ fields from FITS and XISF headers. Supports SeeStar smart telescopes, NINA CSV integration, and stacked-image detection.</p>
                 </div>
 
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">🖼️</div>
+                    <h3 data-i18n="features.items.gallery.title">Gallery &amp; File Browser</h3>
+                    <p data-i18n="features.items.gallery.description">Browse 100,000+ frames with virtual scrolling, 6-level drill-down, smart filters by quality, equipment, and moon phase.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">🔭</div>
+                    <h3 data-i18n="features.items.equipment.title">Equipment Manager</h3>
+                    <p data-i18n="features.items.equipment.description">Auto-discovery from FITS headers with automatic filter recognition, gain/offset detection, QE sensor curves, calibration library, and Bortle sky brightness settings.</p>
+                </div>
+
+                <!-- Row 2: Data insights -->
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">📈</div>
+                    <h3 data-i18n="features.items.statistics.title">Statistics &amp; Reporting</h3>
+                    <p data-i18n="features.items.statistics.description">Session statistics, exposure totals by target and filter, equipment performance baselines, and quality distribution analysis.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">📅</div>
+                    <h3 data-i18n="features.items.planning.title">Session Planner V2</h3>
+                    <p data-i18n="features.items.planning.description">Equipment-aware target recommendations based on your optics, location, season, and sky conditions. 5-state project pipeline with Smart Plan scoring and moon analysis.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">✅</div>
+                    <h3 data-i18n="features.items.catalogue.title">Catalogue Completion</h3>
+                    <p data-i18n="features.items.catalogue.description">Track progress across 26+ astronomical catalogues including Messier, NGC, IC, Caldwell, and Sharpless with color-coded visual grids.</p>
+                </div>
+
+                <!-- Row 3: Automation & ecosystem -->
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-i18n="features.items.autopilot.title">Autopilot Pipeline</h3>
+                    <p data-i18n="features.items.autopilot.description">One-click automated workflow: scan folders, detect equipment, create calibration sets, run quality analysis, and ML analytics in a single pipeline.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">🔗</div>
+                    <h3 data-i18n="features.items.integration.title">PixInsight &amp; AstroBin</h3>
+                    <p data-i18n="features.items.integration.description">AstroBin gallery sync with published badges and acquisition push. PixInsight AutoIntegrate export with combination mode selection.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
+                    <div class="feature-icon">🌌</div>
+                    <h3 data-i18n="features.items.celestial.title">Sky Atlas &amp; Celestial Map</h3>
+                    <p data-i18n="features.items.celestial.description">Interactive sky atlas with FOV overlays and mosaic positioning, plus a celestial map showing your imaging coverage across the sky.</p>
+                </div>
+
+                <!-- Row 4: Pro analysis -->
                 <a href="#insights" style="text-decoration:none;color:inherit">
                 <div class="feature-card pro-feature">
                     <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
                     <div class="feature-icon">📊</div>
                     <h3 data-i18n="features.items.quality.title">Quality Analysis</h3>
-                    <p data-i18n="features.items.quality.description">Advanced image quality metrics including FWHM, HFR, and star detection</p>
+                    <p data-i18n="features.items.quality.description">32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations.</p>
                 </div>
                 </a>
-
-                <div class="feature-card">
-                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
-                    <div class="feature-icon">🔭</div>
-                    <h3 data-i18n="features.items.equipment.title">Equipment Profiling</h3>
-                    <p data-i18n="features.items.equipment.description">Track and optimize performance across all your imaging equipment</p>
-                </div>
 
                 <a href="#insights" style="text-decoration:none;color:inherit">
                 <div class="feature-card pro-feature">
                     <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
                     <div class="feature-icon">🤖</div>
                     <h3 data-i18n="features.items.ml.title">ML Analytics</h3>
-                    <p data-i18n="features.items.ml.description">Machine learning insights to improve your imaging sessions</p>
+                    <p data-i18n="features.items.ml.description">40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor.</p>
                 </div>
                 </a>
 
-                <div class="feature-card">
-                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
-                    <div class="feature-icon">📅</div>
-                    <h3 data-i18n="features.items.planning.title">Session Planning</h3>
-                    <p data-i18n="features.items.planning.description">Plan optimal imaging sessions based on weather and target visibility</p>
+                <a href="#insights" style="text-decoration:none;color:inherit">
+                <div class="feature-card pro-feature">
+                    <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
+                    <div class="feature-icon">🧠</div>
+                    <h3 data-i18n="features.items.aiinsights.title">AI Imaging Advisor</h3>
+                    <p data-i18n="features.items.aiinsights.description">AI-generated recommendations for frame selection, stacking strategies, and equipment optimization. Powered by GPT-4o or Claude.</p>
                 </div>
-
-                <div class="feature-card">
-                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
-                    <div class="feature-icon">🔗</div>
-                    <h3 data-i18n="features.items.integration.title">Software Integration</h3>
-                    <p data-i18n="features.items.integration.description">Seamless integration with PixInsight, N.I.N.A, and other tools</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
-                    <div class="feature-icon">🌌</div>
-                    <h3 data-i18n="features.items.celestial.title">Celestial Map</h3>
-                    <p data-i18n="features.items.celestial.description">Interactive sky map showing your imaging coverage and future targets</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>

@@ -35,29 +35,49 @@ const translations = {
                     title: "Smart Organization",
                     description: "7-stage scanning pipeline extracts 93+ fields from FITS and XISF headers. Supports SeeStar smart telescopes, NINA CSV integration, and stacked-image detection."
                 },
-                quality: {
-                    title: "Quality Analysis",
-                    description: "32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations."
+                gallery: {
+                    title: "Gallery & File Browser",
+                    description: "Browse 100,000+ frames with virtual scrolling, 6-level drill-down, smart filters by quality, equipment, and moon phase."
                 },
                 equipment: {
                     title: "Equipment Manager",
                     description: "Auto-discovery from FITS headers with automatic filter recognition, gain/offset detection, QE sensor curves, calibration library, and Bortle sky brightness settings."
                 },
-                ml: {
-                    title: "ML Analytics",
-                    description: "40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor."
+                statistics: {
+                    title: "Statistics & Reporting",
+                    description: "Session statistics, exposure totals by target and filter, equipment performance baselines, and quality distribution analysis."
                 },
                 planning: {
                     title: "Session Planner V2",
                     description: "Equipment-aware target recommendations based on your optics, location, season, and sky conditions. 5-state project pipeline with Smart Plan scoring and moon analysis."
                 },
+                catalogue: {
+                    title: "Catalogue Completion",
+                    description: "Track progress across 26+ astronomical catalogues including Messier, NGC, IC, Caldwell, and Sharpless with color-coded visual grids."
+                },
+                autopilot: {
+                    title: "Autopilot Pipeline",
+                    description: "One-click automated workflow: scan folders, detect equipment, create calibration sets, run quality analysis, and ML analytics in a single pipeline."
+                },
                 integration: {
-                    title: "AstroBin & PixInsight",
+                    title: "PixInsight & AstroBin",
                     description: "AstroBin gallery sync with published badges and acquisition push. PixInsight AutoIntegrate export with combination mode selection."
                 },
                 celestial: {
                     title: "Sky Atlas & Celestial Map",
                     description: "Interactive sky atlas with FOV overlays and mosaic positioning, plus a celestial map showing your imaging coverage across the sky."
+                },
+                quality: {
+                    title: "Quality Analysis",
+                    description: "32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations."
+                },
+                ml: {
+                    title: "ML Analytics",
+                    description: "40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor."
+                },
+                aiinsights: {
+                    title: "AI Imaging Advisor",
+                    description: "AI-generated recommendations for frame selection, stacking strategies, and equipment optimization. Powered by GPT-4o or Claude."
                 }
             }
         },
@@ -413,31 +433,51 @@ const translations = {
             items: {
                 organization: {
                     title: "Intelligente Organisation",
-                    description: "7-stufige Scan-Pipeline extrahiert 93+ Felder aus FITS- und XISF-Headern. Unterstützt SeeStar Smart-Teleskope, NINA CSV-Integration und Stacked-Image-Erkennung."
+                    description: "7-stufige Scan-Pipeline extrahiert 93+ Felder aus FITS- und XISF-Headern. Unterst\u00fctzt SeeStar Smart-Teleskope, NINA CSV-Integration und Stacked-Image-Erkennung."
                 },
-                quality: {
-                    title: "Qualitätsanalyse",
-                    description: "32+ Qualitätsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting innerhalb von 1,5% PixInsight-Genauigkeit. 10 automatische Defektdetektoren erkennen Nebel, Nachführfehler, Gradienten und optische Aberrationen."
+                gallery: {
+                    title: "Galerie & Dateibrowser",
+                    description: "100.000+ Aufnahmen mit virtuellem Scrollen durchsuchen, 6-stufiger Drill-Down, intelligente Filter nach Qualit\u00e4t, Equipment und Mondphase."
                 },
                 equipment: {
                     title: "Equipment Manager",
                     description: "Auto-Erkennung aus FITS-Headern mit automatischer Filtererkennung, Gain/Offset-Erkennung, QE-Sensorkurven, Kalibrationsbibliothek und Bortle Himmelshelligkeit-Einstellungen."
                 },
-                ml: {
-                    title: "ML-Analytik",
-                    description: "40-Muster-Erkennung in 9 Kategorien, AutoIntegrate Kombinations-Empfehlung mit 11 Paletten und PixInsight-kompatibler Stacking-Advisor."
+                statistics: {
+                    title: "Statistiken & Berichte",
+                    description: "Session-Statistiken, Belichtungsstunden nach Ziel und Filter, Equipment-Leistungsbaselines und Qualit\u00e4tsverteilungsanalyse."
                 },
                 planning: {
                     title: "Session Planner V2",
                     description: "Equipment-bewusste Zielempfehlungen basierend auf Ihrer Optik, Standort, Jahreszeit und Himmelsbedingungen. 5-Stufen-Projekt-Pipeline mit Smart Plan Bewertung und Mondanalyse."
                 },
+                catalogue: {
+                    title: "Katalog-Fortschritt",
+                    description: "Fortschritt \u00fcber 26+ astronomische Kataloge verfolgen: Messier, NGC, IC, Caldwell und Sharpless mit farbcodierten visuellen Rastern."
+                },
+                autopilot: {
+                    title: "Autopilot-Pipeline",
+                    description: "Ein-Klick-Workflow: Ordner scannen, Equipment erkennen, Kalibrationssets erstellen, Qualit\u00e4tsanalyse und ML-Analytik in einer Pipeline."
+                },
                 integration: {
-                    title: "AstroBin & PixInsight",
-                    description: "AstroBin Galerie-Synchronisation mit Veröffentlichungs-Badges und Aufnahmedaten-Push. PixInsight AutoIntegrate Export mit Kombinationsmodus-Auswahl."
+                    title: "PixInsight & AstroBin",
+                    description: "AstroBin Galerie-Synchronisation mit Ver\u00f6ffentlichungs-Badges und Aufnahmedaten-Push. PixInsight AutoIntegrate Export mit Kombinationsmodus-Auswahl."
                 },
                 celestial: {
                     title: "Himmelsatlas & Sternkarte",
                     description: "Interaktiver Himmelsatlas mit FOV-Overlays und Mosaik-Positionierung, plus Sternkarte mit Ihrer Aufnahmeabdeckung am Himmel."
+                },
+                quality: {
+                    title: "Qualit\u00e4tsanalyse",
+                    description: "32+ Qualit\u00e4tsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting innerhalb von 1,5% PixInsight-Genauigkeit. 10 automatische Defektdetektoren erkennen Nebel, Nachf\u00fchrfehler, Gradienten und optische Aberrationen."
+                },
+                ml: {
+                    title: "ML-Analytik",
+                    description: "40-Muster-Erkennung in 9 Kategorien, AutoIntegrate Kombinations-Empfehlung mit 11 Paletten und PixInsight-kompatibler Stacking-Advisor."
+                },
+                aiinsights: {
+                    title: "KI-Aufnahmeberater",
+                    description: "KI-generierte Empfehlungen f\u00fcr Frame-Auswahl, Stacking-Strategien und Equipment-Optimierung. Angetrieben von GPT-4o oder Claude."
                 }
             }
         },
@@ -792,32 +832,52 @@ const translations = {
             },
             items: {
                 organization: {
-                    title: "Organización Inteligente",
-                    description: "Pipeline de escaneo de 7 etapas que extrae 93+ campos de cabeceras FITS y XISF. Compatible con telescopios inteligentes SeeStar, integración CSV de NINA y detección de imágenes apiladas."
+                    title: "Organizaci\u00f3n Inteligente",
+                    description: "Pipeline de escaneo de 7 etapas que extrae 93+ campos de cabeceras FITS y XISF. Compatible con telescopios inteligentes SeeStar, integraci\u00f3n CSV de NINA y detecci\u00f3n de im\u00e1genes apiladas."
                 },
-                quality: {
-                    title: "Análisis de Calidad",
-                    description: "32+ métricas de calidad por frame con ajuste PSF Moffat de 7 parámetros con precisión del 1,5% respecto a PixInsight. 10 detectores automáticos de defectos identifican niebla, trazos, gradientes y aberraciones ópticas."
+                gallery: {
+                    title: "Galer\u00eda y Explorador",
+                    description: "Explore 100.000+ frames con scroll virtual, navegaci\u00f3n de 6 niveles, filtros inteligentes por calidad, equipo y fase lunar."
                 },
                 equipment: {
                     title: "Gestor de Equipos",
-                    description: "Auto-detección desde cabeceras FITS con reconocimiento automático de filtros, detección de ganancia/offset, curvas QE, biblioteca de calibración y configuración de brillo Bortle."
+                    description: "Auto-detecci\u00f3n desde cabeceras FITS con reconocimiento autom\u00e1tico de filtros, detecci\u00f3n de ganancia/offset, curvas QE, biblioteca de calibraci\u00f3n y configuraci\u00f3n de brillo Bortle."
                 },
-                ml: {
-                    title: "Analítica ML",
-                    description: "Descubrimiento de 40 patrones en 9 categorías, Recomendador de Combinación AutoIntegrate con 11 paletas y asesor de apilado compatible con PixInsight."
+                statistics: {
+                    title: "Estad\u00edsticas e Informes",
+                    description: "Estad\u00edsticas de sesi\u00f3n, totales de exposici\u00f3n por objetivo y filtro, l\u00edneas base de rendimiento de equipo y an\u00e1lisis de distribuci\u00f3n de calidad."
                 },
                 planning: {
                     title: "Session Planner V2",
-                    description: "Recomendaciones de objetivos basadas en su equipo, ubicación, época del año y condiciones del cielo. Pipeline de proyectos de 5 estados con puntuación Smart Plan y análisis lunar."
+                    description: "Recomendaciones de objetivos basadas en su equipo, ubicaci\u00f3n, \u00e9poca del a\u00f1o y condiciones del cielo. Pipeline de proyectos de 5 estados con puntuaci\u00f3n Smart Plan y an\u00e1lisis lunar."
+                },
+                catalogue: {
+                    title: "Completitud de Cat\u00e1logos",
+                    description: "Seguimiento del progreso en 26+ cat\u00e1logos astron\u00f3micos: Messier, NGC, IC, Caldwell y Sharpless con cuadr\u00edculas visuales codificadas por colores."
+                },
+                autopilot: {
+                    title: "Pipeline Autopilot",
+                    description: "Flujo de trabajo automatizado: escanear carpetas, detectar equipo, crear sets de calibraci\u00f3n, ejecutar an\u00e1lisis de calidad y ML en una sola pipeline."
                 },
                 integration: {
-                    title: "AstroBin y PixInsight",
-                    description: "Sincronización de galería AstroBin con insignias de publicación y envío de datos de adquisición. Exportación a PixInsight AutoIntegrate con selección de modo de combinación."
+                    title: "PixInsight y AstroBin",
+                    description: "Sincronizaci\u00f3n de galer\u00eda AstroBin con insignias de publicaci\u00f3n y env\u00edo de datos de adquisici\u00f3n. Exportaci\u00f3n a PixInsight AutoIntegrate con selecci\u00f3n de modo de combinaci\u00f3n."
                 },
                 celestial: {
                     title: "Atlas Celeste y Mapa Estelar",
-                    description: "Atlas celeste interactivo con superposiciones FOV y posicionamiento de mosaicos, más un mapa estelar que muestra su cobertura de imagen en el cielo."
+                    description: "Atlas celeste interactivo con superposiciones FOV y posicionamiento de mosaicos, m\u00e1s un mapa estelar que muestra su cobertura de imagen en el cielo."
+                },
+                quality: {
+                    title: "An\u00e1lisis de Calidad",
+                    description: "32+ m\u00e9tricas de calidad por frame con ajuste PSF Moffat de 7 par\u00e1metros con precisi\u00f3n del 1,5% respecto a PixInsight. 10 detectores autom\u00e1ticos de defectos identifican niebla, trazos, gradientes y aberraciones \u00f3pticas."
+                },
+                ml: {
+                    title: "Anal\u00edtica ML",
+                    description: "Descubrimiento de 40 patrones en 9 categor\u00edas, Recomendador de Combinaci\u00f3n AutoIntegrate con 11 paletas y asesor de apilado compatible con PixInsight."
+                },
+                aiinsights: {
+                    title: "Asesor de Imagen IA",
+                    description: "Recomendaciones generadas por IA para selecci\u00f3n de frames, estrategias de apilado y optimizaci\u00f3n de equipo. Impulsado por GPT-4o o Claude."
                 }
             }
         },
