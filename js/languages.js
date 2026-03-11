@@ -255,6 +255,49 @@ const translations = {
             trialLicense: "Download Trial License"
         },
 
+        // Imaging Insights
+        insights: {
+            title: "Your Data Tells a Story",
+            subtitle: "AstroIndexer doesn't just store your images. It reveals what years of imaging data can teach you.",
+            cards: {
+                seeing: {
+                    value: '1.9"',
+                    label: "Best Seeing Achieved",
+                    detail: "Automatically tracked across all sessions"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Sessions Analyzed",
+                    detail: "Every night contributes to your performance profile"
+                },
+                setup: {
+                    value: "APO 94mm",
+                    label: "Most Productive Setup",
+                    detail: "Ranked by quality-weighted imaging hours"
+                },
+                efficiency: {
+                    value: "41%",
+                    label: "Clear Sky Efficiency",
+                    detail: "Usable frames vs. total captured"
+                },
+                months: {
+                    value: "May, Sep",
+                    label: "Best Imaging Months",
+                    detail: "Based on your historical quality scores"
+                },
+                frames: {
+                    value: "1,909",
+                    label: "Frames Indexed",
+                    detail: "Every frame builds a smarter analysis"
+                }
+            },
+            caption: "Example data from a real imaging setup. Your insights are generated from your own sessions.",
+            cta: {
+                text: "Discover what your astrophotography data reveals.",
+                button: "Try It Free"
+            }
+        },
+
         // Pricing Section
         pricing: {
             title: "Choose Your Plan",
@@ -588,6 +631,49 @@ const translations = {
             trialLicense: "Testlizenz herunterladen"
         },
 
+        // Imaging Insights
+        insights: {
+            title: "Ihre Daten erz\u00e4hlen eine Geschichte",
+            subtitle: "AstroIndexer speichert nicht nur Ihre Bilder. Es zeigt, was Jahre an Aufnahmedaten verraten.",
+            cards: {
+                seeing: {
+                    value: '1,9"',
+                    label: "Bestes Seeing",
+                    detail: "Automatisch \u00fcber alle Sessions erfasst"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Sessions analysiert",
+                    detail: "Jede Nacht tr\u00e4gt zu Ihrem Leistungsprofil bei"
+                },
+                setup: {
+                    value: "APO 94mm",
+                    label: "Produktivstes Setup",
+                    detail: "Nach qualit\u00e4tsgewichteten Aufnahmestunden"
+                },
+                efficiency: {
+                    value: "41%",
+                    label: "Klarer-Himmel-Effizienz",
+                    detail: "Nutzbare Frames vs. Gesamtaufnahmen"
+                },
+                months: {
+                    value: "Mai, Sep",
+                    label: "Beste Aufnahmemonate",
+                    detail: "Basierend auf historischen Qualit\u00e4tswerten"
+                },
+                frames: {
+                    value: "1.909",
+                    label: "Frames indexiert",
+                    detail: "Jedes Frame verbessert die Analyse"
+                }
+            },
+            caption: "Beispieldaten eines realen Aufnahme-Setups. Ihre Insights werden aus Ihren eigenen Sessions generiert.",
+            cta: {
+                text: "Entdecken Sie, was Ihre Astrofotografie-Daten verraten.",
+                button: "Kostenlos testen"
+            }
+        },
+
         // Pricing Section
         pricing: {
             title: "W\u00e4hlen Sie Ihren Plan",
@@ -919,6 +1005,49 @@ const translations = {
             },
             note: "Prueba gratuita de 30 días con acceso completo. Sin necesidad de cuenta.",
             trialLicense: "Descargar Licencia de Prueba"
+        },
+
+        // Imaging Insights
+        insights: {
+            title: "Tus Datos Cuentan una Historia",
+            subtitle: "AstroIndexer no solo almacena tus im\u00e1genes. Revela lo que a\u00f1os de datos de imagen pueden ense\u00f1arte.",
+            cards: {
+                seeing: {
+                    value: '1,9"',
+                    label: "Mejor Seeing Conseguido",
+                    detail: "Rastreado autom\u00e1ticamente en todas las sesiones"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Sesiones Analizadas",
+                    detail: "Cada noche contribuye a tu perfil de rendimiento"
+                },
+                setup: {
+                    value: "APO 94mm",
+                    label: "Setup M\u00e1s Productivo",
+                    detail: "Clasificado por horas de imagen ponderadas por calidad"
+                },
+                efficiency: {
+                    value: "41%",
+                    label: "Eficiencia de Cielo Despejado",
+                    detail: "Frames utilizables vs. total capturado"
+                },
+                months: {
+                    value: "May, Sep",
+                    label: "Mejores Meses de Imagen",
+                    detail: "Basado en tus puntuaciones hist\u00f3ricas de calidad"
+                },
+                frames: {
+                    value: "1.909",
+                    label: "Frames Indexados",
+                    detail: "Cada frame mejora el an\u00e1lisis"
+                }
+            },
+            caption: "Datos de ejemplo de una configuraci\u00f3n real. Tus insights se generan a partir de tus propias sesiones.",
+            cta: {
+                text: "Descubre lo que revelan tus datos de astrofotograf\u00eda.",
+                button: "Probar Gratis"
+            }
         },
 
         // Pricing Section
