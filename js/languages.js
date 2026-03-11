@@ -20,7 +20,8 @@ const translations = {
             cta: {
                 download: "Download Free",
                 learnMore: "Learn More"
-            }
+            },
+            priceTeaser: "One-time purchase from €49 · Free 30-day trial"
         },
 
         // Features Section
@@ -503,7 +504,8 @@ const translations = {
             cta: {
                 download: "Kostenlos herunterladen",
                 learnMore: "Mehr erfahren"
-            }
+            },
+            priceTeaser: "Einmaliger Kauf ab €49 · 30 Tage kostenlos testen"
         },
 
         // Features Section
@@ -985,7 +987,8 @@ const translations = {
             cta: {
                 download: "Descarga Gratuita",
                 learnMore: "Más Información"
-            }
+            },
+            priceTeaser: "Compra única desde €49 · Prueba gratuita de 30 días"
         },
 
         // Features Section

@@ -249,6 +249,13 @@ body {
     opacity: 0.7;
 }
 
+.hero-price-teaser {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--mut);
+    letter-spacing: 0.3px;
+}
+
 /* ─── Landing Splash — immersive full-viewport entry ── */
 .landing-splash {
     position: relative;
