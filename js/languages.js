@@ -277,10 +277,11 @@ const translations = {
                 duration: "one-time",
                 features: [
                     "Unlimited images",
-                    "All features included",
-                    "Priority support",
-                    "Lifetime updates",
-                    "Multi-computer license"
+                    "All core features",
+                    "Equipment database",
+                    "Session statistics & planning",
+                    "Multi-computer license",
+                    "Lifetime updates"
                 ],
                 cta: "Buy Now"
             },
@@ -290,13 +291,12 @@ const translations = {
                 duration: "one-time",
                 features: [
                     "Everything in Standard",
-                    "Commercial use",
-                    "Advanced ML features",
-                    "Custom equipment profiles",
-                    "API access",
-                    "Premium support"
+                    "Advanced Quality Analysis",
+                    "Machine Learning Analytics",
+                    "Photometry Tools",
+                    "Custom equipment profiles"
                 ],
-                cta: "Contact Sales"
+                cta: "Buy Now"
             }
         },
 
@@ -610,10 +610,11 @@ const translations = {
                 duration: "einmalig",
                 features: [
                     "Unbegrenzte Bilder",
-                    "Alle Funktionen enthalten",
-                    "Prioritäts-Support",
-                    "Lebenslange Updates",
-                    "Mehrcomputer-Lizenz"
+                    "Alle Kernfunktionen",
+                    "Equipment-Datenbank",
+                    "Session-Statistiken & Planung",
+                    "Mehrcomputer-Lizenz",
+                    "Lebenslange Updates"
                 ],
                 cta: "Jetzt kaufen"
             },
@@ -623,13 +624,12 @@ const translations = {
                 duration: "einmalig",
                 features: [
                     "Alles aus Standard",
-                    "Kommerzielle Nutzung",
-                    "Erweiterte ML-Funktionen",
-                    "Benutzerdefinierte Equipment-Profile",
-                    "API-Zugang",
-                    "Premium-Support"
+                    "Erweiterte Qualitätsanalyse",
+                    "Machine-Learning-Analytik",
+                    "Photometrie-Tools",
+                    "Benutzerdefinierte Equipment-Profile"
                 ],
-                cta: "Vertrieb kontaktieren"
+                cta: "Jetzt kaufen"
             }
         },
 
@@ -943,10 +943,11 @@ const translations = {
                 duration: "pago único",
                 features: [
                     "Imágenes ilimitadas",
-                    "Todas las funciones incluidas",
-                    "Soporte prioritario",
-                    "Actualizaciones de por vida",
-                    "Licencia multi-ordenador"
+                    "Todas las funciones principales",
+                    "Base de datos de equipos",
+                    "Estadísticas y planificación",
+                    "Licencia multi-ordenador",
+                    "Actualizaciones de por vida"
                 ],
                 cta: "Comprar Ahora"
             },
@@ -956,13 +957,12 @@ const translations = {
                 duration: "pago único",
                 features: [
                     "Todo lo de Estándar",
-                    "Uso comercial",
-                    "Funciones ML avanzadas",
-                    "Perfiles de equipo personalizados",
-                    "Acceso API",
-                    "Soporte premium"
+                    "Análisis de calidad avanzado",
+                    "Análisis de Machine Learning",
+                    "Herramientas de fotometría",
+                    "Perfiles de equipo personalizados"
                 ],
-                cta: "Contactar Ventas"
+                cta: "Comprar Ahora"
             }
         },
 

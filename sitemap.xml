@@ -63,19 +63,43 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- Privacy Policy (future) -->
+    <!-- Impressum -->
     <url>
-        <loc>https://astroindexer.com/privacy</loc>
-        <lastmod>2024-01-16</lastmod>
+        <loc>https://astroindexer.com/impressum.html</loc>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
     </url>
 
-    <!-- Terms of Service (future) -->
+    <!-- Datenschutz -->
     <url>
-        <loc>https://astroindexer.com/terms</loc>
-        <lastmod>2024-01-16</lastmod>
+        <loc>https://astroindexer.com/datenschutz.html</loc>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- AGB -->
+    <url>
+        <loc>https://astroindexer.com/agb.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- EULA -->
+    <url>
+        <loc>https://astroindexer.com/eula.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- Widerruf -->
+    <url>
+        <loc>https://astroindexer.com/widerruf.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
     </url>
 </urlset>
