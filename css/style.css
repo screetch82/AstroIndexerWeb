@@ -823,6 +823,7 @@ body.on-landing .language-switcher {
 
 .insight-card {
     background: var(--card-bg);
+    background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 32px 28px;
@@ -830,6 +831,7 @@ body.on-landing .language-switcher {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .insight-card::before {
@@ -892,6 +894,45 @@ body.on-landing .language-switcher {
     font-size: 18px;
     color: var(--text-secondary);
     margin-bottom: 16px;
+}
+
+/* ─── Feature Card Tier Badges ────────────── */
+.feature-card {
+    position: relative;
+}
+
+.tier-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    line-height: 1.4;
+}
+
+.tier-badge.standard {
+    background: rgba(73, 198, 191, 0.12);
+    color: var(--teal);
+    border: 1px solid rgba(73, 198, 191, 0.25);
+}
+
+.tier-badge.pro {
+    background: rgba(240, 180, 41, 0.12);
+    color: var(--gold);
+    border: 1px solid rgba(240, 180, 41, 0.25);
+}
+
+.feature-card.pro-feature {
+    cursor: pointer;
+}
+
+.feature-card.pro-feature:hover {
+    border-color: rgba(240, 180, 41, 0.3);
+    box-shadow: 0 16px 40px rgba(240, 180, 41, 0.08);
 }
 
 @media (max-width: 768px) {

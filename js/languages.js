@@ -26,6 +26,10 @@ const translations = {
         features: {
             title: "Powerful Features for Astrophotographers",
             subtitle: "Everything you need to manage your astronomical imaging data",
+            badge: {
+                standard: "Standard",
+                pro: "Pro"
+            },
             items: {
                 organization: {
                     title: "Smart Organization",
@@ -402,6 +406,10 @@ const translations = {
         features: {
             title: "Leistungsstarke Funktionen für Astrofotografen",
             subtitle: "Alles, was Sie zur Verwaltung Ihrer astronomischen Bilddaten benötigen",
+            badge: {
+                standard: "Standard",
+                pro: "Pro"
+            },
             items: {
                 organization: {
                     title: "Intelligente Organisation",
@@ -778,6 +786,10 @@ const translations = {
         features: {
             title: "Funciones Avanzadas para Astrofotógrafos",
             subtitle: "Todo lo que necesita para gestionar sus datos de imagen astronómica",
+            badge: {
+                standard: "Est\u00e1ndar",
+                pro: "Pro"
+            },
             items: {
                 organization: {
                     title: "Organización Inteligente",
