@@ -111,87 +111,46 @@
         </div>
     </section>
 
-    <!-- Imaging Insights Section -->
+    <!-- Imaging Insights Section (merged proof block) -->
     <section id="insights" class="insights-section">
         <div class="container">
             <h2 class="section-title" data-i18n="insights.title">Your Data Tells a Story</h2>
-            <p class="section-subtitle" data-i18n="insights.subtitle">AstroIndexer doesn't just store your images. It reveals what years of imaging data can teach you.</p>
+            <p class="section-subtitle" data-i18n="insights.subtitle">Real metrics from a single astrophotographer's dataset &mdash; extracted automatically from FITS headers and quality analysis.</p>
 
             <div class="insights-grid">
-                <div class="insight-card">
-                    <div class="insight-value" data-i18n="insights.cards.seeing.value">1.9&quot;</div>
-                    <div class="insight-label" data-i18n="insights.cards.seeing.label">Best Seeing Achieved</div>
-                    <div class="insight-detail" data-i18n="insights.cards.seeing.detail">Automatically tracked across all sessions</div>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-value" data-i18n="insights.cards.sessions.value">62</div>
-                    <div class="insight-label" data-i18n="insights.cards.sessions.label">Sessions Analyzed</div>
-                    <div class="insight-detail" data-i18n="insights.cards.sessions.detail">Every night contributes to your performance profile</div>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-value" data-i18n="insights.cards.setup.value">APO 94mm</div>
-                    <div class="insight-label" data-i18n="insights.cards.setup.label">Most Productive Setup</div>
-                    <div class="insight-detail" data-i18n="insights.cards.setup.detail">Ranked by quality-weighted imaging hours</div>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-value" data-i18n="insights.cards.efficiency.value">41%</div>
-                    <div class="insight-label" data-i18n="insights.cards.efficiency.label">Clear Sky Efficiency</div>
-                    <div class="insight-detail" data-i18n="insights.cards.efficiency.detail">Usable frames vs. total captured</div>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-value" data-i18n="insights.cards.months.value">May, Sep</div>
-                    <div class="insight-label" data-i18n="insights.cards.months.label">Best Imaging Months</div>
-                    <div class="insight-detail" data-i18n="insights.cards.months.detail">Based on your historical quality scores</div>
-                </div>
                 <div class="insight-card">
                     <div class="insight-value" data-i18n="insights.cards.frames.value">1,909</div>
                     <div class="insight-label" data-i18n="insights.cards.frames.label">Frames Indexed</div>
                     <div class="insight-detail" data-i18n="insights.cards.frames.detail">Every frame builds a smarter analysis</div>
                 </div>
-            </div>
-
-            <p class="insights-caption" data-i18n="insights.caption">Example data from a real imaging setup. Your insights are generated from your own sessions.</p>
-
-            <div class="insights-cta">
-                <p data-i18n="insights.cta.text">Discover what your astrophotography data reveals.</p>
-                <a href="#download" class="btn-primary" data-i18n="insights.cta.button">Try It Free</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Real Dataset Section -->
-    <section id="real-data" class="real-data-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="realdata.title">Real Imaging Dataset Analysis</h2>
-            <p class="section-subtitle" data-i18n="realdata.subtitle">Dataset analyzed with AstroIndexer</p>
-
-            <div class="real-data-grid">
-                <div class="real-data-card">
-                    <div class="real-data-value">1,909</div>
-                    <div class="real-data-label" data-i18n="realdata.frames.label">Frames Indexed</div>
+                <div class="insight-card">
+                    <div class="insight-value" data-i18n="insights.cards.sessions.value">62</div>
+                    <div class="insight-label" data-i18n="insights.cards.sessions.label">Imaging Nights</div>
+                    <div class="insight-detail" data-i18n="insights.cards.sessions.detail">Every night contributes to your performance profile</div>
                 </div>
-                <div class="real-data-card">
-                    <div class="real-data-value">60</div>
-                    <div class="real-data-label" data-i18n="realdata.nights.label">Imaging Nights</div>
+                <div class="insight-card">
+                    <div class="insight-value" data-i18n="insights.cards.seeing.value">1.9&quot;</div>
+                    <div class="insight-label" data-i18n="insights.cards.seeing.label">Best Seeing</div>
+                    <div class="insight-detail" data-i18n="insights.cards.seeing.detail">Automatically tracked across all sessions</div>
                 </div>
-                <div class="real-data-card">
-                    <div class="real-data-value">1.9&quot;</div>
-                    <div class="real-data-label" data-i18n="realdata.seeing.label">Best Seeing</div>
+                <div class="insight-card">
+                    <div class="insight-value" data-i18n="insights.cards.fwhm.value">2.7&quot;</div>
+                    <div class="insight-label" data-i18n="insights.cards.fwhm.label">Average FWHM</div>
+                    <div class="insight-detail" data-i18n="insights.cards.fwhm.detail">Measured via Moffat PSF fitting on every frame</div>
                 </div>
-                <div class="real-data-card">
-                    <div class="real-data-value">2.7&quot;</div>
-                    <div class="real-data-label" data-i18n="realdata.fwhm.label">Average FWHM</div>
+                <div class="insight-card highlight">
+                    <div class="insight-value" data-i18n="insights.cards.setup.value">APO 94mm + QHY268M</div>
+                    <div class="insight-label" data-i18n="insights.cards.setup.label">Most Productive Setup</div>
+                    <div class="insight-detail" data-i18n="insights.cards.setup.detail">Ranked by quality-weighted imaging hours</div>
                 </div>
-                <div class="real-data-card highlight">
-                    <div class="real-data-value" data-i18n="realdata.setup.value">APO 94mm + QHY268M</div>
-                    <div class="real-data-label" data-i18n="realdata.setup.label">Most Productive Setup</div>
-                </div>
-                <div class="real-data-card">
-                    <div class="real-data-value" data-i18n="realdata.months.value">May, Jun, Sep</div>
-                    <div class="real-data-label" data-i18n="realdata.months.label">Best Imaging Months</div>
+                <div class="insight-card">
+                    <div class="insight-value" data-i18n="insights.cards.months.value">May, Jun, Sep</div>
+                    <div class="insight-label" data-i18n="insights.cards.months.label">Best Imaging Months</div>
+                    <div class="insight-detail" data-i18n="insights.cards.months.detail">Based on your historical quality scores</div>
                 </div>
             </div>
-            <p class="real-data-caption" data-i18n="realdata.caption">All metrics extracted automatically from FITS headers and quality analysis. No manual data entry.</p>
+
+            <p class="insights-caption" data-i18n="insights.caption">Your insights are generated from your own sessions. No manual data entry required.</p>
         </div>
     </section>
 
@@ -219,6 +178,26 @@
                 <div class="equipment-perf-callout-text">
                     <strong data-i18n="equipperf.callout.title">Best Performing Combination</strong>
                     <p data-i18n="equipperf.callout.desc">AstroIndexer automatically identifies your best-performing telescope, camera, and filter combination based on quality-weighted analysis across all sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="section-title" data-i18n="why.title">Why AstroIndexer Exists</h2>
+                <p class="why-text" data-i18n="why.text1">Astrophotographers accumulate thousands of frames across years of imaging. But answering simple questions is surprisingly difficult:</p>
+                <ul class="why-questions">
+                    <li data-i18n="why.questions.0">Which nights had the best seeing?</li>
+                    <li data-i18n="why.questions.1">Which telescope and camera combination performs best?</li>
+                    <li data-i18n="why.questions.2">Which filters produce the highest quality data?</li>
+                    <li data-i18n="why.questions.3">How has my imaging improved over time?</li>
+                </ul>
+                <p class="why-text" data-i18n="why.text2">AstroIndexer analyzes your entire imaging history to reveal those answers automatically.</p>
+                <div class="why-builder">
+                    <p class="why-builder-text" data-i18n="why.builder">Built by an astrophotographer who wanted to understand years of imaging data instead of managing folders and spreadsheets.</p>
                 </div>
             </div>
         </div>
@@ -272,26 +251,6 @@
                 <div class="ecosystem-step highlight">
                     <div class="ecosystem-label" data-i18n="ecosystem.intelligence.label">Data Intelligence</div>
                     <div class="ecosystem-tools">AstroIndexer</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Section -->
-    <section class="why-section">
-        <div class="container">
-            <div class="why-content">
-                <h2 class="section-title" data-i18n="why.title">Why AstroIndexer Exists</h2>
-                <p class="why-text" data-i18n="why.text1">Astrophotographers accumulate thousands of frames across years of imaging. But answering simple questions is surprisingly difficult:</p>
-                <ul class="why-questions">
-                    <li data-i18n="why.questions.0">Which nights had the best seeing?</li>
-                    <li data-i18n="why.questions.1">Which telescope and camera combination performs best?</li>
-                    <li data-i18n="why.questions.2">Which filters produce the highest quality data?</li>
-                    <li data-i18n="why.questions.3">How has my imaging improved over time?</li>
-                </ul>
-                <p class="why-text" data-i18n="why.text2">AstroIndexer analyzes your entire imaging history to reveal those answers automatically.</p>
-                <div class="why-builder">
-                    <p class="why-builder-text" data-i18n="why.builder">Built by an astrophotographer who wanted to understand years of imaging data instead of managing folders and spreadsheets.</p>
                 </div>
             </div>
         </div>

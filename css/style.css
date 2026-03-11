@@ -863,6 +863,15 @@ body.on-landing .language-switcher {
     opacity: 1;
 }
 
+.insight-card.highlight {
+    border-color: rgba(73, 198, 191, 0.25);
+    background: linear-gradient(135deg, rgba(73, 198, 191, 0.06), rgba(73, 198, 191, 0.02));
+}
+
+.insight-card.highlight::before {
+    opacity: 1;
+}
+
 .insight-value {
     font-size: 36px;
     font-weight: 800;

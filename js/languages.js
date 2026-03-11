@@ -281,47 +281,43 @@ const translations = {
             trialLicense: "Download Trial License"
         },
 
-        // Imaging Insights
+        // Imaging Insights (merged proof block)
         insights: {
             title: "Your Data Tells a Story",
-            subtitle: "AstroIndexer doesn't just store your images. It reveals what years of imaging data can teach you.",
+            subtitle: "Real metrics from a single astrophotographer's dataset \u2014 extracted automatically from FITS headers and quality analysis.",
             cards: {
-                seeing: {
-                    value: '1.9"',
-                    label: "Best Seeing Achieved",
-                    detail: "Automatically tracked across all sessions"
-                },
-                sessions: {
-                    value: "62",
-                    label: "Sessions Analyzed",
-                    detail: "Every night contributes to your performance profile"
-                },
-                setup: {
-                    value: "APO 94mm",
-                    label: "Most Productive Setup",
-                    detail: "Ranked by quality-weighted imaging hours"
-                },
-                efficiency: {
-                    value: "41%",
-                    label: "Clear Sky Efficiency",
-                    detail: "Usable frames vs. total captured"
-                },
-                months: {
-                    value: "May, Sep",
-                    label: "Best Imaging Months",
-                    detail: "Based on your historical quality scores"
-                },
                 frames: {
                     value: "1,909",
                     label: "Frames Indexed",
                     detail: "Every frame builds a smarter analysis"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Imaging Nights",
+                    detail: "Every night contributes to your performance profile"
+                },
+                seeing: {
+                    value: '1.9"',
+                    label: "Best Seeing",
+                    detail: "Automatically tracked across all sessions"
+                },
+                fwhm: {
+                    value: '2.7"',
+                    label: "Average FWHM",
+                    detail: "Measured via Moffat PSF fitting on every frame"
+                },
+                setup: {
+                    value: "APO 94mm + QHY268M",
+                    label: "Most Productive Setup",
+                    detail: "Ranked by quality-weighted imaging hours"
+                },
+                months: {
+                    value: "May, Jun, Sep",
+                    label: "Best Imaging Months",
+                    detail: "Based on your historical quality scores"
                 }
             },
-            caption: "Example data from a real imaging setup. Your insights are generated from your own sessions.",
-            cta: {
-                text: "Discover what your astrophotography data reveals.",
-                button: "Try It Free"
-            }
+            caption: "Your insights are generated from your own sessions. No manual data entry required."
         },
 
         problem: {
@@ -765,47 +761,43 @@ const translations = {
             trialLicense: "Testlizenz herunterladen"
         },
 
-        // Imaging Insights
+        // Imaging Insights (merged proof block)
         insights: {
             title: "Ihre Daten erz\u00e4hlen eine Geschichte",
-            subtitle: "AstroIndexer speichert nicht nur Ihre Bilder. Es zeigt, was Jahre an Aufnahmedaten verraten.",
+            subtitle: "Echte Messwerte eines einzelnen Astrofotografen \u2014 automatisch aus FITS-Headern und Qualit\u00e4tsanalyse extrahiert.",
             cards: {
+                frames: {
+                    value: "1.909",
+                    label: "Frames indexiert",
+                    detail: "Jedes Frame verbessert die Analyse"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Aufnahmen\u00e4chte",
+                    detail: "Jede Nacht tr\u00e4gt zu Ihrem Leistungsprofil bei"
+                },
                 seeing: {
                     value: '1,9"',
                     label: "Bestes Seeing",
                     detail: "Automatisch \u00fcber alle Sessions erfasst"
                 },
-                sessions: {
-                    value: "62",
-                    label: "Sessions analysiert",
-                    detail: "Jede Nacht tr\u00e4gt zu Ihrem Leistungsprofil bei"
+                fwhm: {
+                    value: '2,7"',
+                    label: "Durchschnittlicher FWHM",
+                    detail: "Gemessen per Moffat-PSF-Fitting an jedem Frame"
                 },
                 setup: {
-                    value: "APO 94mm",
+                    value: "APO 94mm + QHY268M",
                     label: "Produktivstes Setup",
                     detail: "Nach qualit\u00e4tsgewichteten Aufnahmestunden"
                 },
-                efficiency: {
-                    value: "41%",
-                    label: "Klarer-Himmel-Effizienz",
-                    detail: "Nutzbare Frames vs. Gesamtaufnahmen"
-                },
                 months: {
-                    value: "Mai, Sep",
+                    value: "Mai, Jun, Sep",
                     label: "Beste Aufnahmemonate",
                     detail: "Basierend auf historischen Qualit\u00e4tswerten"
-                },
-                frames: {
-                    value: "1.909",
-                    label: "Frames indexiert",
-                    detail: "Jedes Frame verbessert die Analyse"
                 }
             },
-            caption: "Beispieldaten eines realen Aufnahme-Setups. Ihre Insights werden aus Ihren eigenen Sessions generiert.",
-            cta: {
-                text: "Entdecken Sie, was Ihre Astrofotografie-Daten verraten.",
-                button: "Kostenlos testen"
-            }
+            caption: "Ihre Insights werden aus Ihren eigenen Sessions generiert. Keine manuelle Dateneingabe n\u00f6tig."
         },
 
         problem: {
@@ -1248,47 +1240,43 @@ const translations = {
             trialLicense: "Descargar Licencia de Prueba"
         },
 
-        // Imaging Insights
+        // Imaging Insights (merged proof block)
         insights: {
             title: "Tus Datos Cuentan una Historia",
-            subtitle: "AstroIndexer no solo almacena tus im\u00e1genes. Revela lo que a\u00f1os de datos de imagen pueden ense\u00f1arte.",
+            subtitle: "M\u00e9tricas reales del conjunto de datos de un astr\u00f3foto \u2014 extra\u00eddas autom\u00e1ticamente de cabeceras FITS y an\u00e1lisis de calidad.",
             cards: {
-                seeing: {
-                    value: '1,9"',
-                    label: "Mejor Seeing Conseguido",
-                    detail: "Rastreado autom\u00e1ticamente en todas las sesiones"
-                },
-                sessions: {
-                    value: "62",
-                    label: "Sesiones Analizadas",
-                    detail: "Cada noche contribuye a tu perfil de rendimiento"
-                },
-                setup: {
-                    value: "APO 94mm",
-                    label: "Setup M\u00e1s Productivo",
-                    detail: "Clasificado por horas de imagen ponderadas por calidad"
-                },
-                efficiency: {
-                    value: "41%",
-                    label: "Eficiencia de Cielo Despejado",
-                    detail: "Frames utilizables vs. total capturado"
-                },
-                months: {
-                    value: "May, Sep",
-                    label: "Mejores Meses de Imagen",
-                    detail: "Basado en tus puntuaciones hist\u00f3ricas de calidad"
-                },
                 frames: {
                     value: "1.909",
                     label: "Frames Indexados",
                     detail: "Cada frame mejora el an\u00e1lisis"
+                },
+                sessions: {
+                    value: "62",
+                    label: "Noches de Imagen",
+                    detail: "Cada noche contribuye a tu perfil de rendimiento"
+                },
+                seeing: {
+                    value: '1,9"',
+                    label: "Mejor Seeing",
+                    detail: "Rastreado autom\u00e1ticamente en todas las sesiones"
+                },
+                fwhm: {
+                    value: '2,7"',
+                    label: "FWHM Promedio",
+                    detail: "Medido mediante ajuste Moffat PSF en cada frame"
+                },
+                setup: {
+                    value: "APO 94mm + QHY268M",
+                    label: "Setup M\u00e1s Productivo",
+                    detail: "Clasificado por horas de imagen ponderadas por calidad"
+                },
+                months: {
+                    value: "May, Jun, Sep",
+                    label: "Mejores Meses de Imagen",
+                    detail: "Basado en tus puntuaciones hist\u00f3ricas de calidad"
                 }
             },
-            caption: "Datos de ejemplo de una configuraci\u00f3n real. Tus insights se generan a partir de tus propias sesiones.",
-            cta: {
-                text: "Descubre lo que revelan tus datos de astrofotograf\u00eda.",
-                button: "Probar Gratis"
-            }
+            caption: "Tus insights se generan a partir de tus propias sesiones. Sin entrada manual de datos."
         },
 
         problem: {
