@@ -16,7 +16,7 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Understand Your Astrophotography",
             description: "AstroIndexer analyzes your imaging history to reveal equipment performance, seeing patterns, and what actually improves your results.",
-            platforms: "Available for",
+            platforms: "Runs on",
             cta: {
                 download: "Download Free",
                 learnMore: "Learn More"
@@ -337,7 +337,7 @@ const translations = {
             caption: "All metrics extracted automatically from FITS headers and quality analysis. No manual data entry."
         },
         equipperf: {
-            title: "Discover What Your Data Reveals",
+            title: "Compare Your Setups Across Years of Data",
             subtitle: "AstroIndexer analyzes thousands of frames across multiple sessions and equipment setups. Compare telescope performance, filter efficiency, and image quality metrics across your entire dataset.",
             comparison: {
                 label: "Equipment Performance Comparison",
@@ -381,6 +381,7 @@ const translations = {
             builder: "Built by an astrophotographer who wanted to understand years of imaging data instead of managing folders and spreadsheets."
         },
         trust: {
+            title: "Built for Privacy and Ownership",
             items: [
                 "One-time purchase \u2014 no subscription",
                 "Runs locally on your computer",
@@ -496,7 +497,7 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Verstehe deine Astrofotografie",
             description: "AstroIndexer analysiert deine Aufnahmehistorie und zeigt Equipment-Performance, Seeing-Muster und was deine Ergebnisse wirklich verbessert.",
-            platforms: "Verf\u00fcgbar f\u00fcr",
+            platforms: "L\u00e4uft auf",
             cta: {
                 download: "Kostenlos herunterladen",
                 learnMore: "Mehr erfahren"
@@ -816,7 +817,7 @@ const translations = {
             caption: "Alle Messwerte automatisch aus FITS-Headern und Qualit\u00e4tsanalyse extrahiert. Keine manuelle Dateneingabe."
         },
         equipperf: {
-            title: "Entdecke, was deine Daten verraten",
+            title: "Vergleiche deine Setups \u00fcber Jahre hinweg",
             subtitle: "AstroIndexer analysiert Tausende von Frames \u00fcber mehrere Sessions und Equipment-Setups. Vergleiche Teleskop-Performance, Filter-Effizienz und Bildqualit\u00e4t \u00fcber deinen gesamten Datensatz.",
             comparison: {
                 label: "Equipment-Performance-Vergleich",
@@ -860,6 +861,7 @@ const translations = {
             builder: "Entwickelt von einem Astrofotografen, der seine jahrelangen Aufnahmedaten verstehen wollte \u2014 statt Ordner und Tabellen zu verwalten."
         },
         trust: {
+            title: "Privatsph\u00e4re und Eigenverantwortung",
             items: [
                 "Einmaliger Kauf \u2014 kein Abo",
                 "L\u00e4uft lokal auf deinem Computer",
@@ -975,7 +977,7 @@ const translations = {
             title: "AstroIndexer",
             subtitle: "Comprende tu astrofotograf\u00eda",
             description: "AstroIndexer analiza tu historial de imagen para revelar rendimiento de equipo, patrones de seeing y lo que realmente mejora tus resultados.",
-            platforms: "Disponible para",
+            platforms: "Funciona en",
             cta: {
                 download: "Descarga Gratuita",
                 learnMore: "Más Información"
@@ -1295,7 +1297,7 @@ const translations = {
             caption: "Todas las m\u00e9tricas extra\u00eddas autom\u00e1ticamente de cabeceras FITS y an\u00e1lisis de calidad. Sin entrada manual de datos."
         },
         equipperf: {
-            title: "Descubre lo que tus datos revelan",
+            title: "Compara tus configuraciones a lo largo de a\u00f1os de datos",
             subtitle: "AstroIndexer analiza miles de frames a trav\u00e9s de m\u00faltiples sesiones y configuraciones de equipo. Compara rendimiento de telescopios, eficiencia de filtros y m\u00e9tricas de calidad de imagen en todo tu conjunto de datos.",
             comparison: {
                 label: "Comparaci\u00f3n de rendimiento de equipo",
@@ -1339,6 +1341,7 @@ const translations = {
             builder: "Creado por un astrof\u00f3tografo que quer\u00eda entender a\u00f1os de datos de imagen en lugar de gestionar carpetas y hojas de c\u00e1lculo."
         },
         trust: {
+            title: "Privacidad y propiedad garantizadas",
             items: [
                 "Compra \u00fanica \u2014 sin suscripci\u00f3n",
                 "Funciona localmente en tu ordenador",
