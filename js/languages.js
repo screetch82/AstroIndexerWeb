@@ -212,7 +212,7 @@ const translations = {
             subtitle: "40 Patterns Across 9 Categories -- Discover What Your Data Reveals",
             dashboard: {
                 title: "Imaging Intelligence Dashboard",
-                description: "40 machine learning patterns across seasonal, moon, equipment, focus, thermal, atmospheric, optical, and optimization categories. Every pattern includes confidence scores and actionable recommendations.",
+                description: "40 patterns across seasonal, moon, equipment, focus, thermal, atmospheric, optical, and optimization categories. Every pattern includes confidence scores and actionable recommendations.",
                 points: [
                     "40 patterns discovered from YOUR imaging history",
                     "Confidence-scored insights with specific actions",
@@ -450,7 +450,7 @@ const translations = {
                     "Unlimited images",
                     "All core features",
                     "Advanced Quality Analysis",
-                    "Machine Learning Analytics",
+                    "Imaging Intelligence",
                     "Photometry Tools",
                     "Custom equipment profiles",
                     "Multi-computer license",
@@ -715,7 +715,7 @@ const translations = {
             subtitle: "40 Muster in 9 Kategorien -- Entdecken Sie, was Ihre Daten verraten",
             dashboard: {
                 title: "Bild-Intelligenz Dashboard",
-                description: "40 Machine-Learning-Muster in den Kategorien Saisonalität, Mond, Equipment, Fokus, Temperatur, Atmosphäre, Optik und Optimierung. Jedes Muster enthält Konfidenzwerte und umsetzbare Empfehlungen.",
+                description: "40 Muster in den Kategorien Saisonalität, Mond, Equipment, Fokus, Temperatur, Atmosphäre, Optik und Optimierung. Jedes Muster enthält Konfidenzwerte und umsetzbare Empfehlungen.",
                 points: [
                     "40 Muster aus IHRER Aufnahmehistorie erkannt",
                     "Konfidenz-bewertete Erkenntnisse mit konkreten Maßnahmen",
@@ -952,7 +952,7 @@ const translations = {
                     "Unbegrenzte Bilder",
                     "Alle Kernfunktionen",
                     "Erweiterte Qualit\u00e4tsanalyse",
-                    "Machine-Learning-Analytik",
+                    "Bild-Intelligenz",
                     "Photometrie-Tools",
                     "Benutzerdefinierte Equipment-Profile",
                     "Mehrcomputer-Lizenz",
@@ -1217,7 +1217,7 @@ const translations = {
             subtitle: "40 Patrones en 9 Categorías -- Descubra lo que Revelan sus Datos",
             dashboard: {
                 title: "Panel de Inteligencia de Imagen",
-                description: "40 patrones de machine learning en categorías estacionales, lunares, de equipo, enfoque, térmicas, atmosféricas, ópticas y de optimización. Cada patrón incluye puntuaciones de confianza y recomendaciones accionables.",
+                description: "40 patrones en categorías estacionales, lunares, de equipo, enfoque, térmicas, atmosféricas, ópticas y de optimización. Cada patrón incluye puntuaciones de confianza y recomendaciones accionables.",
                 points: [
                     "40 patrones descubiertos de SU historial de imágenes",
                     "Insights con puntuación de confianza y acciones específicas",
@@ -1454,7 +1454,7 @@ const translations = {
                     "Im\u00e1genes ilimitadas",
                     "Todas las funciones principales",
                     "An\u00e1lisis de calidad avanzado",
-                    "An\u00e1lisis de Machine Learning",
+                    "Inteligencia de Imagen",
                     "Herramientas de fotometr\u00eda",
                     "Perfiles de equipo personalizados",
                     "Licencia multi-ordenador",
