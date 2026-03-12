@@ -59,7 +59,7 @@ const translations = {
                 },
                 autopilot: {
                     title: "Autopilot Pipeline",
-                    description: "One-click automated workflow: scan folders, detect equipment, create calibration sets, run quality analysis, and ML analytics in a single pipeline."
+                    description: "One-click automated workflow: scan folders, detect equipment, create calibration sets, run quality analysis, and Imaging Intelligence in a single pipeline."
                 },
                 integration: {
                     title: "PixInsight & AstroBin",
@@ -74,7 +74,7 @@ const translations = {
                     description: "32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations."
                 },
                 ml: {
-                    title: "ML Analytics",
+                    title: "Imaging Intelligence",
                     description: "40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor."
                 },
                 aiinsights: {
@@ -110,12 +110,12 @@ const translations = {
             },
             autopilot: {
                 title: "One-Click Autopilot Setup",
-                description: "Point AstroIndexer at your imaging folder and let Autopilot handle everything: scanning, equipment detection, tagging, calibration set creation, gain/offset setup, quality analysis, and ML analytics -- all in one automated pipeline.",
+                description: "Point AstroIndexer at your imaging folder and let Autopilot handle everything: scanning, equipment detection, tagging, calibration set creation, gain/offset setup, quality analysis, and Imaging Intelligence -- all in one automated pipeline.",
                 points: [
                     "Scans and indexes all FITS/XISF files automatically",
                     "Auto-detects equipment, creates calibration sets, populates gain/offset",
                     "Optional Quality Analysis (FWHM, HFR, star detection) in the same run",
-                    "Optional ML Analytics (pattern discovery, stacking recommendations)",
+                    "Optional Imaging Intelligence (pattern discovery, stacking recommendations)",
                     "Optional PixInsight Auto-Stack via AutoIntegrate"
                 ]
             },
@@ -204,12 +204,12 @@ const translations = {
             }
         },
 
-        // ML Analytics Section
+        // Imaging Intelligence Section
         ml: {
-            title: "AI-Powered Analytics",
-            subtitle: "40 ML Patterns Across 9 Categories -- Discover What Your Data Reveals",
+            title: "Imaging Intelligence",
+            subtitle: "40 Patterns Across 9 Categories -- Discover What Your Data Reveals",
             dashboard: {
-                title: "Pattern Discovery Dashboard",
+                title: "Imaging Intelligence Dashboard",
                 description: "40 machine learning patterns across seasonal, moon, equipment, focus, thermal, atmospheric, optical, and optimization categories. Every pattern includes confidence scores and actionable recommendations.",
                 points: [
                     "40 patterns discovered from YOUR imaging history",
@@ -403,7 +403,7 @@ const translations = {
                 "Point AstroIndexer at your imaging folders",
                 "Autopilot scans and indexes all frames",
                 "Quality analysis scores every image",
-                "ML analytics discovers hidden patterns",
+                "Imaging Intelligence discovers hidden patterns",
                 "Insights reveal your best setups and conditions"
             ]
         },
@@ -560,7 +560,7 @@ const translations = {
                 },
                 autopilot: {
                     title: "Autopilot-Pipeline",
-                    description: "Ein-Klick-Workflow: Ordner scannen, Equipment erkennen, Kalibrationssets erstellen, Qualit\u00e4tsanalyse und ML-Analytik in einer Pipeline."
+                    description: "Ein-Klick-Workflow: Ordner scannen, Equipment erkennen, Kalibrationssets erstellen, Qualit\u00e4tsanalyse und Bild-Intelligenz in einer Pipeline."
                 },
                 integration: {
                     title: "PixInsight & AstroBin",
@@ -575,7 +575,7 @@ const translations = {
                     description: "32+ Qualit\u00e4tsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting innerhalb von 1,5% PixInsight-Genauigkeit. 10 automatische Defektdetektoren erkennen Nebel, Nachf\u00fchrfehler, Gradienten und optische Aberrationen."
                 },
                 ml: {
-                    title: "ML-Analytik",
+                    title: "Bild-Intelligenz",
                     description: "40-Muster-Erkennung in 9 Kategorien, AutoIntegrate Kombinations-Empfehlung mit 11 Paletten und PixInsight-kompatibler Stacking-Advisor."
                 },
                 aiinsights: {
@@ -611,12 +611,12 @@ const translations = {
             },
             autopilot: {
                 title: "Ein-Klick Autopilot-Einrichtung",
-                description: "Richten Sie AstroIndexer auf Ihren Aufnahmeordner und lassen Sie den Autopilot alles erledigen: Scannen, Equipment-Erkennung, Tagging, Kalibrationsset-Erstellung, Gain/Offset-Setup, Qualitätsanalyse und ML-Analytik -- alles in einer automatisierten Pipeline.",
+                description: "Richten Sie AstroIndexer auf Ihren Aufnahmeordner und lassen Sie den Autopilot alles erledigen: Scannen, Equipment-Erkennung, Tagging, Kalibrationsset-Erstellung, Gain/Offset-Setup, Qualitätsanalyse und Bild-Intelligenz -- alles in einer automatisierten Pipeline.",
                 points: [
                     "Scannt und indexiert alle FITS/XISF-Dateien automatisch",
                     "Auto-Erkennung von Equipment, Erstellung von Kalibrationssets, Gain/Offset-Befüllung",
                     "Optionale Qualitätsanalyse (FWHM, HFR, Sternerkennung) im gleichen Durchlauf",
-                    "Optionale ML-Analytik (Mustererkennung, Stacking-Empfehlungen)",
+                    "Optionale Bild-Intelligenz (Mustererkennung, Stacking-Empfehlungen)",
                     "Optionales PixInsight Auto-Stacking via AutoIntegrate"
                 ]
             },
@@ -705,12 +705,12 @@ const translations = {
             }
         },
 
-        // ML Analytics Section
+        // Imaging Intelligence Section
         ml: {
-            title: "KI-gestützte Analytik",
-            subtitle: "40 ML-Muster in 9 Kategorien -- Entdecken Sie, was Ihre Daten verraten",
+            title: "Bild-Intelligenz",
+            subtitle: "40 Muster in 9 Kategorien -- Entdecken Sie, was Ihre Daten verraten",
             dashboard: {
-                title: "Muster-Erkennungs-Dashboard",
+                title: "Bild-Intelligenz Dashboard",
                 description: "40 Machine-Learning-Muster in den Kategorien Saisonalität, Mond, Equipment, Fokus, Temperatur, Atmosphäre, Optik und Optimierung. Jedes Muster enthält Konfidenzwerte und umsetzbare Empfehlungen.",
                 points: [
                     "40 Muster aus IHRER Aufnahmehistorie erkannt",
@@ -903,7 +903,7 @@ const translations = {
                 "AstroIndexer auf deine Aufnahmeordner zeigen",
                 "Autopilot scannt und indexiert alle Frames",
                 "Qualit\u00e4tsanalyse bewertet jedes Bild",
-                "ML-Analytik entdeckt verborgene Muster",
+                "Bild-Intelligenz entdeckt verborgene Muster",
                 "Einblicke zeigen deine besten Setups und Bedingungen"
             ]
         },
@@ -1060,7 +1060,7 @@ const translations = {
                 },
                 autopilot: {
                     title: "Pipeline Autopilot",
-                    description: "Flujo de trabajo automatizado: escanear carpetas, detectar equipo, crear sets de calibraci\u00f3n, ejecutar an\u00e1lisis de calidad y ML en una sola pipeline."
+                    description: "Flujo de trabajo automatizado: escanear carpetas, detectar equipo, crear sets de calibraci\u00f3n, ejecutar an\u00e1lisis de calidad e Inteligencia de Imagen en una sola pipeline."
                 },
                 integration: {
                     title: "PixInsight y AstroBin",
@@ -1075,7 +1075,7 @@ const translations = {
                     description: "32+ m\u00e9tricas de calidad por frame con ajuste PSF Moffat de 7 par\u00e1metros con precisi\u00f3n del 1,5% respecto a PixInsight. 10 detectores autom\u00e1ticos de defectos identifican niebla, trazos, gradientes y aberraciones \u00f3pticas."
                 },
                 ml: {
-                    title: "Anal\u00edtica ML",
+                    title: "Inteligencia de Imagen",
                     description: "Descubrimiento de 40 patrones en 9 categor\u00edas, Recomendador de Combinaci\u00f3n AutoIntegrate con 11 paletas y asesor de apilado compatible con PixInsight."
                 },
                 aiinsights: {
@@ -1111,12 +1111,12 @@ const translations = {
             },
             autopilot: {
                 title: "Configuración Autopilot con Un Clic",
-                description: "Apunte AstroIndexer a su carpeta de imágenes y deje que Autopilot se encargue de todo: escaneo, detección de equipos, etiquetado, creación de sets de calibración, configuración de ganancia/offset, análisis de calidad y analítica ML -- todo en un pipeline automatizado.",
+                description: "Apunte AstroIndexer a su carpeta de imágenes y deje que Autopilot se encargue de todo: escaneo, detección de equipos, etiquetado, creación de sets de calibración, configuración de ganancia/offset, análisis de calidad e Inteligencia de Imagen -- todo en un pipeline automatizado.",
                 points: [
                     "Escanea e indexa todos los archivos FITS/XISF automáticamente",
                     "Auto-detección de equipos, creación de sets de calibración, configuración de ganancia/offset",
                     "Análisis de Calidad opcional (FWHM, HFR, detección de estrellas) en la misma ejecución",
-                    "Analítica ML opcional (descubrimiento de patrones, recomendaciones de apilado)",
+                    "Inteligencia de Imagen opcional (descubrimiento de patrones, recomendaciones de apilado)",
                     "Auto-apilado PixInsight opcional vía AutoIntegrate"
                 ]
             },
@@ -1205,12 +1205,12 @@ const translations = {
             }
         },
 
-        // ML Analytics Section
+        // Imaging Intelligence Section
         ml: {
-            title: "Analítica Impulsada por IA",
-            subtitle: "40 Patrones ML en 9 Categorías -- Descubra lo que Revelan sus Datos",
+            title: "Inteligencia de Imagen",
+            subtitle: "40 Patrones en 9 Categorías -- Descubra lo que Revelan sus Datos",
             dashboard: {
-                title: "Panel de Descubrimiento de Patrones",
+                title: "Panel de Inteligencia de Imagen",
                 description: "40 patrones de machine learning en categorías estacionales, lunares, de equipo, enfoque, térmicas, atmosféricas, ópticas y de optimización. Cada patrón incluye puntuaciones de confianza y recomendaciones accionables.",
                 points: [
                     "40 patrones descubiertos de SU historial de imágenes",
@@ -1403,7 +1403,7 @@ const translations = {
                 "Apunta AstroIndexer a tus carpetas de imagen",
                 "Autopilot escanea e indexa todos los frames",
                 "El an\u00e1lisis de calidad puntua cada imagen",
-                "La anal\u00edtica ML descubre patrones ocultos",
+                "La Inteligencia de Imagen descubre patrones ocultos",
                 "Los insights revelan tus mejores configuraciones y condiciones"
             ]
         },
