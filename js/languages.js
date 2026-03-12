@@ -7,6 +7,8 @@ const translations = {
             features: "Features",
             pricing: "Pricing",
             documentation: "Documentation",
+            faq: "FAQ",
+            changelog: "Changelog",
             support: "Support",
             download: "Download"
         },
@@ -508,6 +510,8 @@ const translations = {
             features: "Funktionen",
             pricing: "Preise",
             documentation: "Dokumentation",
+            faq: "FAQ",
+            changelog: "Änderungsprotokoll",
             support: "Support",
             download: "Herunterladen"
         },
@@ -1008,6 +1012,8 @@ const translations = {
             features: "Funciones",
             pricing: "Precios",
             documentation: "Documentación",
+            faq: "FAQ",
+            changelog: "Registro de cambios",
             support: "Soporte",
             download: "Descargar"
         },

@@ -197,9 +197,17 @@ body {
     z-index: 1;
 }
 
-/* Hero H1 is hidden — the brand name already lives in the navbar */
-.hero-content h1 {
-    display: none;
+/* Screen-reader only utility — keeps element in a11y tree + SEO index */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .hero-content h2 {
@@ -775,9 +783,92 @@ body.on-landing .language-switcher {
     }
 }
 
+/* ─── Mobile Menu Toggle ─────────────────── */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--txt);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ─── Pro Feature Links (no underline/color override) */
+.pro-feature-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ─── Pricing Note ───────────────────────── */
+.pricing-note {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-top: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-note a {
+    color: var(--teal);
+}
+
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
     .nav-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(11, 15, 20, 0.96);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--line);
+        gap: 4px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        list-style: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px 0;
     }
 
     .hero {

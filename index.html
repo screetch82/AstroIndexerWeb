@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Paddle.js Checkout SDK -->
-    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
 </head>
 <body>
     <!-- Language Switcher -->
@@ -32,16 +32,16 @@
             <span class="lang-code" id="currentLang">EN</span>
         </button>
         <div class="language-dropdown" id="languageDropdown">
-            <a href="#" class="language-option" data-lang="en">
+            <a href="#" class="language-option" data-lang="en" aria-label="English">
                 <span class="flag">🇬🇧</span>
                 <span>English</span>
             </a>
-            <a href="#" class="language-option" data-lang="de">
+            <a href="#" class="language-option" data-lang="de" aria-label="Deutsch">
                 <span class="flag">🇩🇪</span>
                 <span>Deutsch</span>
             </a>
-            <a href="#" class="language-option" data-lang="es">
-                <span class="flag">&#127466;&#127480;</span>
+            <a href="#" class="language-option" data-lang="es" aria-label="Español">
+                <span class="flag">🇪🇸</span>
                 <span>Espanol</span>
             </a>
         </div>
@@ -53,13 +53,16 @@
                 <img src="images/logo.png" alt="AstroIndexer" class="logo">
                 <span data-i18n="hero.title">AstroIndexer</span>
             </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="#insights" data-i18n="nav.whatis">What Is AstroIndexer?</a></li>
                 <li><a href="#features" data-i18n="nav.features">Features</a></li>
                 <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
                 <li><a href="docs.html" data-i18n="nav.documentation">Documentation</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                <li><a href="changelog.html" data-i18n="nav.changelog">Changelog</a></li>
                 <li><a href="#download" class="btn-primary" data-i18n="nav.download">Download</a></li>
             </ul>
             <!-- Language switcher will be inserted here by JavaScript -->
@@ -78,7 +81,7 @@
     <section id="about" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 data-i18n="hero.title">AstroIndexer</h1>
+                <h1 class="sr-only" data-i18n="hero.title">AstroIndexer</h1>
                 <h2 data-i18n="hero.subtitle">Understand Your Astrophotography</h2>
                 <p data-i18n="hero.description">AstroIndexer analyzes your imaging history to reveal equipment performance, seeing patterns, and what actually improves your results.</p>
                 <div class="hero-buttons">
@@ -94,7 +97,7 @@
 
             </div>
             <div class="hero-image">
-                <img src="screenshots/01_Gallery.png" alt="AstroIndexer Gallery View">
+                <img src="screenshots/01_Gallery.png" alt="AstroIndexer Gallery View" loading="lazy">
             </div>
         </div>
     </section>
@@ -162,12 +165,12 @@
                 <div class="equipment-perf-item">
                     <div class="equipment-perf-label" data-i18n="equipperf.comparison.label">Equipment Performance Comparison</div>
                     <p class="equipment-perf-desc" data-i18n="equipperf.comparison.desc">Compare FWHM, ellipticity, SNR, star counts, tracking RMS, and moon phase impact across every setup you own.</p>
-                    <img src="screenshots/equipment_insights.png" alt="Equipment Performance Comparison" class="equipment-perf-img">
+                    <img src="screenshots/equipment_insights.png" alt="Equipment Performance Comparison" class="equipment-perf-img" loading="lazy">
                 </div>
                 <div class="equipment-perf-item">
                     <div class="equipment-perf-label" data-i18n="equipperf.baseline.label">Baseline Metrics Comparison</div>
                     <p class="equipment-perf-desc" data-i18n="equipperf.baseline.desc">See statistical baselines and variation ranges for each telescope and camera combination to understand what consistently performs best.</p>
-                    <img src="screenshots/equipment_profiles.png" alt="Equipment Baseline Metrics" class="equipment-perf-img">
+                    <img src="screenshots/equipment_profiles.png" alt="Equipment Baseline Metrics" class="equipment-perf-img" loading="lazy">
                 </div>
             </div>
 
@@ -398,7 +401,7 @@
                 </div>
 
                 <!-- Row 4: Pro analysis -->
-                <a href="#insights" style="text-decoration:none;color:inherit">
+                <a href="#insights" class="pro-feature-link">
                 <div class="feature-card pro-feature">
                     <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
                     <div class="feature-icon">📊</div>
@@ -407,7 +410,7 @@
                 </div>
                 </a>
 
-                <a href="#insights" style="text-decoration:none;color:inherit">
+                <a href="#insights" class="pro-feature-link">
                 <div class="feature-card pro-feature">
                     <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
                     <div class="feature-icon">🤖</div>
@@ -416,7 +419,7 @@
                 </div>
                 </a>
 
-                <a href="#insights" style="text-decoration:none;color:inherit">
+                <a href="#insights" class="pro-feature-link">
                 <div class="feature-card pro-feature">
                     <span class="tier-badge pro" data-i18n="features.badge.pro">Pro</span>
                     <div class="feature-icon">⚖️</div>
@@ -446,7 +449,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/01_Gallery.png" alt="Gallery View Screenshot">
+                    <img src="screenshots/01_Gallery.png" alt="Gallery View Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -462,7 +465,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/02_Index_&_Overview.png" alt="Index Overview Screenshot">
+                    <img src="screenshots/02_Index_&_Overview.png" alt="Index Overview Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -480,7 +483,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/autopilot.png" alt="Autopilot Setup Screenshot">
+                    <img src="screenshots/autopilot.png" alt="Autopilot Setup Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -496,7 +499,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/06_Quality_Analysis.png" alt="Quality Analysis Screenshot">
+                    <img src="screenshots/06_Quality_Analysis.png" alt="Quality Analysis Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -514,7 +517,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/equipment_manager.png" alt="Equipment Statistics Screenshot">
+                    <img src="screenshots/equipment_manager.png" alt="Equipment Statistics Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -532,7 +535,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/session_planner_v2.png" alt="Session Planner Screenshot">
+                    <img src="screenshots/session_planner_v2.png" alt="Session Planner Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -549,7 +552,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/sky_atlas.png" alt="Sky Atlas Screenshot">
+                    <img src="screenshots/sky_atlas.png" alt="Sky Atlas Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -566,7 +569,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/celestial_map.png" alt="Celestial Map Screenshot">
+                    <img src="screenshots/celestial_map.png" alt="Celestial Map Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -584,7 +587,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/astrobin_sync.png" alt="AstroBin Integration Screenshot">
+                    <img src="screenshots/astrobin_sync.png" alt="AstroBin Integration Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -601,7 +604,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/stacking_advisor.png" alt="Stacking Advisor Screenshot">
+                    <img src="screenshots/stacking_advisor.png" alt="Stacking Advisor Screenshot" loading="lazy">
                 </div>
             </div>
 
@@ -617,7 +620,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/05_Catalogue_Completion.png" alt="Catalogue Completion Screenshot">
+                    <img src="screenshots/05_Catalogue_Completion.png" alt="Catalogue Completion Screenshot" loading="lazy">
                 </div>
             </div>
         </div>
@@ -641,7 +644,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/ml_analytics.png" alt="Imaging Intelligence Dashboard">
+                    <img src="screenshots/ml_analytics.png" alt="Imaging Intelligence Dashboard" loading="lazy">
                 </div>
             </div>
 
@@ -657,7 +660,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/ml_sensor_heatmap.png" alt="Sensor Performance Heatmap">
+                    <img src="screenshots/ml_sensor_heatmap.png" alt="Sensor Performance Heatmap" loading="lazy">
                 </div>
             </div>
 
@@ -673,7 +676,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/ml_patterns.png" alt="Environmental and Optical Patterns">
+                    <img src="screenshots/ml_patterns.png" alt="Environmental and Optical Patterns" loading="lazy">
                 </div>
             </div>
 
@@ -689,7 +692,7 @@
                     </ul>
                 </div>
                 <div class="feature-screenshot">
-                    <img src="screenshots/ml_insights.png" alt="AI-Generated Insights">
+                    <img src="screenshots/ml_insights.png" alt="AI-Generated Insights" loading="lazy">
                 </div>
             </div>
 
@@ -813,8 +816,8 @@
                     <button class="btn-primary" onclick="openPaddleCheckout()" data-i18n="pricing.professional.cta">Buy Now</button>
                 </div>
             </div>
-            <p class="pricing-note" style="text-align:center;color:var(--text-secondary);font-size:13px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto;">
-    By purchasing, you agree to our <a href="agb.html" style="color:var(--teal)">Terms &amp; Conditions</a> and <a href="eula.html" style="color:var(--teal)">License Agreement</a>. You consent to immediate delivery; your <a href="widerruf.html" style="color:var(--teal)">right of withdrawal</a> expires once the download begins.
+            <p class="pricing-note">
+    By purchasing, you agree to our <a href="agb.html">Terms &amp; Conditions</a> and <a href="eula.html">License Agreement</a>. You consent to immediate delivery; your <a href="widerruf.html">right of withdrawal</a> expires once the download begins.
 </p>
         </div>
     </section>
@@ -828,7 +831,7 @@
                     <ul>
                         <li><a href="#features" data-i18n="footer.product.links.features">Features</a></li>
                         <li><a href="#pricing" data-i18n="footer.product.links.pricing">Pricing</a></li>
-                        <li><a href="#changelog" data-i18n="footer.product.links.changelog">Changelog</a></li>
+                        <li><a href="changelog.html" data-i18n="footer.product.links.changelog">Changelog</a></li>
                         <li><a href="#roadmap" data-i18n="footer.product.links.roadmap">Roadmap</a></li>
                     </ul>
                 </div>
@@ -838,7 +841,6 @@
                     <ul>
                         <li><a href="docs.html" data-i18n="footer.support.links.documentation">Documentation</a></li>
                         <li><a href="faq.html" data-i18n="footer.support.links.faq">FAQ</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
                         <li><a href="mailto:support@astroindexer.com" data-i18n="footer.support.links.contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -912,6 +914,7 @@
 
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
         }
