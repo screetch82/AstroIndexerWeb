@@ -427,7 +427,7 @@ const translations = {
             },
             personal: {
                 title: "Standard",
-                price: "€49",
+                price: "\u20ac49",
                 duration: "one-time",
                 features: [
                     "Unlimited images",
@@ -437,18 +437,22 @@ const translations = {
                     "Multi-computer license",
                     "Lifetime updates"
                 ],
-                cta: "Buy Now"
+                cta: "Coming Soon"
             },
             professional: {
                 title: "Professional",
-                price: "€89",
+                price: "\u20ac89",
                 duration: "one-time",
+                badge: "Best Value",
                 features: [
-                    "Everything in Standard",
+                    "Unlimited images",
+                    "All core features",
                     "Advanced Quality Analysis",
                     "Machine Learning Analytics",
                     "Photometry Tools",
-                    "Custom equipment profiles"
+                    "Custom equipment profiles",
+                    "Multi-computer license",
+                    "Lifetime updates"
                 ],
                 cta: "Buy Now"
             }
@@ -483,7 +487,17 @@ const translations = {
                     terms: "Terms of Service"
                 }
             },
-            copyright: "© 2025 AstroIndexer. All rights reserved."
+            legal: {
+                title: "Legal",
+                links: {
+                    impressum: "Legal Notice",
+                    privacy: "Privacy Policy",
+                    terms: "Terms & Conditions",
+                    eula: "License Agreement (EULA)",
+                    withdrawal: "Right of Withdrawal"
+                }
+            },
+            copyright: "\u00a9 2025 AstroIndexer. All rights reserved."
         }
     },
 
@@ -913,7 +927,7 @@ const translations = {
             },
             personal: {
                 title: "Standard",
-                price: "49€",
+                price: "49\u20ac",
                 duration: "einmalig",
                 features: [
                     "Unbegrenzte Bilder",
@@ -923,18 +937,22 @@ const translations = {
                     "Mehrcomputer-Lizenz",
                     "Lebenslange Updates"
                 ],
-                cta: "Jetzt kaufen"
+                cta: "Bald verf\u00fcgbar"
             },
             professional: {
                 title: "Professionell",
-                price: "89€",
+                price: "89\u20ac",
                 duration: "einmalig",
+                badge: "Bestes Angebot",
                 features: [
-                    "Alles aus Standard",
-                    "Erweiterte Qualitätsanalyse",
+                    "Unbegrenzte Bilder",
+                    "Alle Kernfunktionen",
+                    "Erweiterte Qualit\u00e4tsanalyse",
                     "Machine-Learning-Analytik",
                     "Photometrie-Tools",
-                    "Benutzerdefinierte Equipment-Profile"
+                    "Benutzerdefinierte Equipment-Profile",
+                    "Mehrcomputer-Lizenz",
+                    "Lebenslange Updates"
                 ],
                 cta: "Jetzt kaufen"
             }
@@ -963,13 +981,23 @@ const translations = {
             company: {
                 title: "Unternehmen",
                 links: {
-                    about: "Über uns",
+                    about: "\u00dcber uns",
                     blog: "Blog",
                     privacy: "Datenschutz",
                     terms: "Nutzungsbedingungen"
                 }
             },
-            copyright: "© 2025 AstroIndexer. Alle Rechte vorbehalten."
+            legal: {
+                title: "Rechtliches",
+                links: {
+                    impressum: "Impressum",
+                    privacy: "Datenschutz",
+                    terms: "AGB",
+                    eula: "Lizenzvertrag (EULA)",
+                    withdrawal: "Widerruf"
+                }
+            },
+            copyright: "\u00a9 2025 AstroIndexer. Alle Rechte vorbehalten."
         }
     },
 
@@ -1398,29 +1426,33 @@ const translations = {
                 cta: "Iniciar Prueba Gratuita"
             },
             personal: {
-                title: "Estándar",
-                price: "49€",
-                duration: "pago único",
+                title: "Est\u00e1ndar",
+                price: "49\u20ac",
+                duration: "pago \u00fanico",
                 features: [
-                    "Imágenes ilimitadas",
+                    "Im\u00e1genes ilimitadas",
                     "Todas las funciones principales",
                     "Base de datos de equipos",
-                    "Estadísticas y planificación",
+                    "Estad\u00edsticas y planificaci\u00f3n",
                     "Licencia multi-ordenador",
                     "Actualizaciones de por vida"
                 ],
-                cta: "Comprar Ahora"
+                cta: "Pr\u00f3ximamente"
             },
             professional: {
                 title: "Profesional",
-                price: "89€",
-                duration: "pago único",
+                price: "89\u20ac",
+                duration: "pago \u00fanico",
+                badge: "Mejor Valor",
                 features: [
-                    "Todo lo de Estándar",
-                    "Análisis de calidad avanzado",
-                    "Análisis de Machine Learning",
-                    "Herramientas de fotometría",
-                    "Perfiles de equipo personalizados"
+                    "Im\u00e1genes ilimitadas",
+                    "Todas las funciones principales",
+                    "An\u00e1lisis de calidad avanzado",
+                    "An\u00e1lisis de Machine Learning",
+                    "Herramientas de fotometr\u00eda",
+                    "Perfiles de equipo personalizados",
+                    "Licencia multi-ordenador",
+                    "Actualizaciones de por vida"
                 ],
                 cta: "Comprar Ahora"
             }
@@ -1451,11 +1483,21 @@ const translations = {
                 links: {
                     about: "Acerca de",
                     blog: "Blog",
-                    privacy: "Política de Privacidad",
-                    terms: "Términos de Servicio"
+                    privacy: "Pol\u00edtica de Privacidad",
+                    terms: "T\u00e9rminos de Servicio"
                 }
             },
-            copyright: "© 2025 AstroIndexer. Todos los derechos reservados."
+            legal: {
+                title: "Legal",
+                links: {
+                    impressum: "Aviso Legal",
+                    privacy: "Pol\u00edtica de Privacidad",
+                    terms: "T\u00e9rminos y Condiciones",
+                    eula: "Acuerdo de Licencia (EULA)",
+                    withdrawal: "Derecho de Desistimiento"
+                }
+            },
+            copyright: "\u00a9 2025 AstroIndexer. Todos los derechos reservados."
         }
     }
 };
@@ -1558,6 +1600,20 @@ class LanguageManager {
                 }
             }
         });
+
+        // Toggle language content blocks (used on legal pages)
+        const langBlocks = document.querySelectorAll('[data-lang-content]');
+        if (langBlocks.length > 0) {
+            langBlocks.forEach(block => {
+                const blockLang = block.getAttribute('data-lang-content');
+                block.style.display = blockLang === this.currentLang ? '' : 'none';
+            });
+            // If no block matches current lang, show English as fallback
+            const visible = document.querySelector('[data-lang-content="' + this.currentLang + '"]');
+            if (!visible) {
+                document.querySelectorAll('[data-lang-content="en"]').forEach(b => b.style.display = '');
+            }
+        }
 
         // Update HTML lang attribute
         document.documentElement.lang = this.currentLang;

@@ -20,6 +20,9 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Paddle.js Checkout SDK -->
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
     <!-- Language Switcher -->
@@ -771,9 +774,8 @@
                     <a href="#download" class="btn-primary" data-i18n="pricing.trial.cta">Start Free Trial</a>
                 </div>
 
-                <!-- Standard License -->
-                <div class="pricing-card featured">
-                    <div class="badge">Most Popular</div>
+                <!-- Standard License (Coming Soon) -->
+                <div class="pricing-card">
                     <h3 data-i18n="pricing.personal.title">Standard</h3>
                     <div class="price">
                         <span class="currency" data-i18n="pricing.personal.price">&euro;49</span>
@@ -787,24 +789,28 @@
                         <li data-i18n="pricing.personal.features.4">Multi-computer license</li>
                         <li data-i18n="pricing.personal.features.5">Lifetime updates</li>
                     </ul>
-                    <a href="#purchase" class="btn-primary" data-i18n="pricing.personal.cta">Buy Now</a>
+                    <span class="btn-coming-soon" data-i18n="pricing.personal.cta">Coming Soon</span>
                 </div>
 
                 <!-- Professional License -->
-                <div class="pricing-card">
+                <div class="pricing-card featured">
+                    <div class="badge" data-i18n="pricing.professional.badge">Best Value</div>
                     <h3 data-i18n="pricing.professional.title">Professional</h3>
                     <div class="price">
                         <span class="currency" data-i18n="pricing.professional.price">&euro;89</span>
                         <span class="period" data-i18n="pricing.professional.duration">one-time</span>
                     </div>
                     <ul class="features-list">
-                        <li data-i18n="pricing.professional.features.0">Everything in Standard</li>
-                        <li data-i18n="pricing.professional.features.1">Advanced Quality Analysis</li>
-                        <li data-i18n="pricing.professional.features.2">Machine Learning Analytics</li>
-                        <li data-i18n="pricing.professional.features.3">Photometry Tools</li>
-                        <li data-i18n="pricing.professional.features.4">Custom equipment profiles</li>
+                        <li data-i18n="pricing.professional.features.0">Unlimited images</li>
+                        <li data-i18n="pricing.professional.features.1">All core features</li>
+                        <li data-i18n="pricing.professional.features.2">Advanced Quality Analysis</li>
+                        <li data-i18n="pricing.professional.features.3">Machine Learning Analytics</li>
+                        <li data-i18n="pricing.professional.features.4">Photometry Tools</li>
+                        <li data-i18n="pricing.professional.features.5">Custom equipment profiles</li>
+                        <li data-i18n="pricing.professional.features.6">Multi-computer license</li>
+                        <li data-i18n="pricing.professional.features.7">Lifetime updates</li>
                     </ul>
-                    <a href="#contact" class="btn-primary" data-i18n="pricing.professional.cta">Buy Now</a>
+                    <button class="btn-primary" onclick="openPaddleCheckout()" data-i18n="pricing.professional.cta">Buy Now</button>
                 </div>
             </div>
             <p class="pricing-note" style="text-align:center;color:var(--text-secondary);font-size:13px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto;">
@@ -838,13 +844,13 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
                     <ul>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
-                        <li><a href="agb.html">AGB</a></li>
-                        <li><a href="eula.html">Lizenzvertrag (EULA)</a></li>
-                        <li><a href="widerruf.html">Widerruf</a></li>
+                        <li><a href="impressum.html" data-i18n="footer.legal.links.impressum">Legal Notice</a></li>
+                        <li><a href="datenschutz.html" data-i18n="footer.legal.links.privacy">Privacy Policy</a></li>
+                        <li><a href="agb.html" data-i18n="footer.legal.links.terms">Terms &amp; Conditions</a></li>
+                        <li><a href="eula.html" data-i18n="footer.legal.links.eula">License Agreement (EULA)</a></li>
+                        <li><a href="widerruf.html" data-i18n="footer.legal.links.withdrawal">Right of Withdrawal</a></li>
                         <li><a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
                     </ul>
                 </div>
@@ -907,6 +913,26 @@
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+
+    <!-- Paddle Checkout -->
+    <script>
+        // Initialize Paddle — replace token with your live client-side token from Paddle Dashboard
+        // Dashboard: Settings > Authentication > Client-side token
+        Paddle.Initialize({
+            token: 'test_xxxxxxxxxxxxxxxxxxxxxxx',  // TODO: Replace with live token
+            // Uncomment the next line to use Paddle Sandbox during testing:
+            // environment: 'sandbox'
+        });
+
+        function openPaddleCheckout() {
+            Paddle.Checkout.open({
+                items: [{
+                    priceId: 'pri_01kkgk3me3dyy5qbyd1h38ct95',
+                    quantity: 1
+                }]
             });
         }
     </script>

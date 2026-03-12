@@ -130,6 +130,7 @@ body {
     text-decoration: none;
     font-weight: 650;
     font-size: 14px;
+    font-family: inherit;
     transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid rgba(73,198,191,0.45);
@@ -688,6 +689,19 @@ body.on-landing .language-switcher {
     left: 0;
     color: var(--teal);
     font-weight: bold;
+}
+
+.btn-coming-soon {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    background: rgba(255,255,255,0.06);
+    color: var(--mut);
+    border: 1px solid var(--line);
+    cursor: default;
+    letter-spacing: 0.3px;
 }
 
 /* ─── Footer ──────────────────────────────── */
