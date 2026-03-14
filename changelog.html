@@ -145,6 +145,64 @@
     <section class="doc-section">
         <div class="container changelog-container">
 
+            <!-- v22.5 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>v22.5</h2>
+                    <span class="version-date">March 2026</span>
+                </div>
+                <p class="version-summary">
+                    Major reliability and performance release &mdash; complete pipeline review with 58 data integrity fixes,
+                    new Imaging Intelligence features, PixInsight AutoIntegrate stacking with RC Astro tool detection,
+                    tier-driven stacking advisor, custom XISF codec, UI freeze elimination, and coordinated multi-platform builds.
+                </p>
+
+                <div class="change-category">
+                    <h3>New Features</h3>
+                    <ul>
+                        <li><span class="tag tag-new">New</span> <strong>PixInsight AutoIntegrate stacking</strong> &mdash; one-click auto-stack directly from Autopilot with RC Astro tool detection (BlurXTerminator, StarXTerminator, NoiseXTerminator) and built-in default settings</li>
+                        <li><span class="tag tag-new">New</span> <strong>Tier-driven Stacking Advisor</strong> &mdash; 3 presets (Default Stack, Deep Stack, Sharp Focus) with filter balancing for canonical compositions (LRGB, SHO, HOO, RGB)</li>
+                        <li><span class="tag tag-new">New</span> <strong>Performance Insights</strong> &mdash; sentence-first hero insights with equipment rankings, correlation-based analysis, session intelligence, and filter-aware recommendations in the QA tab</li>
+                        <li><span class="tag tag-new">New</span> <strong>Gallery Archive Overview</strong> &mdash; sidebar with Quick Archive Stats, Sky Coverage, Equipment Usage, Best Nights, Most Revisited Targets, and Seasonal Seeing</li>
+                        <li><span class="tag tag-new">New</span> <strong>Custom XISF v2.0 codec</strong> &mdash; replaces GPL dependency with a native encoder/decoder for XISF file support</li>
+                        <li><span class="tag tag-new">New</span> <strong>Companion Monitor v2.1</strong> &mdash; full dashboard refresh with app launcher and real-time QA pipeline monitoring</li>
+                        <li><span class="tag tag-new">New</span> <strong>QE Curve filter overlays</strong> &mdash; visualize filter bandpass overlays on sensor quantum efficiency curves with SPCC sensor QE import</li>
+                        <li><span class="tag tag-new">New</span> <strong>AstroBin Manager</strong> &mdash; clickable image links and equipment presets viewer with automatic PK-to-name resolution</li>
+                        <li><span class="tag tag-new">New</span> <strong>Coordinated multi-platform release system</strong> &mdash; parallel macOS/Windows/Linux builds with unified updates.json</li>
+                        <li><span class="tag tag-new">New</span> <strong>Expanded frame type classification</strong> &mdash; 70+ IMAGETYP variants including SNAPSHOT, FOCUS, PREVIEW, STD, and all major software conventions</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li><span class="tag tag-improved">Improved</span> <strong>ML Analytics renamed to Imaging Intelligence</strong> &mdash; clearer naming across app, docs, and translations</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>WCS grid performance</strong> &mdash; batch transforms and geometry caching reduces FOV overlay from 14 seconds to under 100ms</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Preview mode</strong> &mdash; reuses cached thumbnails to avoid redundant XISF reads</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>MultiscaleAdaptiveStretch</strong> &mdash; now default stretch for both template and autopilot preview</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>DAL inline documentation</strong> &mdash; all 806+ routing set method entries documented with contracts</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Test suite overhaul</strong> &mdash; 131 tests using real FITS data (606 files, 4 objects, 3 equipment setups), no mocks</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>QA cancel</strong> &mdash; now stops all post-analysis work and shows graceful shutdown status</li>
+                    </ul>
+                </div>
+
+                <div class="change-category">
+                    <h3>Bug Fixes &amp; Reliability</h3>
+                    <ul>
+                        <li><span class="tag tag-fix">Fix</span> <strong>58 excluded-filter gaps</strong> patched across quality baselines, catalogue completion, and equipment summaries &mdash; rejected files no longer inflate counts and scores</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>UI freeze elimination</strong> &mdash; resolved 13.7s preview freeze, 7.8s XISF read, 9.0s QA shutdown, and 3.7s telemetry shutdown that caused perceived app lag</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>40 findings from full-app 8-agent code review</strong> &mdash; contract drift, feeder integrity, lifecycle leaks across all pipelines</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>19 ML analytics findings</strong> &mdash; P1 truthiness bugs, frame type contract violations, feeder population drift, dead metrics</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Enrichment preservation</strong> &mdash; insert_or_replace_file() COALESCE expanded from 10 to 84 columns, preventing QA/ML data loss on rescan</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Import deadlock</strong> &mdash; ghost menu and startup crash from circular import between gui.py and gallery_tab_v3</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Preview race condition</strong> &mdash; stale QTimer chain on equipment switch no longer crashes preview dialog</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>Cython compatibility</strong> &mdash; default checked parameter in all signal lambda connections for frozen builds</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>NINA meta-file handling</strong> &mdash; skip -meta.fits sidecars and guard bare XISF with zero metadata</li>
+                        <li><span class="tag tag-fix">Fix</span> <strong>22+ numpy nanmean guards</strong> &mdash; all nanmean/nanmedian/nanstd calls guarded against empty/all-NaN arrays</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v22.2 -->
             <div class="version-block">
                 <div class="version-header">
