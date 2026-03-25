@@ -816,7 +816,7 @@
                         <li data-i18n="pricing.trial.features.2">Basic support</li>
                         <li data-i18n="pricing.trial.features.3">All analysis tools</li>
                     </ul>
-                    <a href="#download" class="btn-primary" data-i18n="pricing.trial.cta">Start Free Trial</a>
+                    <a href="#contact" class="btn-primary" onclick="openContactForm('Free Trial Request')" data-i18n="pricing.trial.cta">Request Free Trial</a>
                 </div>
 
                 <!-- Standard License (Coming Soon) -->
@@ -959,6 +959,116 @@
                 menuToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
+        }
+    </script>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" style="
+        display: none; position: fixed; inset: 0; z-index: 10000;
+        background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
+        align-items: center; justify-content: center; padding: 24px;
+    ">
+        <div style="
+            max-width: 480px; width: 100%;
+            background: linear-gradient(180deg, #121c28, #0f1620);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 40px 36px;
+            position: relative;
+        ">
+            <button onclick="closeContactForm()" style="
+                position: absolute; top: 16px; right: 16px;
+                background: none; border: none; color: rgba(231,238,248,0.4);
+                font-size: 22px; cursor: pointer; line-height: 1;
+            ">&times;</button>
+            <h2 id="contactTitle" style="
+                font-size: 22px; font-weight: 800; color: #e7eef8;
+                margin-bottom: 6px;
+            ">Get in Touch</h2>
+            <p style="font-size: 13px; color: rgba(231,238,248,0.5); margin-bottom: 28px;">
+                We'll get back to you as soon as possible.
+            </p>
+            <form id="contactForm" onsubmit="submitContactForm(event)">
+                <label style="display: block; font-size: 13px; font-weight: 600; color: rgba(231,238,248,0.7); margin-bottom: 6px;">Name</label>
+                <input id="cfName" type="text" required placeholder="Your name" style="
+                    width: 100%; padding: 11px 14px; margin-bottom: 16px;
+                    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+                    border-radius: 8px; color: #e7eef8; font-size: 14px; outline: none;
+                " onfocus="this.style.borderColor='rgba(73,198,191,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.10)'">
+
+                <label style="display: block; font-size: 13px; font-weight: 600; color: rgba(231,238,248,0.7); margin-bottom: 6px;">Email</label>
+                <input id="cfEmail" type="email" required placeholder="your@email.com" style="
+                    width: 100%; padding: 11px 14px; margin-bottom: 16px;
+                    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+                    border-radius: 8px; color: #e7eef8; font-size: 14px; outline: none;
+                " onfocus="this.style.borderColor='rgba(73,198,191,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.10)'">
+
+                <label style="display: block; font-size: 13px; font-weight: 600; color: rgba(231,238,248,0.7); margin-bottom: 6px;">What are you interested in?</label>
+                <textarea id="cfMessage" required rows="4" placeholder="e.g. I'd like to try AstroIndexer for my astrophotography workflow..." style="
+                    width: 100%; padding: 11px 14px; margin-bottom: 24px;
+                    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+                    border-radius: 8px; color: #e7eef8; font-size: 14px; outline: none;
+                    resize: vertical; font-family: inherit;
+                " onfocus="this.style.borderColor='rgba(73,198,191,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.10)'"></textarea>
+
+                <button type="submit" style="
+                    width: 100%; padding: 14px;
+                    background: linear-gradient(135deg, #49c6bf, #2aa39d);
+                    color: #0b0f14; border: none; border-radius: 10px;
+                    font-size: 15px; font-weight: 700; cursor: pointer;
+                    transition: transform 0.15s ease, box-shadow 0.15s ease;
+                " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 8px 24px rgba(73,198,191,0.25)'"
+                   onmouseout="this.style.transform='';this.style.boxShadow=''">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContactForm(subject) {
+            var modal = document.getElementById('contactModal');
+            var title = document.getElementById('contactTitle');
+            modal.style.display = 'flex';
+            title.textContent = subject || 'Get in Touch';
+            // Pre-fill the message with the subject context
+            var msg = document.getElementById('cfMessage');
+            if (subject && !msg.value) {
+                msg.placeholder = 'I\'d like to request a ' + subject.toLowerCase() + '...';
+            }
+        }
+        function closeContactForm() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+        // Close on backdrop click
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) closeContactForm();
+        });
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeContactForm();
+        });
+
+        function submitContactForm(e) {
+            e.preventDefault();
+            var name = document.getElementById('cfName').value.trim();
+            var email = document.getElementById('cfEmail').value.trim();
+            var message = document.getElementById('cfMessage').value.trim();
+            var title = document.getElementById('contactTitle').textContent;
+
+            var subject = encodeURIComponent('AstroIndexer: ' + title);
+            var body = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n\n' +
+                message
+            );
+            window.location.href = 'mailto:support@astroindexer.com?subject=' + subject + '&body=' + body;
+
+            // Show confirmation after a brief delay
+            setTimeout(function() {
+                var form = document.getElementById('contactForm');
+                form.innerHTML = '<div style="text-align:center;padding:24px 0;">' +
+                    '<p style="font-size:18px;font-weight:700;color:#49c6bf;margin-bottom:8px;">Thank you!</p>' +
+                    '<p style="font-size:14px;color:rgba(231,238,248,0.6);">Your email client should open with the message pre-filled.<br>If it didn\'t, please email us directly at<br><a href="mailto:support@astroindexer.com" style="color:#49c6bf;">support@astroindexer.com</a></p>' +
+                    '</div>';
+            }, 500);
         }
     </script>
 
