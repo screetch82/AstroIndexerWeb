@@ -25,6 +25,49 @@
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
 </head>
 <body>
+    <!-- WIP Disclaimer Overlay -->
+    <div id="disclaimerOverlay" style="
+        position: fixed; inset: 0; z-index: 9999;
+        background: radial-gradient(ellipse at 30% 20%, rgba(73,198,191,0.10), transparent 60%),
+                    linear-gradient(180deg, #070a0f, #0b1018);
+        display: flex; align-items: center; justify-content: center;
+        padding: 24px;
+    ">
+        <div style="
+            max-width: 560px; text-align: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 56px 40px;
+            backdrop-filter: blur(24px);
+        ">
+            <img src="images/logo.png" alt="AstroIndexer" style="height: 56px; margin-bottom: 28px; opacity: 0.9;">
+            <h1 style="
+                font-size: 28px; font-weight: 800; color: #e7eef8;
+                margin-bottom: 12px; letter-spacing: -0.02em;
+            ">Coming Soon</h1>
+            <p style="
+                font-size: 15px; line-height: 1.7; color: rgba(231,238,248,0.65);
+                margin-bottom: 32px;
+            ">
+                AstroIndexer is currently in active development.<br>
+                This website is a work in progress &mdash; features, pricing, and content shown here are subject to change before the official product launch.
+            </p>
+            <button onclick="document.getElementById('disclaimerOverlay').style.display='none'" style="
+                background: linear-gradient(135deg, #49c6bf, #2aa39d);
+                color: #0b0f14; border: none; border-radius: 10px;
+                padding: 14px 36px; font-size: 15px; font-weight: 700;
+                cursor: pointer; letter-spacing: 0.01em;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+            " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 8px 24px rgba(73,198,191,0.25)'"
+               onmouseout="this.style.transform='';this.style.boxShadow=''">
+                Continue to Preview Site
+            </button>
+            <p style="font-size: 12px; color: rgba(231,238,248,0.35); margin-top: 20px;">
+                Runs locally on Windows, macOS &amp; Linux
+            </p>
+        </div>
+    </div>
+
     <!-- Language Switcher -->
     <div class="language-switcher">
         <button class="language-btn" id="languageBtn">
