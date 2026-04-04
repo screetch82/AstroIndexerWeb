@@ -274,7 +274,7 @@ const translations = {
                 detail: "Installer (.exe) \u00b7 Windows 10+"
             },
             macos: {
-                detail: "Universal (.zip) \u00b7 macOS 12+"
+                detail: "Universal (.dmg) \u00b7 macOS 12+"
             },
             linux: {
                 detail: "Archive (.tar.gz) \u00b7 Ubuntu 22.04+"
@@ -777,7 +777,7 @@ const translations = {
                 detail: "Installer (.exe) \u00b7 Windows 10+"
             },
             macos: {
-                detail: "Universal (.zip) \u00b7 macOS 12+"
+                detail: "Universal (.dmg) \u00b7 macOS 12+"
             },
             linux: {
                 detail: "Archiv (.tar.gz) \u00b7 Ubuntu 22.04+"
@@ -1279,7 +1279,7 @@ const translations = {
                 detail: "Instalador (.exe) \u00b7 Windows 10+"
             },
             macos: {
-                detail: "Universal (.zip) \u00b7 macOS 12+"
+                detail: "Universal (.dmg) \u00b7 macOS 12+"
             },
             linux: {
                 detail: "Archivo (.tar.gz) \u00b7 Ubuntu 22.04+"
