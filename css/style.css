@@ -587,6 +587,50 @@ body.on-landing .language-switcher {
     z-index: 1;
 }
 
+/* Linux dual-button card */
+.download-card--linux {
+    cursor: default;
+}
+.download-card--linux:hover {
+    transform: translateY(-3px);
+}
+.download-linux-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 2;
+}
+.download-btn--primary {
+    background: rgba(73,198,191,0.15);
+    color: var(--teal);
+    border: 1px solid rgba(73,198,191,0.3);
+}
+.download-btn--primary:hover {
+    background: rgba(73,198,191,0.28);
+    border-color: rgba(73,198,191,0.5);
+}
+.download-btn--secondary {
+    background: rgba(255,255,255,0.05);
+    color: var(--mut);
+    border: 1px solid var(--line);
+}
+.download-btn--secondary:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--txt);
+}
+
 .download-note {
     text-align: center;
     margin-top: 28px;
