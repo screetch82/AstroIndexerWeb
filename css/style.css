@@ -612,7 +612,9 @@ body.on-landing .language-switcher {
     position: relative;
     z-index: 2;
 }
-.download-btn--primary {
+.download-btn--primary,
+.download-btn--primary:visited,
+.download-btn--primary:active {
     background: rgba(73,198,191,0.15);
     color: var(--teal);
     border: 1px solid rgba(73,198,191,0.3);
@@ -620,8 +622,11 @@ body.on-landing .language-switcher {
 .download-btn--primary:hover {
     background: rgba(73,198,191,0.28);
     border-color: rgba(73,198,191,0.5);
+    color: var(--teal);
 }
-.download-btn--secondary {
+.download-btn--secondary,
+.download-btn--secondary:visited,
+.download-btn--secondary:active {
     background: rgba(255,255,255,0.05);
     color: var(--mut);
     border: 1px solid var(--line);
