@@ -1114,6 +1114,12 @@
         // Dashboard: Settings > Authentication > Client-side token
         Paddle.Initialize({
             token: 'live_82c17dd6b3d8a56cd7dad17b91e',
+            eventCallback: function(data) {
+                // Logs every checkout lifecycle event (loaded, warning, error, completed)
+                // to the browser console so failures surface their real cause instead of
+                // the generic "Something went wrong" overlay. Safe to leave enabled.
+                console.log('[Paddle]', data && data.name, data);
+            },
             // Uncomment the next line to use Paddle Sandbox during testing:
             // environment: 'sandbox'
         });
