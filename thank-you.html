@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for your purchase | AstroIndexer</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/language-switcher.css">
+    <style>
+        .ty-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ty-content {
+            text-align: center;
+            padding: 40px;
+            max-width: 640px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ty-check {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(46, 204, 113, 0.35);
+            animation: pop 0.6s cubic-bezier(.16,1.3,.24,1) both;
+        }
+
+        .ty-check svg {
+            width: 48px;
+            height: 48px;
+            stroke: #ffffff;
+            stroke-width: 3.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw 0.7s 0.3s ease-out forwards;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.4); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .ty-title {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #4dd0e1 0%, #7c4dff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ty-message {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .ty-note {
+            font-size: 14px;
+            color: #9aa6b8;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        .ty-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stars-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        .star:nth-child(1) { top: 15%; left: 12%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 35%; left: 88%; animation-delay: 0.8s; }
+        .star:nth-child(3) { top: 60%; left: 25%; animation-delay: 1.6s; }
+        .star:nth-child(4) { top: 80%; left: 75%; animation-delay: 0.4s; }
+        .star:nth-child(5) { top: 25%; left: 60%; animation-delay: 2.2s; }
+        .star:nth-child(6) { top: 70%; left: 15%; animation-delay: 1.2s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ty-page">
+        <div class="stars-animation">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+
+        <div class="ty-content">
+            <div class="ty-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="5 12.5 10 17.5 19 7.5"></polyline>
+                </svg>
+            </div>
+            <h1 class="ty-title" data-i18n="thanks.title">Thank you for your purchase!</h1>
+            <p class="ty-message" data-i18n="thanks.message">
+                Your AstroIndexer license is on its way. We're preparing your activation email right now &mdash;
+                it usually arrives within a few minutes.
+            </p>
+            <p class="ty-note" data-i18n="thanks.note">
+                If you don't see it within an hour, please check your spam folder or contact
+                <a href="mailto:support@astroindexer.com" style="color:#4dd0e1;">support@astroindexer.com</a>
+                with your purchase confirmation.
+            </p>
+            <div class="ty-buttons">
+                <a href="/" class="btn-primary btn-large" data-i18n="thanks.home">Back to Homepage</a>
+                <a href="/docs.html" class="btn-secondary btn-large" data-i18n="thanks.docs">Getting Started Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Bilingual strings injected into the shared language system.
+        if (window.translations) {
+            window.translations.en.thanks = {
+                title: "Thank you for your purchase!",
+                message: "Your AstroIndexer license is on its way. We're preparing your activation email right now &mdash; it usually arrives within a few minutes.",
+                note: "If you don't see it within an hour, please check your spam folder or contact support@astroindexer.com with your purchase confirmation.",
+                home: "Back to Homepage",
+                docs: "Getting Started Guide"
+            };
+
+            window.translations.de.thanks = {
+                title: "Vielen Dank f&uuml;r Ihren Kauf!",
+                message: "Ihre AstroIndexer-Lizenz ist auf dem Weg. Ihre Aktivierungs-E-Mail wird gerade vorbereitet &mdash; sie trifft &uuml;blicherweise innerhalb weniger Minuten ein.",
+                note: "Sollte sie nicht innerhalb einer Stunde eintreffen, pr&uuml;fen Sie bitte Ihren Spam-Ordner oder kontaktieren Sie support@astroindexer.com mit Ihrer Kaufbest&auml;tigung.",
+                home: "Zur&uuml;ck zur Startseite",
+                docs: "Erste Schritte"
+            };
+        }
+    </script>
+    <script src="/js/languages.js"></script>
+</body>
+</html>

@@ -1132,7 +1132,12 @@
                 items: [{
                     priceId: 'pri_01kkgk3me3dyy5qbyd1h38ct95',
                     quantity: 1
-                }]
+                }],
+                settings: {
+                    // Branded post-purchase landing page. Paddle navigates the parent
+                    // window to this URL after the customer completes payment.
+                    successUrl: 'https://astroindexer.com/thank-you.html'
+                }
             });
         }
     </script>
