@@ -21,8 +21,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Paddle.js Checkout SDK -->
-    <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
+    <!-- Paddle.js Checkout SDK — must load synchronously so the inline
+         Paddle.Initialize() block lower in the document can reference the
+         global `Paddle` object. With `defer`, paddle.js runs after HTML
+         parsing finishes, but the inline init runs during parsing -> ReferenceError. -->
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
     <!-- WIP Disclaimer Overlay -->
