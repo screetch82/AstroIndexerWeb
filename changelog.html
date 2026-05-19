@@ -145,23 +145,31 @@
     <section class="doc-section">
         <div class="container changelog-container">
 
-            <div style="text-align: center; padding: 80px 20px;">
-                <p style="font-size: 16px; color: rgba(231,238,248,0.5); line-height: 1.8;">
-                    Changelog will be available starting with the first public release.
-                </p>
+            <!-- Beta 2 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>Beta 2</h2>
+                    <span class="version-date">May 19, 2026</span>
+                </div>
             </div>
 
-            <!-- Previous development versions removed — changelog starts fresh at public launch -->
-            <!--
+            <!-- Beta 1 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>Beta 1</h2>
+                    <span class="version-date">April 26, 2026</span>
+                </div>
+            </div>
+
+            <!-- v22.5 -->
             <div class="version-block">
                 <div class="version-header">
                     <h2>v22.5</h2>
                     <span class="version-date">March 2026</span>
                 </div>
                 <p class="version-summary">
-                    Major reliability and performance release &mdash; complete pipeline review with 58 data integrity fixes,
-                    new Imaging Intelligence features, PixInsight AutoIntegrate stacking with RC Astro tool detection,
-                    tier-driven stacking advisor, custom XISF codec, UI freeze elimination, and coordinated multi-platform builds.
+                    Major performance release &mdash; Imaging Intelligence features, PixInsight AutoIntegrate
+                    stacking with RC Astro tool detection, tier-driven stacking advisor, and native XISF support.
                 </p>
 
                 <div class="change-category">
@@ -169,13 +177,11 @@
                     <ul>
                         <li><span class="tag tag-new">New</span> <strong>PixInsight AutoIntegrate stacking</strong> &mdash; one-click auto-stack directly from Autopilot with RC Astro tool detection (BlurXTerminator, StarXTerminator, NoiseXTerminator) and built-in default settings</li>
                         <li><span class="tag tag-new">New</span> <strong>Tier-driven Stacking Advisor</strong> &mdash; 3 presets (Default Stack, Deep Stack, Sharp Focus) with filter balancing for canonical compositions (LRGB, SHO, HOO, RGB)</li>
-                        <li><span class="tag tag-new">New</span> <strong>Performance Insights</strong> &mdash; sentence-first hero insights with equipment rankings, correlation-based analysis, session intelligence, and filter-aware recommendations in the QA tab</li>
+                        <li><span class="tag tag-new">New</span> <strong>Performance Insights</strong> &mdash; hero insights with equipment rankings, correlation-based analysis, session intelligence, and filter-aware recommendations in the QA tab</li>
                         <li><span class="tag tag-new">New</span> <strong>Gallery Archive Overview</strong> &mdash; sidebar with Quick Archive Stats, Sky Coverage, Equipment Usage, Best Nights, Most Revisited Targets, and Seasonal Seeing</li>
-                        <li><span class="tag tag-new">New</span> <strong>Custom XISF v2.0 codec</strong> &mdash; replaces GPL dependency with a native encoder/decoder for XISF file support</li>
+                        <li><span class="tag tag-new">New</span> <strong>Native XISF support</strong> &mdash; built-in XISF encoder/decoder with no external dependencies</li>
                         <li><span class="tag tag-new">New</span> <strong>Companion Monitor v2.1</strong> &mdash; full dashboard refresh with app launcher and real-time QA pipeline monitoring</li>
                         <li><span class="tag tag-new">New</span> <strong>QE Curve filter overlays</strong> &mdash; visualize filter bandpass overlays on sensor quantum efficiency curves with SPCC sensor QE import</li>
-                        <li><span class="tag tag-new">New</span> <strong>AstroBin Manager</strong> &mdash; clickable image links and equipment presets viewer with automatic PK-to-name resolution</li>
-                        <li><span class="tag tag-new">New</span> <strong>Coordinated multi-platform release system</strong> &mdash; parallel macOS/Windows/Linux builds with unified updates.json</li>
                         <li><span class="tag tag-new">New</span> <strong>Expanded frame type classification</strong> &mdash; 70+ IMAGETYP variants including SNAPSHOT, FOCUS, PREVIEW, STD, and all major software conventions</li>
                     </ul>
                 </div>
@@ -183,31 +189,14 @@
                 <div class="change-category">
                     <h3>Improvements</h3>
                     <ul>
-                        <li><span class="tag tag-improved">Improved</span> <strong>ML Analytics renamed to Imaging Intelligence</strong> &mdash; clearer naming across app, docs, and translations</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>WCS grid performance</strong> &mdash; batch transforms and geometry caching reduces FOV overlay from 14 seconds to under 100ms</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>ML Analytics renamed to Imaging Intelligence</strong> &mdash; clearer naming across the entire app</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>FOV overlay performance</strong> &mdash; WCS grid rendering reduced from 14 seconds to under 100ms</li>
                         <li><span class="tag tag-improved">Improved</span> <strong>Preview mode</strong> &mdash; reuses cached thumbnails to avoid redundant XISF reads</li>
                         <li><span class="tag tag-improved">Improved</span> <strong>MultiscaleAdaptiveStretch</strong> &mdash; now default stretch for both template and autopilot preview</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>DAL inline documentation</strong> &mdash; all 806+ routing set method entries documented with contracts</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Test suite overhaul</strong> &mdash; 131 tests using real FITS data (606 files, 4 objects, 3 equipment setups), no mocks</li>
                         <li><span class="tag tag-improved">Improved</span> <strong>QA cancel</strong> &mdash; now stops all post-analysis work and shows graceful shutdown status</li>
                     </ul>
                 </div>
 
-                <div class="change-category">
-                    <h3>Bug Fixes &amp; Reliability</h3>
-                    <ul>
-                        <li><span class="tag tag-fix">Fix</span> <strong>58 excluded-filter gaps</strong> patched across quality baselines, catalogue completion, and equipment summaries &mdash; rejected files no longer inflate counts and scores</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>UI freeze elimination</strong> &mdash; resolved 13.7s preview freeze, 7.8s XISF read, 9.0s QA shutdown, and 3.7s telemetry shutdown that caused perceived app lag</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>40 findings from full-app 8-agent code review</strong> &mdash; contract drift, feeder integrity, lifecycle leaks across all pipelines</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>19 ML analytics findings</strong> &mdash; P1 truthiness bugs, frame type contract violations, feeder population drift, dead metrics</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Enrichment preservation</strong> &mdash; insert_or_replace_file() COALESCE expanded from 10 to 84 columns, preventing QA/ML data loss on rescan</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Import deadlock</strong> &mdash; ghost menu and startup crash from circular import between gui.py and gallery_tab_v3</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Preview race condition</strong> &mdash; stale QTimer chain on equipment switch no longer crashes preview dialog</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Cython compatibility</strong> &mdash; default checked parameter in all signal lambda connections for frozen builds</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>NINA meta-file handling</strong> &mdash; skip -meta.fits sidecars and guard bare XISF with zero metadata</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>22+ numpy nanmean guards</strong> &mdash; all nanmean/nanmedian/nanstd calls guarded against empty/all-NaN arrays</li>
-                    </ul>
-                </div>
             </div>
 
             <!-- v22.2 -->
@@ -217,57 +206,21 @@
                     <span class="version-date">March 2026</span>
                 </div>
                 <p class="version-summary">
-                    Quality and reliability release &mdash; 21 bug fixes from a 72,000-file production audit,
-                    PixInsight measurement parity validation, and continuous code quality monitoring.
+                    Quality refinement release &mdash; improved scoring accuracy and closer PixInsight measurement parity.
                 </p>
 
                 <div class="change-category">
-                    <h3>Quality &amp; Reliability</h3>
+                    <h3>Improvements</h3>
                     <ul>
-                        <li><span class="tag tag-improved">Improved</span> <strong>72K-file production audit</strong> &mdash; 21 findings fixed across QA scoring, Imaging Intelligence, equipment detection, and scanner enrichment</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight QA parity</strong> &mdash; 16 automated tests now verify FWHM, HFR, eccentricity, and SNR match PixInsight SubframeSelector within tolerance</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Qodana code quality gate</strong> &mdash; continuous static analysis on every commit via GitHub Actions</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>104 real-data tests</strong> &mdash; test suite rebuilt from synthetic mocks to real FITS data across 6 domains</li>
-                    </ul>
-                </div>
-
-                <div class="change-category">
-                    <h3>Planner</h3>
-                    <ul>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment Match filter</strong> now correctly filters targets by match percentage (&ge;50%, &ge;80%)</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment pill</strong> visibility improved &mdash; clearer background, border, and hover state</li>
-                    </ul>
-                </div>
-
-                <div class="change-category">
-                    <h3>Imaging Intelligence</h3>
-                    <ul>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Equipment switch</strong> no longer triggers unnecessary ML re-analysis when all files are already analyzed</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Portrait sensor heatmap</strong> &mdash; SeeStar and other portrait-oriented sensors now display correctly oriented grid</li>
-                    </ul>
-                </div>
-
-                <div class="change-category">
-                    <h3>Scanner &amp; Data Integrity</h3>
-                    <ul>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Filter name normalization</strong> &mdash; consistent casing for OIII, H-alpha, and SII across all vendors</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Enrichment preservation</strong> &mdash; rescanning folders no longer overwrites existing QA and ML scores</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>SNR clamping</strong> &mdash; extreme outlier values (e.g. 9.6 trillion) now clamped at 10,000</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>Phantom equipment cleanup</strong> &mdash; auto-generated placeholder setups are now deactivated on startup</li>
-                        <li><span class="tag tag-fix">Fix</span> <strong>FWHM zero guard</strong> &mdash; physically meaningless FWHM=0.0 values are no longer written to the database</li>
-                    </ul>
-                </div>
-
-                <div class="change-category">
-                    <h3>Performance</h3>
-                    <ul>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Startup wizard</strong> deferred to prevent crash after welcome dialog</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Telemetry ring buffer</strong> now persists snapshots to disk instead of losing data on overflow</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Scoring accuracy</strong> &mdash; refined QA scoring, Imaging Intelligence, and equipment detection from extensive real-world testing</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight QA parity</strong> &mdash; FWHM, HFR, eccentricity, and SNR measurements now closely match PixInsight SubframeSelector values</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Portrait sensor heatmap</strong> &mdash; SeeStar and other portrait-oriented sensors now display correctly oriented grid</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Filter name normalization</strong> &mdash; consistent casing for OIII, H-alpha, and SII across all vendors</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- v22 -->
+            <!-- v22.0 -->
             <div class="version-block">
                 <div class="version-header">
                     <h2>v22.0</h2>
@@ -295,7 +248,7 @@
                     <ul>
                         <li><span class="tag tag-new">New</span> <strong>SeeStar S50, S30, S30 Pro</strong> &mdash; automatic detection from FITS headers with correct aperture, focal length, and sensor identification</li>
                         <li><span class="tag tag-new">New</span> <strong>SeeStar filter classification</strong> &mdash; IRCUT recognized as broadband, LP correctly identified as dual-narrowband (Ha + OIII), not light-pollution</li>
-                        <li><span class="tag tag-new">New</span> <strong>Stacked-image pass-through</strong> &mdash; SeeStar stacked files (STACKCNT &gt; 1) automatically categorized as PROCESSED with target name preserved</li>
+                        <li><span class="tag tag-new">New</span> <strong>Stacked-image pass-through</strong> &mdash; SeeStar stacked files automatically categorized as processed with target name preserved</li>
                         <li><span class="tag tag-new">New</span> <strong>Built-in QE curves</strong> for IMX585, IMX662, and IMX462 sensors used in the SeeStar family</li>
                     </ul>
                 </div>
@@ -303,18 +256,18 @@
                 <div class="change-category">
                     <h3>Theme &amp; Visual Design</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>Proposal D palette</strong> &mdash; complete theme redesign with neutral dark backgrounds and brighter accent colors</li>
-                        <li><span class="tag tag-new">New</span> <strong>Visual hierarchy selectors</strong> &mdash; accent-colored card titles (teal), count badges (gold), and sidebar section headers across all tabs</li>
+                        <li><span class="tag tag-new">New</span> <strong>Dark theme redesign</strong> &mdash; neutral dark backgrounds with brighter accent colors for better readability</li>
+                        <li><span class="tag tag-new">New</span> <strong>Visual hierarchy</strong> &mdash; accent-colored card titles, count badges, and sidebar section headers across all tabs</li>
                         <li><span class="tag tag-improved">Improved</span> <strong>Gallery cards</strong> &mdash; consistent vertical name alignment across the grid, cleaner subtitle with exposure time only</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Glass-card styling</strong> &mdash; semi-transparent backgrounds replacing solid teal in gallery cards</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Unified token system</strong> &mdash; all 30+ inline-styled files migrated to centralized theme tokens; one file controls all colors</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Glass-card styling</strong> &mdash; semi-transparent backgrounds for a more modern look</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Consistent theming</strong> &mdash; unified color system across the entire application</li>
                     </ul>
                 </div>
 
                 <div class="change-category">
                     <h3>Multi-Language</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>German and Spanish</strong> &mdash; 1,875+ translated interface strings covering every tab and dialog</li>
+                        <li><span class="tag tag-new">New</span> <strong>German and Spanish</strong> &mdash; full interface translation covering every tab and dialog</li>
                         <li><span class="tag tag-new">New</span> <strong>Language switcher</strong> in Settings for runtime language changes</li>
                     </ul>
                 </div>
@@ -329,55 +282,46 @@
                     </ul>
                 </div>
 
-                <div class="change-category">
-                    <h3>Quality Fixes</h3>
-                    <ul>
-                        <li><span class="tag tag-fix">Fix</span> Autopilot dialog no longer auto-starts before you can configure QA/ML checkboxes</li>
-                        <li><span class="tag tag-fix">Fix</span> Folder catalogue detection no longer overwrites FITS header target names</li>
-                        <li><span class="tag tag-fix">Fix</span> Catalogue grid no longer overlaps the summary panel</li>
-                        <li><span class="tag tag-fix">Fix</span> Planner equipment match column now refreshes when equipment changes</li>
-                    </ul>
-                </div>
             </div>
 
-            <!-- v21 -->
+            <!-- v21.0 -->
             <div class="version-block">
                 <div class="version-header">
                     <h2>v21.0</h2>
                     <span class="version-date">January &ndash; February 2026</span>
                 </div>
                 <p class="version-summary">
-                    Focused on quality analysis accuracy, ML intelligence, stacking workflow, and the Session Planner V2.
+                    Focused on quality analysis accuracy, imaging intelligence, stacking workflow, and the Session Planner V2.
                 </p>
 
                 <div class="change-category">
                     <h3>Quality Analysis</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>V4 Quality Scorer</strong> &mdash; phase-space residual scoring with 32+ metrics per frame and 10 automatic defect detectors (fog, cloud, trailing, gradient, tilt, coma, vignetting, hot pixels, blank frames, underexposure)</li>
-                        <li><span class="tag tag-new">New</span> <strong>9 quality multipliers</strong> &mdash; star shape, seeing, transparency, star density, SNR weight, sky background, signal floor, PSF signal weight, and sharpness</li>
-                        <li><span class="tag tag-new">New</span> <strong>Adaptive baselines</strong> &mdash; per-equipment-per-filter baselines with multi-level shrinkage (target &gt; equipment &gt; cohort fallback)</li>
-                        <li><span class="tag tag-new">New</span> <strong>"Why is this X?" score breakdown</strong> &mdash; click any quality score to see exactly which multipliers affected it</li>
-                        <li><span class="tag tag-new">New</span> <strong>QA header bar</strong> on gallery cards replacing pill badges, with 5-metric grid (FWHM, SNR, eccentricity, stars, score)</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight parity</strong> &mdash; FWHM measurements now match PixInsight SubframeSelector within 1.5% using Moffat beta=4 fitting</li>
+                        <li><span class="tag tag-new">New</span> <strong>Advanced Quality Scorer</strong> &mdash; multi-metric scoring with 10 automatic defect detectors (fog, cloud, trailing, gradient, tilt, coma, vignetting, hot pixels, blank frames, underexposure)</li>
+                        <li><span class="tag tag-new">New</span> <strong>Quality multipliers</strong> &mdash; star shape, seeing, transparency, star density, SNR weight, sky background, signal floor, PSF signal weight, and sharpness</li>
+                        <li><span class="tag tag-new">New</span> <strong>Adaptive baselines</strong> &mdash; per-equipment-per-filter baselines that automatically adjust to your setup</li>
+                        <li><span class="tag tag-new">New</span> <strong>"Why is this score X?" breakdown</strong> &mdash; click any quality score to see exactly which factors affected it</li>
+                        <li><span class="tag tag-new">New</span> <strong>QA header bar</strong> on gallery cards with 5-metric grid (FWHM, SNR, eccentricity, stars, score)</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>PixInsight parity</strong> &mdash; FWHM measurements now closely match PixInsight SubframeSelector</li>
                     </ul>
                 </div>
 
                 <div class="change-category">
-                    <h3>Imaging Intelligence &amp; AI (formerly ML Analytics)</h3>
+                    <h3>Imaging Intelligence &amp; AI</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>48 ML patterns</strong> (up from 40) &mdash; added 8 physics-based patterns using signal efficiency, scatter index, and star efficiency</li>
-                        <li><span class="tag tag-new">New</span> <strong>AI-powered summaries</strong> &mdash; human-readable pattern insights with actionable recommendations, powered by GPT-4o or Claude</li>
-                        <li><span class="tag tag-new">New</span> <strong>Local ML models</strong> &mdash; 5 trained models with a training UI tab for offline pattern analysis</li>
-                        <li><span class="tag tag-new">New</span> <strong>ML + QA in Autopilot</strong> &mdash; added Imaging Intelligence (formerly ML Analytics, Step 7) and PixInsight Auto-Stack (Step 8) to the autopilot pipeline</li>
+                        <li><span class="tag tag-new">New</span> <strong>48 environmental patterns</strong> &mdash; physics-based patterns using signal efficiency, scatter index, and star efficiency</li>
+                        <li><span class="tag tag-new">New</span> <strong>AI-powered summaries</strong> &mdash; human-readable pattern insights with actionable recommendations</li>
+                        <li><span class="tag tag-new">New</span> <strong>Local ML models</strong> &mdash; trained models with a training UI for offline pattern analysis</li>
+                        <li><span class="tag tag-new">New</span> <strong>Imaging Intelligence in Autopilot</strong> &mdash; pattern analysis and PixInsight auto-stack added to the autopilot pipeline</li>
                     </ul>
                 </div>
 
                 <div class="change-category">
                     <h3>Stacking &amp; Processing</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>AutoIntegrate Combination Recommender</strong> &mdash; intelligent palette selection from 11 options (SHO, HOO, LRGB, Dynamic SHO, Natural HOO, and more) based on your filters and object type</li>
+                        <li><span class="tag tag-new">New</span> <strong>Combination Recommender</strong> &mdash; intelligent palette selection from 11 options (SHO, HOO, LRGB, Dynamic SHO, Natural HOO, and more) based on your filters and object type</li>
                         <li><span class="tag tag-improved">Improved</span> <strong>SHO + RGB Stars</strong> as the standard narrowband recommendation</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking Advisor</strong> &mdash; PixInsight-aligned Winsorized Sigma at 2.2, PSF Signal Weight ranking</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking Advisor</strong> &mdash; PixInsight-aligned rejection settings and PSF Signal Weight ranking</li>
                     </ul>
                 </div>
 
@@ -396,18 +340,18 @@
                     <ul>
                         <li><span class="tag tag-new">New</span> <strong>5-state pipeline</strong> &mdash; Queued &gt; Planned &gt; Scheduled &gt; Active &gt; Complete with automatic state transitions</li>
                         <li><span class="tag tag-new">New</span> <strong>Equipment-aware suitability scoring</strong> &mdash; targets ranked by your focal length, sensor FOV, altitude, moon phase, and filter-specific safe zones</li>
-                        <li><span class="tag tag-new">New</span> <strong>Annual Timeline</strong> &mdash; capacity-aware multi-month scheduler with visual timeline bars</li>
+                        <li><span class="tag tag-new">New</span> <strong>Annual Timeline</strong> &mdash; multi-month scheduler with visual timeline bars</li>
                         <li><span class="tag tag-new">New</span> <strong>NINA sequence export</strong> &mdash; export planned sessions directly to NINA</li>
-                        <li><span class="tag tag-new">New</span> <strong>Catalogue Completion tracking</strong> with progress through Messier, Caldwell, NGC, IC, and custom lists</li>
+                        <li><span class="tag tag-new">New</span> <strong>Catalogue Completion tracking</strong> &mdash; progress through Messier, Caldwell, NGC, IC, and custom lists</li>
                     </ul>
                 </div>
 
                 <div class="change-category">
                     <h3>UX &amp; Onboarding</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>242 help tooltips</strong> across 14 UI panels (from 13% to 70% tooltip coverage)</li>
+                        <li><span class="tag tag-new">New</span> <strong>Help tooltips</strong> &mdash; contextual help across all major UI panels</li>
                         <li><span class="tag tag-new">New</span> <strong>User Manual</strong> accessible from Help menu (F1) with searchable in-app help</li>
-                        <li><span class="tag tag-new">New</span> <strong>Trial license auto-download</strong> &mdash; 14-day trial activates automatically on first launch</li>
+                        <li><span class="tag tag-new">New</span> <strong>Trial license</strong> &mdash; 14-day trial activates automatically on first launch</li>
                         <li><span class="tag tag-new">New</span> <strong>Configurable install directory</strong> &mdash; choose where your data is stored</li>
                         <li><span class="tag tag-new">New</span> <strong>Autopilot Quick Setup</strong> &mdash; one-click scanning, equipment detection, and quality analysis with configurable options</li>
                     </ul>
@@ -416,16 +360,11 @@
                 <div class="change-category">
                     <h3>Performance</h3>
                     <ul>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Native C median filter</strong> with OpenMP parallelization for up to 3x faster QA processing</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>SMT-aware concurrency</strong> &mdash; automatic CPU affinity partitioning and dynamic worker priority</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Galaxy mask caching</strong> with pier-side grouping for meridian-flip awareness</li>
-                        <li><span class="tag tag-fix">Fix</span> Tree view 6.7-second stall on large libraries eliminated</li>
-                        <li><span class="tag tag-fix">Fix</span> XISF memory-mapped file leak causing UI freeze resolved</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Up to 3x faster QA processing</strong> &mdash; native C pipeline with multi-core parallelization</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Smarter CPU utilization</strong> &mdash; automatic core allocation and dynamic worker priority</li>
                     </ul>
                 </div>
             </div>
-
-            -->
         </div>
     </section>
 
