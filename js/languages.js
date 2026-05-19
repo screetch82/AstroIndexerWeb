@@ -23,7 +23,7 @@ const translations = {
                 download: "Download Free",
                 learnMore: "Learn More"
             },
-            priceTeaser: "One-time purchase from \u20ac49 \u00b7 Free 30-day trial"
+            priceTeaser: "One-time purchase from \u20ac49 \u00b7 Free 14-day trial"
         },
 
         // Features Section
@@ -279,7 +279,7 @@ const translations = {
             linux: {
                 detail: "Archive (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "Free 30-day trial with full access. No account required.",
+            note: "Free 14-day trial with full access. No account required.",
             trialLicense: "Download Trial License"
         },
 
@@ -418,7 +418,7 @@ const translations = {
             trial: {
                 title: "Free Trial",
                 price: "Free",
-                duration: "30 days",
+                duration: "14 days",
                 features: [
                     "Full feature access",
                     "Up to 1000 images",
@@ -526,7 +526,7 @@ const translations = {
                 download: "Kostenlos herunterladen",
                 learnMore: "Mehr erfahren"
             },
-            priceTeaser: "Einmaliger Kauf ab €49 · 30 Tage kostenlos testen"
+            priceTeaser: "Einmaliger Kauf ab €49 · 14 Tage kostenlos testen"
         },
 
         // Features Section
@@ -782,7 +782,7 @@ const translations = {
             linux: {
                 detail: "Archiv (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "30 Tage kostenlose Testversion mit vollem Zugang. Kein Konto erforderlich.",
+            note: "14 Tage kostenlose Testversion mit vollem Zugang. Kein Konto erforderlich.",
             trialLicense: "Testlizenz herunterladen"
         },
 
@@ -920,7 +920,7 @@ const translations = {
             trial: {
                 title: "Kostenlose Testversion",
                 price: "Kostenlos",
-                duration: "30 Tage",
+                duration: "14 Tage",
                 features: [
                     "Voller Funktionsumfang",
                     "Bis zu 1000 Bilder",
@@ -1028,7 +1028,7 @@ const translations = {
                 download: "Descarga Gratuita",
                 learnMore: "Más Información"
             },
-            priceTeaser: "Compra única desde €49 · Prueba gratuita de 30 días"
+            priceTeaser: "Compra única desde €49 · Prueba gratuita de 14 días"
         },
 
         // Features Section
@@ -1284,7 +1284,7 @@ const translations = {
             linux: {
                 detail: "Archivo (.tar.gz) \u00b7 Ubuntu 22.04+"
             },
-            note: "Prueba gratuita de 30 días con acceso completo. Sin necesidad de cuenta.",
+            note: "Prueba gratuita de 14 días con acceso completo. Sin necesidad de cuenta.",
             trialLicense: "Descargar Licencia de Prueba"
         },
 
@@ -1422,7 +1422,7 @@ const translations = {
             trial: {
                 title: "Prueba Gratuita",
                 price: "Gratis",
-                duration: "30 días",
+                duration: "14 días",
                 features: [
                     "Acceso completo a todas las funciones",
                     "Hasta 1000 imágenes",
