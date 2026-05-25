@@ -81,6 +81,54 @@ Add the `data-i18n` attribute to any element:
    - Add CNAME file with `astroindexer.com`
    - Configure DNS settings
 
+## Contact Form Backend
+
+The contact modal in `index.html` posts to:
+
+```text
+https://api.astroindexer.com/api/contact
+```
+
+If `api.astroindexer.com` is not yet available, the modal falls back to:
+
+```text
+https://astro-indexer-web.vercel.app/api/contact
+```
+
+The endpoint is implemented as a Node serverless function in `api/contact.mjs` and
+sends mail through the existing Private Email SMTP account. The website can stay
+on GitHub Pages; deploy only the API function to a Node serverless host such as
+Vercel, then point `api.astroindexer.com` at that deployment.
+
+Vercel DNS record:
+
+```text
+A api.astroindexer.com 76.76.21.21
+```
+
+Required production environment variables:
+
+```text
+SMTP_HOST=mail.privateemail.com
+SMTP_PORT=465
+SMTP_USER=support@astroindexer.com
+SMTP_PASS=<set as a secret, never commit this>
+CONTACT_TO=support@astroindexer.com
+CONTACT_FROM=AstroIndexer Website <support@astroindexer.com>
+ALLOWED_ORIGINS=https://astroindexer.com,https://www.astroindexer.com,https://screetch82.github.io
+```
+
+Local syntax check:
+
+```bash
+npm install
+npm run check:contact-api
+```
+
+The form includes server-side validation, CORS allowlisting, and a hidden
+honeypot field. For heavier spam protection, add Cloudflare Turnstile or another
+captcha before calling the API.
+
 ## Important Notes
 
 ### Download Links

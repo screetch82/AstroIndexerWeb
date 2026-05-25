@@ -999,6 +999,10 @@
                 We'll get back to you as soon as possible.
             </p>
             <form id="contactForm" onsubmit="submitContactForm(event)">
+                <input id="cfWebsite" name="website" type="text" autocomplete="off" tabindex="-1" aria-hidden="true" style="
+                    position: absolute; left: -10000px; width: 1px; height: 1px;
+                    opacity: 0; pointer-events: none;
+                ">
                 <label style="display: block; font-size: 13px; font-weight: 600; color: rgba(231,238,248,0.7); margin-bottom: 6px;">Name</label>
                 <input id="cfName" type="text" required placeholder="Your name" style="
                     width: 100%; padding: 11px 14px; margin-bottom: 16px;
@@ -1021,7 +1025,12 @@
                     resize: vertical; font-family: inherit;
                 " onfocus="this.style.borderColor='rgba(73,198,191,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.10)'"></textarea>
 
-                <button type="submit" style="
+                <p id="contactStatus" aria-live="polite" style="
+                    min-height: 20px; margin: -8px 0 14px;
+                    font-size: 13px; line-height: 1.45; color: rgba(231,238,248,0.65);
+                "></p>
+
+                <button id="contactSubmitButton" type="submit" style="
                     width: 100%; padding: 14px;
                     background: linear-gradient(135deg, #49c6bf, #2aa39d);
                     color: #0b0f14; border: none; border-radius: 10px;
@@ -1034,11 +1043,17 @@
     </div>
 
     <script>
+        var CONTACT_FORM_ENDPOINTS = window.ASTROINDEXER_CONTACT_ENDPOINTS || [
+            'https://api.astroindexer.com/api/contact',
+            'https://astro-indexer-web.vercel.app/api/contact'
+        ];
+
         function openContactForm(subject) {
             var modal = document.getElementById('contactModal');
             var title = document.getElementById('contactTitle');
             modal.style.display = 'flex';
             title.textContent = subject || 'Get in Touch';
+            setContactStatus('');
             // Pre-fill the message with the subject context
             var msg = document.getElementById('cfMessage');
             if (subject && !msg.value) {
@@ -1057,29 +1072,82 @@
             if (e.key === 'Escape') closeContactForm();
         });
 
-        function submitContactForm(e) {
+        function setContactStatus(message, isError) {
+            var status = document.getElementById('contactStatus');
+            if (!status) return;
+            status.innerHTML = message;
+            status.style.color = isError ? '#ff9d8d' : 'rgba(231,238,248,0.65)';
+        }
+
+        async function submitContactForm(e) {
             e.preventDefault();
+            var form = document.getElementById('contactForm');
+            var button = document.getElementById('contactSubmitButton');
             var name = document.getElementById('cfName').value.trim();
             var email = document.getElementById('cfEmail').value.trim();
             var message = document.getElementById('cfMessage').value.trim();
             var title = document.getElementById('contactTitle').textContent;
+            var website = document.getElementById('cfWebsite').value;
 
-            var subject = encodeURIComponent('AstroIndexer: ' + title);
-            var body = encodeURIComponent(
-                'Name: ' + name + '\n' +
-                'Email: ' + email + '\n\n' +
-                message
-            );
-            window.location.href = 'mailto:support@astroindexer.com?subject=' + subject + '&body=' + body;
+            button.disabled = true;
+            button.textContent = 'Sending...';
+            button.style.opacity = '0.75';
+            setContactStatus('Sending your message...');
 
-            // Show confirmation after a brief delay
-            setTimeout(function() {
-                var form = document.getElementById('contactForm');
-                form.innerHTML = '<div style="text-align:center;padding:24px 0;">' +
-                    '<p style="font-size:18px;font-weight:700;color:#49c6bf;margin-bottom:8px;">Thank you!</p>' +
-                    '<p style="font-size:14px;color:rgba(231,238,248,0.6);">Your email client should open with the message pre-filled.<br>If it didn\'t, please email us directly at<br><a href="mailto:support@astroindexer.com" style="color:#49c6bf;">support@astroindexer.com</a></p>' +
-                    '</div>';
-            }, 500);
+            try {
+                var payload = {
+                    name: name,
+                    email: email,
+                    message: message,
+                    subject: title,
+                    website: website,
+                    pageUrl: window.location.href
+                };
+                var response = null;
+                var result = {};
+
+                for (var i = 0; i < CONTACT_FORM_ENDPOINTS.length; i++) {
+                    try {
+                        response = await fetch(CONTACT_FORM_ENDPOINTS[i], {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        try {
+                            result = await response.json();
+                        } catch (parseError) {
+                            result = {};
+                        }
+
+                        if (response.ok && result.ok === true) {
+                            break;
+                        }
+                    } catch (endpointError) {
+                        if (i === CONTACT_FORM_ENDPOINTS.length - 1) {
+                            throw endpointError;
+                        }
+                    }
+                }
+
+                if (!response.ok || result.ok !== true) {
+                    throw new Error(result.error || 'Message delivery failed.');
+                }
+
+                form.reset();
+                setContactStatus('Thank you. Your message was sent and we will get back to you soon.');
+            } catch (error) {
+                setContactStatus(
+                    'We could not send the message right now. Please try again, or email <a href="mailto:support@astroindexer.com" style="color:#49c6bf;">support@astroindexer.com</a>.',
+                    true
+                );
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Send Message';
+                button.style.opacity = '';
+            }
         }
     </script>
 

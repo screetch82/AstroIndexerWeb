@@ -1,0 +1,11 @@
+{
+  "name": "astroindexer-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check:contact-api": "node --check api/contact.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^8.0.8"
+  }
+}

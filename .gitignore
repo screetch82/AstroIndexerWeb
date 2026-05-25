@@ -1,0 +1,9 @@
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+node_modules/
+.vercel/
+.wrangler/
+
+.vercel
