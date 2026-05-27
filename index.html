@@ -1153,24 +1153,44 @@
 
     <!-- Paddle Checkout -->
     <script>
-        // Initialize Paddle — replace token with your live client-side token from Paddle Dashboard
-        // Dashboard: Settings > Authentication > Client-side token
+        var PADDLE_CONFIG = {
+            production: {
+                token: 'live_82c17dd6b3d8a56cd7dad17b91e',
+                priceId: 'pri_01kkgk3me3dyy5qbyd1h38ct95'
+            },
+            sandbox: {
+                token: 'test_74a27ab7a36b29e9bb14269c977',
+                priceId: 'pri_01ksmv21n4731h14wtg0e7eeab'
+            }
+        };
+
+        var paddleQuery = new URLSearchParams(window.location.search);
+        var paddleEnvironment = (
+            paddleQuery.get('paddleEnv') === 'sandbox' ||
+            paddleQuery.get('paddle') === 'sandbox' ||
+            window.location.hostname === 'localhost' ||
+            window.location.hostname === '127.0.0.1'
+        ) ? 'sandbox' : 'production';
+        var paddleConfig = PADDLE_CONFIG[paddleEnvironment];
+
+        if (paddleEnvironment === 'sandbox') {
+            Paddle.Environment.set('sandbox');
+        }
+
         Paddle.Initialize({
-            token: 'live_82c17dd6b3d8a56cd7dad17b91e',
+            token: paddleConfig.token,
             eventCallback: function(data) {
                 // Logs every checkout lifecycle event (loaded, warning, error, completed)
                 // to the browser console so failures surface their real cause instead of
                 // the generic "Something went wrong" overlay. Safe to leave enabled.
-                console.log('[Paddle]', data && data.name, data);
-            },
-            // Uncomment the next line to use Paddle Sandbox during testing:
-            // environment: 'sandbox'
+                console.log('[Paddle]', paddleEnvironment, data && data.name, data);
+            }
         });
 
         function openPaddleCheckout() {
             Paddle.Checkout.open({
                 items: [{
-                    priceId: 'pri_01kkgk3me3dyy5qbyd1h38ct95',
+                    priceId: paddleConfig.priceId,
                     quantity: 1
                 }],
                 settings: {
