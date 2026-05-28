@@ -429,32 +429,37 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h4>Product</h4>
+                    <h4 data-i18n="footer.product.title">Product</h4>
                     <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#features" data-i18n="footer.product.links.features">Features</a></li>
+                        <li><a href="index.html#pricing" data-i18n="footer.product.links.pricing">Pricing</a></li>
+                        <li><a href="changelog.html" data-i18n="footer.product.links.changelog">Changelog</a></li>
+                        <li><a href="index.html#roadmap" data-i18n="footer.product.links.roadmap">Roadmap</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
-                    <h4>Support</h4>
+                    <h4 data-i18n="footer.support.title">Support</h4>
                     <ul>
-                        <li><a href="docs.html">Documentation</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="docs.html" data-i18n="footer.support.links.documentation">Documentation</a></li>
+                        <li><a href="faq.html" data-i18n="footer.support.links.faq">FAQ</a></li>
+                        <li><a href="#contact" onclick="openContactForm('Contact Us'); return false;" data-i18n="footer.support.links.contact">Contact Us</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
                     <ul>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="datenschutz.html">Privacy Policy</a></li>
-                        <li><a href="agb.html">Terms &amp; Conditions</a></li>
-                        <li><a href="eula.html">License Agreement (EULA)</a></li>
-                        <li><a href="widerruf.html">Right of Withdrawal</a></li>
+                        <li><a href="impressum.html" data-i18n="footer.legal.links.impressum">Legal Notice</a></li>
+                        <li><a href="datenschutz.html" data-i18n="footer.legal.links.privacy">Privacy Policy</a></li>
+                        <li><a href="agb.html" data-i18n="footer.legal.links.terms">Terms &amp; Conditions</a></li>
+                        <li><a href="eula.html" data-i18n="footer.legal.links.eula">License Agreement (EULA)</a></li>
+                        <li><a href="widerruf.html" data-i18n="footer.legal.links.withdrawal">Right of Withdrawal</a></li>
                         <li><a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025-2026 DeepSky Analytics UG. All rights reserved.</p>
             </div>
@@ -462,5 +467,6 @@
     </footer>
 
     <script src="js/languages.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 </html>
