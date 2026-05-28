@@ -73,15 +73,15 @@ const translations = {
                 },
                 quality: {
                     title: "Quality Analysis",
-                    description: "32+ quality metrics per frame with Moffat 7-parameter PSF fitting within 1.5% of PixInsight. 10 automatic defect detectors catch fog, trailing, gradients, and optical aberrations."
+                    description: "Automatically score your captures and find the best frames for clean, detail-rich stacks. AstroIndexer detects sharpness, signal, star shape, background problems, and common capture errors."
                 },
                 ml: {
                     title: "Imaging Intelligence",
-                    description: "40-pattern discovery across 9 categories, AutoIntegrate Combination Recommender with 11 palettes, and PixInsight-aligned stacking advisor."
+                    description: "Spot the patterns in your astrophotography: which nights, filters, setups, and conditions truly deliver the best results - and where hidden problems are holding your image quality back."
                 },
                 aiinsights: {
-                    title: "AI Imaging Advisor",
-                    description: "AI-generated recommendations for frame selection, stacking strategies, and equipment optimization. Powered by GPT-4o or Claude."
+                    title: "Local AI Insights",
+                    description: "Get clear, easy-to-follow recommendations for frame selection, stacking, and equipment optimization - running locally on your computer by default, with optional support from OpenAI or Claude."
                 }
             }
         },
@@ -576,15 +576,15 @@ const translations = {
                 },
                 quality: {
                     title: "Qualit\u00e4tsanalyse",
-                    description: "32+ Qualit\u00e4tsmetriken pro Aufnahme mit Moffat 7-Parameter PSF-Fitting innerhalb von 1,5% PixInsight-Genauigkeit. 10 automatische Defektdetektoren erkennen Nebel, Nachf\u00fchrfehler, Gradienten und optische Aberrationen."
+                    description: "Bewerte deine Aufnahmen automatisch und finde die besten Frames f\u00fcr saubere, detailreiche Stacks. AstroIndexer erkennt Sch\u00e4rfe, Signal, Sternform, Hintergrundprobleme und typische Aufnahmefehler."
                 },
                 ml: {
                     title: "Bild-Intelligenz",
-                    description: "40-Muster-Erkennung in 9 Kategorien, AutoIntegrate Kombinations-Empfehlung mit 11 Paletten und PixInsight-kompatibler Stacking-Advisor."
+                    description: "Erkenne Muster in deiner Astrofotografie: Welche N\u00e4chte, Filter, Setups und Bedingungen liefern wirklich die besten Ergebnisse - und wo versteckte Probleme deine Bildqualit\u00e4t bremsen."
                 },
                 aiinsights: {
-                    title: "KI-Aufnahmeberater",
-                    description: "KI-generierte Empfehlungen f\u00fcr Frame-Auswahl, Stacking-Strategien und Equipment-Optimierung. Angetrieben von GPT-4o oder Claude."
+                    title: "Lokale KI-Insights",
+                    description: "Erhalte verst\u00e4ndliche Empfehlungen f\u00fcr Frame-Auswahl, Stacking und Equipment-Optimierung - standardm\u00e4\u00dfig lokal auf deinem Computer, mit optionaler Unterst\u00fctzung durch OpenAI oder Claude."
                 }
             }
         },
@@ -1078,15 +1078,15 @@ const translations = {
                 },
                 quality: {
                     title: "An\u00e1lisis de Calidad",
-                    description: "32+ m\u00e9tricas de calidad por frame con ajuste PSF Moffat de 7 par\u00e1metros con precisi\u00f3n del 1,5% respecto a PixInsight. 10 detectores autom\u00e1ticos de defectos identifican niebla, trazos, gradientes y aberraciones \u00f3pticas."
+                    description: "Eval\u00faa tus capturas autom\u00e1ticamente y encuentra los mejores frames para apilados limpios y con gran detalle. AstroIndexer detecta nitidez, se\u00f1al, forma estelar, problemas de fondo y errores de captura habituales."
                 },
                 ml: {
                     title: "Inteligencia de Imagen",
-                    description: "Descubrimiento de 40 patrones en 9 categor\u00edas, Recomendador de Combinaci\u00f3n AutoIntegrate con 11 paletas y asesor de apilado compatible con PixInsight."
+                    description: "Descubre los patrones en tu astrofotograf\u00eda: qu\u00e9 noches, filtros, configuraciones y condiciones ofrecen realmente los mejores resultados - y d\u00f3nde hay problemas ocultos que frenan la calidad de tus im\u00e1genes."
                 },
                 aiinsights: {
-                    title: "Asesor de Imagen IA",
-                    description: "Recomendaciones generadas por IA para selecci\u00f3n de frames, estrategias de apilado y optimizaci\u00f3n de equipo. Impulsado por GPT-4o o Claude."
+                    title: "Insights de IA Local",
+                    description: "Recibe recomendaciones claras y f\u00e1ciles de entender para la selecci\u00f3n de frames, el apilado y la optimizaci\u00f3n del equipo - de forma local en tu ordenador por defecto, con soporte opcional de OpenAI o Claude."
                 }
             }
         },
