@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for purchasing AstroIndexer. Your license is on its way by email - get set up while you wait.">
+    <meta name="description" content="Your AstroIndexer download is starting. Get set up fast with the Getting Started guide, FAQ, and what's new.">
     <meta name="robots" content="noindex">
-    <title>Thank you for your purchase | AstroIndexer</title>
+    <title>Thank you for downloading | AstroIndexer</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <link rel="stylesheet" href="css/thank-you.css">
@@ -61,28 +61,40 @@
             <div class="star"></div><div class="star"></div><div class="star"></div>
         </div>
         <div class="container">
-            <div class="ty-icon ty-icon--success" aria-hidden="true">
+            <span class="ty-eyebrow" data-i18n="download.eyebrow">Free 14-day trial</span>
+
+            <div class="ty-icon ty-icon--download" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                    <polyline points="5 12.5 10 17.5 19 7.5"></polyline>
+                    <path d="M12 3v12"></path>
+                    <polyline points="7 11 12 16 17 11"></polyline>
+                    <path d="M5 20h14"></path>
                 </svg>
             </div>
 
-            <h1 class="ty-title" data-i18n="thanks.title">Thank you for your purchase!</h1>
+            <h1 class="ty-title" data-i18n="download.title">Thank you for downloading AstroIndexer</h1>
 
-            <p class="ty-message" data-i18n="thanks.message">
-                Your AstroIndexer license is on its way. We're preparing your activation email right now — it usually arrives within a few minutes.
+            <!-- Auto-start status. Each translatable piece is its own element so the
+                 i18n engine (which sets textContent) never wipes the manual link. -->
+            <p class="ty-message" id="dl-status">
+                <span data-i18n="download.starting">Your download is starting now.</span>
+                <span data-i18n="download.didntStart">Didn't start?</span>
+                <a href="index.html#download" id="dl-manual" data-i18n="download.clickHere">Click here</a>.
             </p>
 
-            <!-- Email link kept as its own node so the i18n engine (textContent) keeps it. -->
-            <p class="ty-note">
-                <span data-i18n="thanks.note">If you don't see it within an hour, please check your spam folder or contact</span>
-                <a href="mailto:support@astroindexer.com">support@astroindexer.com</a>
-                <span data-i18n="thanks.noteEnd">with your purchase confirmation.</span>
-            </p>
+            <div class="ty-badge" id="dl-badge" style="display:none;">
+                <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                <span id="dl-badge-text"></span>
+            </div>
 
-            <div class="ty-buttons">
-                <a href="index.html" class="btn-secondary btn-large" data-i18n="thanks.home">Back to Homepage</a>
-                <a href="docs.html" class="btn-primary btn-large" data-i18n="thanks.docs">Getting Started Guide</a>
+            <!-- Shown only when the ?os= parameter is missing or unrecognized. -->
+            <div id="dl-fallback" style="display:none;">
+                <p class="ty-note" data-i18n="download.fallback">Choose your platform to start the download:</p>
+                <div class="ty-buttons">
+                    <a href="https://f005.backblazeb2.com/file/astroindexer-releases/AstroIndexerSetup-latest.exe" class="btn-secondary">Windows (.exe)</a>
+                    <a href="https://f005.backblazeb2.com/file/astroindexer-releases/AstroIndexer-macOS-latest.dmg" class="btn-secondary">macOS (.dmg)</a>
+                    <a href="https://f005.backblazeb2.com/file/astroindexer-releases/astroindexer_latest_amd64.deb" class="btn-secondary">Linux (.deb)</a>
+                    <a href="https://f005.backblazeb2.com/file/astroindexer-releases/AstroIndexer-Linux-latest.tar.gz" class="btn-secondary">Linux (.tar.gz)</a>
+                </div>
             </div>
         </div>
     </header>
@@ -91,8 +103,8 @@
     <section class="ty-section alt-bg">
         <div class="container">
             <div class="ty-section-head">
-                <h2 data-i18n="thanks.next.title">While your license arrives, get set up</h2>
-                <p data-i18n="thanks.next.sub">A few minutes now saves hours later.</p>
+                <h2 data-i18n="download.next.title">While it downloads, get set up</h2>
+                <p data-i18n="download.next.sub">A few minutes now saves hours later.</p>
             </div>
 
             <div class="ty-split">
@@ -102,40 +114,48 @@
                     </video>
                 </div>
                 <div class="ty-split-copy">
-                    <h3 data-i18n="thanks.video.title">See AstroIndexer in action</h3>
-                    <p data-i18n="thanks.video.desc">A short tour of how AstroIndexer scans, scores, and organizes thousands of frames so you spend less time managing files and more time imaging.</p>
+                    <h3 data-i18n="download.video.title">See AstroIndexer in action</h3>
+                    <p data-i18n="download.video.desc">A two-minute tour of how AstroIndexer scans, scores, and organizes thousands of frames so you spend less time managing files and more time imaging.</p>
                 </div>
             </div>
 
             <div class="ty-cards">
                 <a class="ty-card" href="docs.html">
                     <div class="ty-card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h12a2 2 0 0 1 2 2v13H6a2 2 0 0 1-2-2V5z"></path><path d="M18 7h2v13H6"></path><path d="M8 9h8M8 13h8"></path></svg></div>
-                    <h4 data-i18n="thanks.card.start.title">Getting Started</h4>
-                    <p data-i18n="thanks.card.start.desc">Set up your library and run your first scan in minutes.</p>
-                    <span class="ty-card-more" data-i18n="thanks.card.start.more">Open the guide &rarr;</span>
+                    <h4 data-i18n="download.card.start.title">Getting Started</h4>
+                    <p data-i18n="download.card.start.desc">Set up your library and run your first scan in minutes.</p>
+                    <span class="ty-card-more" data-i18n="download.card.start.more">Open the guide &rarr;</span>
                 </a>
                 <a class="ty-card" href="faq.html">
                     <div class="ty-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.7-2.5 2-2.5 3.5"></path><path d="M12 17h.01"></path></svg></div>
-                    <h4 data-i18n="thanks.card.faq.title">FAQ</h4>
-                    <p data-i18n="thanks.card.faq.desc">Answers to the most common setup and licensing questions.</p>
-                    <span class="ty-card-more" data-i18n="thanks.card.faq.more">Read the FAQ &rarr;</span>
+                    <h4 data-i18n="download.card.faq.title">FAQ</h4>
+                    <p data-i18n="download.card.faq.desc">Answers to the most common setup and licensing questions.</p>
+                    <span class="ty-card-more" data-i18n="download.card.faq.more">Read the FAQ &rarr;</span>
                 </a>
                 <a class="ty-card" href="changelog.html">
                     <div class="ty-card-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
-                    <h4 data-i18n="thanks.card.news.title">What's New</h4>
-                    <p data-i18n="thanks.card.news.desc">See the latest features and fixes in this release.</p>
-                    <span class="ty-card-more" data-i18n="thanks.card.news.more">View changelog &rarr;</span>
+                    <h4 data-i18n="download.card.news.title">What's New</h4>
+                    <p data-i18n="download.card.news.desc">See the latest features and fixes in this release.</p>
+                    <span class="ty-card-more" data-i18n="download.card.news.more">View changelog &rarr;</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Activation help -->
+    <!-- Soft upsell -->
     <section class="ty-section">
         <div class="container">
-            <div class="ty-help">
+            <div class="ty-upsell">
+                <div class="ty-upsell-text">
+                    <strong data-i18n="download.upsell.title">Enjoying the trial?</strong>
+                    <span data-i18n="download.upsell.text">Unlock the full version &mdash; one-time &euro;49, no subscription.</span>
+                </div>
+                <a href="index.html#pricing" class="btn-primary btn-large" data-i18n="download.upsell.cta">See pricing</a>
+            </div>
+
+            <div class="ty-help" style="margin-top:36px;">
                 <p>
-                    <span data-i18n="thanks.activate">Your license email includes your key and activation steps. Trouble activating? Email</span>
+                    <span data-i18n="download.help">Need a hand getting started? Email</span>
                     <a href="mailto:support@astroindexer.com">support@astroindexer.com</a>.
                 </p>
             </div>
@@ -181,22 +201,23 @@
         </div>
     </footer>
 
-    <!-- Shared language system, then page-specific strings, then the contact modal.
-         Loading languages.js FIRST is what makes the bilingual strings actually apply -
-         the previous version injected before the script loaded, so window.translations
-         was undefined and the German copy never took effect. -->
+    <!-- Shared language system, then page-specific strings, then the contact modal. -->
     <script src="js/languages.js"></script>
     <script>
+        // Inject the download-page strings into the shared translation tables.
+        // MUST run AFTER languages.js so window.translations exists, and BEFORE the
+        // DOMContentLoaded apply (synchronous order guarantees this). We also re-apply
+        // if the manager was already constructed (DOM-ready edge case).
         (function () {
             if (!window.translations) return;
-            window.translations.en.thanks = {
-                title: "Thank you for your purchase!",
-                message: "Your AstroIndexer license is on its way. We're preparing your activation email right now — it usually arrives within a few minutes.",
-                note: "If you don't see it within an hour, please check your spam folder or contact",
-                noteEnd: "with your purchase confirmation.",
-                home: "Back to Homepage",
-                docs: "Getting Started Guide",
-                next: { title: "While your license arrives, get set up", sub: "A few minutes now saves hours later." },
+            window.translations.en.download = {
+                eyebrow: "Free 14-day trial",
+                title: "Thank you for downloading AstroIndexer",
+                starting: "Your download is starting now.",
+                didntStart: "Didn't start?",
+                clickHere: "Click here",
+                fallback: "Choose your platform to start the download:",
+                next: { title: "While it downloads, get set up", sub: "A few minutes now saves hours later." },
                 video: {
                     title: "See AstroIndexer in action",
                     desc: "A short tour of how AstroIndexer scans, scores, and organizes thousands of frames — so you spend less time managing files and more time imaging."
@@ -206,16 +227,17 @@
                     faq: { title: "FAQ", desc: "Answers to the most common setup and licensing questions.", more: "Read the FAQ →" },
                     news: { title: "What's New", desc: "See the latest features and fixes in this release.", more: "View changelog →" }
                 },
-                activate: "Your license email includes your key and activation steps. Trouble activating? Email"
+                upsell: { title: "Enjoying the trial?", text: "Unlock the full version — one-time €49, no subscription.", cta: "See pricing" },
+                help: "Need a hand getting started? Email"
             };
-            window.translations.de.thanks = {
-                title: "Vielen Dank für Ihren Kauf!",
-                message: "Ihre AstroIndexer-Lizenz ist auf dem Weg. Ihre Aktivierungs-E-Mail wird gerade vorbereitet — sie trifft üblicherweise innerhalb weniger Minuten ein.",
-                note: "Sollte sie nicht innerhalb einer Stunde eintreffen, prüfen Sie bitte Ihren Spam-Ordner oder kontaktieren Sie",
-                noteEnd: "mit Ihrer Kaufbestätigung.",
-                home: "Zurück zur Startseite",
-                docs: "Erste Schritte",
-                next: { title: "Während Ihre Lizenz eintrifft: Erste Schritte", sub: "Ein paar Minuten jetzt sparen später Stunden." },
+            window.translations.de.download = {
+                eyebrow: "Kostenlose 14-Tage-Testversion",
+                title: "Vielen Dank für den Download von AstroIndexer",
+                starting: "Ihr Download startet jetzt.",
+                didntStart: "Nicht gestartet?",
+                clickHere: "Hier klicken",
+                fallback: "Wählen Sie Ihre Plattform, um den Download zu starten:",
+                next: { title: "Während des Downloads: Erste Schritte", sub: "Ein paar Minuten jetzt sparen später Stunden." },
                 video: {
                     title: "AstroIndexer in Aktion",
                     desc: "Eine kurze Tour, wie AstroIndexer Tausende von Aufnahmen scannt, bewertet und organisiert — damit Sie weniger Zeit mit der Dateiverwaltung und mehr Zeit mit dem Fotografieren verbringen."
@@ -225,9 +247,54 @@
                     faq: { title: "FAQ", desc: "Antworten auf die häufigsten Fragen zu Einrichtung und Lizenz.", more: "FAQ lesen →" },
                     news: { title: "Neuigkeiten", desc: "Die neuesten Funktionen und Verbesserungen dieser Version.", more: "Changelog ansehen →" }
                 },
-                activate: "Ihre Lizenz-E-Mail enthält Ihren Schlüssel und die Aktivierungsschritte. Probleme bei der Aktivierung? Schreiben Sie an"
+                upsell: { title: "Gefällt Ihnen die Testversion?", text: "Schalten Sie die Vollversion frei — einmalig 49 €, kein Abo.", cta: "Preise ansehen" },
+                help: "Brauchen Sie Hilfe beim Start? Schreiben Sie an"
             };
             if (window.languageManager) window.languageManager.applyTranslations();
+        })();
+    </script>
+    <script>
+        // Map the ?os= parameter to the canonical release file, fill the platform
+        // badge, point the manual fallback link at the file, and auto-start the
+        // download. The B2 files are cross-origin, so the `download` attribute is
+        // advisory only; clicking still triggers a download because the browser
+        // cannot render an .exe/.dmg/.deb/.tar.gz inline.
+        (function () {
+            var BASE = "https://f005.backblazeb2.com/file/astroindexer-releases/";
+            var FILES = {
+                win: { file: "AstroIndexerSetup-latest.exe",     label: "Windows · Installer (.exe) · Windows 10+" },
+                mac: { file: "AstroIndexer-macOS-latest.dmg",     label: "macOS · Universal (.dmg) · macOS 12+" },
+                deb: { file: "astroindexer_latest_amd64.deb",     label: "Linux · Debian/Ubuntu (.deb)" },
+                tar: { file: "AstroIndexer-Linux-latest.tar.gz",  label: "Linux · Portable archive (.tar.gz)" }
+            };
+            var os = (new URLSearchParams(window.location.search).get("os") || "").toLowerCase();
+            var entry = FILES[os];
+            var manual = document.getElementById("dl-manual");
+            var status = document.getElementById("dl-status");
+            var badge = document.getElementById("dl-badge");
+            var badgeText = document.getElementById("dl-badge-text");
+            var fallback = document.getElementById("dl-fallback");
+
+            if (!entry) {
+                // No / unknown platform: hide the auto-start line, show the chooser.
+                if (status) status.style.display = "none";
+                if (fallback) fallback.style.display = "";
+                return;
+            }
+
+            var url = BASE + entry.file;
+            if (manual) { manual.setAttribute("href", url); manual.setAttribute("download", ""); }
+            if (badge && badgeText) { badgeText.textContent = entry.label; badge.style.display = ""; }
+
+            // Small delay lets the page paint before the browser download prompt.
+            window.setTimeout(function () {
+                var a = document.createElement("a");
+                a.href = url;
+                a.setAttribute("download", "");
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }, 900);
         })();
     </script>
     <script src="js/contact-form.js"></script>
