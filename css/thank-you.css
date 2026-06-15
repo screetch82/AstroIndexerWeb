@@ -199,7 +199,8 @@
     background: #000;
 }
 
-.ty-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ty-video video,
+.ty-video iframe { width: 100%; height: 100%; border: 0; object-fit: cover; display: block; }
 
 .ty-split-copy h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
 .ty-split-copy p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
