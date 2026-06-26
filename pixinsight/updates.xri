@@ -6,9 +6,9 @@
       </p>
    </description>
    <platform os="all" arch="noarch" version="1.9.4:2.9.99">
-      <package fileName="astroindexer-pixinsight-solver-1.0.0-20260626.zip" sha1="7c7fbbaa0493f15d702832211b015861dc9c01db" type="script" releaseDate="20260626">
+      <package fileName="astroindexer-pixinsight-solver-1.1.0-20260626095901.zip" sha1="e1c27cea6274f74a37eabbf1e466f95495fde770" type="script" releaseDate="20260626095901">
          <title>
-            AstroIndexer PixInsight plate-solver driver v1.0.0
+            AstroIndexer PixInsight plate-solver driver v1.1.0
          </title>
          <description>
             <p>
@@ -18,4 +18,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="DeepSkyAnalytics" timestamp="2026-06-26T08:29:41.096Z" encoding="Base64">krQLsDUFhYzpvsgGRDb29T7O79U0CMPRzA84VrSsYVapXNpIa2FOW8zKhkEuZyzTkeaFp4KoofoxeGdlB248DQ==</Signature>
+<Signature developerId="DeepSkyAnalytics" timestamp="2026-06-26T10:00:09.807Z" encoding="Base64">+3KO+sIhXXRMnJXquspz1Eh8hwfHFUw1ZffNDLmXCfxC/ZU45nOlTn5Ny8hRrDDmjAIKyGZv6xh8MdUn21ibDQ==</Signature>
