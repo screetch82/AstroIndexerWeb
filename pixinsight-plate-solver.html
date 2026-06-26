@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroIndexer PixInsight plate-solver plugin - a CPD-signed headless ImageSolver driver that plate-solves processed and final frames ASTAP cannot match. Install in one click via the AstroIndexer PixInsight update repository.">
+    <title>PixInsight Plate Solver - AstroIndexer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Scoped helpers for the repository URL block (self-contained; no new global classes). */
+        .repo-url-box {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px; padding: 14px 16px; margin: 18px 0;
+        }
+        .repo-url-box code {
+            flex: 1 1 320px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 15px; word-break: break-all; color: #66f0a0; background: transparent;
+        }
+        .repo-copy-btn {
+            border: 1px solid #66f0a0; color: #66f0a0; background: transparent;
+            border-radius: 6px; padding: 8px 16px; font-size: 14px; cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        .repo-copy-btn:hover { background: rgba(102,240,160,0.12); }
+        .repo-steps { counter-reset: step; list-style: none; padding: 0; margin: 18px 0 0; }
+        .repo-steps li {
+            position: relative; padding: 0 0 14px 42px; margin: 0; line-height: 1.6;
+        }
+        .repo-steps li::before {
+            counter-increment: step; content: counter(step);
+            position: absolute; left: 0; top: 0; width: 28px; height: 28px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(102,240,160,0.15); color: #66f0a0; border-radius: 50%;
+            font-weight: 600; font-size: 14px;
+        }
+        .callout {
+            border-left: 3px solid #66f0a0; background: rgba(102,240,160,0.06);
+            padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 18px 0;
+        }
+        .callout.warn { border-left-color: #ffc247; background: rgba(255,194,71,0.06); }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">
+            <span class="flag" id="currentFlag">&#127468;&#127463;</span>
+            <span class="lang-code" id="currentLang">EN</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" class="language-option" data-lang="en">
+                <span class="flag">&#127468;&#127463;</span>
+                <span>English</span>
+            </a>
+            <a href="#" class="language-option" data-lang="de">
+                <span class="flag">&#127465;&#127466;</span>
+                <span>Deutsch</span>
+            </a>
+            <a href="#" class="language-option" data-lang="es">
+                <span class="flag">&#127466;&#127480;</span>
+                <span>Espanol</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+                    <img src="images/logo.png" alt="AstroIndexer" class="logo">
+                    <span>AstroIndexer</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>PixInsight Plate Solver</h1>
+            <p class="page-subtitle">A CPD-signed PixInsight plugin that lets AstroIndexer plate-solve the processed and final frames ordinary solvers cannot - installed in one click from a signed update repository.</p>
+        </div>
+    </section>
+
+    <!-- What it is -->
+    <section class="doc-section">
+        <div class="container">
+            <h2>What it does</h2>
+            <p class="section-lead">AstroIndexer plate-solves your frames automatically to place them on the Sky Atlas and compute orientation, scale, and field of view. For raw subs this is fast and local. But <strong>stretched, processed, and final images</strong> have altered star profiles that defeat the quad-matching used by ASTAP and astrometry.net.</p>
+            <p>The AstroIndexer PixInsight plate solver is a small, code-signed PixInsight script (an <em>ImageSolver</em> driver) that AstroIndexer calls as a <strong>last-resort backend</strong> - only after ASTAP and astrometry.net have both failed. It drives PixInsight's own ImageSolver engine against your local Gaia DR3 catalog, which routinely solves processed frames the other solvers miss, and hands the astrometric solution back to AstroIndexer.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Last-resort only</h3>
+                    <p>It runs solely when ASTAP and astrometry.net both fail, so your normal solving stays fast. There is no change to the default pipeline.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Built for processed frames</h3>
+                    <p>PixInsight's ImageSolver with a local Gaia DR3 catalog solves stretched and final images that quad-based solvers reject - ideal for Sky Atlas overlays of finished work.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Safe and read-only</h3>
+                    <p>It never modifies your originals, runs under a hard timeout (a stuck PixInsight can never hang AstroIndexer), and only reports a solution when a real WCS is produced.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="doc-section alt-bg">
+        <div class="container">
+            <h2>Requirements</h2>
+            <div class="integration-grid">
+                <div class="integration-item">
+                    <h4>PixInsight 1.9.4 or newer</h4>
+                    <p>The driver uses PixInsight's current v8 script engine and ImageSolver 6.4.2. Older cores are not supported.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>Local Gaia DR3 database</h4>
+                    <p>Configure a local Gaia DR3 / XPSD astrometric database in PixInsight (the same one ImageSolver uses). The solver reads your existing ImageSolver catalog configuration.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>AstroIndexer with PixInsight detected</h4>
+                    <p>AstroIndexer auto-detects your PixInsight install. No extra configuration beyond enabling the backend (below).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install: repository -->
+    <section class="doc-section">
+        <div class="container">
+            <h2>Install (recommended): one-click update repository</h2>
+            <p class="section-lead">The driver ships through the standard PixInsight update-repository mechanism - the same "add a URL" flow you already use for AutoIntegrate and other tools. PixInsight downloads and installs it for you, and because the package is <strong>CPD-signed</strong>, it is trusted on every machine with no security prompts and no manual signing.</p>
+
+            <div class="repo-url-box">
+                <code id="repoUrl">https://astroindexer.com/pixinsight/updates.xri</code>
+                <button class="repo-copy-btn" id="repoCopyBtn" type="button">Copy URL</button>
+            </div>
+
+            <ol class="repo-steps">
+                <li>In PixInsight, open <strong>Resources &rarr; Updates &rarr; Manage Repositories</strong>.</li>
+                <li>Click <strong>Add</strong>, paste the URL above, and confirm.</li>
+                <li>Open <strong>Resources &rarr; Updates &rarr; Check for Updates</strong>, then <strong>Apply</strong> the available update.</li>
+                <li>Restart PixInsight when prompted. The driver installs into <code>src/scripts/AstroIndexer/</code> automatically.</li>
+            </ol>
+
+            <div class="callout">
+                <strong>That's it.</strong> No file copying, no administrator prompt, and no per-user code signing - PixInsight's own updater performs the privileged install, and the CPD signature makes the driver trusted everywhere.
+            </div>
+        </div>
+    </section>
+
+    <!-- Install: manual -->
+    <section class="doc-section alt-bg">
+        <div class="container">
+            <h2>Install (alternative): manual</h2>
+            <p class="section-lead">If you prefer not to add a repository, you can place the signed driver yourself. The files are already CPD-signed, so no signing is required on your end.</p>
+            <ol class="repo-steps">
+                <li>Download the package: <a href="pixinsight/astroindexer-pixinsight-solver-1.0.0-20260626.zip">astroindexer-pixinsight-solver-1.0.0-20260626.zip</a>.</li>
+                <li>Extract it. Inside you will find <code>src/scripts/AstroIndexer/ai_imagesolver_driver.js</code> and its <code>.xsgn</code> signature.</li>
+                <li>Copy the <code>AstroIndexer</code> folder into your PixInsight install at <code>&lt;PixInsight&gt;/src/scripts/</code> (this directory is protected, so you may need administrator rights).</li>
+                <li>Restart PixInsight.</li>
+            </ol>
+            <div class="callout warn">
+                The repository method above is recommended precisely because <code>src/scripts/</code> is a protected directory - PixInsight's updater writes there for you, avoiding the elevation step.
+            </div>
+        </div>
+    </section>
+
+    <!-- Enable in AstroIndexer -->
+    <section class="doc-section">
+        <div class="container">
+            <h2>Enable it in AstroIndexer</h2>
+            <p class="section-lead">The PixInsight backend is off by default. Turn it on once and AstroIndexer uses it automatically as the third solver.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Open the plate-solving setup</h3>
+                    <p>In the first-run Setup Wizard (or Settings), go to the <strong>plate-solving</strong> page. When PixInsight is detected and the repository is live, an <strong>"Add AstroIndexer PixInsight repository"</strong> row gives you the URL and a Copy button right there.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Check "Use PixInsight as a 3rd plate solver"</h3>
+                    <p>This enables the backend. A status dot shows whether the signed driver is installed and current.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Done</h3>
+                    <p>AstroIndexer now falls through ASTAP &rarr; astrometry.net &rarr; PixInsight, using the PixInsight solver only when the first two cannot solve a frame.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works / notes -->
+    <section class="doc-section alt-bg">
+        <div class="container">
+            <h2>Good to know</h2>
+            <div class="integration-grid">
+                <div class="integration-item">
+                    <h4>When is it used?</h4>
+                    <p>Only as the third solver, after ASTAP and astrometry.net both fail on a frame - typically processed or final images for Sky Atlas overlays. Raw subs continue to solve with the fast local solver.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>Will it touch my files?</h4>
+                    <p>No. The solver is read-only on your originals and communicates with PixInsight through a temporary working folder that is cleaned up after each solve.</p>
+                </div>
+                <div class="integration-item">
+                    <h4>Why a signed repository?</h4>
+                    <p>PixInsight only runs trusted, code-signed scripts headlessly. The Certified PixInsight Developer (CPD) signature is what lets AstroIndexer launch the solver automatically with zero prompts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="doc-section">
+        <div class="container" style="text-align:center;max-width:700px">
+            <h2>Get AstroIndexer</h2>
+            <p>The PixInsight plate solver is an optional add-on to AstroIndexer. Don't have AstroIndexer yet? Start with a 14-day free trial - no account required.</p>
+            <a href="index.html#download" class="btn-primary btn-large" style="margin-top:24px">Download AstroIndexer</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 data-i18n="footer.product.title">Product</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-i18n="footer.product.links.features">Features</a></li>
+                        <li><a href="index.html#pricing" data-i18n="footer.product.links.pricing">Pricing</a></li>
+                        <li><a href="changelog.html" data-i18n="footer.product.links.changelog">Changelog</a></li>
+                        <li><a href="index.html#roadmap" data-i18n="footer.product.links.roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.support.title">Support</h4>
+                    <ul>
+                        <li><a href="docs.html" data-i18n="footer.support.links.documentation">Documentation</a></li>
+                        <li><a href="pixinsight-plate-solver.html">PixInsight Plate Solver</a></li>
+                        <li><a href="faq.html" data-i18n="footer.support.links.faq">FAQ</a></li>
+                        <li><a href="#contact" onclick="openContactForm('Contact Us'); return false;" data-i18n="footer.support.links.contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <ul>
+                        <li><a href="impressum.html" data-i18n="footer.legal.links.impressum">Legal Notice</a></li>
+                        <li><a href="datenschutz.html" data-i18n="footer.legal.links.privacy">Privacy Policy</a></li>
+                        <li><a href="agb.html" data-i18n="footer.legal.links.terms">Terms &amp; Conditions</a></li>
+                        <li><a href="eula.html" data-i18n="footer.legal.links.eula">License Agreement (EULA)</a></li>
+                        <li><a href="widerruf.html" data-i18n="footer.legal.links.withdrawal">Right of Withdrawal</a></li>
+                        <li><a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 DeepSky Analytics UG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script>
+        // Copy the repository URL to the clipboard (no dialogs).
+        (function () {
+            var btn = document.getElementById('repoCopyBtn');
+            var url = document.getElementById('repoUrl');
+            if (!btn || !url) return;
+            btn.addEventListener('click', function () {
+                var text = url.textContent.trim();
+                var done = function () {
+                    btn.textContent = 'Copied';
+                    setTimeout(function () { btn.textContent = 'Copy URL'; }, 1500);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(done).catch(done);
+                } else {
+                    var r = document.createRange(); r.selectNode(url);
+                    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+                    try { document.execCommand('copy'); } catch (e) {}
+                    sel.removeAllRanges(); done();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
