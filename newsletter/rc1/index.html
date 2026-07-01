@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroIndexer 1.0 Release Candidate 1 is here</title>
+    <meta name="description" content="AstroIndexer 1.0 RC1 is a major milestone toward the end-of-summer 2026 release: a built-in plate solver with native distortion data, PixInsight script integration, iOS and Android companion apps, the Inspect Loupe, and an expanded Backfocus Manager.">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AstroIndexer 1.0 Release Candidate 1 is here">
+    <meta property="og:description" content="A built-in plate solver, PixInsight integration, mobile companions, and the final polish before the 1.0 launch.">
+    <meta property="og:image" content="https://astroindexer.com/newsletter/rc1/img/gallery.jpg">
+    <meta property="og:url" content="https://astroindexer.com/newsletter/rc1/">
+
+    <!--
+      Standalone RC1 announcement page. Intentionally self-contained (its own
+      inline styles, no dependency on /css/style.css) so this point-in-time
+      newsletter renders identically for years regardless of future site-CSS
+      changes, and stays portable as the email's "view in browser" target.
+      Brand tokens below mirror the site's Planner V2 theme (css/style.css).
+    -->
+    <style>
+        :root {
+            --bg0: #0b0f14;
+            --bg1: #0f1620;
+            --card: #121c28;
+            --line: rgba(255, 255, 255, 0.10);
+            --txt: #e7eef8;
+            --txt2: rgba(231, 238, 248, 0.74);
+            --mut: rgba(231, 238, 248, 0.55);
+            --teal: #49c6bf;
+            --gold: #f0b429;
+            --blue: #5aa7ff;
+            --vio: #b08cff;
+            --green: #59d98e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--txt);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background:
+                radial-gradient(1200px 500px at 25% -10%, rgba(73,198,191,0.13), transparent 60%),
+                radial-gradient(1000px 420px at 92% 0%, rgba(240,180,41,0.06), transparent 55%),
+                linear-gradient(180deg, #070a0f, #0a0f15 35%, #070a0f);
+            background-attachment: fixed;
+        }
+
+        a { color: var(--teal); }
+
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .narrow { max-width: 760px; margin-left: auto; margin-right: auto; }
+
+        /* ---- Brand bar ---- */
+        .topbar {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(11, 15, 20, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .topbar .wrap {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 62px;
+        }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--txt); }
+        .brand img { width: 30px; height: 30px; }
+        .brand span { font-weight: 800; font-size: 18px; letter-spacing: 0.2px; }
+        .topbar-cta {
+            display: inline-block; padding: 8px 18px; border-radius: 12px;
+            font-size: 13px; font-weight: 650; text-decoration: none;
+            color: var(--txt); background: rgba(73,198,191,0.16);
+            border: 1px solid rgba(73,198,191,0.45);
+        }
+        .topbar-cta:hover { background: rgba(73,198,191,0.28); }
+
+        /* ---- Hero ---- */
+        .hero { position: relative; padding: 76px 0 40px; overflow: hidden; }
+        .hero::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 78% 14%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1.4px 1.4px at 42% 68%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 88% 55%, rgba(255,255,255,0.85), transparent),
+                radial-gradient(1px 1px at 28% 84%, rgba(255,255,255,0.55), transparent),
+                radial-gradient(1.2px 1.2px at 62% 40%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 8% 60%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 95% 80%, rgba(255,255,255,0.5), transparent);
+            background-repeat: no-repeat;
+            animation: twinkle 50s infinite;
+        }
+        @keyframes twinkle { 0%,100% { opacity: 0.4; } 50% { opacity: 0.75; } }
+
+        .hero-inner { position: relative; z-index: 1; text-align: center; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 14px; border-radius: 999px;
+            background: rgba(73,198,191,0.12); border: 1px solid rgba(73,198,191,0.35);
+            color: var(--teal); font-size: 12px; font-weight: 700;
+            letter-spacing: 0.10em; text-transform: uppercase;
+        }
+        .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+        .hero h1 {
+            font-size: 46px; line-height: 1.1; font-weight: 800;
+            margin: 22px auto 18px; max-width: 780px; letter-spacing: -0.5px;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(120deg, var(--teal), var(--blue));
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; color: var(--teal);
+        }
+        .hero p.lead {
+            font-size: 18px; color: var(--txt2); max-width: 640px;
+            margin: 0 auto 28px;
+        }
+        .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 13px 26px; border-radius: 14px; text-decoration: none;
+            font-size: 15px; font-weight: 650; transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary { background: rgba(73,198,191,0.18); color: var(--txt); border-color: rgba(73,198,191,0.5); }
+        .btn-primary:hover { background: rgba(73,198,191,0.3); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(73,198,191,0.18); }
+        .btn-secondary { background: rgba(255,255,255,0.03); color: var(--txt2); border-color: var(--line); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.07); color: var(--txt); }
+
+        .hero-figure { position: relative; z-index: 1; margin: 46px auto 0; max-width: 980px; }
+        .hero-figure img {
+            width: 100%; border-radius: 16px; border: 1px solid var(--line);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            display: block;
+        }
+        figcaption { color: var(--mut); font-size: 13px; margin-top: 12px; text-align: center; }
+
+        /* ---- Stat strip ---- */
+        .stats { padding: 56px 0 8px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 720px; margin: 0 auto; }
+        .stat {
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px;
+            text-align: center;
+        }
+        .stat .v { font-size: 34px; font-weight: 800; color: var(--teal); line-height: 1.1; letter-spacing: -0.5px; }
+        .stat .l { font-size: 15px; font-weight: 650; margin-top: 8px; }
+        .stat .d { font-size: 13px; color: var(--mut); margin-top: 6px; }
+        .stat.gold .v { color: var(--gold); }
+
+        /* ---- Intro ---- */
+        .intro { padding: 48px 0 8px; }
+        .intro p { font-size: 17px; color: var(--txt2); }
+        .intro p + p { margin-top: 16px; }
+
+        /* ---- Feature rows ---- */
+        .feature { padding: 56px 0; }
+        .feature .row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center;
+        }
+        .feature.reverse .media { order: 2; }
+        .feature .media img {
+            width: 100%; border-radius: 14px; border: 1px solid var(--line);
+            box-shadow: 0 22px 56px rgba(0,0,0,0.5); display: block;
+        }
+        .feature .media.phone { text-align: center; }
+        .feature .media.phone img { max-width: 300px; margin: 0 auto; border-radius: 26px; box-shadow: 0 26px 60px rgba(0,0,0,0.6); }
+        .kicker {
+            font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--teal); margin-bottom: 12px;
+        }
+        .kicker.blue { color: var(--blue); }
+        .kicker.gold { color: var(--gold); }
+        .kicker.vio { color: var(--vio); }
+        .feature h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 16px; line-height: 1.2; }
+        .feature p.body { font-size: 16px; color: var(--txt2); margin-bottom: 20px; }
+        ul.points { list-style: none; }
+        ul.points li {
+            position: relative; padding: 7px 0 7px 28px; font-size: 15px; color: var(--txt2);
+        }
+        ul.points li::before {
+            content: '\2713'; position: absolute; left: 0; top: 7px;
+            color: var(--teal); font-weight: 800;
+        }
+
+        .bench-callout {
+            margin-top: 24px; display: flex; align-items: center; gap: 18px;
+            background: linear-gradient(135deg, rgba(73,198,191,0.10), rgba(73,198,191,0.02));
+            border: 1px solid rgba(73,198,191,0.30); border-left: 3px solid var(--teal);
+            border-radius: 14px; padding: 20px 22px;
+        }
+        .bench-callout .big { font-size: 40px; font-weight: 800; color: var(--teal); line-height: 1; letter-spacing: -1px; }
+        .bench-callout .txt { font-size: 14px; color: var(--txt2); }
+        .bench-callout .txt strong { color: var(--txt); }
+
+        .status-line {
+            margin-top: 20px; display: inline-flex; flex-wrap: wrap; gap: 10px;
+        }
+        .pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+            border: 1px solid var(--line); background: rgba(255,255,255,0.03); color: var(--txt2);
+        }
+        .pill .led { width: 8px; height: 8px; border-radius: 50%; }
+        .pill.live { border-color: rgba(89,217,142,0.4); color: var(--green); }
+        .pill.live .led { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .pill.soon { border-color: rgba(90,167,255,0.4); color: var(--blue); }
+        .pill.soon .led { background: var(--blue); box-shadow: 0 0 8px var(--blue); }
+
+        /* ---- section divider ---- */
+        .divider { height: 1px; max-width: 80%; margin: 0 auto;
+            background: linear-gradient(90deg, transparent, var(--line), transparent); }
+
+        /* ---- Also new grid ---- */
+        .also { padding: 64px 0; }
+        .section-head { text-align: center; margin-bottom: 44px; }
+        .section-head h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.3px; }
+        .section-head p { color: var(--txt2); font-size: 16px; margin-top: 10px; }
+        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .mini {
+            background: rgba(18,28,40,0.8); border: 1px solid var(--line); border-radius: 16px;
+            padding: 28px 26px; transition: all 0.25s ease;
+        }
+        .mini:hover { transform: translateY(-3px); border-color: rgba(73,198,191,0.3); }
+        .mini .ico { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center;
+            background: rgba(73,198,191,0.12); color: var(--teal); margin-bottom: 16px; }
+        .mini .ico svg { width: 22px; height: 22px; }
+        .mini.b .ico { background: rgba(90,167,255,0.12); color: var(--blue); }
+        .mini.v .ico { background: rgba(176,140,255,0.12); color: var(--vio); }
+        .mini h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .mini p { font-size: 14px; color: var(--txt2); }
+
+        /* ---- Feedback ---- */
+        .feedback { padding: 64px 0; }
+        .feedback-box {
+            background: linear-gradient(180deg, rgba(240,180,41,0.06), rgba(255,255,255,0.01));
+            border: 1px solid rgba(240,180,41,0.28); border-radius: 18px; padding: 40px;
+        }
+        .feedback-box h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+        .feedback-box p { color: var(--txt2); font-size: 16px; margin-bottom: 18px; }
+        .feedback-box ul.points li::before { color: var(--gold); }
+
+        /* ---- Final CTA ---- */
+        .final { padding: 30px 0 90px; text-align: center; }
+        .final h2 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+        .final p { color: var(--txt2); font-size: 16px; margin-bottom: 26px; }
+        .final .sub { font-size: 13px; color: var(--mut); margin-top: 18px; }
+
+        /* ---- Footer ---- */
+        footer { border-top: 1px solid var(--line); background: rgba(15,22,32,0.6); padding: 40px 0; }
+        footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+        footer .links a { color: var(--txt2); text-decoration: none; font-size: 14px; margin-right: 20px; }
+        footer .links a:hover { color: var(--teal); }
+        footer .copy { color: var(--mut); font-size: 13px; }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 860px) {
+            .hero h1 { font-size: 34px; }
+            .feature .row { grid-template-columns: 1fr; gap: 28px; }
+            .feature.reverse .media { order: 0; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 520px) {
+            .hero h1 { font-size: 28px; }
+            .hero p.lead { font-size: 16px; }
+            .feature h2, .section-head h2 { font-size: 24px; }
+            .feedback-box { padding: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Brand bar -->
+    <div class="topbar">
+        <div class="wrap">
+            <a class="brand" href="https://astroindexer.com/">
+                <img src="img/logo.png" alt="">
+                <span>AstroIndexer</span>
+            </a>
+            <a class="topbar-cta" href="https://astroindexer.com/download.html">Download</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="wrap hero-inner">
+            <span class="eyebrow"><span class="dot"></span>Release Candidate 1 &middot; v1.0.0</span>
+            <h1>AstroIndexer 1.0 is <span class="accent">almost here</span>.</h1>
+            <p class="lead">
+                Release Candidate 1 opens the final validation phase before the full 1.0 launch,
+                targeted for the end of summer 2026 &mdash; and it is the biggest step yet.
+            </p>
+            <div class="hero-buttons">
+                <a class="btn btn-primary" href="https://astroindexer.com/download.html">Update to RC1</a>
+                <a class="btn btn-secondary" href="#whats-new">See what's new</a>
+            </div>
+        </div>
+        <figure class="hero-figure wrap">
+            <img src="img/gallery.jpg" alt="AstroIndexer Gallery showing catalogue tiles for Abell, Arp, Messier, NGC and more, with a live Archive Overview sidebar">
+            <figcaption>The catalogue-first Gallery, with a live Archive Overview of your entire imaging library.</figcaption>
+        </figure>
+    </header>
+
+    <!-- Stat strip -->
+    <section class="stats" id="whats-new">
+        <div class="wrap">
+            <div class="stat-grid">
+                <div class="stat">
+                    <div class="v">1.0 RC1</div>
+                    <div class="l">Final validation phase</div>
+                    <div class="d">The last stop before the 1.0 release</div>
+                </div>
+                <div class="stat">
+                    <div class="v">iOS + Android</div>
+                    <div class="l">Companion apps</div>
+                    <div class="d">iOS live now; Android in final review</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="wrap narrow">
+            <p>
+                This is a major milestone. RC1 is not another beta drop &mdash; it is the build we
+                believe is ready to become 1.0, out in your hands for one last round of real-library
+                validation. It lands a plate solver built directly into AstroIndexer, a QA-driven
+                stacking workflow that drives both Siril and PixInsight, an image object detector,
+                brand-new iOS and Android companions, the Inspect Loupe, an expanded Backfocus Manager,
+                and share-ready image export, on top of dozens of workflow refinements.
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature 1: Native PlateSolver -->
+    <section class="feature">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/platesolver.jpg" alt="AstroIndexer's native plate solver showing a WCS solution with SIP distortion coefficients and distortion vectors overlaid on a solved frame">
+                </div>
+                <div class="content">
+                    <div class="kicker">Headline feature</div>
+                    <h2>A plate solver, built into AstroIndexer</h2>
+                    <p class="body">
+                        No more shelling out to an external tool. RC1 ships AstroIndexer's own plate
+                        solver &mdash; it detects the star field, computes the WCS solution, and stores
+                        native SIP distortion coefficients right alongside your frame. In the latest
+                        raw-light benchmark it posted an 18.6% lower median solve time than ASTAP.
+                    </p>
+                    <ul class="points">
+                        <li>Native WCS with a full SIP distortion model, captured per frame</li>
+                        <li>No external astrometry.net or ASTAP install to configure or maintain</li>
+                        <li>Distortion vectors and pixel-scale readout right in the Inspect view</li>
+                        <li>Solutions stored with your library, ready for framing and mosaics</li>
+                    </ul>
+                    <div class="bench-callout">
+                        <div class="big">18.6%</div>
+                        <div class="txt"><strong>lower median solve time vs ASTAP</strong><br>latest raw-light benchmark</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature 2: Inspect Loupe -->
+    <section class="feature reverse">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/loupe.jpg" alt="The Inspect Loupe magnifying stars at 1:1 on a frame of Arp 320, with live quality and PSF metrics and an RGB histogram alongside">
+                </div>
+                <div class="content">
+                    <div class="kicker blue">New</div>
+                    <h2>Pixel-peep any frame with the Inspect Loupe</h2>
+                    <p class="body">
+                        A magnifier loupe for your subs. Move over the frame to inspect stars at 1:1,
+                        read live quality, PSF and PixInsight-parity metrics, and check the histogram
+                        &mdash; all without leaving the gallery.
+                    </p>
+                    <ul class="points">
+                        <li>Live FWHM, HFR, eccentricity and SNR as you move across the frame</li>
+                        <li>PixInsight-parity metrics (PSFSNR / PSFSW) side by side</li>
+                        <li>Per-pixel RGB readout and an RGB histogram with log and percentile toggles</li>
+                        <li>Fit, 1:1 and WCS inspect modes for fast triage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature: Stacking Workflow -->
+    <section class="feature">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/stacking.jpg" alt="AstroIndexer stacking workflow with QA frame buckets, filter balance, and a Siril processing sequence for a HOO plus RGB stars narrowband composition">
+                </div>
+                <div class="content">
+                    <div class="kicker">New</div>
+                    <h2>One-click stacking, for Siril and PixInsight</h2>
+                    <p class="body">
+                        AstroIndexer reads your QA scores, sorts every sub into Excellent, Good,
+                        Acceptable and Reject buckets, and balances your filters for you. Then it hands
+                        the keepers straight to a stacker &mdash; no manual set-up, no juggling scripts.
+                    </p>
+                    <ul class="points">
+                        <li>QA-driven frame selection into Excellent / Good / Acceptable / Reject buckets, filter-balanced</li>
+                        <li>Automatic PixInsight stacking via AutoIntegrate, with RC Astro tool detection (BlurX / StarX / NoiseX)</li>
+                        <li>Automatic Siril stacking via AstroIndexer's own workflow scripts</li>
+                        <li>Ready-made sequences for OSC, broadband (LRGB / RGB) and narrowband (SHO / HOO)</li>
+                        <li>Presets for every goal: Default Stack, Deep Stack, Sharp Focus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature: Object Detector -->
+    <section class="feature reverse">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/detector.jpg" alt="AstroIndexer Object Detector annotating 50 catalogued galaxies on a frame of NGC 660, with a findings table listing class, catalogue and position">
+                </div>
+                <div class="content">
+                    <div class="kicker blue">New</div>
+                    <h2>See every object in the frame</h2>
+                    <p class="body">
+                        Point the Object Detector at any solved frame and it annotates every catalogued
+                        object it finds &mdash; galaxies, clusters and more &mdash; cross-matched against
+                        LEDA, SDSS, MCG and 2MASX, with a keep / reject findings table and per-object
+                        thumbnails.
+                    </p>
+                    <ul class="points">
+                        <li>Catalog-assisted detection against LEDA, SDSS, MCG, 2MASX, NVSS and more</li>
+                        <li>Every finding annotated on the frame and listed with class, catalogue and position</li>
+                        <li>Uses your WCS solution for accurate identification</li>
+                        <li>Keep or reject detections, then export the findings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature: Image Overlay Export -->
+    <section class="feature">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/overlay.jpg" alt="AstroIndexer Image Overlay Export showing a grid of processed objects with acquisition and branding overlays, ready to share">
+                </div>
+                <div class="content">
+                    <div class="kicker vio">New</div>
+                    <h2>Export share-ready images with overlays</h2>
+                    <p class="body">
+                        Turn your processed results into images that are ready to post. Image Overlay
+                        Export lays acquisition details, object info, a minimap and your own branding
+                        straight onto each frame, then batch-exports your whole library at the size you
+                        choose.
+                    </p>
+                    <ul class="points">
+                        <li>Acquisition, object, minimap and branding overlays</li>
+                        <li>Batch export across your whole library at a chosen width</li>
+                        <li>Signature preset for a consistent, branded look</li>
+                        <li>Sorted by best score, ready to share</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature 3: Backfocus Manager -->
+    <section class="feature reverse">
+        <div class="wrap">
+            <div class="row">
+                <div class="media">
+                    <img src="img/backfocus.jpg" alt="The Backfocus Manager showing a to-scale 3D image train from optic to sensor, with an under / within / over tolerance band and a backfocus summary">
+                </div>
+                <div class="content">
+                    <div class="kicker gold">Expanded</div>
+                    <h2>Dial in your imaging train before you go out</h2>
+                    <p class="body">
+                        The Backfocus Manager grew up. Build your train from a vendor inventory, see it
+                        drawn to scale, and get the exact spacer combination to hit each sensor's
+                        required backfocus &mdash; with an under / within / over band so you know instantly
+                        when you are in tolerance.
+                    </p>
+                    <ul class="points">
+                        <li>To-scale image-train diagram from optic to sensor plane</li>
+                        <li>Filter-glass compensation folded into the spacing math</li>
+                        <li>Spacer solver that names the combination to reach target backfocus</li>
+                        <li>Export a checklist to take to the scope</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Feature 4: Mobile companions -->
+    <section class="feature">
+        <div class="wrap">
+            <div class="row">
+                <div class="media phone">
+                    <img src="img/mobile.jpg" alt="The AstroIndexer mobile companion app showing the M 96 object page with a preview image, capture stats, and Scan / QA / ML pipeline status">
+                </div>
+                <div class="content">
+                    <div class="kicker vio">New platform</div>
+                    <h2>Your library, in your pocket</h2>
+                    <p class="body">
+                        AstroIndexer now has companion apps. Browse your catalogue, check per-object
+                        capture stats, and see Scan, QA and ML status on any target &mdash; from the field
+                        or from the couch.
+                    </p>
+                    <ul class="points">
+                        <li>Per-object capture summary: total exposure, frames, rig and date range</li>
+                        <li>Scan / Rig / QA / ML / Image pipeline status at a glance</li>
+                        <li>Object previews synced from your indexed library</li>
+                    </ul>
+                    <div class="status-line">
+                        <a class="pill live" href="https://apps.apple.com/us/app/astroindexercompanion/id6772704017" style="text-decoration:none;"><span class="led"></span>iOS &mdash; live now on the App Store</a>
+                        <span class="pill soon"><span class="led"></span>Android &mdash; in final Google review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Also new -->
+    <section class="also">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Also new in RC1</h2>
+                <p>Smaller additions and refinements that add up across the workflow.</p>
+            </div>
+            <div class="card-grid">
+                <div class="mini">
+                    <div class="ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+                    </div>
+                    <h3>AstroBin sync</h3>
+                    <p>Push your images and acquisition details straight to your AstroBin gallery, matched to the right target.</p>
+                </div>
+                <div class="mini b">
+                    <div class="ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+                    </div>
+                    <h3>Filter lifecycle tools</h3>
+                    <p>Track your filters across their lifecycle, so filter-aware quality and stacking decisions stay accurate over time.</p>
+                </div>
+                <div class="mini v">
+                    <div class="ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+                    </div>
+                    <h3>Workflow refinements</h3>
+                    <p>Dozens of smaller improvements across scan, gallery, quality analysis and stacking, from RC1 real-library testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback -->
+    <section class="feedback">
+        <div class="wrap narrow">
+            <div class="feedback-box">
+                <h2>What we need from you</h2>
+                <p>
+                    RC1 is about finding the last rough edges on real libraries &mdash; the setups and
+                    edge cases we cannot reproduce in the lab. If you hit any of these, please reply and
+                    tell us:
+                </p>
+                <ul class="points">
+                    <li>Install or update problems on your platform</li>
+                    <li>Plate-solving regressions compared with your previous solver</li>
+                    <li>PixInsight / AutoIntegrate hand-off issues</li>
+                    <li>Gallery, catalogue or completion oddities</li>
+                    <li>Unusual equipment, filters or acquisition setups we may not have seen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final">
+        <div class="wrap">
+            <h2>Update to Release Candidate 1</h2>
+            <p>Available for macOS, Windows and Linux.</p>
+            <a class="btn btn-primary" href="https://astroindexer.com/download.html">Download AstroIndexer 1.0 RC1</a>
+            <div class="sub">Already installed? Use the in-app updater to move to 1.0.0 RC1.</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <div class="links">
+                <a href="https://astroindexer.com/">Home</a>
+                <a href="https://astroindexer.com/changelog.html">Changelog</a>
+                <a href="https://astroindexer.com/docs.html">Docs</a>
+                <a href="mailto:support@astroindexer.com">support@astroindexer.com</a>
+            </div>
+            <div class="copy">&copy; 2025-2026 DeepSky Analytics UG</div>
+        </div>
+    </footer>
+
+</body>
+</html>

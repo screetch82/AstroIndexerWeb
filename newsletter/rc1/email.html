@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <title>AstroIndexer 1.0 Release Candidate 1</title>
+    <!--[if mso]>
+    <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+    <![endif]-->
+    <style>
+        /* Progressive enhancement only - core styling is inline. */
+        body { margin: 0; padding: 0; width: 100% !important; }
+        img { border: 0; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+        a { text-decoration: none; }
+        .es-hover:hover { opacity: 0.9; }
+        @media only screen and (max-width: 620px) {
+            .es-wrap { width: 100% !important; }
+            .es-pad { padding-left: 22px !important; padding-right: 22px !important; }
+            .es-h1 { font-size: 28px !important; line-height: 34px !important; }
+            .es-h2 { font-size: 21px !important; line-height: 27px !important; }
+            .es-img { width: 100% !important; height: auto !important; }
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color:#070a0f;">
+
+    <!-- Preheader (hidden preview text) -->
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all; font-size:1px; line-height:1px; color:#070a0f; opacity:0;">
+        Native plate solving, PixInsight integration, mobile companions, and the final polish before 1.0.
+        &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
+    </div>
+
+    <!-- Outer background -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#070a0f;">
+        <tr>
+            <td align="center" style="padding:0;">
+
+                <!-- View in browser -->
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="es-wrap" style="width:600px; max-width:600px;">
+                    <tr>
+                        <td align="center" class="es-pad" style="padding:14px 32px 6px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12px; color:#7f8a98;">
+                            <a href="https://astroindexer.com/newsletter/rc1/" style="color:#7f8a98; text-decoration:underline;">View this email in your browser</a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Main content card -->
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="es-wrap" style="width:600px; max-width:600px; background-color:#0b0f14; border:1px solid #1e2a38; border-radius:18px; overflow:hidden;">
+
+                    <!-- Brand header -->
+                    <tr>
+                        <td align="center" class="es-pad" style="padding:26px 32px 10px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-right:9px;" valign="middle">
+                                        <img src="https://astroindexer.com/newsletter/rc1/img/logo.png" width="28" height="28" alt="" border="0" style="display:block; width:28px; height:28px; border:0;">
+                                    </td>
+                                    <td valign="middle" style="font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:18px; font-weight:800; color:#e7eef8; letter-spacing:0.2px;">
+                                        AstroIndexer
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding:2px 32px 18px;">
+                            <span style="display:inline-block; padding:6px 14px; border:1px solid rgba(73,198,191,0.45); border-radius:999px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#49c6bf; background-color:#0e1b1e;">
+                                Release Candidate 1 &middot; v1.0.0
+                            </span>
+                        </td>
+                    </tr>
+
+                    <!-- Hero image (full bleed) -->
+                    <tr>
+                        <td style="padding:0;">
+                            <a href="https://astroindexer.com/newsletter/rc1/">
+                                <img class="es-img" src="https://astroindexer.com/newsletter/rc1/img/gallery.jpg" width="600" height="353" border="0" alt="AstroIndexer Gallery showing catalogue tiles and a live Archive Overview of the imaging library" style="display:block; width:600px; max-width:100%; height:auto; border:0;">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- H1 + intro -->
+                    <tr>
+                        <td class="es-pad" style="padding:30px 40px 0; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <h1 class="es-h1" style="margin:0 0 14px; font-size:32px; line-height:38px; font-weight:800; color:#e7eef8; letter-spacing:-0.4px;">
+                                AstroIndexer 1.0 is almost here.
+                            </h1>
+                            <p style="margin:0 0 14px; font-size:16px; line-height:26px; color:#b8c2ce;">
+                                Hi {first_name},
+                            </p>
+                            <p style="margin:0 0 6px; font-size:16px; line-height:26px; color:#b8c2ce;">
+                                Release Candidate 1 opens the final validation phase before the full 1.0 launch,
+                                targeted for the end of summer 2026 &mdash; and it is the biggest step yet. A plate
+                                solver built into AstroIndexer, a QA-driven stacking workflow that drives Siril
+                                and PixInsight, an image object detector, brand-new iOS and Android companions,
+                                the Inspect Loupe, and an expanded Backfocus Manager.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Primary CTA -->
+                    <tr>
+                        <td class="es-pad" align="left" style="padding:22px 40px 8px;">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://astroindexer.com/download.html" style="height:46px;v-text-anchor:middle;width:220px;" arcsize="28%" strokecolor="#49c6bf" fillcolor="#49c6bf">
+                            <w:anchorlock/><center style="color:#07231f;font-family:sans-serif;font-size:15px;font-weight:bold;">Update to RC1</center>
+                            </v:roundrect>
+                            <![endif]-->
+                            <!--[if !mso]><!-- -->
+                            <a class="es-hover" href="https://astroindexer.com/download.html" style="display:inline-block; background-color:#49c6bf; color:#07231f; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:15px; font-weight:700; line-height:46px; text-align:center; text-decoration:none; padding:0 28px; border-radius:13px;">
+                                Update to RC1
+                            </a>
+                            <!--<![endif]-->
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- PlateSolver -->
+                    <tr>
+                        <td class="es-pad" style="padding:26px 40px 4px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <p style="margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#49c6bf;">Headline feature</p>
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:24px; line-height:30px; font-weight:800; color:#e7eef8;">A plate solver, built in</h2>
+                            <p style="margin:0 0 16px; font-size:15px; line-height:25px; color:#b8c2ce;">
+                                No more shelling out to an external tool. RC1 ships AstroIndexer's own plate solver
+                                &mdash; it detects the star field, computes the WCS solution, and stores native SIP
+                                distortion coefficients right alongside your frame.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 0 4px;">
+                            <img class="es-img" src="https://astroindexer.com/newsletter/rc1/img/platesolver.jpg" width="600" height="341" border="0" alt="AstroIndexer native plate solver with a WCS solution, SIP distortion coefficients and distortion vectors overlaid on a solved frame" style="display:block; width:600px; max-width:100%; height:auto; border:0;">
+                        </td>
+                    </tr>
+                    <!-- 18.6% callout -->
+                    <tr>
+                        <td class="es-pad" style="padding:16px 40px 0;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0e1b1e; border:1px solid rgba(73,198,191,0.30); border-radius:12px;">
+                                <tr>
+                                    <td width="96" align="center" valign="middle" style="padding:16px 6px 16px 18px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:34px; font-weight:800; color:#49c6bf; letter-spacing:-1px;">18.6%</td>
+                                    <td valign="middle" style="padding:16px 18px 16px 8px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; line-height:20px; color:#b8c2ce;">
+                                        <strong style="color:#e7eef8;">lower median solve time vs ASTAP</strong><br>in the latest raw-light benchmark &mdash; with no external solver to install.
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style="margin:14px 0 0; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; line-height:22px; color:#8a94a2;">
+                                Plus the new <strong style="color:#b8c2ce;">Inspect Loupe</strong> to pixel-peep any sub at 1:1 with live FWHM, HFR, PSF and histogram readouts.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- Stacking -->
+                    <tr>
+                        <td class="es-pad" style="padding:26px 40px 4px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <p style="margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#49c6bf;">New</p>
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:24px; line-height:30px; font-weight:800; color:#e7eef8;">One-click stacking, Siril or PixInsight</h2>
+                            <p style="margin:0 0 16px; font-size:15px; line-height:25px; color:#b8c2ce;">
+                                AstroIndexer sorts your subs by QA score, balances your filters, then hands the
+                                keepers to a stacker: one-click PixInsight AutoIntegrate, or automatic Siril
+                                stacking via AstroIndexer's own workflow scripts &mdash; each with ready-made
+                                sequences for OSC, broadband and narrowband.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            <img class="es-img" src="https://astroindexer.com/newsletter/rc1/img/stacking.jpg" width="600" height="341" border="0" alt="AstroIndexer stacking workflow with QA frame buckets, filter balance and a Siril processing sequence" style="display:block; width:600px; max-width:100%; height:auto; border:0;">
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- Object Detector -->
+                    <tr>
+                        <td class="es-pad" style="padding:26px 40px 4px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <p style="margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#5aa7ff;">New</p>
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:24px; line-height:30px; font-weight:800; color:#e7eef8;">See every object in the frame</h2>
+                            <p style="margin:0 0 16px; font-size:15px; line-height:25px; color:#b8c2ce;">
+                                The Object Detector annotates every catalogued object in a solved frame &mdash;
+                                galaxies, clusters and more &mdash; cross-matched against LEDA, SDSS, MCG and
+                                2MASX, with a keep / reject findings table.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            <img class="es-img" src="https://astroindexer.com/newsletter/rc1/img/detector.jpg" width="600" height="341" border="0" alt="AstroIndexer Object Detector annotating catalogued galaxies on a frame of NGC 660 with a findings table" style="display:block; width:600px; max-width:100%; height:auto; border:0;">
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- Backfocus -->
+                    <tr>
+                        <td class="es-pad" style="padding:26px 40px 4px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <p style="margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#f0b429;">Expanded</p>
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:24px; line-height:30px; font-weight:800; color:#e7eef8;">Dial in your imaging train</h2>
+                            <p style="margin:0 0 16px; font-size:15px; line-height:25px; color:#b8c2ce;">
+                                Build your train from a vendor inventory, see it drawn to scale, and get the exact
+                                spacer combination to hit each sensor's required backfocus &mdash; with an under /
+                                within / over band so you know instantly when you are in tolerance.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            <img class="es-img" src="https://astroindexer.com/newsletter/rc1/img/backfocus.jpg" width="600" height="341" border="0" alt="Backfocus Manager showing a to-scale image train from optic to sensor with an under / within / over tolerance band" style="display:block; width:600px; max-width:100%; height:auto; border:0;">
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- Mobile -->
+                    <tr>
+                        <td class="es-pad" style="padding:26px 40px 4px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <p style="margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#b08cff;">New platform</p>
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:24px; line-height:30px; font-weight:800; color:#e7eef8;">Your library, in your pocket</h2>
+                            <p style="margin:0 0 4px; font-size:15px; line-height:25px; color:#b8c2ce;">
+                                AstroIndexer now has companion apps. Browse your catalogue, check per-object capture
+                                stats, and see Scan, QA and ML status on any target &mdash; from the field or the couch.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding:14px 0 4px;">
+                            <a href="https://apps.apple.com/us/app/astroindexercompanion/id6772704017"><img src="https://astroindexer.com/newsletter/rc1/img/mobile.jpg" width="240" height="519" border="0" alt="AstroIndexer mobile companion app showing the M 96 object page with capture stats and pipeline status" style="display:block; width:240px; max-width:70%; height:auto; margin:0 auto; border-radius:22px; border:0;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="es-pad" align="center" style="padding:8px 40px 0; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:13px; line-height:22px; color:#8a94a2;">
+                            <a href="https://apps.apple.com/us/app/astroindexercompanion/id6772704017" style="color:#59d98e; font-weight:700; text-decoration:underline;">iOS &mdash; live now on the App Store &rarr;</a><br>
+                            <span style="color:#5aa7ff; font-weight:600;">Android &mdash; in final Google review.</span>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr><td class="es-pad" style="padding:26px 40px 0;"><div style="border-top:1px solid #1e2a38; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+                    <!-- Also new -->
+                    <tr>
+                        <td class="es-pad" style="padding:24px 40px 0; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                            <h2 class="es-h2" style="margin:0 0 12px; font-size:20px; line-height:26px; font-weight:800; color:#e7eef8;">Also new in RC1</h2>
+                            <p style="margin:0 0 6px; font-size:15px; line-height:24px; color:#b8c2ce;">
+                                &bull; <strong style="color:#e7eef8;">Image Overlay Export</strong> &mdash; share-ready images with acquisition, object and branding overlays.<br>
+                                &bull; <strong style="color:#e7eef8;">Filter lifecycle tools</strong> &mdash; keep filter-aware quality and stacking accurate over time.<br>
+                                &bull; <strong style="color:#e7eef8;">Dozens of workflow refinements</strong> &mdash; across scan, gallery, quality analysis and stacking.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Feedback -->
+                    <tr>
+                        <td class="es-pad" style="padding:24px 40px 0;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1a1712; border:1px solid rgba(240,180,41,0.28); border-radius:14px;">
+                                <tr>
+                                    <td style="padding:22px 22px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                                        <p style="margin:0 0 8px; font-size:17px; font-weight:800; color:#e7eef8;">What we need from you</p>
+                                        <p style="margin:0; font-size:14px; line-height:23px; color:#b8c2ce;">
+                                            RC1 is about the last rough edges on real libraries. Just reply to this email if
+                                            you hit install / update problems, plate-solving regressions, PixInsight hand-off
+                                            issues, gallery or catalogue oddities, or unusual equipment we may not have seen.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Dual CTA -->
+                    <tr>
+                        <td class="es-pad" align="center" style="padding:30px 40px 6px;">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://astroindexer.com/download.html" style="height:48px;v-text-anchor:middle;width:250px;" arcsize="28%" strokecolor="#49c6bf" fillcolor="#49c6bf">
+                            <w:anchorlock/><center style="color:#07231f;font-family:sans-serif;font-size:15px;font-weight:bold;">Update to AstroIndexer 1.0 RC1</center>
+                            </v:roundrect>
+                            <![endif]-->
+                            <!--[if !mso]><!-- -->
+                            <a class="es-hover" href="https://astroindexer.com/download.html" style="display:inline-block; background-color:#49c6bf; color:#07231f; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:15px; font-weight:700; line-height:48px; text-align:center; text-decoration:none; padding:0 30px; border-radius:13px;">
+                                Update to AstroIndexer 1.0 RC1
+                            </a>
+                            <!--<![endif]-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding:0 40px 30px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px;">
+                            <a href="https://astroindexer.com/newsletter/rc1/" style="color:#49c6bf; text-decoration:none; font-weight:600;">Read the full RC1 announcement &rarr;</a>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <!-- Footer -->
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="es-wrap" style="width:600px; max-width:600px;">
+                    <tr>
+                        <td class="es-pad" align="center" style="padding:24px 40px 40px; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:20px; color:#6b7280;">
+                            <span style="color:#7f8a98;">Clear skies,<br>The AstroIndexer Team</span><br><br>
+                            <a href="https://astroindexer.com/" style="color:#7f8a98; text-decoration:underline;">astroindexer.com</a>
+                            &nbsp;&middot;&nbsp;
+                            <a href="mailto:support@astroindexer.com" style="color:#7f8a98; text-decoration:underline;">support@astroindexer.com</a>
+                            <br><br>
+                            <span style="color:#8a94a2;">
+                                You are receiving this because you have an AstroIndexer license.<br>
+                                Reply to this email to unsubscribe.<br>
+                                &copy; 2025-2026 DeepSky Analytics UG
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

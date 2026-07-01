@@ -1,0 +1,88 @@
+AstroIndexer 1.0 Release Candidate 1 is here
+=============================================
+
+Hi {first_name},
+
+Release Candidate 1 opens the final validation phase before the full 1.0
+launch, targeted for the end of summer 2026 - and it is the biggest step yet:
+a plate solver built into AstroIndexer, a QA-driven stacking workflow that
+drives Siril and PixInsight, an image object detector, brand-new iOS and
+Android companions, the Inspect Loupe, and an expanded Backfocus Manager.
+
+Update to RC1:  https://astroindexer.com/download.html
+
+
+A PLATE SOLVER, BUILT IN
+------------------------
+No more shelling out to an external tool. RC1 ships AstroIndexer's own plate
+solver - it detects the star field, computes the WCS solution, and
+stores native SIP distortion coefficients right alongside your frame.
+
+  18.6% lower median solve time vs ASTAP in the latest raw-light benchmark,
+  with no external solver to install.
+
+Plus the new Inspect Loupe to pixel-peep any sub at 1:1 with live FWHM, HFR,
+PSF and histogram readouts.
+
+
+ONE-CLICK STACKING, SIRIL OR PIXINSIGHT
+---------------------------------------
+AstroIndexer sorts your subs by QA score, balances your filters, then hands
+the keepers to a stacker: one-click PixInsight AutoIntegrate (with RC Astro
+tool detection), or automatic Siril stacking via AstroIndexer's own workflow
+scripts - each with ready-made sequences for OSC, broadband and narrowband.
+
+
+SEE EVERY OBJECT IN THE FRAME
+-----------------------------
+The Object Detector annotates every catalogued object in a solved frame -
+galaxies, clusters and more - cross-matched against LEDA, SDSS, MCG and 2MASX,
+with a keep / reject findings table.
+
+
+DIAL IN YOUR IMAGING TRAIN
+--------------------------
+Build your train from a vendor inventory, see it drawn to scale, and get the
+exact spacer combination to hit each sensor's required backfocus - with an
+under / within / over band so you know instantly when you are in tolerance.
+
+
+YOUR LIBRARY, IN YOUR POCKET
+----------------------------
+AstroIndexer now has companion apps. Browse your catalogue, check per-object
+capture stats, and see Scan, QA and ML status on any target.
+
+  iOS - live now on the App Store:
+  https://apps.apple.com/us/app/astroindexercompanion/id6772704017
+  Android - in final Google review.
+
+
+ALSO NEW IN RC1
+---------------
+- Image Overlay Export: share-ready images with acquisition, object and
+  branding overlays.
+- Filter lifecycle tools: keep filter-aware quality and stacking accurate over
+  time.
+- Dozens of workflow refinements across scan, gallery, quality analysis and
+  stacking.
+
+
+WHAT WE NEED FROM YOU
+---------------------
+RC1 is about the last rough edges on real libraries. Just reply to this email
+if you hit install / update problems, plate-solving regressions, PixInsight
+hand-off issues, gallery or catalogue oddities, or unusual equipment we may not
+have seen.
+
+
+Update to AstroIndexer 1.0 RC1:  https://astroindexer.com/download.html
+Read the full announcement:      https://astroindexer.com/newsletter/rc1/
+
+Clear skies,
+The AstroIndexer Team
+
+astroindexer.com  -  support@astroindexer.com
+
+You are receiving this because you have an AstroIndexer license.
+Reply to this email to unsubscribe.
+(c) 2025-2026 DeepSky Analytics UG
