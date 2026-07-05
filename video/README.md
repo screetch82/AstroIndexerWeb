@@ -60,6 +60,32 @@ npm run studio                   # live preview / scrub in the browser
 
 Feature copy (titles/bodies/chips) lives in `BEATS` in `src/Announcement.tsx`.
 
+## Languages (en / de / es)
+
+The announcement is localized. Each language has its own composition
+(`Announcement`, `AnnouncementDE`, `AnnouncementES`) plus a flag chip in the
+corner, and renders with that language's shipped brand voice:
+
+| Lang | Voice | Manifest |
+|------|-------|----------|
+| en | `en-GB-LibbyNeural` | `src/ann.en.json` |
+| de | `de-DE-KatjaNeural` | `src/ann.de.json` |
+| es | `es-ES-ElviraNeural` | `src/ann.es.json` |
+
+`gen_i18n.py` holds all per-language content (on-screen strings **and** narration)
+in one place; it renders the VO and writes each `ann.<lang>.json` (strings +
+timings). `Announcement.tsx` is data-driven — it reads `ann.<lang>.json` by the
+`lang` prop; design (accent colours, screenshots, pill colours) stays in code.
+
+```bash
+python3 gen_i18n.py                 # all languages (or: gen_i18n.py de es)
+for L in en de es; do python3 gen_music.py src/ann.$L.json public/music/bed_$L.wav; done
+npx remotion render src/index.ts AnnouncementDE out/announcement-de.mp4 --codec=h264 --image-format=png --crf=16
+```
+
+To add a language: add an entry to `LANGS` in `gen_i18n.py` (voice + flag +
+strings + narration), register a `Composition` in `src/Root.tsx`.
+
 ## Feature tutorials (pilot)
 
 `TutorialBackfocus` is the first feature-tutorial composition and the template for

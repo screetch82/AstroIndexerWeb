@@ -1,0 +1,116 @@
+{
+  "fps": 30,
+  "lang": "de",
+  "flag": "🇩🇪",
+  "label": "DE",
+  "voice": "de-DE-KatjaNeural",
+  "eyebrow": "Release Candidate 1 · v1.0.0",
+  "rcChip": "1.0 RC1",
+  "intro": {
+    "pre": "AstroIndexer 1.0 ist ",
+    "accent": "fast da",
+    "post": ".",
+    "subtitle": "Der bisher größte Schritt zur fertigen Version 1.0."
+  },
+  "outro": {
+    "title": "Jetzt auf 1.0 RC1 updaten",
+    "cta": "astroindexer.com",
+    "platforms": "macOS · Windows · Linux  •  iOS live im App Store · Android in finaler Prüfung"
+  },
+  "beats": {
+    "platesolver": {
+      "kicker": "Highlight",
+      "title": "Ein Plate Solver, integriert",
+      "body": "Natives WCS-Lösen mit vollständigem SIP-Verzeichnungsmodell, pro Frame gespeichert — ohne externes ASTAP oder astrometry.net.",
+      "chipBig": "18,6 %",
+      "chipSmall": "niedrigere mediane\nLösungszeit als ASTAP"
+    },
+    "loupe": {
+      "kicker": "Neu",
+      "title": "Die Inspect-Lupe",
+      "body": "Jedes Sub bei 1:1 begutachten — mit Live-FWHM, HFR und PixInsight-konformen Metriken, ohne die Galerie zu verlassen."
+    },
+    "stacking": {
+      "kicker": "Neu",
+      "title": "Ein-Klick-Stacking",
+      "body": "QA-sortierte Frames direkt an PixInsight AutoIntegrate oder Siril — fertig für OSC, Breitband und Schmalband."
+    },
+    "detector": {
+      "kicker": "Neu",
+      "title": "Objekt-Detektor",
+      "body": "Jedes katalogisierte Objekt in einem gelösten Frame annotiert, abgeglichen mit LEDA, SDSS, MCG und 2MASX."
+    },
+    "backfocus": {
+      "kicker": "Erweitert",
+      "title": "Backfocus Manager",
+      "body": "Ihr Abbildungszug maßstabsgetreu gezeichnet, mit der exakten Spacer-Kombination für den Backfocus jedes Sensors."
+    },
+    "mobile": {
+      "kicker": "Neue Plattform",
+      "title": "Ihre Bibliothek in der Tasche",
+      "body": "Katalog durchsuchen und Scan-, QA- und ML-Status auf jedem Ziel sehen — vom Feld oder vom Sofa.",
+      "pills": [
+        "iOS — live im App Store",
+        "Android — in finaler Prüfung"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "audio": "vo_de/intro.mp3",
+      "durSec": 7.608,
+      "beatFrames": 257,
+      "audioStartFrame": 12
+    },
+    {
+      "id": "platesolver",
+      "audio": "vo_de/platesolver.mp3",
+      "durSec": 12.624,
+      "beatFrames": 406,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "loupe",
+      "audio": "vo_de/loupe.mp3",
+      "durSec": 9.144,
+      "beatFrames": 301,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "stacking",
+      "audio": "vo_de/stacking.mp3",
+      "durSec": 10.992,
+      "beatFrames": 357,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "detector",
+      "audio": "vo_de/detector.mp3",
+      "durSec": 9.552,
+      "beatFrames": 314,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "backfocus",
+      "audio": "vo_de/backfocus.mp3",
+      "durSec": 8.832,
+      "beatFrames": 292,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "mobile",
+      "audio": "vo_de/mobile.mp3",
+      "durSec": 10.392,
+      "beatFrames": 339,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "outro",
+      "audio": "vo_de/outro.mp3",
+      "durSec": 10.368,
+      "beatFrames": 352,
+      "audioStartFrame": 10
+    }
+  ]
+}

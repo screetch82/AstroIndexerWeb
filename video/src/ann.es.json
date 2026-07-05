@@ -1,0 +1,116 @@
+{
+  "fps": 30,
+  "lang": "es",
+  "flag": "🇪🇸",
+  "label": "ES",
+  "voice": "es-ES-ElviraNeural",
+  "eyebrow": "Release Candidate 1 · v1.0.0",
+  "rcChip": "1.0 RC1",
+  "intro": {
+    "pre": "AstroIndexer 1.0 ",
+    "accent": "ya casi está",
+    "post": ".",
+    "subtitle": "El mayor paso hasta ahora hacia la versión 1.0 final."
+  },
+  "outro": {
+    "title": "Actualiza a 1.0 RC1",
+    "cta": "astroindexer.com",
+    "platforms": "macOS · Windows · Linux  •  iOS en la App Store · Android en revisión final"
+  },
+  "beats": {
+    "platesolver": {
+      "kicker": "Función estrella",
+      "title": "Un plate solver, integrado",
+      "body": "Resolución WCS nativa con un modelo de distorsión SIP completo, guardado por frame — sin ASTAP ni astrometry.net externos.",
+      "chipBig": "18,6 %",
+      "chipSmall": "menor tiempo mediano\nde resolución que ASTAP"
+    },
+    "loupe": {
+      "kicker": "Nuevo",
+      "title": "La lupa de inspección",
+      "body": "Examina cualquier sub a 1:1 con FWHM, HFR y métricas equivalentes a PixInsight en vivo, sin salir de la galería."
+    },
+    "stacking": {
+      "kicker": "Nuevo",
+      "title": "Apilado con un clic",
+      "body": "Frames ordenados por QA directos a PixInsight AutoIntegrate o Siril — listos para OSC, banda ancha y banda estrecha."
+    },
+    "detector": {
+      "kicker": "Nuevo",
+      "title": "Detector de Objetos",
+      "body": "Cada objeto catalogado anotado en un frame resuelto, contrastado con LEDA, SDSS, MCG y 2MASX."
+    },
+    "backfocus": {
+      "kicker": "Ampliado",
+      "title": "Gestor de Backfocus",
+      "body": "Tu tren de imagen dibujado a escala, con la combinación exacta de espaciadores para el backfocus de cada sensor."
+    },
+    "mobile": {
+      "kicker": "Nueva plataforma",
+      "title": "Tu biblioteca en el bolsillo",
+      "body": "Explora tu catálogo y consulta el estado de Escaneo, QA y ML en cualquier objetivo — desde el campo o el sofá.",
+      "pills": [
+        "iOS — ya en la App Store",
+        "Android — en revisión final"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "audio": "vo_es/intro.mp3",
+      "durSec": 7.728,
+      "beatFrames": 260,
+      "audioStartFrame": 12
+    },
+    {
+      "id": "platesolver",
+      "audio": "vo_es/platesolver.mp3",
+      "durSec": 12.696,
+      "beatFrames": 408,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "loupe",
+      "audio": "vo_es/loupe.mp3",
+      "durSec": 8.808,
+      "beatFrames": 291,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "stacking",
+      "audio": "vo_es/stacking.mp3",
+      "durSec": 9.6,
+      "beatFrames": 315,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "detector",
+      "audio": "vo_es/detector.mp3",
+      "durSec": 8.184,
+      "beatFrames": 273,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "backfocus",
+      "audio": "vo_es/backfocus.mp3",
+      "durSec": 6.984,
+      "beatFrames": 237,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "mobile",
+      "audio": "vo_es/mobile.mp3",
+      "durSec": 8.352,
+      "beatFrames": 278,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "outro",
+      "audio": "vo_es/outro.mp3",
+      "durSec": 10.632,
+      "beatFrames": 359,
+      "audioStartFrame": 10
+    }
+  ]
+}

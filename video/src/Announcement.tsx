@@ -1,88 +1,33 @@
 import React from "react";
 import {
-  AbsoluteFill,
-  Audio,
-  Img,
-  Sequence,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-  interpolate,
-  spring,
+  AbsoluteFill, Audio, Img, Sequence, staticFile,
+  useCurrentFrame, useVideoConfig, interpolate, spring,
 } from "remotion";
 import { Background, Kicker, C, FONT, useRise } from "./theme";
-import manifest from "./manifest.json";
+import en from "./ann.en.json";
+import de from "./ann.de.json";
+import es from "./ann.es.json";
 
-type Pill = { text: string; color: string };
-type Beat = {
-  kicker: string;
-  accent: string;
-  title: string;
-  body: string;
-  shot: string;
-  portrait?: boolean;
-  chip?: { big: string; small: React.ReactNode };
-  pills?: Pill[];
-};
+const MANIFESTS: Record<string, any> = { en, de, es };
 
-// ── Per-feature content (keyed by manifest segment id) ───────────────────
-const BEATS: Record<string, Beat> = {
-  platesolver: {
-    kicker: "Headline feature",
-    accent: C.teal,
-    title: "A plate solver, built in",
-    body: "Native WCS solving with a full SIP distortion model, stored per frame — no external ASTAP or astrometry.net to install.",
-    shot: "shots/plate_solver.jpg",
-    chip: { big: "18.6%", small: <>lower median solve<br />time than ASTAP</> },
-  },
-  loupe: {
-    kicker: "New",
-    accent: C.blue,
-    title: "The Inspect Loupe",
-    body: "Pixel-peep any sub at 1:1 with live FWHM, HFR and PixInsight-parity metrics — without ever leaving the gallery.",
-    shot: "shots/inspect_loupe.jpg",
-  },
-  stacking: {
-    kicker: "New",
-    accent: C.teal,
-    title: "One-click stacking",
-    body: "QA-sorted frames handed straight to PixInsight AutoIntegrate or Siril — ready-made for OSC, broadband and narrowband.",
-    shot: "shots/stacking_workflow.jpg",
-  },
-  detector: {
-    kicker: "New",
-    accent: C.blue,
-    title: "Object Detector",
-    body: "Every catalogued object annotated on a solved frame, cross-matched against LEDA, SDSS, MCG and 2MASX.",
-    shot: "shots/object_detector.jpg",
-  },
-  backfocus: {
-    kicker: "Expanded",
-    accent: C.gold,
-    title: "Backfocus Manager",
-    body: "Your imaging train drawn to scale, with the exact spacer combination to hit each sensor's required backfocus.",
-    shot: "shots/backfocus_manager.jpg",
-  },
-  mobile: {
-    kicker: "New platform",
-    accent: C.vio,
-    title: "Your library, in your pocket",
-    body: "Browse your catalogue and see Scan, QA and ML status on any target — from the field or the couch.",
-    shot: "shots/mobile_companion.jpg",
-    portrait: true,
-    pills: [
-      { text: "iOS — live on the App Store", color: C.green },
-      { text: "Android — in final review", color: C.blue },
-    ],
-  },
+// Design (language-independent): accent colour, screenshot and app-status colours per beat.
+const ACCENT: Record<string, string> = {
+  platesolver: C.teal, loupe: C.blue, stacking: C.teal,
+  detector: C.blue, backfocus: C.gold, mobile: C.vio,
 };
+const SHOT: Record<string, string> = {
+  platesolver: "shots/plate_solver.jpg", loupe: "shots/inspect_loupe.jpg",
+  stacking: "shots/stacking_workflow.jpg", detector: "shots/object_detector.jpg",
+  backfocus: "shots/backfocus_manager.jpg", mobile: "shots/mobile_companion.jpg",
+};
+const PORTRAIT = new Set(["mobile"]);
+const PILL_COLORS = [C.green, C.blue];
 
 const useVertical = () => {
   const { width, height } = useVideoConfig();
   return height > width;
 };
 
-// ── Screenshot with entrance + slow Ken-Burns drift ──────────────────────
 const Shot: React.FC<{ src: string; portrait?: boolean; dur: number }> = ({ src, portrait, dur }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -94,139 +39,71 @@ const Shot: React.FC<{ src: string; portrait?: boolean; dur: number }> = ({ src,
   const maxHeight = portrait ? (V ? 1000 : 860) : V ? 740 : 620;
   return (
     <div style={{ flex: V ? "none" : 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div
-        style={{
-          transform: `scale(${(0.94 + enter * 0.06) * kb}) translateY(${(1 - enter) * 26 + drift}px)`,
-          opacity: enter,
-          borderRadius: portrait ? 34 : 18,
-          overflow: "hidden",
-          border: `1px solid ${C.line}`,
-          boxShadow: "0 40px 90px rgba(0,0,0,0.6)",
-          background: C.card,
-        }}
-      >
+      <div style={{
+        transform: `scale(${(0.94 + enter * 0.06) * kb}) translateY(${(1 - enter) * 26 + drift}px)`,
+        opacity: enter, borderRadius: portrait ? 34 : 18, overflow: "hidden",
+        border: `1px solid ${C.line}`, boxShadow: "0 40px 90px rgba(0,0,0,0.6)", background: C.card,
+      }}>
         <Img src={staticFile(src)} style={{ display: "block", maxWidth, maxHeight, width: "auto", height: "auto" }} />
       </div>
     </div>
   );
 };
 
-// ── One feature beat ─────────────────────────────────────────────────────
-const FeatureBeat: React.FC<{ beat: Beat; mediaRight: boolean; dur: number }> = ({ beat, mediaRight, dur }) => {
+const FeatureBeat: React.FC<{ id: string; content: any; mediaRight: boolean; dur: number }> = ({ id, content, mediaRight, dur }) => {
   const frame = useCurrentFrame();
   const V = useVertical();
-  const beatOpacity = interpolate(frame, [0, 12, dur - 14, dur], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const rk = useRise(3);
-  const rt = useRise(8);
-  const rb = useRise(14);
-  const rc = useRise(20);
+  const accent = ACCENT[id];
+  const beatOpacity = interpolate(frame, [0, 12, dur - 14, dur], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const rk = useRise(3), rt = useRise(8), rb = useRise(14), rc = useRise(20);
   const align = V ? "center" : "flex-start";
 
   const text = (
     <div style={{ flex: V ? "none" : 1, padding: V ? 0 : "0 30px", maxWidth: V ? 960 : 820, textAlign: V ? "center" : "left" }}>
-      <div style={rk}>
-        <Kicker color={beat.accent}>{beat.kicker}</Kicker>
-      </div>
+      <div style={rk}><Kicker color={accent}>{content.kicker}</Kicker></div>
       <div style={rt}>
-        <h1 style={{ margin: "16px 0 0", fontSize: V ? 60 : 74, lineHeight: 1.04, fontWeight: 800, letterSpacing: -1.5, color: C.txt }}>
-          {beat.title}
-        </h1>
+        <h1 style={{ margin: "16px 0 0", fontSize: V ? 60 : 74, lineHeight: 1.04, fontWeight: 800, letterSpacing: -1.5, color: C.txt }}>{content.title}</h1>
       </div>
       <div style={rb}>
-        <p style={{ margin: V ? "18px auto 0" : "22px 0 0", fontSize: 30, lineHeight: 1.42, color: C.txt2, maxWidth: 760 }}>
-          {beat.body}
-        </p>
+        <p style={{ margin: V ? "18px auto 0" : "22px 0 0", fontSize: 30, lineHeight: 1.42, color: C.txt2, maxWidth: 760 }}>{content.body}</p>
       </div>
-      {beat.chip && (
+      {content.chipBig && (
         <div style={{ ...rc, textAlign: V ? "center" : "left" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 16,
-              marginTop: 28,
-              padding: "16px 22px",
-              borderRadius: 16,
-              border: `1px solid ${beat.accent}66`,
-              background: `${beat.accent}16`,
-            }}
-          >
-            <span style={{ fontSize: 46, fontWeight: 800, color: beat.accent, letterSpacing: -1.5 }}>{beat.chip.big}</span>
-            <span style={{ fontSize: 22, lineHeight: 1.2, color: C.txt2, textAlign: "left" }}>{beat.chip.small}</span>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 16, marginTop: 28, padding: "16px 22px", borderRadius: 16, border: `1px solid ${accent}66`, background: `${accent}16` }}>
+            <span style={{ fontSize: 46, fontWeight: 800, color: accent, letterSpacing: -1.5 }}>{content.chipBig}</span>
+            <span style={{ fontSize: 22, lineHeight: 1.2, color: C.txt2, textAlign: "left" }}>
+              {String(content.chipSmall || "").split("\n").map((l: string, i: number) => (<React.Fragment key={i}>{i > 0 && <br />}{l}</React.Fragment>))}
+            </span>
           </div>
         </div>
       )}
-      {beat.pills && (
+      {content.pills && (
         <div style={{ ...rc, display: "flex", gap: 14, marginTop: 28, flexWrap: "wrap", justifyContent: align }}>
-          {beat.pills.map((p, i) => (
-            <div
-              key={i}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 11,
-                padding: "12px 20px",
-                borderRadius: 999,
-                border: `1px solid ${p.color}66`,
-                background: `${p.color}14`,
-                fontSize: 22,
-                fontWeight: 600,
-                color: p.color,
-              }}
-            >
-              <span style={{ width: 11, height: 11, borderRadius: "50%", background: p.color }} />
-              {p.text}
+          {content.pills.map((p: string, i: number) => (
+            <div key={i} style={{ display: "inline-flex", alignItems: "center", gap: 11, padding: "12px 20px", borderRadius: 999, border: `1px solid ${PILL_COLORS[i]}66`, background: `${PILL_COLORS[i]}14`, fontSize: 22, fontWeight: 600, color: PILL_COLORS[i] }}>
+              <span style={{ width: 11, height: 11, borderRadius: "50%", background: PILL_COLORS[i] }} />{p}
             </div>
           ))}
         </div>
       )}
     </div>
   );
-
-  const media = <Shot src={beat.shot} portrait={beat.portrait} dur={dur} />;
+  const media = <Shot src={SHOT[id]} portrait={PORTRAIT.has(id)} dur={dur} />;
 
   return (
     <AbsoluteFill style={{ opacity: beatOpacity }}>
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: V ? "column" : mediaRight ? "row" : "row-reverse",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: V ? "150px 70px 96px" : "120px 100px 96px",
-          gap: V ? 44 : 40,
-        }}
-      >
-        {V ? (
-          <>
-            {media}
-            {text}
-          </>
-        ) : (
-          <>
-            {text}
-            {media}
-          </>
-        )}
+      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: V ? "column" : mediaRight ? "row" : "row-reverse", alignItems: "center", justifyContent: "center", padding: V ? "150px 70px 96px" : "120px 100px 96px", gap: V ? 44 : 40 }}>
+        {V ? (<>{media}{text}</>) : (<>{text}{media}</>)}
       </div>
     </AbsoluteFill>
   );
 };
 
-// ── Intro card ───────────────────────────────────────────────────────────
-const Intro: React.FC<{ dur: number }> = ({ dur }) => {
+const Intro: React.FC<{ intro: any; eyebrow: string; dur: number }> = ({ intro, eyebrow, dur }) => {
   const frame = useCurrentFrame();
   const V = useVertical();
   const op = interpolate(frame, [0, 14, dur - 16, dur], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const r0 = useRise(2, 20);
-  const r1 = useRise(8, 30);
-  const r2 = useRise(16, 30);
-  const r3 = useRise(26, 24);
+  const r0 = useRise(2, 20), r1 = useRise(8, 30), r2 = useRise(16, 30), r3 = useRise(26, 24);
   return (
     <AbsoluteFill style={{ opacity: op, alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 60px" }}>
       <div style={{ ...r0, display: "flex", alignItems: "center", gap: 16, marginBottom: 26 }}>
@@ -234,78 +111,39 @@ const Intro: React.FC<{ dur: number }> = ({ dur }) => {
         <span style={{ fontSize: 40, fontWeight: 800, color: C.txt, letterSpacing: 0.3 }}>AstroIndexer</span>
       </div>
       <div style={r1}>
-        <span
-          style={{
-            display: "inline-block",
-            padding: "9px 20px",
-            borderRadius: 999,
-            border: `1px solid ${C.teal}55`,
-            background: `${C.teal}14`,
-            color: C.teal,
-            fontSize: 20,
-            fontWeight: 800,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-          }}
-        >
-          Release Candidate 1 · v1.0.0
-        </span>
+        <span style={{ display: "inline-block", padding: "9px 20px", borderRadius: 999, border: `1px solid ${C.teal}55`, background: `${C.teal}14`, color: C.teal, fontSize: 20, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase" }}>{eyebrow}</span>
       </div>
       <h1 style={{ ...r2, margin: "28px 0 0", fontSize: V ? 76 : 104, lineHeight: 1.03, fontWeight: 800, letterSpacing: V ? -2 : -3, color: C.txt, maxWidth: V ? 960 : 1500 }}>
-        AstroIndexer 1.0 is{" "}
-        <span style={{ background: `linear-gradient(110deg, ${C.teal}, ${C.blue})`, WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          almost here
-        </span>
-        .
+        {intro.pre}
+        <span style={{ background: `linear-gradient(110deg, ${C.teal}, ${C.blue})`, WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>{intro.accent}</span>
+        {intro.post}
       </h1>
-      <p style={{ ...r3, margin: "30px 0 0", fontSize: V ? 32 : 34, color: C.txt2, maxWidth: 1000, lineHeight: 1.4 }}>
-        The biggest step yet toward the full 1.0 launch.
-      </p>
+      <p style={{ ...r3, margin: "30px 0 0", fontSize: V ? 32 : 34, color: C.txt2, maxWidth: 1050, lineHeight: 1.4 }}>{intro.subtitle}</p>
     </AbsoluteFill>
   );
 };
 
-// ── Outro card ───────────────────────────────────────────────────────────
-const Outro: React.FC<{ dur: number }> = ({ dur }) => {
+const Outro: React.FC<{ outro: any; dur: number }> = ({ outro, dur }) => {
   const frame = useCurrentFrame();
   const V = useVertical();
   const op = interpolate(frame, [0, 16, dur - 20, dur], [0, 1, 1, 0.0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const r0 = useRise(2, 20);
-  const r1 = useRise(10, 30);
-  const r2 = useRise(20, 24);
-  const r3 = useRise(30, 20);
+  const r0 = useRise(2, 20), r1 = useRise(10, 30), r2 = useRise(20, 24), r3 = useRise(30, 20);
   return (
     <AbsoluteFill style={{ opacity: op, alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 60px" }}>
       <div style={{ ...r0, display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
         <Img src={staticFile("logo.png")} style={{ width: 50, height: 50 }} />
         <span style={{ fontSize: 32, fontWeight: 800, color: C.txt }}>AstroIndexer</span>
       </div>
-      <h1 style={{ ...r1, margin: 0, fontSize: V ? 70 : 96, fontWeight: 800, letterSpacing: -2.5, color: C.txt }}>Update to 1.0 RC1</h1>
+      <h1 style={{ ...r1, margin: 0, fontSize: V ? 70 : 96, fontWeight: 800, letterSpacing: -2.5, color: C.txt }}>{outro.title}</h1>
       <div style={{ ...r2, marginTop: 34 }}>
-        <span
-          style={{
-            display: "inline-block",
-            padding: "18px 40px",
-            borderRadius: 16,
-            background: `linear-gradient(135deg, ${C.teal}, ${C.blue})`,
-            color: "#06121a",
-            fontSize: V ? 30 : 34,
-            fontWeight: 800,
-            letterSpacing: 0.3,
-          }}
-        >
-          astroindexer.com
-        </span>
+        <span style={{ display: "inline-block", padding: "18px 40px", borderRadius: 16, background: `linear-gradient(135deg, ${C.teal}, ${C.blue})`, color: "#06121a", fontSize: V ? 30 : 34, fontWeight: 800, letterSpacing: 0.3 }}>{outro.cta}</span>
       </div>
-      <p style={{ ...r3, margin: "30px auto 0", fontSize: V ? 23 : 26, color: C.mut, letterSpacing: 0.4, maxWidth: 900, lineHeight: 1.5 }}>
-        macOS · Windows · Linux &nbsp;•&nbsp; iOS live on the App Store · Android in final review
-      </p>
+      <p style={{ ...r3, margin: "30px auto 0", fontSize: V ? 23 : 26, color: C.mut, letterSpacing: 0.4, maxWidth: 900, lineHeight: 1.5 }}>{outro.platforms}</p>
     </AbsoluteFill>
   );
 };
 
-// ── Persistent chrome across the feature beats ───────────────────────────
-const Header: React.FC = () => {
+const Header: React.FC<{ rcChip: string }> = ({ rcChip }) => {
   const frame = useCurrentFrame();
   const op = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
   return (
@@ -314,26 +152,18 @@ const Header: React.FC = () => {
         <Img src={staticFile("logo.png")} style={{ width: 34, height: 34 }} />
         <span style={{ fontSize: 24, fontWeight: 800, color: C.txt }}>AstroIndexer</span>
       </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 56,
-          right: 64,
-          padding: "7px 16px",
-          borderRadius: 999,
-          border: `1px solid ${C.teal}55`,
-          background: `${C.teal}14`,
-          color: C.teal,
-          fontSize: 18,
-          fontWeight: 800,
-          letterSpacing: "0.12em",
-        }}
-      >
-        1.0 RC1
-      </div>
+      <div style={{ position: "absolute", top: 56, right: 168, padding: "7px 16px", borderRadius: 999, border: `1px solid ${C.teal}55`, background: `${C.teal}14`, color: C.teal, fontSize: 18, fontWeight: 800, letterSpacing: "0.12em" }}>{rcChip}</div>
     </AbsoluteFill>
   );
 };
+
+// Persistent language flag (all beats + intro + outro), top-right.
+const FlagChip: React.FC<{ flag: string; label: string }> = ({ flag, label }) => (
+  <div style={{ position: "absolute", top: 52, right: 56, display: "flex", alignItems: "center", gap: 9, padding: "7px 14px", borderRadius: 999, background: "rgba(11,15,20,0.72)", border: `1px solid ${C.line}`, backdropFilter: "blur(6px)" }}>
+    <span style={{ fontSize: 24, lineHeight: 1 }}>{flag}</span>
+    <span style={{ fontSize: 16, fontWeight: 800, color: C.txt2, letterSpacing: "0.08em" }}>{label}</span>
+  </div>
+);
 
 const ProgressBar: React.FC = () => {
   const frame = useCurrentFrame();
@@ -346,15 +176,12 @@ const ProgressBar: React.FC = () => {
   );
 };
 
-// ── Assembly ─────────────────────────────────────────────────────────────
-export const Announcement: React.FC = () => {
-  const segs = manifest.segments;
+export const Announcement: React.FC<{ lang?: string }> = ({ lang = "en" }) => {
+  const M = MANIFESTS[lang] || MANIFESTS.en;
+  const segs = M.segments;
   const offsets: number[] = [];
   let acc = 0;
-  for (const s of segs) {
-    offsets.push(acc);
-    acc += s.beatFrames;
-  }
+  for (const s of segs) { offsets.push(acc); acc += s.beatFrames; }
   const outroIdx = segs.length - 1;
   const beatsStart = offsets[1];
   const beatsEnd = offsets[outroIdx];
@@ -363,37 +190,27 @@ export const Announcement: React.FC = () => {
   return (
     <AbsoluteFill style={{ fontFamily: FONT, backgroundColor: C.bg0 }}>
       <Background />
+      <Audio src={staticFile(`music/bed_${lang}.wav`)} volume={0.16} />
 
-      {/* Ambient music bed (original, synthesized) for the whole piece */}
-      <Audio src={staticFile("music/bed.wav")} volume={0.16} />
-
-      {segs.map((s, i) => {
-        const isIntro = i === 0;
-        const isOutro = i === outroIdx;
+      {segs.map((s: any, i: number) => {
+        const isIntro = i === 0, isOutro = i === outroIdx;
         let content: React.ReactNode;
-        if (isIntro) {
-          content = <Intro dur={s.beatFrames} />;
-        } else if (isOutro) {
-          content = <Outro dur={s.beatFrames} />;
-        } else {
-          const mediaRight = featureCounter % 2 === 0;
-          featureCounter += 1;
-          content = <FeatureBeat beat={BEATS[s.id]} mediaRight={mediaRight} dur={s.beatFrames} />;
+        if (isIntro) content = <Intro intro={M.intro} eyebrow={M.eyebrow} dur={s.beatFrames} />;
+        else if (isOutro) content = <Outro outro={M.outro} dur={s.beatFrames} />;
+        else {
+          const mediaRight = featureCounter % 2 === 0; featureCounter += 1;
+          content = <FeatureBeat id={s.id} content={M.beats[s.id]} mediaRight={mediaRight} dur={s.beatFrames} />;
         }
         return (
-          <Sequence key={s.id} from={offsets[i]} durationInFrames={s.beatFrames} name={s.id}>
+          <Sequence key={s.id} from={offsets[i]} durationInFrames={s.beatFrames} name={`${lang}-${s.id}`}>
             {content}
-            <Sequence from={s.audioStartFrame} name={`${s.id}-vo`}>
-              <Audio src={staticFile(s.audio)} />
-            </Sequence>
+            <Sequence from={s.audioStartFrame} name={`${s.id}-vo`}><Audio src={staticFile(s.audio)} /></Sequence>
           </Sequence>
         );
       })}
 
-      <Sequence from={beatsStart} durationInFrames={beatsEnd - beatsStart} name="header">
-        <Header />
-      </Sequence>
-
+      <Sequence from={beatsStart} durationInFrames={beatsEnd - beatsStart} name="header"><Header rcChip={M.rcChip} /></Sequence>
+      <FlagChip flag={M.flag} label={M.label} />
       <ProgressBar />
     </AbsoluteFill>
   );

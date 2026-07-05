@@ -1,0 +1,116 @@
+{
+  "fps": 30,
+  "lang": "en",
+  "flag": "🇬🇧",
+  "label": "EN",
+  "voice": "en-GB-LibbyNeural",
+  "eyebrow": "Release Candidate 1 · v1.0.0",
+  "rcChip": "1.0 RC1",
+  "intro": {
+    "pre": "AstroIndexer 1.0 is ",
+    "accent": "almost here",
+    "post": ".",
+    "subtitle": "The biggest step yet toward the full 1.0 launch."
+  },
+  "outro": {
+    "title": "Update to 1.0 RC1",
+    "cta": "astroindexer.com",
+    "platforms": "macOS · Windows · Linux  •  iOS live on the App Store · Android in final review"
+  },
+  "beats": {
+    "platesolver": {
+      "kicker": "Headline feature",
+      "title": "A plate solver, built in",
+      "body": "Native WCS solving with a full SIP distortion model, stored per frame — no external ASTAP or astrometry.net to install.",
+      "chipBig": "18.6%",
+      "chipSmall": "lower median solve\ntime than ASTAP"
+    },
+    "loupe": {
+      "kicker": "New",
+      "title": "The Inspect Loupe",
+      "body": "Pixel-peep any sub at 1:1 with live FWHM, HFR and PixInsight-parity metrics — without ever leaving the gallery."
+    },
+    "stacking": {
+      "kicker": "New",
+      "title": "One-click stacking",
+      "body": "QA-sorted frames handed straight to PixInsight AutoIntegrate or Siril — ready-made for OSC, broadband and narrowband."
+    },
+    "detector": {
+      "kicker": "New",
+      "title": "Object Detector",
+      "body": "Every catalogued object annotated on a solved frame, cross-matched against LEDA, SDSS, MCG and 2MASX."
+    },
+    "backfocus": {
+      "kicker": "Expanded",
+      "title": "Backfocus Manager",
+      "body": "Your imaging train drawn to scale, with the exact spacer combination to hit each sensor's required backfocus."
+    },
+    "mobile": {
+      "kicker": "New platform",
+      "title": "Your library, in your pocket",
+      "body": "Browse your catalogue and see Scan, QA and ML status on any target — from the field or the couch.",
+      "pills": [
+        "iOS — live on the App Store",
+        "Android — in final review"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "audio": "vo_en/intro.mp3",
+      "durSec": 7.944,
+      "beatFrames": 267,
+      "audioStartFrame": 12
+    },
+    {
+      "id": "platesolver",
+      "audio": "vo_en/platesolver.mp3",
+      "durSec": 12.408,
+      "beatFrames": 399,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "loupe",
+      "audio": "vo_en/loupe.mp3",
+      "durSec": 8.976,
+      "beatFrames": 296,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "stacking",
+      "audio": "vo_en/stacking.mp3",
+      "durSec": 10.824,
+      "beatFrames": 352,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "detector",
+      "audio": "vo_en/detector.mp3",
+      "durSec": 9.192,
+      "beatFrames": 303,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "backfocus",
+      "audio": "vo_en/backfocus.mp3",
+      "durSec": 8.28,
+      "beatFrames": 275,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "mobile",
+      "audio": "vo_en/mobile.mp3",
+      "durSec": 9.936,
+      "beatFrames": 325,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "outro",
+      "audio": "vo_en/outro.mp3",
+      "durSec": 11.4,
+      "beatFrames": 382,
+      "audioStartFrame": 10
+    }
+  ]
+}
