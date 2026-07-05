@@ -86,7 +86,23 @@ npx remotion render src/index.ts TutorialBackfocus out/tutorial.mp4 \
 python3 whisper_srt.py out/tutorial.mp4 out/tutorial.srt  # optional (recorded footage)
 ```
 
-**Next step toward real screencasts:** this pilot annotates a static screenshot. A true
-live-UI walkthrough uses the app's own `tools/tutorial_capture` pipeline (drive the app +
-record) — which needs the macOS `avfoundation` capture path finished. See
+## Live screencasts (compositing)
+
+For a real walkthrough, the base track is a **live screen recording** (the app's own
+`tools/tutorial_capture` pipeline — macOS `avfoundation` recorder is implemented and
+verified working here) instead of a screenshot. Remotion then supplies a **transparent
+graphics track** composited over that footage with ffmpeg:
+
+- `src/Overlay.tsx` — graphics only (header, animated lower-third, progress), no background.
+  Render **with alpha** (PNG frames + a yuva pixel format, since `remotion.config` uses
+  jpeg for the opaque comps):
+  ```bash
+  npx remotion render src/index.ts Overlay out/overlay.mov \
+    --codec=prores --prores-profile=4444 --image-format=png --pixel-format=yuva444p10le
+  ```
+- `compose_screencast.sh BASE.mp4 OVERLAY.mov VO.mp3 MUSIC.wav OUT.mp4` — ffmpeg glue:
+  `overlay` the alpha track over the base, `amix` narration + ducked music, export H.264/AAC.
+
+Swap `BASE.mp4` for a live `avfoundation` recording and it's a real screencast. The one
+interactive step left is driving the app through a feature journey while recording. See
 `PIPELINE_PROPOSAL.md`.

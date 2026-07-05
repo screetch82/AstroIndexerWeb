@@ -9,6 +9,17 @@ and reproducible when the UI changes.
 Written after reviewing the "Claude + video" ecosystem (see *What I consumed*) and
 auditing what we already have.
 
+> **Status update — Phase 0 done + more.** ffmpeg, faster-whisper, and the
+> HyperFrames skills are installed. The zoom-highlight **video kit** and a **pilot
+> Backfocus tutorial** are built and rendered. Correction to §4/§5: the macOS
+> `avfoundation` recorder is **already implemented** in `tools/tutorial_capture/
+> recorder.py` (v1.1.0) — and **live screen capture is verified working on this
+> Mac** (ffmpeg + Screen Recording permission both good). The **compositing stage**
+> now exists too: `src/Overlay.tsx` renders a transparent (alpha) graphics track and
+> `compose_screencast.sh` layers it — plus narration and ducked music — over any
+> base video with ffmpeg. Remaining to reach a real screencast: **run the app +
+> drive a feature journey while recording** (the one interactive step).
+
 ---
 
 ## 1. What we already have (assets to build on)
