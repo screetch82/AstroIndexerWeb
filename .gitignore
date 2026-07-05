@@ -11,3 +11,7 @@ node_modules/
 # macOS Finder metadata — local only, never synced
 .DS_Store
 **/.DS_Store
+
+# Installed agent skills (HyperFrames etc.) — not part of the site
+.agents/
+skills-lock.json

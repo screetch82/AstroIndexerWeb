@@ -3,11 +3,14 @@
 licensing concerns). Warm I-V-vi-IV progression, soft harmonics, slow swell,
 gentle stereo width, matched to the video length. Output: public/music/bed.wav
 """
-import json, math, os, wave
+import json, math, os, sys, wave
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(HERE, "src", "manifest.json")) as f:
+# Usage: gen_music.py [manifest.json] [out.wav]  (defaults: announcement)
+MAN_PATH = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "src", "manifest.json")
+OUT_PATH = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "public", "music", "bed.wav")
+with open(MAN_PATH) as f:
     man = json.load(f)
 FPS = man["fps"]
 TOTAL_FRAMES = sum(s["beatFrames"] for s in man["segments"])
@@ -78,8 +81,8 @@ peak = np.max(np.abs(buf))
 buf = buf / peak * 0.8
 
 pcm = (buf * 32767).astype("<i2")
-os.makedirs(os.path.join(HERE, "public", "music"), exist_ok=True)
-out_path = os.path.join(HERE, "public", "music", "bed.wav")
+out_path = OUT_PATH
+os.makedirs(os.path.dirname(out_path), exist_ok=True)
 with wave.open(out_path, "w") as w:
     w.setnchannels(2)
     w.setsampwidth(2)

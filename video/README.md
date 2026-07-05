@@ -59,3 +59,34 @@ npm run studio                   # live preview / scrub in the browser
 5. `python3 gen_captions.py` → refresh `out/*.srt` + `out/*-youtube.md` to match.
 
 Feature copy (titles/bodies/chips) lives in `BEATS` in `src/Announcement.tsx`.
+
+## Feature tutorials (pilot)
+
+`TutorialBackfocus` is the first feature-tutorial composition and the template for
+the rest (Planning, Quality Analytics, Equipment Manager, …). It's a **zoom-to-highlight
+walkthrough**: the camera pans/zooms across an annotated screenshot, step by step, with
+animated lower-third captions, brand-voice narration, and music.
+
+- `gen_tutorial.py` — narration (edge-tts LibbyNeural) + `src/tutorial_backfocus.json`
+  (per-step `region` to zoom to + `caption` + timings). Edit `STEPS` to author a tutorial.
+- `src/Tutorial.tsx` — the composition. `target(region)` centres + zooms on a region and
+  **clamps the pan so the image always covers the frame** (no black edges). Regions are
+  `[x, y, w, h]` fractions of the screenshot.
+- `gen_music.py <manifest.json> <out.wav>` — score any manifest (reused for the tutorial bed).
+- `whisper_srt.py <media> <out.srt>` — **stage F**: transcribe *any* audio (recorded
+  screencasts included) with faster-whisper → SRT. Note: for **scripted** narration the
+  manifest-derived SRT is exact; Whisper's value is **unscripted/recorded** footage
+  (it trips on domain terms like "spacers"/"AstroIndexer" from mixed audio).
+
+```bash
+python3 gen_tutorial.py                                  # VO + manifest
+python3 gen_music.py src/tutorial_backfocus.json public/music/tutorial_bed.wav
+npx remotion render src/index.ts TutorialBackfocus out/tutorial.mp4 \
+  --codec=h264 --image-format=png --crf=16
+python3 whisper_srt.py out/tutorial.mp4 out/tutorial.srt  # optional (recorded footage)
+```
+
+**Next step toward real screencasts:** this pilot annotates a static screenshot. A true
+live-UI walkthrough uses the app's own `tools/tutorial_capture` pipeline (drive the app +
+record) — which needs the macOS `avfoundation` capture path finished. See
+`PIPELINE_PROPOSAL.md`.

@@ -1,0 +1,112 @@
+{
+  "fps": 30,
+  "shot": "shots/backfocus_manager.jpg",
+  "title": "Backfocus Manager",
+  "segments": [
+    {
+      "id": "intro",
+      "audio": "tvo/intro.mp3",
+      "text": "This is the Backfocus Manager, in the Equipment Manager. It builds your imaging train, draws it to scale, and works out the exact spacers to hit your sensor's backfocus.",
+      "caption": "",
+      "region": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "durSec": 12.168,
+      "beatFrames": 395,
+      "audioStartFrame": 12
+    },
+    {
+      "id": "inventory",
+      "audio": "tvo/inventory.mp3",
+      "text": "Start on the left. Add each part of your train from the vendor inventory \u2014 adapters, spacers, filter drawers, and your camera. AstroIndexer knows every part's optical length.",
+      "caption": "Build from the vendor inventory",
+      "region": [
+        0.0,
+        0.17,
+        0.24,
+        0.78
+      ],
+      "durSec": 13.776,
+      "beatFrames": 440,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "train",
+      "audio": "tvo/train.mp3",
+      "text": "Your train is drawn to scale, from the reference optic down to the sensor plane, so the spacing is obvious at a glance.",
+      "caption": "Drawn to scale, optic to sensor",
+      "region": [
+        0.21,
+        0.16,
+        0.52,
+        0.72
+      ],
+      "durSec": 8.16,
+      "beatFrames": 272,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "tolerance",
+      "audio": "tvo/tolerance.mp3",
+      "text": "The backfocus summary shows your target and tolerance. The under, within, over band tells you at a glance whether you're in spec.",
+      "caption": "Under \u00b7 within \u00b7 over",
+      "region": [
+        0.71,
+        0.16,
+        0.29,
+        0.18
+      ],
+      "durSec": 9.408,
+      "beatFrames": 309,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "details",
+      "audio": "tvo/details.mp3",
+      "text": "Filter-glass compensation is folded into the maths, and the details panel resolves the spacer combination you need.",
+      "caption": "Filter-glass + spacer maths",
+      "region": [
+        0.71,
+        0.28,
+        0.29,
+        0.24
+      ],
+      "durSec": 7.752,
+      "beatFrames": 260,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "export",
+      "audio": "tvo/export.mp3",
+      "text": "When it's dialled in, export the checklist and take it to the scope.",
+      "caption": "Export the checklist",
+      "region": [
+        0.8,
+        0.11,
+        0.18,
+        0.06
+      ],
+      "durSec": 4.776,
+      "beatFrames": 170,
+      "audioStartFrame": 10
+    },
+    {
+      "id": "outro",
+      "audio": "tvo/outro.mp3",
+      "text": "That's the Backfocus Manager \u2014 dial in your train before you head out.",
+      "caption": "",
+      "region": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "durSec": 5.208,
+      "beatFrames": 195,
+      "audioStartFrame": 12
+    }
+  ]
+}
