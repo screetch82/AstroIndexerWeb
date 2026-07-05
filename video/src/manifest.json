@@ -1,0 +1,70 @@
+{
+  "fps": 30,
+  "voice": "en-GB-LibbyNeural",
+  "segments": [
+    {
+      "id": "intro",
+      "audio": "vo/intro.mp3",
+      "text": "AstroIndexer 1.0, Release Candidate 1, is here \u2014 the biggest step yet toward the full release.",
+      "durSec": 7.94,
+      "beatFrames": 267,
+      "audioStartFrame": 12
+    },
+    {
+      "id": "platesolver",
+      "audio": "vo/platesolver.mp3",
+      "text": "AstroIndexer now includes its own plate solver \u2014 native solving with full distortion data, and no external tools to install. Eighteen point six percent faster than ASTAP.",
+      "durSec": 12.41,
+      "beatFrames": 396,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "loupe",
+      "audio": "vo/loupe.mp3",
+      "text": "The new Inspect Loupe examines any sub at full resolution, with live quality metrics that match PixInsight \u2014 right in your gallery.",
+      "durSec": 8.98,
+      "beatFrames": 293,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "stacking",
+      "audio": "vo/stacking.mp3",
+      "text": "Stacking is now a single click. AstroIndexer sorts your frames by quality, and hands the best of them to PixInsight or Siril, automatically.",
+      "durSec": 10.82,
+      "beatFrames": 349,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "detector",
+      "audio": "vo/detector.mp3",
+      "text": "The new Object Detector identifies every catalogued object in a solved frame, and cross-matches them against professional sky surveys.",
+      "durSec": 9.19,
+      "beatFrames": 300,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "backfocus",
+      "audio": "vo/backfocus.mp3",
+      "text": "And the expanded Backfocus Manager draws your imaging train to scale, and finds the exact spacer for every sensor.",
+      "durSec": 8.28,
+      "beatFrames": 272,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "mobile",
+      "audio": "vo/mobile.mp3",
+      "text": "Your library travels with you, too, with new companion apps for iOS and Android \u2014 catalogue and pipeline status always in reach.",
+      "durSec": 9.94,
+      "beatFrames": 322,
+      "audioStartFrame": 9
+    },
+    {
+      "id": "outro",
+      "audio": "vo/outro.mp3",
+      "text": "AstroIndexer 1.0, Release Candidate 1. It runs locally, with no subscription. Update at astroindexer.com.",
+      "durSec": 11.4,
+      "beatFrames": 382,
+      "audioStartFrame": 10
+    }
+  ]
+}
