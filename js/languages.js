@@ -5,6 +5,7 @@ const translations = {
         nav: {
             whatis: "What Is AstroIndexer?",
             features: "Features",
+            whatsnew: "What's New",
             pricing: "Pricing",
             documentation: "Documentation",
             faq: "FAQ",
@@ -32,7 +33,8 @@ const translations = {
             subtitle: "Everything you need to organize, analyze, and understand your astronomical imaging data",
             badge: {
                 standard: "Standard",
-                pro: "Pro"
+                pro: "Pro",
+                new: "New"
             },
             items: {
                 organization: {
@@ -82,7 +84,114 @@ const translations = {
                 aiinsights: {
                     title: "Local AI Insights",
                     description: "Get clear, easy-to-follow recommendations for frame selection, stacking, and equipment optimization - running locally on your computer by default, with optional support from OpenAI or Claude."
+                },
+                platesolver: {
+                    title: "Built-In Plate Solver",
+                    description: "AstroIndexer's own plate solver detects the star field, computes the WCS solution, and stores native SIP distortion coefficients per frame — no external ASTAP or astrometry.net to install. 18.6% faster median solve time than ASTAP."
+                },
+                stacking: {
+                    title: "One-Click Stacking",
+                    description: "QA scores sort every sub into Excellent, Good, Acceptable and Reject buckets, then AstroIndexer hands the keepers to a stacker: one-click PixInsight AutoIntegrate or automatic Siril stacking, with ready-made OSC, broadband and narrowband sequences."
+                },
+                detector: {
+                    title: "Object Detector",
+                    description: "Annotates every catalogued object in a solved frame — galaxies, clusters and more — cross-matched against LEDA, SDSS, MCG and 2MASX, with a keep / reject findings table."
+                },
+                loupe: {
+                    title: "Inspect Loupe",
+                    description: "Pixel-peep any sub at 1:1 with a magnifier loupe. Live FWHM, HFR, eccentricity, SNR and PixInsight-parity PSF metrics, plus a per-pixel RGB readout and histogram — without leaving the gallery."
+                },
+                backfocus: {
+                    title: "Backfocus Manager",
+                    description: "Build your imaging train from a vendor inventory, see it drawn to scale, and get the exact spacer combination to hit each sensor's required backfocus — with an under / within / over tolerance band."
+                },
+                mobile: {
+                    title: "Mobile Companion Apps",
+                    description: "Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or the couch. iOS is live on the App Store; Android is in final review."
                 }
+            }
+        },
+
+        // New in 1.0 RC1 Section
+        rc1: {
+            banner: {
+                badge: "New · 1.0 RC1",
+                text: "Built-in plate solver, one-click stacking & mobile apps"
+            },
+            eyebrow: "Release Candidate 1 · v1.0.0",
+            title: "New in 1.0 Release Candidate 1",
+            subtitle: "The biggest step yet toward 1.0 — acquisition and processing tools built right into AstroIndexer.",
+            platesolver: {
+                title: "A Plate Solver, Built In",
+                description: "No more shelling out to an external tool. AstroIndexer's own plate solver detects the star field, computes the WCS solution, and stores native SIP distortion coefficients right alongside your frame. In the latest raw-light benchmark it posted an 18.6% lower median solve time than ASTAP.",
+                points: [
+                    "Native WCS with a full SIP distortion model, captured per frame",
+                    "No external astrometry.net or ASTAP install to configure or maintain",
+                    "18.6% lower median solve time than ASTAP in the latest raw-light benchmark",
+                    "Solutions stored with your library, ready for framing and mosaics"
+                ]
+            },
+            loupe: {
+                title: "Pixel-Peep Any Frame with the Inspect Loupe",
+                description: "A magnifier loupe for your subs. Move over the frame to inspect stars at 1:1, read live quality, PSF and PixInsight-parity metrics, and check the histogram — all without leaving the gallery.",
+                points: [
+                    "Live FWHM, HFR, eccentricity and SNR as you move across the frame",
+                    "PixInsight-parity metrics (PSFSNR / PSFSW) side by side",
+                    "Per-pixel RGB readout and an RGB histogram with log and percentile toggles",
+                    "Fit, 1:1 and WCS inspect modes for fast triage"
+                ]
+            },
+            stacking: {
+                title: "One-Click Stacking, for Siril and PixInsight",
+                description: "AstroIndexer reads your QA scores, sorts every sub into Excellent, Good, Acceptable and Reject buckets, and balances your filters for you. Then it hands the keepers straight to a stacker — no manual set-up, no juggling scripts.",
+                points: [
+                    "QA-driven frame selection into Excellent / Good / Acceptable / Reject buckets, filter-balanced",
+                    "Automatic PixInsight stacking via AutoIntegrate, with RC Astro tool detection (BlurX / StarX / NoiseX)",
+                    "Automatic Siril stacking via AstroIndexer's own workflow scripts",
+                    "Ready-made sequences for OSC, broadband (LRGB / RGB) and narrowband (SHO / HOO)",
+                    "Presets for every goal: Default Stack, Deep Stack, Sharp Focus"
+                ]
+            },
+            detector: {
+                title: "See Every Object in the Frame",
+                description: "Point the Object Detector at any solved frame and it annotates every catalogued object it finds — galaxies, clusters and more — cross-matched against LEDA, SDSS, MCG and 2MASX, with a keep / reject findings table and per-object thumbnails.",
+                points: [
+                    "Catalog-assisted detection against LEDA, SDSS, MCG, 2MASX, NVSS and more",
+                    "Every finding annotated on the frame and listed with class, catalogue and position",
+                    "Uses your WCS solution for accurate identification",
+                    "Keep or reject detections, then export the findings"
+                ]
+            },
+            overlay: {
+                title: "Export Share-Ready Images with Overlays",
+                description: "Turn your processed results into images that are ready to post. Image Overlay Export lays acquisition details, object info, a minimap and your own branding straight onto each frame, then batch-exports your whole library at the size you choose.",
+                points: [
+                    "Acquisition, object, minimap and branding overlays",
+                    "Batch export across your whole library at a chosen width",
+                    "Signature preset for a consistent, branded look",
+                    "Sorted by best score, ready to share"
+                ]
+            },
+            backfocus: {
+                title: "Dial In Your Imaging Train Before You Go Out",
+                description: "The Backfocus Manager grew up. Build your train from a vendor inventory, see it drawn to scale, and get the exact spacer combination to hit each sensor's required backfocus — with an under / within / over band so you know instantly when you are in tolerance.",
+                points: [
+                    "To-scale image-train diagram from optic to sensor plane",
+                    "Filter-glass compensation folded into the spacing math",
+                    "Spacer solver that names the combination to reach target backfocus",
+                    "Export a checklist to take to the scope"
+                ]
+            },
+            mobile: {
+                title: "Your Library, In Your Pocket",
+                description: "AstroIndexer now has companion apps. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.",
+                points: [
+                    "Per-object capture summary: total exposure, frames, rig and date range",
+                    "Scan / Rig / QA / ML / Image pipeline status at a glance",
+                    "Object previews synced from your indexed library"
+                ],
+                ios: "iOS — live now on the App Store",
+                android: "Android — in final Google review"
             }
         },
 
@@ -508,6 +617,7 @@ const translations = {
         nav: {
             whatis: "Was ist AstroIndexer?",
             features: "Funktionen",
+            whatsnew: "Neuheiten",
             pricing: "Preise",
             documentation: "Dokumentation",
             faq: "FAQ",
@@ -535,7 +645,8 @@ const translations = {
             subtitle: "Alles, was Sie brauchen, um Ihre astronomischen Bilddaten zu organisieren, analysieren und verstehen",
             badge: {
                 standard: "Standard",
-                pro: "Pro"
+                pro: "Pro",
+                new: "Neu"
             },
             items: {
                 organization: {
@@ -585,7 +696,114 @@ const translations = {
                 aiinsights: {
                     title: "Lokale KI-Insights",
                     description: "Erhalte verst\u00e4ndliche Empfehlungen f\u00fcr Frame-Auswahl, Stacking und Equipment-Optimierung - standardm\u00e4\u00dfig lokal auf deinem Computer, mit optionaler Unterst\u00fctzung durch OpenAI oder Claude."
+                },
+                platesolver: {
+                    title: "Integrierter Plate Solver",
+                    description: "AstroIndexers eigener Plate Solver erkennt das Sternfeld, berechnet die WCS-L\u00f6sung und speichert native SIP-Verzeichnungskoeffizienten pro Frame \u2014 kein externes ASTAP oder astrometry.net n\u00f6tig. 18,6% schnellere mediane L\u00f6sungszeit als ASTAP."
+                },
+                stacking: {
+                    title: "Ein-Klick-Stacking",
+                    description: "QA-Scores sortieren jedes Sub in Exzellent, Gut, Akzeptabel und Ausschuss, dann \u00fcbergibt AstroIndexer die besten Frames an einen Stacker: Ein-Klick PixInsight AutoIntegrate oder automatisches Siril-Stacking, mit fertigen Sequenzen f\u00fcr OSC, Breitband und Schmalband."
+                },
+                detector: {
+                    title: "Objekt-Detektor",
+                    description: "Annotiert jedes katalogisierte Objekt in einem gel\u00f6sten Frame \u2014 Galaxien, Sternhaufen und mehr \u2014 abgeglichen mit LEDA, SDSS, MCG und 2MASX, mit einer \u00dcbernehmen/Verwerfen-Fundliste."
+                },
+                loupe: {
+                    title: "Inspect-Lupe",
+                    description: "Begutachten Sie jedes Sub bei 1:1 mit einer Lupe. Live FWHM, HFR, Exzentrizit\u00e4t, SNR und PixInsight-konforme PSF-Metriken, plus RGB-Pixelwerte und Histogramm \u2014 ohne die Galerie zu verlassen."
+                },
+                backfocus: {
+                    title: "Backfocus Manager",
+                    description: "Bauen Sie Ihren Abbildungszug aus einem Hersteller-Inventar, sehen Sie ihn ma\u00dfstabsgetreu und erhalten Sie die genaue Spacer-Kombination f\u00fcr den erforderlichen Backfocus jedes Sensors \u2014 mit einem Unter-/Im-Bereich-/\u00dcber-Toleranzband."
+                },
+                mobile: {
+                    title: "Mobile Companion-Apps",
+                    description: "Durchsuchen Sie Ihren Katalog, pr\u00fcfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status vom Feld oder vom Sofa aus. iOS ist live im App Store; Android ist in finaler Pr\u00fcfung."
                 }
+            }
+        },
+
+        // New in 1.0 RC1 Section
+        rc1: {
+            banner: {
+                badge: "Neu · 1.0 RC1",
+                text: "Integrierter Plate Solver, Ein-Klick-Stacking & mobile Apps"
+            },
+            eyebrow: "Release Candidate 1 · v1.0.0",
+            title: "Neu in 1.0 Release Candidate 1",
+            subtitle: "Der bisher größte Schritt Richtung 1.0 — Aufnahme- und Verarbeitungswerkzeuge direkt in AstroIndexer integriert.",
+            platesolver: {
+                title: "Ein integrierter Plate Solver",
+                description: "Kein Auslagern an ein externes Tool mehr. AstroIndexers eigener Plate Solver erkennt das Sternfeld, berechnet die WCS-Lösung und speichert native SIP-Verzeichnungskoeffizienten direkt beim Frame. Im aktuellen Rohbild-Benchmark erreichte er eine 18,6% niedrigere mediane Lösungszeit als ASTAP.",
+                points: [
+                    "Natives WCS mit vollständigem SIP-Verzeichnungsmodell, pro Frame erfasst",
+                    "Keine externe astrometry.net- oder ASTAP-Installation zu konfigurieren oder zu pflegen",
+                    "18,6% niedrigere mediane Lösungszeit als ASTAP im aktuellen Rohbild-Benchmark",
+                    "Lösungen in Ihrer Bibliothek gespeichert, bereit für Framing und Mosaike"
+                ]
+            },
+            loupe: {
+                title: "Jedes Frame begutachten mit der Inspect-Lupe",
+                description: "Eine Lupe für Ihre Subs. Fahren Sie über das Frame, um Sterne bei 1:1 zu inspizieren, live Qualitäts-, PSF- und PixInsight-konforme Metriken abzulesen und das Histogramm zu prüfen — alles ohne die Galerie zu verlassen.",
+                points: [
+                    "Live FWHM, HFR, Exzentrizität und SNR, während Sie über das Frame fahren",
+                    "PixInsight-konforme Metriken (PSFSNR / PSFSW) nebeneinander",
+                    "RGB-Pixelwerte und ein RGB-Histogramm mit Log- und Perzentil-Umschaltung",
+                    "Fit-, 1:1- und WCS-Inspektionsmodi für schnelle Triage"
+                ]
+            },
+            stacking: {
+                title: "Ein-Klick-Stacking, für Siril und PixInsight",
+                description: "AstroIndexer liest Ihre QA-Scores, sortiert jedes Sub in Exzellent, Gut, Akzeptabel und Ausschuss und balanciert Ihre Filter für Sie. Dann übergibt es die besten Frames direkt an einen Stacker — kein manuelles Setup, kein Jonglieren mit Skripten.",
+                points: [
+                    "QA-gesteuerte Frame-Auswahl in Exzellent / Gut / Akzeptabel / Ausschuss, filterbalanciert",
+                    "Automatisches PixInsight-Stacking via AutoIntegrate, mit RC-Astro-Tool-Erkennung (BlurX / StarX / NoiseX)",
+                    "Automatisches Siril-Stacking über AstroIndexers eigene Workflow-Skripte",
+                    "Fertige Sequenzen für OSC, Breitband (LRGB / RGB) und Schmalband (SHO / HOO)",
+                    "Presets für jedes Ziel: Default Stack, Deep Stack, Sharp Focus"
+                ]
+            },
+            detector: {
+                title: "Jedes Objekt im Frame erkennen",
+                description: "Richten Sie den Objekt-Detektor auf ein beliebiges gelöstes Frame und er annotiert jedes gefundene katalogisierte Objekt — Galaxien, Sternhaufen und mehr — abgeglichen mit LEDA, SDSS, MCG und 2MASX, mit einer Übernehmen/Verwerfen-Fundliste und Objekt-Thumbnails.",
+                points: [
+                    "Katalog-gestützte Erkennung gegen LEDA, SDSS, MCG, 2MASX, NVSS und mehr",
+                    "Jeder Fund auf dem Frame annotiert und mit Klasse, Katalog und Position gelistet",
+                    "Nutzt Ihre WCS-Lösung für präzise Identifikation",
+                    "Funde übernehmen oder verwerfen, dann exportieren"
+                ]
+            },
+            overlay: {
+                title: "Teilbare Bilder mit Overlays exportieren",
+                description: "Verwandeln Sie Ihre bearbeiteten Ergebnisse in postfertige Bilder. Image Overlay Export legt Aufnahmedaten, Objektinfos, eine Minimap und Ihr eigenes Branding direkt auf jedes Frame und exportiert dann Ihre gesamte Bibliothek im Stapel in der von Ihnen gewählten Größe.",
+                points: [
+                    "Aufnahme-, Objekt-, Minimap- und Branding-Overlays",
+                    "Stapelexport über Ihre gesamte Bibliothek in gewählter Breite",
+                    "Signatur-Preset für einen konsistenten, gebrandeten Look",
+                    "Nach bester Bewertung sortiert, bereit zum Teilen"
+                ]
+            },
+            backfocus: {
+                title: "Stellen Sie Ihren Abbildungszug ein, bevor Sie rausgehen",
+                description: "Der Backfocus Manager ist erwachsen geworden. Bauen Sie Ihren Zug aus einem Hersteller-Inventar, sehen Sie ihn maßstabsgetreu und erhalten Sie die genaue Spacer-Kombination für den erforderlichen Backfocus jedes Sensors — mit einem Unter-/Im-Bereich-/Über-Band, damit Sie sofort wissen, wann Sie in Toleranz sind.",
+                points: [
+                    "Maßstabsgetreues Abbildungszug-Diagramm von der Optik bis zur Sensorebene",
+                    "Filterglas-Kompensation in die Abstandsberechnung eingerechnet",
+                    "Spacer-Solver, der die Kombination zum Ziel-Backfocus benennt",
+                    "Checkliste für das Teleskop exportieren"
+                ]
+            },
+            mobile: {
+                title: "Ihre Bibliothek in Ihrer Tasche",
+                description: "AstroIndexer hat jetzt Companion-Apps. Durchsuchen Sie Ihren Katalog, prüfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status zu jedem Ziel — vom Feld oder vom Sofa aus.",
+                points: [
+                    "Aufnahme-Zusammenfassung pro Objekt: Gesamtbelichtung, Frames, Rig und Zeitraum",
+                    "Scan / Rig / QA / ML / Image Pipeline-Status auf einen Blick",
+                    "Objektvorschauen aus Ihrer indexierten Bibliothek synchronisiert"
+                ],
+                ios: "iOS — jetzt live im App Store",
+                android: "Android — in finaler Google-Prüfung"
             }
         },
 
@@ -1010,6 +1228,7 @@ const translations = {
         nav: {
             whatis: "¿Qué es AstroIndexer?",
             features: "Funciones",
+            whatsnew: "Novedades",
             pricing: "Precios",
             documentation: "Documentación",
             faq: "FAQ",
@@ -1037,7 +1256,8 @@ const translations = {
             subtitle: "Todo lo que necesitas para organizar, analizar y comprender tus datos de imagen astron\u00f3mica",
             badge: {
                 standard: "Est\u00e1ndar",
-                pro: "Pro"
+                pro: "Pro",
+                new: "Nuevo"
             },
             items: {
                 organization: {
@@ -1087,7 +1307,114 @@ const translations = {
                 aiinsights: {
                     title: "Insights de IA Local",
                     description: "Recibe recomendaciones claras y f\u00e1ciles de entender para la selecci\u00f3n de frames, el apilado y la optimizaci\u00f3n del equipo - de forma local en tu ordenador por defecto, con soporte opcional de OpenAI o Claude."
+                },
+                platesolver: {
+                    title: "Plate Solver Integrado",
+                    description: "El propio plate solver de AstroIndexer detecta el campo estelar, calcula la soluci\u00f3n WCS y guarda coeficientes de distorsi\u00f3n SIP nativos por frame \u2014 sin ASTAP ni astrometry.net externos que instalar. Tiempo mediano de resoluci\u00f3n un 18,6% m\u00e1s r\u00e1pido que ASTAP."
+                },
+                stacking: {
+                    title: "Apilado con un Clic",
+                    description: "Las puntuaciones de QA clasifican cada sub en Excelente, Bueno, Aceptable y Descartado, y AstroIndexer entrega los mejores frames a un apilador: PixInsight AutoIntegrate con un clic o apilado autom\u00e1tico con Siril, con secuencias listas para OSC, banda ancha y banda estrecha."
+                },
+                detector: {
+                    title: "Detector de Objetos",
+                    description: "Anota cada objeto catalogado en un frame resuelto \u2014 galaxias, c\u00famulos y m\u00e1s \u2014 cruzado con LEDA, SDSS, MCG y 2MASX, con una tabla de hallazgos de aceptar / descartar."
+                },
+                loupe: {
+                    title: "Lupa de Inspecci\u00f3n",
+                    description: "Examina cualquier sub a 1:1 con una lupa. FWHM, HFR, excentricidad, SNR y m\u00e9tricas PSF equivalentes a PixInsight en vivo, adem\u00e1s de lectura RGB por p\u00edxel e histograma \u2014 sin salir de la galer\u00eda."
+                },
+                backfocus: {
+                    title: "Gestor de Backfocus",
+                    description: "Construye tu tren de imagen desde un inventario de fabricantes, m\u00edralo a escala y obt\u00e9n la combinaci\u00f3n exacta de espaciadores para alcanzar el backfocus requerido de cada sensor \u2014 con una banda de tolerancia por debajo / dentro / por encima."
+                },
+                mobile: {
+                    title: "Apps Complementarias M\u00f3viles",
+                    description: "Explora tu cat\u00e1logo, consulta las estad\u00edsticas de captura por objeto y el estado de Escaneo, QA y ML desde el campo o desde el sof\u00e1. iOS ya est\u00e1 disponible en la App Store; Android est\u00e1 en revisi\u00f3n final."
                 }
+            }
+        },
+
+        // New in 1.0 RC1 Section
+        rc1: {
+            banner: {
+                badge: "Nuevo · 1.0 RC1",
+                text: "Plate solver integrado, apilado con un clic y apps móviles"
+            },
+            eyebrow: "Release Candidate 1 · v1.0.0",
+            title: "Novedades en 1.0 Release Candidate 1",
+            subtitle: "El mayor paso hasta ahora hacia 1.0 — herramientas de adquisición y procesado integradas directamente en AstroIndexer.",
+            platesolver: {
+                title: "Un Plate Solver Integrado",
+                description: "Se acabó depender de una herramienta externa. El propio plate solver de AstroIndexer detecta el campo estelar, calcula la solución WCS y guarda coeficientes de distorsión SIP nativos junto a tu frame. En el último benchmark con tomas en bruto registró un tiempo mediano de resolución un 18,6% menor que ASTAP.",
+                points: [
+                    "WCS nativo con un modelo de distorsión SIP completo, capturado por frame",
+                    "Sin instalación externa de astrometry.net o ASTAP que configurar o mantener",
+                    "Tiempo mediano de resolución un 18,6% menor que ASTAP en el último benchmark con tomas en bruto",
+                    "Soluciones guardadas con tu biblioteca, listas para encuadre y mosaicos"
+                ]
+            },
+            loupe: {
+                title: "Examina Cualquier Frame con la Lupa de Inspección",
+                description: "Una lupa para tus subs. Muévete sobre el frame para inspeccionar estrellas a 1:1, leer en vivo métricas de calidad, PSF y equivalentes a PixInsight, y revisar el histograma — todo sin salir de la galería.",
+                points: [
+                    "FWHM, HFR, excentricidad y SNR en vivo mientras te mueves por el frame",
+                    "Métricas equivalentes a PixInsight (PSFSNR / PSFSW) una al lado de la otra",
+                    "Lectura RGB por píxel e histograma RGB con conmutadores de log y percentil",
+                    "Modos de inspección Ajustar, 1:1 y WCS para un triaje rápido"
+                ]
+            },
+            stacking: {
+                title: "Apilado con un Clic, para Siril y PixInsight",
+                description: "AstroIndexer lee tus puntuaciones de QA, clasifica cada sub en Excelente, Bueno, Aceptable y Descartado, y equilibra tus filtros por ti. Luego entrega los mejores frames directamente a un apilador — sin configuración manual, sin malabares con scripts.",
+                points: [
+                    "Selección de frames guiada por QA en Excelente / Bueno / Aceptable / Descartado, equilibrada por filtro",
+                    "Apilado automático en PixInsight vía AutoIntegrate, con detección de herramientas RC Astro (BlurX / StarX / NoiseX)",
+                    "Apilado automático en Siril mediante los propios scripts de flujo de AstroIndexer",
+                    "Secuencias listas para OSC, banda ancha (LRGB / RGB) y banda estrecha (SHO / HOO)",
+                    "Presets para cada objetivo: Default Stack, Deep Stack, Sharp Focus"
+                ]
+            },
+            detector: {
+                title: "Ve Cada Objeto del Frame",
+                description: "Apunta el Detector de Objetos a cualquier frame resuelto y anotará cada objeto catalogado que encuentre — galaxias, cúmulos y más — cruzado con LEDA, SDSS, MCG y 2MASX, con una tabla de hallazgos de aceptar / descartar y miniaturas por objeto.",
+                points: [
+                    "Detección asistida por catálogo contra LEDA, SDSS, MCG, 2MASX, NVSS y más",
+                    "Cada hallazgo anotado en el frame y listado con clase, catálogo y posición",
+                    "Usa tu solución WCS para una identificación precisa",
+                    "Acepta o descarta detecciones y luego exporta los hallazgos"
+                ]
+            },
+            overlay: {
+                title: "Exporta Imágenes Listas para Compartir con Superposiciones",
+                description: "Convierte tus resultados procesados en imágenes listas para publicar. Image Overlay Export coloca datos de adquisición, información del objeto, un minimapa y tu propia marca directamente sobre cada frame, y luego exporta por lotes toda tu biblioteca al tamaño que elijas.",
+                points: [
+                    "Superposiciones de adquisición, objeto, minimapa y marca",
+                    "Exportación por lotes de toda tu biblioteca al ancho elegido",
+                    "Preset de firma para un aspecto coherente y con tu marca",
+                    "Ordenadas por mejor puntuación, listas para compartir"
+                ]
+            },
+            backfocus: {
+                title: "Ajusta tu Tren de Imagen Antes de Salir",
+                description: "El Gestor de Backfocus ha madurado. Construye tu tren desde un inventario de fabricantes, míralo a escala y obtén la combinación exacta de espaciadores para alcanzar el backfocus requerido de cada sensor — con una banda por debajo / dentro / por encima para saber al instante cuándo estás en tolerancia.",
+                points: [
+                    "Diagrama del tren de imagen a escala, de la óptica al plano del sensor",
+                    "Compensación del vidrio del filtro incorporada en el cálculo de distancias",
+                    "Solucionador de espaciadores que nombra la combinación para alcanzar el backfocus objetivo",
+                    "Exporta una lista de comprobación para llevar al telescopio"
+                ]
+            },
+            mobile: {
+                title: "Tu Biblioteca en tu Bolsillo",
+                description: "AstroIndexer ya tiene apps complementarias. Explora tu catálogo, consulta las estadísticas de captura por objeto y el estado de Escaneo, QA y ML de cualquier objetivo — desde el campo o desde el sofá.",
+                points: [
+                    "Resumen de captura por objeto: exposición total, frames, equipo y rango de fechas",
+                    "Estado de la pipeline Escaneo / Equipo / QA / ML / Imagen de un vistazo",
+                    "Vistas previas de objetos sincronizadas desde tu biblioteca indexada"
+                ],
+                ios: "iOS — ya disponible en la App Store",
+                android: "Android — en revisión final de Google"
             }
         },
 

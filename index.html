@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AstroIndexer - Professional astrophotography data management and analysis software">
+    <meta name="description" content="AstroIndexer - Professional astrophotography data management and analysis software. Version 1.0 RC1 adds a built-in plate solver, one-click stacking for Siril and PixInsight, an object detector, the Inspect Loupe, an expanded Backfocus Manager, and iOS &amp; Android companion apps.">
 
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="AstroIndexer">
-    <meta property="og:description" content="Professional astrophotography data management and analysis software">
+    <meta property="og:description" content="Professional astrophotography data management and analysis software — now with a built-in plate solver, one-click stacking, an object detector, and mobile companion apps.">
     <meta property="og:image" content="https://astroindexer.com/images/og-image.jpg">
     <meta property="og:url" content="https://astroindexer.com">
     <meta property="og:type" content="website">
@@ -107,6 +107,7 @@
             <ul class="nav-menu">
                 <li><a href="#insights" data-i18n="nav.whatis">What Is AstroIndexer?</a></li>
                 <li><a href="#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="#whats-new-rc1" data-i18n="nav.whatsnew">What's New</a></li>
                 <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
                 <li><a href="docs.html" data-i18n="nav.documentation">Documentation</a></li>
                 <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
@@ -131,6 +132,11 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="sr-only" data-i18n="hero.title">AstroIndexer</h1>
+                <a class="release-pill" href="newsletter/rc1/">
+                    <span class="rp-badge" data-i18n="rc1.banner.badge">New · 1.0 RC1</span>
+                    <span class="rp-text" data-i18n="rc1.banner.text">Built-in plate solver, one-click stacking &amp; mobile apps</span>
+                    <span class="rp-arrow" aria-hidden="true">&rarr;</span>
+                </a>
                 <h2 data-i18n="hero.subtitle">Understand Your Astrophotography</h2>
                 <p data-i18n="hero.description">AstroIndexer analyzes your imaging history to reveal equipment performance, seeing patterns, and what actually improves your results.</p>
                 <div class="hero-buttons">
@@ -383,6 +389,61 @@
             <p class="section-subtitle" data-i18n="features.subtitle">Everything you need to organize, analyze, and understand your astronomical imaging data</p>
 
             <div class="features-grid">
+                <!-- New in 1.0 RC1 — lead the grid with the RC1 additions -->
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.platesolver.title">Built-In Plate Solver</h3>
+                    <p data-i18n="features.items.platesolver.description">AstroIndexer's own plate solver detects the star field, computes the WCS solution, and stores native SIP distortion coefficients per frame — no external ASTAP or astrometry.net to install. 18.6% faster median solve time than ASTAP.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.stacking.title">One-Click Stacking</h3>
+                    <p data-i18n="features.items.stacking.description">QA scores sort every sub into Excellent, Good, Acceptable and Reject buckets, then AstroIndexer hands the keepers to a stacker: one-click PixInsight AutoIntegrate or automatic Siril stacking, with ready-made OSC, broadband and narrowband sequences.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.detector.title">Object Detector</h3>
+                    <p data-i18n="features.items.detector.description">Annotates every catalogued object in a solved frame — galaxies, clusters and more — cross-matched against LEDA, SDSS, MCG and 2MASX, with a keep / reject findings table.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.loupe.title">Inspect Loupe</h3>
+                    <p data-i18n="features.items.loupe.description">Pixel-peep any sub at 1:1 with a magnifier loupe. Live FWHM, HFR, eccentricity, SNR and PixInsight-parity PSF metrics, plus a per-pixel RGB readout and histogram — without leaving the gallery.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M7 8v3M12 8v4M17 8v3"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.backfocus.title">Backfocus Manager</h3>
+                    <p data-i18n="features.items.backfocus.description">Build your imaging train from a vendor inventory, see it drawn to scale, and get the exact spacer combination to hit each sensor's required backfocus — with an under / within / over tolerance band.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="tier-badge new" data-i18n="features.badge.new">New</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+                    </div>
+                    <h3 data-i18n="features.items.mobile.title">Mobile Companion Apps</h3>
+                    <p data-i18n="features.items.mobile.description">Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or the couch. iOS is live on the App Store; Android is in final review.</p>
+                </div>
+
                 <!-- Row 1: Core workflow -->
                 <div class="feature-card">
                     <span class="tier-badge standard" data-i18n="features.badge.standard">Standard</span>
@@ -480,11 +541,145 @@
         </div>
     </section>
 
-    <!-- Detailed Features Showcase -->
+    <!-- Detailed Features Showcase (leads with the New in 1.0 RC1 additions) -->
     <section id="feature-details" class="feature-details">
         <div class="container">
             <h2 class="section-title" data-i18n="details.title">See AstroIndexer in Action</h2>
             <p class="section-subtitle" data-i18n="details.subtitle">Powerful tools designed for serious astrophotographers</p>
+
+            <!-- New in 1.0 Release Candidate 1 — folded into the showcase, leading it -->
+            <div id="whats-new-rc1" class="rc1-group">
+            <p class="rc1-eyebrow" data-i18n="rc1.title">New in 1.0 Release Candidate 1</p>
+
+            <!-- Native Plate Solver -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.platesolver.title">A Plate Solver, Built In</h3>
+                    <p data-i18n="rc1.platesolver.description">No more shelling out to an external tool. AstroIndexer's own plate solver detects the star field, computes the WCS solution, and stores native SIP distortion coefficients right alongside your frame. In the latest raw-light benchmark it posted an 18.6% lower median solve time than ASTAP.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.platesolver.points.0">Native WCS with a full SIP distortion model, captured per frame</li>
+                        <li data-i18n="rc1.platesolver.points.1">No external astrometry.net or ASTAP install to configure or maintain</li>
+                        <li data-i18n="rc1.platesolver.points.2">18.6% lower median solve time than ASTAP in the latest raw-light benchmark</li>
+                        <li data-i18n="rc1.platesolver.points.3">Solutions stored with your library, ready for framing and mosaics</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/plate_solver.jpg" alt="AstroIndexer's native plate solver showing a WCS solution with SIP distortion coefficients and distortion vectors overlaid on a solved frame" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Inspect Loupe -->
+            <div class="feature-detail reverse">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.loupe.title">Pixel-Peep Any Frame with the Inspect Loupe</h3>
+                    <p data-i18n="rc1.loupe.description">A magnifier loupe for your subs. Move over the frame to inspect stars at 1:1, read live quality, PSF and PixInsight-parity metrics, and check the histogram — all without leaving the gallery.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.loupe.points.0">Live FWHM, HFR, eccentricity and SNR as you move across the frame</li>
+                        <li data-i18n="rc1.loupe.points.1">PixInsight-parity metrics (PSFSNR / PSFSW) side by side</li>
+                        <li data-i18n="rc1.loupe.points.2">Per-pixel RGB readout and an RGB histogram with log and percentile toggles</li>
+                        <li data-i18n="rc1.loupe.points.3">Fit, 1:1 and WCS inspect modes for fast triage</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/inspect_loupe.jpg" alt="The Inspect Loupe magnifying stars at 1:1 with live quality and PSF metrics and an RGB histogram alongside" loading="lazy">
+                </div>
+            </div>
+
+            <!-- One-Click Stacking -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.stacking.title">One-Click Stacking, for Siril and PixInsight</h3>
+                    <p data-i18n="rc1.stacking.description">AstroIndexer reads your QA scores, sorts every sub into Excellent, Good, Acceptable and Reject buckets, and balances your filters for you. Then it hands the keepers straight to a stacker — no manual set-up, no juggling scripts.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.stacking.points.0">QA-driven frame selection into Excellent / Good / Acceptable / Reject buckets, filter-balanced</li>
+                        <li data-i18n="rc1.stacking.points.1">Automatic PixInsight stacking via AutoIntegrate, with RC Astro tool detection (BlurX / StarX / NoiseX)</li>
+                        <li data-i18n="rc1.stacking.points.2">Automatic Siril stacking via AstroIndexer's own workflow scripts</li>
+                        <li data-i18n="rc1.stacking.points.3">Ready-made sequences for OSC, broadband (LRGB / RGB) and narrowband (SHO / HOO)</li>
+                        <li data-i18n="rc1.stacking.points.4">Presets for every goal: Default Stack, Deep Stack, Sharp Focus</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/stacking_workflow.jpg" alt="AstroIndexer stacking workflow with QA frame buckets, filter balance and a Siril processing sequence" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Object Detector -->
+            <div class="feature-detail reverse">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.detector.title">See Every Object in the Frame</h3>
+                    <p data-i18n="rc1.detector.description">Point the Object Detector at any solved frame and it annotates every catalogued object it finds — galaxies, clusters and more — cross-matched against LEDA, SDSS, MCG and 2MASX, with a keep / reject findings table and per-object thumbnails.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.detector.points.0">Catalog-assisted detection against LEDA, SDSS, MCG, 2MASX, NVSS and more</li>
+                        <li data-i18n="rc1.detector.points.1">Every finding annotated on the frame and listed with class, catalogue and position</li>
+                        <li data-i18n="rc1.detector.points.2">Uses your WCS solution for accurate identification</li>
+                        <li data-i18n="rc1.detector.points.3">Keep or reject detections, then export the findings</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/object_detector.jpg" alt="AstroIndexer Object Detector annotating catalogued galaxies on a frame of NGC 660, with a findings table listing class, catalogue and position" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Image Overlay Export -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.overlay.title">Export Share-Ready Images with Overlays</h3>
+                    <p data-i18n="rc1.overlay.description">Turn your processed results into images that are ready to post. Image Overlay Export lays acquisition details, object info, a minimap and your own branding straight onto each frame, then batch-exports your whole library at the size you choose.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.overlay.points.0">Acquisition, object, minimap and branding overlays</li>
+                        <li data-i18n="rc1.overlay.points.1">Batch export across your whole library at a chosen width</li>
+                        <li data-i18n="rc1.overlay.points.2">Signature preset for a consistent, branded look</li>
+                        <li data-i18n="rc1.overlay.points.3">Sorted by best score, ready to share</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/image_overlay.jpg" alt="AstroIndexer Image Overlay Export showing a grid of processed objects with acquisition and branding overlays, ready to share" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Backfocus Manager -->
+            <div class="feature-detail reverse">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.backfocus.title">Dial In Your Imaging Train Before You Go Out</h3>
+                    <p data-i18n="rc1.backfocus.description">The Backfocus Manager grew up. Build your train from a vendor inventory, see it drawn to scale, and get the exact spacer combination to hit each sensor's required backfocus — with an under / within / over band so you know instantly when you are in tolerance.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.backfocus.points.0">To-scale image-train diagram from optic to sensor plane</li>
+                        <li data-i18n="rc1.backfocus.points.1">Filter-glass compensation folded into the spacing math</li>
+                        <li data-i18n="rc1.backfocus.points.2">Spacer solver that names the combination to reach target backfocus</li>
+                        <li data-i18n="rc1.backfocus.points.3">Export a checklist to take to the scope</li>
+                    </ul>
+                </div>
+                <div class="feature-screenshot">
+                    <img src="screenshots/backfocus_manager.jpg" alt="The Backfocus Manager showing a to-scale image train from optic to sensor with an under / within / over tolerance band" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Mobile Companion Apps -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3 data-i18n="rc1.mobile.title">Your Library, In Your Pocket</h3>
+                    <p data-i18n="rc1.mobile.description">AstroIndexer now has companion apps. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.</p>
+                    <ul class="feature-points">
+                        <li data-i18n="rc1.mobile.points.0">Per-object capture summary: total exposure, frames, rig and date range</li>
+                        <li data-i18n="rc1.mobile.points.1">Scan / Rig / QA / ML / Image pipeline status at a glance</li>
+                        <li data-i18n="rc1.mobile.points.2">Object previews synced from your indexed library</li>
+                    </ul>
+                    <div class="app-badges">
+                        <a class="app-badge live" href="https://apps.apple.com/us/app/astroindexercompanion/id6772704017">
+                            <span class="led"></span>
+                            <span data-i18n="rc1.mobile.ios">iOS — live now on the App Store</span>
+                        </a>
+                        <span class="app-badge soon">
+                            <span class="led"></span>
+                            <span data-i18n="rc1.mobile.android">Android — in final Google review</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="feature-screenshot phone">
+                    <img src="screenshots/mobile_companion.jpg" alt="The AstroIndexer mobile companion app showing an object page with a preview image, capture stats, and Scan / QA / ML pipeline status" loading="lazy">
+                </div>
+            </div>
+            </div><!-- /#whats-new-rc1 -->
 
             <!-- Gallery View -->
             <div class="feature-detail">

@@ -7,3 +7,7 @@ node_modules/
 .wrangler/
 
 .vercel
+
+# macOS Finder metadata — local only, never synced
+.DS_Store
+**/.DS_Store

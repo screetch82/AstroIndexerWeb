@@ -1673,3 +1673,108 @@ body.on-landing .language-switcher {
 .pro-feature .feature-icon {
     color: var(--gold);
 }
+
+/* ─── 1.0 RC1 additions ───────────────────────────────────────────────
+   New-feature styling introduced with the 1.0 Release Candidate 1 refresh:
+   the "New" feature-card badge, the hero release pill, the highlighted
+   "New in 1.0 RC1" showcase section, the portrait phone screenshot, and the
+   App Store / Google Play status badges. Kept together so the RC1 refresh is
+   easy to find and adjust. */
+
+/* Inline-SVG feature-card icons (new cards use SVGs, not Material Symbols,
+   so they never depend on the self-hosted glyph subset). */
+.feature-icon svg { width: 34px; height: 34px; display: block; }
+
+/* "New" tier badge — a filled teal→blue chip that reads brighter than the
+   Standard/Pro outline badges. */
+.tier-badge.new {
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+    color: #06121a;
+    border: 1px solid rgba(73, 198, 191, 0.5);
+}
+
+/* Hero release pill — links to the RC1 announcement page. */
+.release-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 8px 7px 8px;
+    margin: 0 0 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(73, 198, 191, 0.35);
+    background: rgba(73, 198, 191, 0.08);
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    font-weight: 550;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+.release-pill:hover {
+    background: rgba(73, 198, 191, 0.16);
+    border-color: rgba(73, 198, 191, 0.55);
+    transform: translateY(-1px);
+}
+.release-pill .rp-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+    color: #06121a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.release-pill .rp-text { padding-right: 4px; }
+.release-pill .rp-arrow { color: var(--teal); font-weight: 700; }
+
+/* "New in 1.0 RC1" group inside the "See AstroIndexer in Action" showcase —
+   leads the showcase, separated from the rest by a divider. */
+.rc1-group {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+.rc1-group > .feature-detail:last-child { margin-bottom: 48px; }
+.rc1-eyebrow {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0 0 48px;
+}
+
+/* Portrait phone screenshot (mobile companion). */
+.feature-screenshot.phone { display: flex; justify-content: center; }
+.feature-screenshot.phone img {
+    width: auto;
+    max-width: 290px;
+    border-radius: 30px;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* App Store / Google Play status badges. */
+.app-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; padding: 0; list-style: none; }
+.app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    transition: all 0.25s ease;
+}
+.app-badge .led { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.app-badge.live { border-color: rgba(89, 217, 142, 0.4); color: var(--green); }
+.app-badge.live .led { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.app-badge.live:hover { background: rgba(89, 217, 142, 0.1); transform: translateY(-1px); }
+.app-badge.soon { border-color: rgba(90, 167, 255, 0.4); color: var(--blue); }
+.app-badge.soon .led { background: var(--blue); box-shadow: 0 0 8px var(--blue); }
