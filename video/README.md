@@ -1,5 +1,10 @@
 # AstroIndexer 1.0 RC1 — announcement video
 
+> **Making the next video? Start with [`MAKING_VIDEOS.md`](MAKING_VIDEOS.md)** —
+> the step-by-step runbook. This file is the component reference;
+> `PIPELINE_PROPOSAL.md` is the strategy.
+
+
 A [Remotion](https://remotion.dev) project that renders the RC1 announcement
 video (16:9 for YouTube and 9:16 for Shorts/Reels), brand-matched to the site.
 Everything renders **locally** — the only network step is regenerating the
