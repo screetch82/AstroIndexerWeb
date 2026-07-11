@@ -1,35 +1,44 @@
-/* AstroIndexer Website Styles — Planner V2 Theme */
+/* AstroIndexer — Star-Atlas Editorial Theme 
+   Production theme since 2026-07: replaces the Planner V2 dark-teal theme.
+   Palette: deep navy / warm paper / single brass accent. Type: Fraunces display,
+   IBM Plex Sans body, IBM Plex Mono for data. Flat surfaces, hairline borders. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-    /* Planner V2 palette */
-    --bg0: #0b0f14;
-    --bg1: #0f1620;
-    --bg2: #141f2c;
-    --bg3: #1b2a3a;
-    --card: #121c28;
-    --line: rgba(255, 255, 255, 0.10);
+    --bg0: #0A101C;
+    --bg1: #0C1322;
+    --bg2: #111A2C;
+    --bg3: #1A2436;
+    --card: #101828;
+    --line: rgba(242, 237, 227, 0.14);
 
-    --txt: #e7eef8;
-    --mut: rgba(231, 238, 248, 0.55);
+    --txt: #F7F3E8;
+    --mut: rgba(247, 243, 232, 0.58);
 
-    --teal: #49c6bf;
-    --teal2: #2aa39d;
-    --gold: #f0b429;
-    --red: #ff6b6b;
+    --hl: #4EC9C1;          /* highlight: checklists, links, hovers — matches the app UI */
+
+    --teal: #C8A55C;
+    --teal2: #A98842;
+    --gold: #C8A55C;
+    --red: #E24B4A;
     --green: #59d98e;
     --blue: #5aa7ff;
-    --vio: #b08cff;
 
-    /* Semantic aliases (so existing markup still works) */
+    --accent: #C8A55C;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
     --primary-color: var(--teal);
     --secondary-color: var(--gold);
     --dark-bg: var(--bg0);
     --dark-secondary: var(--bg1);
     --text-primary: var(--txt);
-    --text-secondary: rgba(231, 238, 248, 0.72);
+    --text-secondary: rgba(247, 243, 232, 0.80);
     --text-muted: var(--mut);
-    --card-bg: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-    --card-bg-flat: rgba(18, 28, 40, 0.8);
+    --card-bg: var(--card);
+    --card-bg-flat: var(--card);
     --border-color: var(--line);
 }
 
@@ -40,15 +49,23 @@
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-body);
     color: var(--txt);
     line-height: 1.6;
     overflow-x: hidden;
-    background:
-        radial-gradient(1200px 500px at 30% -10%, rgba(73,198,191,0.14), transparent 60%),
-        radial-gradient(1000px 400px at 90% 0%, rgba(240,180,41,0.07), transparent 55%),
-        linear-gradient(180deg, #070a0f, #0a0f15 35%, #070a0f);
-    background-attachment: fixed;
+    background: var(--bg0);
+}
+
+h1, h2, h3,
+.section-title,
+.hero-content h2,
+.feature-content h3,
+.pricing-card h3,
+.problem-question,
+.nav-brand {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
 .container {
@@ -63,18 +80,15 @@ body {
     top: 0;
     width: 100%;
     padding: 14px 0;
-    background: rgba(11, 15, 20, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(10, 16, 28, 0.96);
+    border-bottom: 1px solid rgba(242,237,227,0.05);
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
     padding: 8px 0;
-    background: rgba(11, 15, 20, 0.96);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    background: rgba(10, 16, 28, 0.96);
 }
 
 .navbar .container {
@@ -89,7 +103,7 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--txt);
     letter-spacing: 0.2px;
     flex-shrink: 0;
@@ -119,49 +133,47 @@ body {
 }
 
 .nav-menu a:hover {
-    color: var(--teal);
+    color: var(--hl);
 }
 
 /* ─── Buttons ─────────────────────────────── */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 14px;
+    padding: 10px 22px;
+    border-radius: 2px;
     text-decoration: none;
-    font-weight: 650;
+    font-weight: 500;
     font-size: 14px;
     font-family: inherit;
-    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     cursor: pointer;
-    border: 1px solid rgba(73,198,191,0.45);
+    border: 1px solid var(--accent);
 }
 
 .btn-primary {
-    background: rgba(73,198,191,0.16);
-    color: var(--txt);
+    background: var(--accent);
+    color: var(--bg0);
 }
 
 .btn-primary:hover {
-    background: rgba(73,198,191,0.28);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(73, 198, 191, 0.15);
+    background: #D6B672;
+    border-color: #D6B672;
 }
 
 .btn-secondary {
-    background: rgba(255,255,255,0.02);
-    color: var(--text-secondary);
+    background: transparent;
+    color: var(--txt);
     border-color: var(--line);
 }
 
 .btn-secondary:hover {
-    background: rgba(255,255,255,0.06);
-    color: var(--txt);
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(242, 237, 227, 0.4);
 }
 
 .btn-large {
-    padding: 14px 28px;
-    font-size: 16px;
+    padding: 14px 30px;
+    font-size: 15px;
 }
 
 /* ─── Hero Section ────────────────────────── */
@@ -169,35 +181,6 @@ body {
     padding: 130px 0 80px;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Pure-CSS starfield - replaces the missing images/stars-bg.png asset (was 404ing). */
-    background-image:
-        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.9), transparent),
-        radial-gradient(1px 1px at 78% 14%, rgba(255,255,255,0.7), transparent),
-        radial-gradient(1.4px 1.4px at 42% 68%, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 88% 55%, rgba(255,255,255,0.85), transparent),
-        radial-gradient(1px 1px at 28% 84%, rgba(255,255,255,0.55), transparent),
-        radial-gradient(1.2px 1.2px at 62% 40%, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 8% 60%, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 95% 80%, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 52% 12%, rgba(255,255,255,0.65), transparent),
-        radial-gradient(1px 1px at 35% 48%, rgba(255,255,255,0.45), transparent);
-    background-repeat: no-repeat;
-    animation: twinkle 50s infinite;
-    pointer-events: none;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.35; }
-    50% { opacity: 0.7; }
 }
 
 .hero .container {
@@ -224,7 +207,7 @@ body {
 
 .hero-content h2 {
     font-size: 38px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--txt);
     margin-bottom: 16px;
     letter-spacing: 0.2px;
@@ -245,9 +228,8 @@ body {
 
 .hero-image img {
     width: 100%;
-    border-radius: 18px;
+    border-radius: 4px;
     border: 1px solid var(--line);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
 /* Hero Platforms Indicator */
@@ -309,7 +291,7 @@ body {
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.35);
+    color: rgba(242,237,227,0.35);
     animation: bounce-enter 2.4s ease-in-out infinite;
     pointer-events: none;
 }
@@ -335,12 +317,12 @@ body.on-landing .language-switcher {
 /* ─── Features Section ────────────────────── */
 .features {
     padding: 80px 0;
-    background: rgba(15, 22, 32, 0.6);
+    background: rgba(13, 21, 36, 0.6);
 }
 
 .section-title {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 10px;
     letter-spacing: 0.2px;
@@ -363,16 +345,14 @@ body.on-landing .language-switcher {
     background: var(--card-bg);
     background-color: var(--card-bg-flat);
     padding: 32px;
-    border-radius: 18px;
+    border-radius: 4px;
     border: 1px solid var(--line);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(73, 198, 191, 0.3);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    
+    border-color: rgba(200, 165, 92, 0.3);
 }
 
 .feature-icon {
@@ -383,7 +363,7 @@ body.on-landing .language-switcher {
 
 .feature-card h3 {
     font-size: 20px;
-    font-weight: 750;
+    font-weight: 600;
     margin-bottom: 12px;
     color: var(--txt);
 }
@@ -416,7 +396,7 @@ body.on-landing .language-switcher {
 
 .feature-content h3 {
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--txt);
     margin-bottom: 16px;
 }
@@ -435,7 +415,7 @@ body.on-landing .language-switcher {
 
 .feature-points li {
     padding: 8px 0;
-    color: var(--teal);
+    color: var(--hl);
     position: relative;
     padding-left: 24px;
     font-size: 14px;
@@ -445,6 +425,7 @@ body.on-landing .language-switcher {
     content: '\2713';
     position: absolute;
     left: 0;
+    color: var(--hl);
     font-weight: bold;
 }
 
@@ -455,8 +436,7 @@ body.on-landing .language-switcher {
 
 .feature-screenshot img {
     width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
     border: 1px solid var(--line);
 }
 
@@ -471,13 +451,10 @@ body.on-landing .language-switcher {
 /* ─── ML Analytics Section ────────────────── */
 .ml-analytics {
     padding: 80px 0;
-    background: rgba(11, 15, 20, 0.5);
+    background: rgba(10, 16, 28, 0.5);
 }
 
 .ml-analytics .section-title {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--red) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
 }
 
@@ -497,9 +474,9 @@ body.on-landing .language-switcher {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+    width: 80%;
+    height: 1px;
+    background: var(--line);
 }
 
 .download-grid {
@@ -515,30 +492,28 @@ body.on-landing .language-switcher {
     align-items: center;
     gap: 16px;
     padding: 22px 24px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 4px;
     text-decoration: none;
     color: var(--txt);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .download-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(73,198,191,0.06) 0%, transparent 60%);
+    background: rgba(200, 165, 92, 0.04);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .download-card:hover {
-    border-color: rgba(73,198,191,0.35);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+    border-color: rgba(200,165,92,0.35);
+    
 }
 
 .download-card:hover::after {
@@ -546,8 +521,8 @@ body.on-landing .language-switcher {
 }
 
 .download-card:hover .download-os-icon {
-    color: var(--teal);
-    transform: scale(1.08);
+    color: var(--hl);
+    
 }
 
 .download-card:hover .download-arrow {
@@ -593,7 +568,7 @@ body.on-landing .language-switcher {
 
 .download-arrow {
     flex-shrink: 0;
-    color: var(--teal);
+    color: var(--hl);
     opacity: 0.3;
     transition: all 0.3s ease;
     position: relative;
@@ -605,7 +580,7 @@ body.on-landing .language-switcher {
     cursor: default;
 }
 .download-card--linux:hover {
-    transform: translateY(-3px);
+    
 }
 .download-linux-buttons {
     display: flex;
@@ -617,7 +592,7 @@ body.on-landing .language-switcher {
     align-items: center;
     gap: 5px;
     padding: 5px 14px;
-    border-radius: 8px;
+    border-radius: 3px;
     font-size: 12px;
     font-weight: 600;
     text-decoration: none;
@@ -628,24 +603,24 @@ body.on-landing .language-switcher {
 .download-btn--primary,
 .download-btn--primary:visited,
 .download-btn--primary:active {
-    background: rgba(73,198,191,0.15);
+    background: rgba(200,165,92,0.15);
     color: var(--teal);
-    border: 1px solid rgba(73,198,191,0.3);
+    border: 1px solid rgba(200,165,92,0.3);
 }
 .download-btn--primary:hover {
-    background: rgba(73,198,191,0.28);
-    border-color: rgba(73,198,191,0.5);
+    background: rgba(200,165,92,0.28);
+    border-color: rgba(200,165,92,0.5);
     color: var(--teal);
 }
 .download-btn--secondary,
 .download-btn--secondary:visited,
 .download-btn--secondary:active {
-    background: rgba(255,255,255,0.05);
+    background: rgba(242,237,227,0.05);
     color: var(--mut);
     border: 1px solid var(--line);
 }
 .download-btn--secondary:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(242,237,227,0.1);
     color: var(--txt);
 }
 
@@ -680,26 +655,25 @@ body.on-landing .language-switcher {
 }
 
 .pricing-card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    background: var(--card);
     background-color: var(--card-bg-flat);
     padding: 36px;
-    border-radius: 18px;
+    border-radius: 4px;
     border: 1px solid var(--line);
     text-align: center;
     position: relative;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 .pricing-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(73,198,191,0.3);
+    
+    border-color: rgba(200,165,92,0.3);
 }
 
 .pricing-card.featured {
-    border-color: rgba(73,198,191,0.35);
-    transform: scale(1.03);
-    background: linear-gradient(180deg, rgba(73,198,191,0.06), rgba(255,255,255,0.01));
+    border-color: rgba(200,165,92,0.35);
+    
+    background: var(--card);
 }
 
 .pricing-card .badge {
@@ -707,18 +681,18 @@ body.on-landing .language-switcher {
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(73,198,191,0.16);
+    background: rgba(200,165,92,0.16);
     color: var(--teal);
-    border: 1px solid rgba(73,198,191,0.4);
+    border: 1px solid rgba(200,165,92,0.4);
     padding: 5px 18px;
-    border-radius: 999px;
+    border-radius: 2px;
     font-size: 12px;
     font-weight: 700;
 }
 
 .pricing-card h3 {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 16px;
 }
 
@@ -728,7 +702,7 @@ body.on-landing .language-switcher {
 
 .price .currency {
     font-size: 42px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--teal);
 }
 
@@ -757,17 +731,17 @@ body.on-landing .language-switcher {
     content: '\2713';
     position: absolute;
     left: 0;
-    color: var(--teal);
+    color: var(--hl);
     font-weight: bold;
 }
 
 .btn-coming-soon {
     display: inline-block;
     padding: 12px 32px;
-    border-radius: 10px;
+    border-radius: 3px;
     font-weight: 600;
     font-size: 14px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(242,237,227,0.06);
     color: var(--mut);
     border: 1px solid var(--line);
     cursor: default;
@@ -777,7 +751,7 @@ body.on-landing .language-switcher {
 /* ─── Footer ──────────────────────────────── */
 .footer {
     padding: 60px 0 30px;
-    background: rgba(15, 22, 32, 0.6);
+    background: rgba(13, 21, 36, 0.6);
     border-top: 1px solid var(--line);
 }
 
@@ -790,7 +764,7 @@ body.on-landing .language-switcher {
 
 .footer-column h4 {
     color: var(--txt);
-    font-weight: 750;
+    font-weight: 600;
     margin-bottom: 16px;
     font-size: 14px;
     letter-spacing: 0.02em;
@@ -812,7 +786,7 @@ body.on-landing .language-switcher {
 }
 
 .footer-column a:hover {
-    color: var(--teal);
+    color: var(--hl);
 }
 
 .social-links {
@@ -826,7 +800,7 @@ body.on-landing .language-switcher {
 }
 
 .social-links a:hover {
-    transform: translateY(-3px);
+    
 }
 
 .footer-bottom {
@@ -897,7 +871,7 @@ body.on-landing .language-switcher {
 }
 
 .pricing-note a {
-    color: var(--teal);
+    color: var(--hl);
 }
 
 @media (max-width: 768px) {
@@ -912,9 +886,7 @@ body.on-landing .language-switcher {
         left: 0;
         right: 0;
         flex-direction: column;
-        background: rgba(11, 15, 20, 0.96);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        background: rgba(10, 16, 28, 0.96);
         padding: 16px 20px;
         border-bottom: 1px solid var(--line);
         gap: 4px;
@@ -985,7 +957,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .insights-grid {
@@ -999,13 +971,12 @@ body.on-landing .language-switcher {
     background: var(--card-bg);
     background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 32px 28px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .insight-card::before {
@@ -1015,15 +986,14 @@ body.on-landing .language-switcher {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--teal), var(--gold));
+    background: var(--accent);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .insight-card:hover {
-    border-color: rgba(73, 198, 191, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(73, 198, 191, 0.08);
+    border-color: rgba(200, 165, 92, 0.3);
+    
 }
 
 .insight-card:hover::before {
@@ -1031,8 +1001,8 @@ body.on-landing .language-switcher {
 }
 
 .insight-card.highlight {
-    border-color: rgba(73, 198, 191, 0.25);
-    background: linear-gradient(135deg, rgba(73, 198, 191, 0.06), rgba(73, 198, 191, 0.02));
+    border-color: rgba(200, 165, 92, 0.25);
+    background: rgba(200, 165, 92, 0.05);
 }
 
 .insight-card.highlight::before {
@@ -1041,7 +1011,7 @@ body.on-landing .language-switcher {
 
 .insight-value {
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--teal);
     line-height: 1.2;
     margin-bottom: 8px;
@@ -1093,20 +1063,20 @@ body.on-landing .language-switcher {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     padding: 3px 10px;
-    border-radius: 20px;
+    border-radius: 2px;
     line-height: 1.4;
 }
 
 .tier-badge.standard {
-    background: rgba(73, 198, 191, 0.12);
+    background: rgba(200, 165, 92, 0.12);
     color: var(--teal);
-    border: 1px solid rgba(73, 198, 191, 0.25);
+    border: 1px solid rgba(200, 165, 92, 0.25);
 }
 
 .tier-badge.pro {
-    background: rgba(240, 180, 41, 0.12);
+    background: rgba(200, 165, 92, 0.12);
     color: var(--gold);
-    border: 1px solid rgba(240, 180, 41, 0.25);
+    border: 1px solid rgba(200, 165, 92, 0.25);
 }
 
 .feature-card.pro-feature {
@@ -1114,8 +1084,7 @@ body.on-landing .language-switcher {
 }
 
 .feature-card.pro-feature:hover {
-    border-color: rgba(240, 180, 41, 0.3);
-    box-shadow: 0 16px 40px rgba(240, 180, 41, 0.08);
+    border-color: rgba(200, 165, 92, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -1148,7 +1117,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .real-data-grid {
@@ -1164,25 +1133,25 @@ body.on-landing .language-switcher {
 .real-data-card {
     background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 28px 20px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .real-data-card:hover {
-    border-color: rgba(73, 198, 191, 0.3);
-    transform: translateY(-2px);
+    border-color: rgba(200, 165, 92, 0.3);
+    
 }
 
 .real-data-card.highlight {
-    border-color: rgba(73, 198, 191, 0.4);
-    background: linear-gradient(180deg, rgba(73, 198, 191, 0.06), var(--card-bg-flat));
+    border-color: rgba(200, 165, 92, 0.4);
+    background: var(--card);
 }
 
 .real-data-value {
     font-size: 28px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--teal);
     margin-bottom: 6px;
 }
@@ -1224,13 +1193,13 @@ body.on-landing .language-switcher {
     padding: 24px;
     background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 .audience-card:hover {
-    border-color: rgba(73, 198, 191, 0.3);
-    transform: translateY(-2px);
+    border-color: rgba(200, 165, 92, 0.3);
+    
 }
 
 .audience-icon {
@@ -1261,7 +1230,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .ecosystem-flow {
@@ -1276,7 +1245,7 @@ body.on-landing .language-switcher {
 .ecosystem-step {
     background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 28px 32px;
     text-align: center;
     min-width: 180px;
@@ -1284,12 +1253,12 @@ body.on-landing .language-switcher {
 }
 
 .ecosystem-step:hover {
-    transform: translateY(-2px);
+    
 }
 
 .ecosystem-step.highlight {
     border-color: var(--teal);
-    background: linear-gradient(180deg, rgba(73, 198, 191, 0.08), var(--card-bg-flat));
+    background: var(--card);
 }
 
 .ecosystem-label {
@@ -1330,7 +1299,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .why-content {
@@ -1363,7 +1332,7 @@ body.on-landing .language-switcher {
     content: '?';
     position: absolute;
     left: 0;
-    color: var(--teal);
+    color: var(--hl);
     font-weight: 700;
     font-size: 18px;
 }
@@ -1373,7 +1342,7 @@ body.on-landing .language-switcher {
     padding: 24px;
     background-color: var(--card-bg-flat);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 4px;
     border-left: 3px solid var(--teal);
 }
 
@@ -1431,7 +1400,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .workflow-steps {
@@ -1453,9 +1422,9 @@ body.on-landing .language-switcher {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--teal), rgba(73, 198, 191, 0.6));
+    background: var(--accent);
     color: var(--bg0);
-    font-weight: 800;
+    font-weight: 600;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -1473,7 +1442,7 @@ body.on-landing .language-switcher {
 .workflow-connector {
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--teal), rgba(73, 198, 191, 0.3));
+    background: var(--line);
     flex-shrink: 0;
 }
 
@@ -1501,7 +1470,7 @@ body.on-landing .language-switcher {
     .workflow-connector {
         width: 2px;
         height: 24px;
-        background: linear-gradient(180deg, var(--teal), rgba(73, 198, 191, 0.3));
+        background: var(--line);
     }
 }
 
@@ -1553,7 +1522,7 @@ body.on-landing .language-switcher {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    background: var(--line);
 }
 
 .equipment-perf-showcase {
@@ -1564,16 +1533,13 @@ body.on-landing .language-switcher {
 }
 
 .equipment-perf-item {
-    background-color: var(--card-bg-flat);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 32px;
-    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .equipment-perf-item:hover {
-    border-color: rgba(73, 198, 191, 0.3);
-    box-shadow: 0 8px 32px rgba(73, 198, 191, 0.08);
+    border: none;
 }
 
 .equipment-perf-label {
@@ -1593,22 +1559,21 @@ body.on-landing .language-switcher {
 
 .equipment-perf-img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 3px;
     border: 1px solid var(--line);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .equipment-perf-callout {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    background-color: var(--card-bg-flat);
-    border: 1px solid rgba(240, 180, 41, 0.3);
-    border-left: 3px solid var(--gold);
-    border-radius: 12px;
-    padding: 24px 28px;
+    background: transparent;
+    border: none;
+    border-left: 2px solid var(--accent);
+    border-radius: 0;
+    padding: 8px 28px;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 48px auto 0;
 }
 
 .equipment-perf-callout-icon {
@@ -1688,9 +1653,9 @@ body.on-landing .language-switcher {
 /* "New" tier badge — a filled teal→blue chip that reads brighter than the
    Standard/Pro outline badges. */
 .tier-badge.new {
-    background: linear-gradient(135deg, var(--teal), var(--blue));
-    color: #06121a;
-    border: 1px solid rgba(73, 198, 191, 0.5);
+    background: var(--accent);
+    color: #0A101C;
+    border: 1px solid rgba(200, 165, 92, 0.5);
 }
 
 /* Hero release pill — links to the RC1 announcement page. */
@@ -1700,9 +1665,9 @@ body.on-landing .language-switcher {
     gap: 10px;
     padding: 7px 8px 7px 8px;
     margin: 0 0 22px;
-    border-radius: 999px;
-    border: 1px solid rgba(73, 198, 191, 0.35);
-    background: rgba(73, 198, 191, 0.08);
+    border-radius: 2px;
+    border: 1px solid rgba(200, 165, 92, 0.35);
+    background: rgba(200, 165, 92, 0.08);
     color: var(--text-secondary);
     font-size: 13.5px;
     font-weight: 550;
@@ -1710,16 +1675,16 @@ body.on-landing .language-switcher {
     transition: all 0.25s ease;
 }
 .release-pill:hover {
-    background: rgba(73, 198, 191, 0.16);
-    border-color: rgba(73, 198, 191, 0.55);
-    transform: translateY(-1px);
+    background: rgba(200, 165, 92, 0.16);
+    border-color: rgba(200, 165, 92, 0.55);
+   
 }
 .release-pill .rp-badge {
     display: inline-block;
     padding: 3px 10px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--teal), var(--blue));
-    color: #06121a;
+    border-radius: 2px;
+    background: var(--accent);
+    color: #0A101C;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -1753,7 +1718,6 @@ body.on-landing .language-switcher {
     width: auto;
     max-width: 290px;
     border-radius: 30px;
-    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
 }
 
 /* App Store / Google Play status badges. */
@@ -1763,18 +1727,192 @@ body.on-landing .language-switcher {
     align-items: center;
     gap: 9px;
     padding: 9px 16px;
-    border-radius: 999px;
+    border-radius: 2px;
     font-size: 13.5px;
     font-weight: 600;
     text-decoration: none;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(242, 237, 227, 0.03);
     color: var(--text-secondary);
     transition: all 0.25s ease;
 }
 .app-badge .led { width: 8px; height: 8px; border-radius: 50%; flex: none; }
 .app-badge.live { border-color: rgba(89, 217, 142, 0.4); color: var(--green); }
-.app-badge.live .led { background: var(--green); box-shadow: 0 0 8px var(--green); }
-.app-badge.live:hover { background: rgba(89, 217, 142, 0.1); transform: translateY(-1px); }
+.app-badge.live .led { background: var(--green); }
+.app-badge.live:hover { background: rgba(89, 217, 142, 0.1); }
 .app-badge.soon { border-color: rgba(90, 167, 255, 0.4); color: var(--blue); }
-.app-badge.soon .led { background: var(--blue); box-shadow: 0 0 8px var(--blue); }
+.app-badge.soon .led { background: var(--blue); }
+
+
+/* ─── Star-atlas additions ────────────────── */
+.rc1-eyebrow, .ecosystem-label, .tier-badge {
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.insight-value, .real-data-value, .price .currency, .workflow-number, .download-detail {
+    font-family: var(--font-mono);
+}
+
+.insight-value { font-weight: 500; font-size: 30px; letter-spacing: 0; }
+.price .currency { font-weight: 500; }
+.workflow-number { font-weight: 500; }
+
+.insight-card, .real-data-card {
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    text-align: left;
+    padding: 20px 6px 26px;
+}
+.insight-card:hover { transform: none; border-color: var(--line); }
+.insight-card::before { display: none; }
+.insight-card.highlight {
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--accent);
+}
+.insight-label {
+    font-size: 12px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mut);
+    order: -1;
+}
+.insight-card { display: flex; flex-direction: column; }
+.insight-value { margin: 6px 0 8px; }
+.insights-caption { font-style: normal; }
+
+.release-pill {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mut);
+}
+.release-pill:hover { background: transparent; color: var(--txt); }
+.release-pill .rp-badge {
+    background: var(--accent);
+    color: var(--bg0);
+    border-radius: 2px;
+    font-family: var(--font-mono);
+}
+.release-pill .rp-arrow { color: var(--accent); }
+
+.language-switcher .flag { display: none; }
+
+.section-title { line-height: 1.2; }
+.hero-content h2 { line-height: 1.15; }
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+#contactModal > div {
+    background: var(--bg1) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 4px !important;
+}
+#contactModal h2 { font-family: var(--font-display) !important; color: var(--txt) !important; }
+#contactModal input, #contactModal textarea {
+    background: rgba(242, 237, 227, 0.05) !important;
+    border-radius: 2px !important;
+    color: var(--txt) !important;
+}
+#contactSubmitButton {
+    background: var(--accent) !important;
+    color: var(--bg0) !important;
+    border-radius: 2px !important;
+    font-weight: 500 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* fixes after visual review */
+.nav-menu a.btn-primary,
+.nav-menu a.btn-primary:hover {
+    color: var(--bg0);
+}
+.release-pill .rp-badge { white-space: nowrap; }
+.audience-card { flex-wrap: wrap; }
+.audience-card p { min-width: 0; flex-basis: 100%; }
+html { overflow-x: hidden; }
+
+/* ─── App store badges — official Apple / Google artwork ── */
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+.store-badges a { display: inline-block; line-height: 0; border-radius: 8px; }
+.store-badges img { height: 52px; width: auto; display: block; }
+
+.feature-screenshot.phone img {
+    border-radius: 32px;
+    border: 1px solid var(--line);
+}
+
+/* ─── Motion layer (used with js/staratlas.js) ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+.reveal.reveal-left { transform: translateX(-28px); }
+.reveal.reveal-right { transform: translateX(28px); }
+.reveal.in { opacity: 1; transform: none; }
+
+.hero-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+    .hero-stars { display: none; }
+}
+
+/* ─── Screenshot depth + hover life ─────────── */
+.feature-screenshot img,
+.hero-image img,
+.equipment-perf-img {
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+.feature-screenshot img:hover,
+.hero-image img:hover,
+.equipment-perf-img:hover {
+    transform: scale(1.018);
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-screenshot img:hover,
+    .hero-image img:hover,
+    .equipment-perf-img:hover { transform: none; }
+}
+
+/* Static body-level language switcher is superseded by the navbar copy that
+   languages.js injects — hide the leftover so it can't render top-left. */
+body > .language-switcher { display: none; }

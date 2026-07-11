@@ -658,25 +658,23 @@
             <div class="feature-detail">
                 <div class="feature-content">
                     <h3 data-i18n="rc1.mobile.title">Your Library, In Your Pocket</h3>
-                    <p data-i18n="rc1.mobile.description">AstroIndexer now has companion apps. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.</p>
+                    <p data-i18n="rc1.mobile.description">AstroIndexer now has companion apps for iOS and Android. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.</p>
                     <ul class="feature-points">
                         <li data-i18n="rc1.mobile.points.0">Per-object capture summary: total exposure, frames, rig and date range</li>
                         <li data-i18n="rc1.mobile.points.1">Scan / Rig / QA / ML / Image pipeline status at a glance</li>
                         <li data-i18n="rc1.mobile.points.2">Object previews synced from your indexed library</li>
                     </ul>
-                    <div class="app-badges">
-                        <a class="app-badge live" href="https://apps.apple.com/us/app/astroindexercompanion/id6772704017">
-                            <span class="led"></span>
-                            <span data-i18n="rc1.mobile.ios">iOS — live now on the App Store</span>
+                    <div class="store-badges">
+                        <a href="https://apps.apple.com/app/astroindexercompanion/id6772704017">
+                            <img class="badge-appstore" src="images/badges/appstore_badge_en.svg" alt="Download on the App Store" loading="lazy">
                         </a>
-                        <span class="app-badge soon">
-                            <span class="led"></span>
-                            <span data-i18n="rc1.mobile.android">Android — in final Google review</span>
-                        </span>
+                        <a href="https://play.google.com/store/apps/details?id=com.deepskyanalytics.astroindexercompanion">
+                            <img class="badge-gplay" src="images/badges/gplay_badge_en.svg" alt="Get it on Google Play" loading="lazy">
+                        </a>
                     </div>
                 </div>
-                <div class="feature-screenshot phone">
-                    <img src="screenshots/mobile_companion.jpg" alt="The AstroIndexer mobile companion app showing an object page with a preview image, capture stats, and Scan / QA / ML pipeline status" loading="lazy">
+                <div class="feature-screenshot">
+                    <img src="screenshots/mobile_app_hand_composited.jpg" alt="A hand holding a phone running the AstroIndexer companion app at night, showing the M 96 object page, with a telescope rig under a starry sky in the background" loading="lazy">
                 </div>
             </div>
             </div><!-- /#whats-new-rc1 -->
@@ -1168,6 +1166,9 @@
             });
         }
     </script>
+
+    <!-- Star-atlas motion layer -->
+    <script src="js/staratlas.js"></script>
 
     <!-- Contact / trial-request form: shared modal injected by js/contact-form.js -->
     <script src="js/contact-form.js"></script>

@@ -107,7 +107,7 @@ const translations = {
                 },
                 mobile: {
                     title: "Mobile Companion Apps",
-                    description: "Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or the couch. iOS is live on the App Store; Android is in final review."
+                    description: "Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or the couch. Available for iOS and Android."
                 }
             }
         },
@@ -184,7 +184,7 @@ const translations = {
             },
             mobile: {
                 title: "Your Library, In Your Pocket",
-                description: "AstroIndexer now has companion apps. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.",
+                description: "AstroIndexer now has companion apps for iOS and Android. Browse your catalogue, check per-object capture stats, and see Scan, QA and ML status on any target — from the field or from the couch.",
                 points: [
                     "Per-object capture summary: total exposure, frames, rig and date range",
                     "Scan / Rig / QA / ML / Image pipeline status at a glance",
@@ -719,7 +719,7 @@ const translations = {
                 },
                 mobile: {
                     title: "Mobile Companion-Apps",
-                    description: "Durchsuchen Sie Ihren Katalog, pr\u00fcfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status vom Feld oder vom Sofa aus. iOS ist live im App Store; Android ist in finaler Pr\u00fcfung."
+                    description: "Durchsuchen Sie Ihren Katalog, pr\u00fcfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status vom Feld oder vom Sofa aus. Verf\u00fcgbar f\u00fcr iOS und Android."
                 }
             }
         },
@@ -796,7 +796,7 @@ const translations = {
             },
             mobile: {
                 title: "Ihre Bibliothek in Ihrer Tasche",
-                description: "AstroIndexer hat jetzt Companion-Apps. Durchsuchen Sie Ihren Katalog, prüfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status zu jedem Ziel — vom Feld oder vom Sofa aus.",
+                description: "AstroIndexer hat jetzt Companion-Apps für iOS und Android. Durchsuchen Sie Ihren Katalog, prüfen Sie Aufnahmestatistiken pro Objekt und sehen Sie Scan-, QA- und ML-Status zu jedem Ziel — vom Feld oder vom Sofa aus.",
                 points: [
                     "Aufnahme-Zusammenfassung pro Objekt: Gesamtbelichtung, Frames, Rig und Zeitraum",
                     "Scan / Rig / QA / ML / Image Pipeline-Status auf einen Blick",
@@ -1330,7 +1330,7 @@ const translations = {
                 },
                 mobile: {
                     title: "Apps Complementarias M\u00f3viles",
-                    description: "Explora tu cat\u00e1logo, consulta las estad\u00edsticas de captura por objeto y el estado de Escaneo, QA y ML desde el campo o desde el sof\u00e1. iOS ya est\u00e1 disponible en la App Store; Android est\u00e1 en revisi\u00f3n final."
+                    description: "Explora tu cat\u00e1logo, consulta las estad\u00edsticas de captura por objeto y el estado de Escaneo, QA y ML desde el campo o desde el sof\u00e1. Disponible para iOS y Android."
                 }
             }
         },
@@ -1407,7 +1407,7 @@ const translations = {
             },
             mobile: {
                 title: "Tu Biblioteca en tu Bolsillo",
-                description: "AstroIndexer ya tiene apps complementarias. Explora tu catálogo, consulta las estadísticas de captura por objeto y el estado de Escaneo, QA y ML de cualquier objetivo — desde el campo o desde el sofá.",
+                description: "AstroIndexer ya tiene apps complementarias para iOS y Android. Explora tu catálogo, consulta las estadísticas de captura por objeto y el estado de Escaneo, QA y ML de cualquier objetivo — desde el campo o desde el sofá.",
                 points: [
                     "Resumen de captura por objeto: exposición total, frames, equipo y rango de fechas",
                     "Estado de la pipeline Escaneo / Equipo / QA / ML / Imagen de un vistazo",
