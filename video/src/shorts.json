@@ -73,7 +73,8 @@
           "beatFrames": 298,
           "audioStartFrame": 9
         }
-      ]
+      ],
+      "clip": "clips/gallery.mp4"
     },
     {
       "id": "catalogue",
@@ -369,7 +370,8 @@
           "beatFrames": 260,
           "audioStartFrame": 9
         }
-      ]
+      ],
+      "clip": "clips/skyatlas.mp4"
     },
     {
       "id": "planner",
@@ -443,7 +445,8 @@
           "beatFrames": 323,
           "audioStartFrame": 9
         }
-      ]
+      ],
+      "clip": "clips/planner.mp4"
     }
   ]
 }

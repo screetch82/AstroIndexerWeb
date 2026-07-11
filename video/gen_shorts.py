@@ -24,7 +24,7 @@ CTA_LINE = "AstroIndexer — free trial at astroindexer dot com."
 # region fractions are of the SOURCE image; tune against the real screenshots.
 SHORTS = [
     {
-        "id": "gallery", "feature": "Gallery", "shot": "shots/gallery.jpg",
+        "id": "gallery", "feature": "Gallery", "shot": "shots/gallery.jpg", "clip": True,
         "segments": [
             ("hook", "hook", [0, 0, 1, 1], "",
              "Thousands of light frames, scattered across a dozen drives. Good luck finding anything."),
@@ -76,7 +76,7 @@ SHORTS = [
         ],
     },
     {
-        "id": "skyatlas", "feature": "Interactive Sky Atlas", "shot": "shots/skyatlas.jpg",
+        "id": "skyatlas", "feature": "Interactive Sky Atlas", "shot": "shots/skyatlas.jpg", "clip": True,
         "segments": [
             ("hook", "hook", [0, 0, 1, 1], "",
              "Will that target actually fit your camera? Find out before you are freezing outside."),
@@ -89,7 +89,7 @@ SHORTS = [
         ],
     },
     {
-        "id": "planner", "feature": "Session Planner", "shot": "shots/planner.jpg",
+        "id": "planner", "feature": "Session Planner", "shot": "shots/planner.jpg", "clip": True,
         "segments": [
             ("hook", "hook", [0, 0, 1, 1], "",
              "It is clear tonight. What should you actually image?"),
@@ -161,10 +161,14 @@ async def build_short(short):
         })
     total = sum(s["beatFrames"] for s in segs)
     flag = "OK " if window_ok(total, FPS) else "!! "
-    print(f"{flag}{sid:13s} {total:4d}f = {total/FPS:5.1f}s  ({shotW}x{shotH})")
-    return {"id": sid, "feature": short["feature"], "shot": short["shot"],
-            "shotW": shotW, "shotH": shotH, "music": pick_music(sid, MUSIC_DIR),
-            "segments": segs}
+    mode = "clip " if short.get("clip") else "still"
+    print(f"{flag}{sid:13s} {mode} {total:4d}f = {total/FPS:5.1f}s  ({shotW}x{shotH})")
+    res = {"id": sid, "feature": short["feature"], "shot": short["shot"],
+           "shotW": shotW, "shotH": shotH, "music": pick_music(sid, MUSIC_DIR),
+           "segments": segs}
+    if short.get("clip"):
+        res["clip"] = f"clips/{sid}.mp4"   # user records this; poster = shot until then
+    return res
 
 
 async def main():
