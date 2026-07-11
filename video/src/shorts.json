@@ -1,0 +1,449 @@
+{
+  "fps": 30,
+  "shorts": [
+    {
+      "id": "gallery",
+      "feature": "Gallery",
+      "shot": "shots/gallery.jpg",
+      "shotW": 2600,
+      "shotH": 1476,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/gallery/hook.mp3",
+          "text": "Thousands of light frames, scattered across a dozen drives. Good luck finding anything.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 7.344,
+          "beatFrames": 246,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "search",
+          "kind": "beat",
+          "audio": "svo/gallery/search.mp3",
+          "text": "The Gallery brings every frame you have ever shot into one searchable library \u2014 by target, filter, session, even moon phase.",
+          "caption": "One searchable library",
+          "region": [
+            0.2,
+            0.02,
+            0.56,
+            0.14
+          ],
+          "durSec": 9.168,
+          "beatFrames": 301,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cards",
+          "kind": "beat",
+          "audio": "svo/gallery/cards.mp3",
+          "text": "And these are not file icons \u2014 every card is a real preview, straight from the FITS data.",
+          "caption": "Real FITS previews",
+          "region": [
+            0.24,
+            0.3,
+            0.4,
+            0.52
+          ],
+          "durSec": 6.624,
+          "beatFrames": 224,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/gallery/cta.mp3",
+          "text": "Your whole archive, finally in one place. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 8.736,
+          "beatFrames": 298,
+          "audioStartFrame": 9
+        }
+      ]
+    },
+    {
+      "id": "catalogue",
+      "feature": "Catalogue Completion",
+      "shot": "shots/catalogue.jpg",
+      "shotW": 2600,
+      "shotH": 1486,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/catalogue/hook.mp3",
+          "text": "How much of the Messier catalogue have you actually shot? Be honest.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 5.568,
+          "beatFrames": 193,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "counters",
+          "kind": "beat",
+          "audio": "svo/catalogue/counters.mp3",
+          "text": "Catalogue Completion tracks your progress across Messier, N. G. C., I. C., Caldwell and more \u2014 captured, partial, or still waiting.",
+          "caption": "Captured \u00b7 partial \u00b7 missing",
+          "region": [
+            0.18,
+            0.04,
+            0.62,
+            0.16
+          ],
+          "durSec": 11.112,
+          "beatFrames": 359,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "grid",
+          "kind": "beat",
+          "audio": "svo/catalogue/grid.mp3",
+          "text": "Your own thumbnails fill the grid as you go. A mission map of the sky, target by target.",
+          "caption": "A mission map of the sky",
+          "region": [
+            0.22,
+            0.3,
+            0.52,
+            0.55
+          ],
+          "durSec": 7.368,
+          "beatFrames": 247,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/catalogue/cta.mp3",
+          "text": "See what is left to catch. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 7.584,
+          "beatFrames": 264,
+          "audioStartFrame": 9
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "feature": "Quality Analysis",
+      "shot": "shots/quality.jpg",
+      "shotW": 2600,
+      "shotH": 1436,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/quality/hook.mp3",
+          "text": "Which of tonight's subs actually belong in your stack?",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 3.768,
+          "beatFrames": 139,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "metrics",
+          "kind": "beat",
+          "audio": "svo/quality/metrics.mp3",
+          "text": "Quality Analysis scores every frame \u2014 F. W. H. M., H. F. R., eccentricity, S. N. R., star count and background.",
+          "caption": "FWHM \u00b7 HFR \u00b7 SNR \u00b7 eccentricity",
+          "region": [
+            0.04,
+            0.18,
+            0.46,
+            0.64
+          ],
+          "durSec": 12.192,
+          "beatFrames": 391,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "calib",
+          "kind": "beat",
+          "audio": "svo/quality/calib.mp3",
+          "text": "Calibrated to PixInsight's SubframeSelector within ten percent, so the numbers you already trust just carry over.",
+          "caption": "Calibrated to PixInsight",
+          "region": [
+            0.5,
+            0.18,
+            0.46,
+            0.64
+          ],
+          "durSec": 8.28,
+          "beatFrames": 274,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/quality/cta.mp3",
+          "text": "Stop judging by eye. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 7.464,
+          "beatFrames": 260,
+          "audioStartFrame": 9
+        }
+      ]
+    },
+    {
+      "id": "intelligence",
+      "feature": "Imaging Intelligence",
+      "shot": "shots/intelligence.jpg",
+      "shotW": 2600,
+      "shotH": 1538,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/intelligence/hook.mp3",
+          "text": "Your data has been trying to tell you something for years.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 4.272,
+          "beatFrames": 154,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "patterns",
+          "kind": "beat",
+          "audio": "svo/intelligence/patterns.mp3",
+          "text": "Imaging Intelligence reads every session at once \u2014 tracking drift, focus health, gradients, moon impact, optical issues.",
+          "caption": "Every session, read at once",
+          "region": [
+            0.04,
+            0.14,
+            0.5,
+            0.72
+          ],
+          "durSec": 9.336,
+          "beatFrames": 306,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "insight",
+          "kind": "beat",
+          "audio": "svo/intelligence/insight.mp3",
+          "text": "The sensor heatmap exposes tilt and vignetting you cannot see in a single frame, then turns it into plain, practical advice.",
+          "caption": "Tilt, vignetting, plain advice",
+          "region": [
+            0.54,
+            0.14,
+            0.42,
+            0.62
+          ],
+          "durSec": 8.64,
+          "beatFrames": 285,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/intelligence/cta.mp3",
+          "text": "Let your archive talk back. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 7.608,
+          "beatFrames": 264,
+          "audioStartFrame": 9
+        }
+      ]
+    },
+    {
+      "id": "skyatlas",
+      "feature": "Interactive Sky Atlas",
+      "shot": "shots/skyatlas.jpg",
+      "shotW": 1400,
+      "shotH": 900,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/skyatlas/hook.mp3",
+          "text": "Will that target actually fit your camera? Find out before you are freezing outside.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 6.696,
+          "beatFrames": 226,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "fov",
+          "kind": "beat",
+          "audio": "svo/skyatlas/fov.mp3",
+          "text": "The Interactive Sky Atlas projects your real field of view onto the sky \u2014 frame targets and plan mosaics in advance.",
+          "caption": "Your real field of view",
+          "region": [
+            0.34,
+            0.28,
+            0.32,
+            0.42
+          ],
+          "durSec": 8.712,
+          "beatFrames": 287,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "coverage",
+          "kind": "beat",
+          "audio": "svo/skyatlas/coverage.mp3",
+          "text": "Check your coverage across the whole celestial sphere. It is not files on disk \u2014 it is your journey across the night sky.",
+          "caption": "Coverage across the sphere",
+          "region": [
+            0.08,
+            0.1,
+            0.84,
+            0.8
+          ],
+          "durSec": 8.856,
+          "beatFrames": 291,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/skyatlas/cta.mp3",
+          "text": "Plan it before you shoot it. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 7.464,
+          "beatFrames": 260,
+          "audioStartFrame": 9
+        }
+      ]
+    },
+    {
+      "id": "planner",
+      "feature": "Session Planner",
+      "shot": "shots/planner.jpg",
+      "shotW": 2600,
+      "shotH": 1474,
+      "music": "music/shorts_bed.wav",
+      "segments": [
+        {
+          "id": "hook",
+          "kind": "hook",
+          "audio": "svo/planner/hook.mp3",
+          "text": "It is clear tonight. What should you actually image?",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 4.824,
+          "beatFrames": 170,
+          "audioStartFrame": 9
+        },
+        {
+          "id": "inputs",
+          "kind": "beat",
+          "audio": "svo/planner/inputs.mp3",
+          "text": "The Session Planner weighs Skyfield ephemerides and Meteoblue weather against your rig, your location, and the moon.",
+          "caption": "Ephemerides + weather + your rig",
+          "region": [
+            0.03,
+            0.18,
+            0.42,
+            0.72
+          ],
+          "durSec": 7.632,
+          "beatFrames": 254,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "ranked",
+          "kind": "beat",
+          "audio": "svo/planner/ranked.mp3",
+          "text": "Out comes the best target for tonight \u2014 ranked, and matched to your remaining catalogue goals.",
+          "caption": "Tonight's best target",
+          "region": [
+            0.46,
+            0.18,
+            0.5,
+            0.72
+          ],
+          "durSec": 6.432,
+          "beatFrames": 218,
+          "audioStartFrame": 10
+        },
+        {
+          "id": "cta",
+          "kind": "cta",
+          "audio": "svo/planner/cta.mp3",
+          "text": "Stop guessing. Make every clear night count. AstroIndexer \u2014 free trial at astroindexer dot com.",
+          "caption": "",
+          "region": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "durSec": 9.576,
+          "beatFrames": 323,
+          "audioStartFrame": 9
+        }
+      ]
+    }
+  ]
+}
