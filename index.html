@@ -1218,7 +1218,11 @@
                 settings: {
                     // Branded post-purchase landing page. Paddle navigates the parent
                     // window to this URL after the customer completes payment.
-                    successUrl: 'https://astroindexer.com/thank-you.html'
+                    successUrl: 'https://astroindexer.com/thank-you.html',
+                    // Match the checkout language to the site's current language.
+                    // Without this, Paddle auto-detects from the browser/IP, so an
+                    // English page can open a German checkout.
+                    locale: document.documentElement.lang || 'en'
                 }
             });
         }
