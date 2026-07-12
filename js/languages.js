@@ -545,8 +545,7 @@ const translations = {
                     "All core features",
                     "Equipment database",
                     "Session statistics & planning",
-                    "Multi-computer license",
-                    "Lifetime updates"
+                    "Multi-computer license"
                 ],
                 cta: "Coming Soon"
             },
@@ -562,8 +561,7 @@ const translations = {
                     "Imaging Intelligence",
                     "Photometry Tools",
                     "Custom equipment profiles",
-                    "Multi-computer license",
-                    "Lifetime updates"
+                    "Multi-computer license"
                 ],
                 cta: "Buy Now"
             }
@@ -1156,8 +1154,7 @@ const translations = {
                     "Alle Kernfunktionen",
                     "Equipment-Datenbank",
                     "Session-Statistiken & Planung",
-                    "Mehrcomputer-Lizenz",
-                    "Lebenslange Updates"
+                    "Mehrcomputer-Lizenz"
                 ],
                 cta: "Bald verf\u00fcgbar"
             },
@@ -1173,8 +1170,7 @@ const translations = {
                     "Bild-Intelligenz",
                     "Photometrie-Tools",
                     "Benutzerdefinierte Equipment-Profile",
-                    "Mehrcomputer-Lizenz",
-                    "Lebenslange Updates"
+                    "Mehrcomputer-Lizenz"
                 ],
                 cta: "Jetzt kaufen"
             }
@@ -1767,8 +1763,7 @@ const translations = {
                     "Todas las funciones principales",
                     "Base de datos de equipos",
                     "Estad\u00edsticas y planificaci\u00f3n",
-                    "Licencia multi-ordenador",
-                    "Actualizaciones de por vida"
+                    "Licencia multi-ordenador"
                 ],
                 cta: "Pr\u00f3ximamente"
             },
@@ -1784,8 +1779,7 @@ const translations = {
                     "Inteligencia de Imagen",
                     "Herramientas de fotometr\u00eda",
                     "Perfiles de equipo personalizados",
-                    "Licencia multi-ordenador",
-                    "Actualizaciones de por vida"
+                    "Licencia multi-ordenador"
                 ],
                 cta: "Comprar Ahora"
             }
