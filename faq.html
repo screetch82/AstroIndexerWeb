@@ -43,13 +43,13 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#pricing">Pricing</a></li>
-                <li><a href="docs.html">Documentation</a></li>
-                <li><a href="faq.html" class="active">FAQ</a></li>
-                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="index.html#pricing" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="docs.html" data-i18n="nav.documentation">Documentation</a></li>
+                <li><a href="faq.html" class="active" data-i18n="nav.faq">FAQ</a></li>
+                <li><a href="changelog.html" data-i18n="nav.changelog">Changelog</a></li>
                 <li><a href="pixinsight-plate-solver.html">PixInsight</a></li>
-                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+                <li><a href="index.html#download" class="btn-primary" data-i18n="nav.download">Download</a></li>
             </ul>
         </div>
     </nav>
@@ -57,8 +57,16 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Frequently Asked Questions</h1>
-            <p class="page-subtitle">Quick answers to common questions about AstroIndexer</p>
+            <h1>
+                <span data-lang-content="en">Frequently Asked Questions</span>
+                <span data-lang-content="de" style="display:none">Häufig gestellte Fragen</span>
+                <span data-lang-content="es" style="display:none">Preguntas frecuentes</span>
+            </h1>
+            <p class="page-subtitle">
+                <span data-lang-content="en">Quick answers to common questions about AstroIndexer</span>
+                <span data-lang-content="de" style="display:none">Schnelle Antworten auf häufige Fragen zu AstroIndexer</span>
+                <span data-lang-content="es" style="display:none">Respuestas rápidas a las preguntas más comunes sobre AstroIndexer</span>
+            </p>
         </div>
     </section>
 
@@ -68,292 +76,778 @@
 
             <!-- General -->
             <div class="faq-category">
-                <h2>General</h2>
+                <h2>
+                    <span data-lang-content="en">General</span>
+                    <span data-lang-content="de" style="display:none">Allgemein</span>
+                    <span data-lang-content="es" style="display:none">General</span>
+                </h2>
 
                 <details class="faq-item" open>
-                    <summary>What is AstroIndexer?</summary>
+                    <summary>
+                        <span data-lang-content="en">What is AstroIndexer?</span>
+                        <span data-lang-content="de" style="display:none">Was ist AstroIndexer?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué es AstroIndexer?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>AstroIndexer is a comprehensive astrophotography management and analysis application. It indexes your FITS and XISF files, measures quality metrics (FWHM, HFR, SNR, eccentricity) with PixInsight-grade accuracy, discovers patterns with 6 Imaging Intelligence modules, and helps you plan imaging sessions with a full-lifecycle planner.</p>
+                        <div data-lang-content="en">
+                            <p>AstroIndexer is a comprehensive astrophotography management and analysis application. It indexes your FITS and XISF files, measures quality metrics (FWHM, HFR, SNR, eccentricity) with PixInsight-grade accuracy, discovers patterns with 6 Imaging Intelligence modules, and helps you plan imaging sessions with a full-lifecycle planner.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>AstroIndexer ist eine umfassende Anwendung zur Verwaltung und Analyse von Astrofotografie. Sie indexiert Ihre FITS- und XISF-Dateien, misst Qualitätsmetriken (FWHM, HFR, SNR, Exzentrizität) mit PixInsight-Genauigkeit, erkennt Muster mit 6 Bild-Intelligenz-Modulen und hilft Ihnen mit einem Planer über den gesamten Lebenszyklus bei der Planung Ihrer Aufnahmesessions.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>AstroIndexer es una aplicación integral de gestión y análisis de astrofotografía. Indexa tus archivos FITS y XISF, mide métricas de calidad (FWHM, HFR, SNR, excentricidad) con precisión equivalente a PixInsight, detecta patrones con 6 módulos de Inteligencia de Imagen y te ayuda a planificar tus sesiones de captura con un planificador de ciclo de vida completo.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>What platforms does AstroIndexer support?</summary>
+                    <summary>
+                        <span data-lang-content="en">What platforms does AstroIndexer support?</span>
+                        <span data-lang-content="de" style="display:none">Welche Plattformen unterstützt AstroIndexer?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué plataformas admite AstroIndexer?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>AstroIndexer runs on:</p>
-                        <ul>
-                            <li><strong>Windows</strong> 10 and later (64-bit)</li>
-                            <li><strong>macOS</strong> 12 (Monterey) and later (Apple Silicon &amp; Intel)</li>
-                            <li><strong>Linux</strong> Ubuntu 22.04+ and compatible distributions</li>
-                        </ul>
+                        <div data-lang-content="en">
+                            <p>AstroIndexer runs on:</p>
+                            <ul>
+                                <li><strong>Windows</strong> 10 and later (64-bit)</li>
+                                <li><strong>macOS</strong> 12 (Monterey) and later (Apple Silicon &amp; Intel)</li>
+                                <li><strong>Linux</strong> Ubuntu 22.04+ and compatible distributions</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>AstroIndexer läuft auf:</p>
+                            <ul>
+                                <li><strong>Windows</strong> 10 und neuer (64-Bit)</li>
+                                <li><strong>macOS</strong> 12 (Monterey) und neuer (Apple Silicon &amp; Intel)</li>
+                                <li><strong>Linux</strong> Ubuntu 22.04+ und kompatible Distributionen</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>AstroIndexer funciona en:</p>
+                            <ul>
+                                <li><strong>Windows</strong> 10 y posterior (64 bits)</li>
+                                <li><strong>macOS</strong> 12 (Monterey) y posterior (Apple Silicon e Intel)</li>
+                                <li><strong>Linux</strong> Ubuntu 22.04+ y distribuciones compatibles</li>
+                            </ul>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>What file formats are supported?</summary>
+                    <summary>
+                        <span data-lang-content="en">What file formats are supported?</span>
+                        <span data-lang-content="de" style="display:none">Welche Dateiformate werden unterstützt?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué formatos de archivo se admiten?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p><strong>Full support:</strong> FITS (.fits, .fit, .fts), XISF (.xisf), TIFF (.tif, .tiff)</p>
-                        <p><strong>Partial support:</strong> RAW formats (CR2, NEF, ARW) via dcraw, JPEG, PNG (limited metadata)</p>
-                        <p>Extension matching is case-insensitive, so .FIT, .Fits, .XISF all work. Compatible with files from N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, and other capture software.</p>
+                        <div data-lang-content="en">
+                            <p><strong>Full support:</strong> FITS (.fits, .fit, .fts), XISF (.xisf), TIFF (.tif, .tiff)</p>
+                            <p><strong>Partial support:</strong> RAW formats (CR2, NEF, ARW) via dcraw, JPEG, PNG (limited metadata)</p>
+                            <p>Extension matching is case-insensitive, so .FIT, .Fits, .XISF all work. Compatible with files from N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, and other capture software.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p><strong>Volle Unterstützung:</strong> FITS (.fits, .fit, .fts), XISF (.xisf), TIFF (.tif, .tiff)</p>
+                            <p><strong>Teilweise Unterstützung:</strong> RAW-Formate (CR2, NEF, ARW) über dcraw, JPEG, PNG (eingeschränkte Metadaten)</p>
+                            <p>Die Erweiterungserkennung ist nicht case-sensitiv, sodass .FIT, .Fits, .XISF alle funktionieren. Kompatibel mit Dateien aus N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair und anderer Aufnahmesoftware.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p><strong>Compatibilidad total:</strong> FITS (.fits, .fit, .fts), XISF (.xisf), TIFF (.tif, .tiff)</p>
+                            <p><strong>Compatibilidad parcial:</strong> formatos RAW (CR2, NEF, ARW) mediante dcraw, JPEG, PNG (metadatos limitados)</p>
+                            <p>La detección de extensiones no distingue mayúsculas, así que .FIT, .Fits, .XISF funcionan todas. Compatible con archivos de N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair y otro software de captura.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Does AstroIndexer modify my original files?</summary>
+                    <summary>
+                        <span data-lang-content="en">Does AstroIndexer modify my original files?</span>
+                        <span data-lang-content="de" style="display:none">Verändert AstroIndexer meine Originaldateien?</span>
+                        <span data-lang-content="es" style="display:none">¿AstroIndexer modifica mis archivos originales?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p><strong>No.</strong> AstroIndexer never modifies your original image files. It only reads metadata from files, creates thumbnails in its own directory, and stores analysis results in its local database. Your images remain untouched.</p>
+                        <div data-lang-content="en">
+                            <p><strong>No.</strong> AstroIndexer never modifies your original image files. It only reads metadata from files, creates thumbnails in its own directory, and stores analysis results in its local database. Your images remain untouched.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p><strong>Nein.</strong> AstroIndexer verändert Ihre Original-Bilddateien niemals. Es liest nur Metadaten aus den Dateien, erstellt Thumbnails in seinem eigenen Verzeichnis und speichert Analyseergebnisse in seiner lokalen Datenbank. Ihre Bilder bleiben unangetastet.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p><strong>No.</strong> AstroIndexer nunca modifica tus archivos de imagen originales. Solo lee los metadatos de los archivos, crea miniaturas en su propio directorio y guarda los resultados del análisis en su base de datos local. Tus imágenes permanecen intactas.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Installation -->
             <div class="faq-category">
-                <h2>Installation &amp; Setup</h2>
+                <h2>
+                    <span data-lang-content="en">Installation &amp; Setup</span>
+                    <span data-lang-content="de" style="display:none">Installation &amp; Einrichtung</span>
+                    <span data-lang-content="es" style="display:none">Instalación y configuración</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>How do I install AstroIndexer?</summary>
+                    <summary>
+                        <span data-lang-content="en">How do I install AstroIndexer?</span>
+                        <span data-lang-content="de" style="display:none">Wie installiere ich AstroIndexer?</span>
+                        <span data-lang-content="es" style="display:none">¿Cómo instalo AstroIndexer?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p><strong>Windows:</strong> Download the installer (.exe), run it, and follow the wizard. You can choose both the install location and the data directory.</p>
-                        <p><strong>macOS:</strong> Download the .dmg, open it, and drag AstroIndexer to Applications. On first launch, right-click &rarr; Open to bypass Gatekeeper.</p>
-                        <p><strong>Linux:</strong> Download the .tar.gz archive, extract, and run the included launcher.</p>
+                        <div data-lang-content="en">
+                            <p><strong>Windows:</strong> Download the installer (.exe), run it, and follow the wizard. You can choose both the install location and the data directory.</p>
+                            <p><strong>macOS:</strong> Download the .dmg, open it, and drag AstroIndexer to Applications. On first launch, right-click &rarr; Open to bypass Gatekeeper.</p>
+                            <p><strong>Linux:</strong> Download the .tar.gz archive, extract, and run the included launcher.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p><strong>Windows:</strong> Laden Sie den Installer (.exe) herunter, führen Sie ihn aus und folgen Sie dem Assistenten. Sie können sowohl den Installationsort als auch das Datenverzeichnis wählen.</p>
+                            <p><strong>macOS:</strong> Laden Sie die .dmg herunter, öffnen Sie sie und ziehen Sie AstroIndexer in den Programme-Ordner. Beim ersten Start: Rechtsklick &rarr; Öffnen, um Gatekeeper zu umgehen.</p>
+                            <p><strong>Linux:</strong> Laden Sie das .tar.gz-Archiv herunter, entpacken Sie es und führen Sie den enthaltenen Launcher aus.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p><strong>Windows:</strong> descarga el instalador (.exe), ejecútalo y sigue el asistente. Puedes elegir tanto la ubicación de instalación como el directorio de datos.</p>
+                            <p><strong>macOS:</strong> descarga el .dmg, ábrelo y arrastra AstroIndexer a Aplicaciones. En el primer inicio, haz clic derecho &rarr; Abrir para omitir Gatekeeper.</p>
+                            <p><strong>Linux:</strong> descarga el archivo .tar.gz, extráelo y ejecuta el lanzador incluido.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Why does Windows/macOS show a security warning?</summary>
+                    <summary>
+                        <span data-lang-content="en">Why does Windows/macOS show a security warning?</span>
+                        <span data-lang-content="de" style="display:none">Warum zeigt Windows/macOS eine Sicherheitswarnung?</span>
+                        <span data-lang-content="es" style="display:none">¿Por qué Windows/macOS muestra una advertencia de seguridad?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>This is normal for newly downloaded software.</p>
-                        <ul>
-                            <li><strong>Windows SmartScreen:</strong> Click "More info" then "Run anyway"</li>
-                            <li><strong>macOS Gatekeeper:</strong> Right-click the app &rarr; Open, or go to System Settings &rarr; Privacy &amp; Security &rarr; "Open Anyway"</li>
-                        </ul>
+                        <div data-lang-content="en">
+                            <p>This is normal for newly downloaded software.</p>
+                            <ul>
+                                <li><strong>Windows SmartScreen:</strong> Click "More info" then "Run anyway"</li>
+                                <li><strong>macOS Gatekeeper:</strong> Right-click the app &rarr; Open, or go to System Settings &rarr; Privacy &amp; Security &rarr; "Open Anyway"</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Das ist bei neu heruntergeladener Software normal.</p>
+                            <ul>
+                                <li><strong>Windows SmartScreen:</strong> Klicken Sie auf „Weitere Informationen“ und dann „Trotzdem ausführen“</li>
+                                <li><strong>macOS Gatekeeper:</strong> Rechtsklick auf die App &rarr; Öffnen, oder gehen Sie zu Systemeinstellungen &rarr; Datenschutz &amp; Sicherheit &rarr; „Trotzdem öffnen“</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Esto es normal en software recién descargado.</p>
+                            <ul>
+                                <li><strong>Windows SmartScreen:</strong> haz clic en «Más información» y luego en «Ejecutar de todas formas»</li>
+                                <li><strong>macOS Gatekeeper:</strong> haz clic derecho en la app &rarr; Abrir, o ve a Ajustes del Sistema &rarr; Privacidad y seguridad &rarr; «Abrir de todos modos»</li>
+                            </ul>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Where is my data stored?</summary>
+                    <summary>
+                        <span data-lang-content="en">Where is my data stored?</span>
+                        <span data-lang-content="de" style="display:none">Wo werden meine Daten gespeichert?</span>
+                        <span data-lang-content="es" style="display:none">¿Dónde se almacenan mis datos?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <ul>
-                            <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\AstroIndexer\</code></li>
-                            <li><strong>macOS:</strong> <code>~/Library/Application Support/AstroIndexer/</code></li>
-                            <li><strong>Linux:</strong> <code>~/.local/share/AstroIndexer/</code></li>
-                        </ul>
-                        <p>The database (<code>astro_indexer.db</code>), thumbnails, and configuration are stored in this directory. On Windows, the installer lets you choose a custom data location.</p>
+                        <div data-lang-content="en">
+                            <ul>
+                                <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\AstroIndexer\</code></li>
+                                <li><strong>macOS:</strong> <code>~/Library/Application Support/AstroIndexer/</code></li>
+                                <li><strong>Linux:</strong> <code>~/.local/share/AstroIndexer/</code></li>
+                            </ul>
+                            <p>The database (<code>astro_indexer.db</code>), thumbnails, and configuration are stored in this directory. On Windows, the installer lets you choose a custom data location.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <ul>
+                                <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\AstroIndexer\</code></li>
+                                <li><strong>macOS:</strong> <code>~/Library/Application Support/AstroIndexer/</code></li>
+                                <li><strong>Linux:</strong> <code>~/.local/share/AstroIndexer/</code></li>
+                            </ul>
+                            <p>Die Datenbank (<code>astro_indexer.db</code>), Thumbnails und Konfiguration werden in diesem Verzeichnis gespeichert. Unter Windows können Sie im Installer einen benutzerdefinierten Datenort wählen.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <ul>
+                                <li><strong>Windows:</strong> <code>%LOCALAPPDATA%\AstroIndexer\</code></li>
+                                <li><strong>macOS:</strong> <code>~/Library/Application Support/AstroIndexer/</code></li>
+                                <li><strong>Linux:</strong> <code>~/.local/share/AstroIndexer/</code></li>
+                            </ul>
+                            <p>La base de datos (<code>astro_indexer.db</code>), las miniaturas y la configuración se guardan en este directorio. En Windows, el instalador permite elegir una ubicación de datos personalizada.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Can I use images on external drives?</summary>
+                    <summary>
+                        <span data-lang-content="en">Can I use images on external drives?</span>
+                        <span data-lang-content="de" style="display:none">Kann ich Bilder auf externen Laufwerken verwenden?</span>
+                        <span data-lang-content="es" style="display:none">¿Puedo usar imágenes en unidades externas?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Yes. AstroIndexer can catalog images on any accessible drive (USB, NAS, network share). The drive must be connected for viewing and analysis, but thumbnails are cached locally for offline browsing. If drive letters change, use "Update Paths" to reconcile.</p>
+                        <div data-lang-content="en">
+                            <p>Yes. AstroIndexer can catalog images on any accessible drive (USB, NAS, network share). The drive must be connected for viewing and analysis, but thumbnails are cached locally for offline browsing. If drive letters change, use "Update Paths" to reconcile.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Ja. AstroIndexer kann Bilder auf jedem zugänglichen Laufwerk katalogisieren (USB, NAS, Netzwerkfreigabe). Das Laufwerk muss zum Ansehen und Analysieren verbunden sein, aber Thumbnails werden lokal zwischengespeichert, sodass Sie offline browsen können. Wenn sich Laufwerksbuchstaben ändern, verwenden Sie „Pfade aktualisieren“ zum Abgleich.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Sí. AstroIndexer puede catalogar imágenes en cualquier unidad accesible (USB, NAS, recurso de red). La unidad debe estar conectada para ver y analizar, pero las miniaturas se almacenan en caché localmente para navegar sin conexión. Si cambian las letras de unidad, usa «Actualizar rutas» para reconciliar.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Quality Analysis -->
             <div class="faq-category">
-                <h2>Quality Analysis</h2>
+                <h2>
+                    <span data-lang-content="en">Quality Analysis</span>
+                    <span data-lang-content="de" style="display:none">Qualitätsanalyse</span>
+                    <span data-lang-content="es" style="display:none">Análisis de calidad</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>What is FWHM and why does it matter?</summary>
+                    <summary>
+                        <span data-lang-content="en">What is FWHM and why does it matter?</span>
+                        <span data-lang-content="de" style="display:none">Was ist FWHM und warum ist es wichtig?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué es el FWHM y por qué importa?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>FWHM (Full Width at Half Maximum) measures star diameter in pixels. Lower values mean sharper stars and better focus/seeing:</p>
-                        <ul>
-                            <li><strong>Excellent:</strong> &lt; 2.0 px</li>
-                            <li><strong>Good:</strong> 2.0 &ndash; 2.5 px</li>
-                            <li><strong>Acceptable:</strong> 2.5 &ndash; 3.0 px</li>
-                            <li><strong>Poor:</strong> &gt; 3.0 px</li>
-                        </ul>
-                        <p>Note: these are general guidelines. AstroIndexer scores frames relative to your own equipment's typical performance, not fixed thresholds.</p>
+                        <div data-lang-content="en">
+                            <p>FWHM (Full Width at Half Maximum) measures star diameter in pixels. Lower values mean sharper stars and better focus/seeing:</p>
+                            <ul>
+                                <li><strong>Excellent:</strong> &lt; 2.0 px</li>
+                                <li><strong>Good:</strong> 2.0 &ndash; 2.5 px</li>
+                                <li><strong>Acceptable:</strong> 2.5 &ndash; 3.0 px</li>
+                                <li><strong>Poor:</strong> &gt; 3.0 px</li>
+                            </ul>
+                            <p>Note: these are general guidelines. AstroIndexer scores frames relative to your own equipment's typical performance, not fixed thresholds.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>FWHM (Full Width at Half Maximum) misst den Sterndurchmesser in Pixeln. Niedrigere Werte bedeuten schärfere Sterne und besseren Fokus/Seeing:</p>
+                            <ul>
+                                <li><strong>Exzellent:</strong> &lt; 2,0 px</li>
+                                <li><strong>Gut:</strong> 2,0 &ndash; 2,5 px</li>
+                                <li><strong>Akzeptabel:</strong> 2,5 &ndash; 3,0 px</li>
+                                <li><strong>Schlecht:</strong> &gt; 3,0 px</li>
+                            </ul>
+                            <p>Hinweis: Dies sind allgemeine Richtwerte. AstroIndexer bewertet Frames relativ zur typischen Leistung Ihres eigenen Equipments, nicht anhand fester Schwellenwerte.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>El FWHM (Full Width at Half Maximum, anchura a media altura) mide el diámetro de las estrellas en píxeles. Valores más bajos significan estrellas más nítidas y mejor enfoque/seeing:</p>
+                            <ul>
+                                <li><strong>Excelente:</strong> &lt; 2,0 px</li>
+                                <li><strong>Bueno:</strong> 2,0 &ndash; 2,5 px</li>
+                                <li><strong>Aceptable:</strong> 2,5 &ndash; 3,0 px</li>
+                                <li><strong>Deficiente:</strong> &gt; 3,0 px</li>
+                            </ul>
+                            <p>Nota: son pautas generales. AstroIndexer puntúa los frames en relación con el rendimiento típico de tu propio equipo, no con umbrales fijos.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>How is the Quality Score calculated?</summary>
+                    <summary>
+                        <span data-lang-content="en">How is the Quality Score calculated?</span>
+                        <span data-lang-content="de" style="display:none">Wie wird der Qualitäts-Score berechnet?</span>
+                        <span data-lang-content="es" style="display:none">¿Cómo se calcula la puntuación de calidad?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>The quality score (0&ndash;100) is a weighted combination of four metrics:</p>
-                        <ul>
-                            <li><strong>FWHM</strong> (40%) &mdash; star sharpness (lower is better)</li>
-                            <li><strong>SNR</strong> (30%) &mdash; signal-to-noise ratio (higher is better)</li>
-                            <li><strong>Star Count</strong> (20%) &mdash; number of detected stars (optimal range)</li>
-                            <li><strong>Eccentricity</strong> (10%) &mdash; star roundness (lower is better)</li>
-                        </ul>
-                        <p>Scoring bands: Reject (&lt;30), Needs Work (30&ndash;50), Ready (50&ndash;75), Good (75&ndash;90), Exceptional (90+).</p>
+                        <div data-lang-content="en">
+                            <p>The quality score (0&ndash;100) is a weighted combination of four metrics:</p>
+                            <ul>
+                                <li><strong>FWHM</strong> (40%) &mdash; star sharpness (lower is better)</li>
+                                <li><strong>SNR</strong> (30%) &mdash; signal-to-noise ratio (higher is better)</li>
+                                <li><strong>Star Count</strong> (20%) &mdash; number of detected stars (optimal range)</li>
+                                <li><strong>Eccentricity</strong> (10%) &mdash; star roundness (lower is better)</li>
+                            </ul>
+                            <p>Scoring bands: Reject (&lt;30), Needs Work (30&ndash;50), Ready (50&ndash;75), Good (75&ndash;90), Exceptional (90+).</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Der Qualitäts-Score (0&ndash;100) ist eine gewichtete Kombination aus vier Metriken:</p>
+                            <ul>
+                                <li><strong>FWHM</strong> (40%) &mdash; Sternschärfe (niedriger ist besser)</li>
+                                <li><strong>SNR</strong> (30%) &mdash; Signal-Rausch-Verhältnis (höher ist besser)</li>
+                                <li><strong>Sternanzahl</strong> (20%) &mdash; Anzahl erkannter Sterne (optimaler Bereich)</li>
+                                <li><strong>Exzentrizität</strong> (10%) &mdash; Sternrundheit (niedriger ist besser)</li>
+                            </ul>
+                            <p>Bewertungsstufen: Ausschuss (&lt;30), Nachbesserung nötig (30&ndash;50), Bereit (50&ndash;75), Gut (75&ndash;90), Außergewöhnlich (90+).</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>La puntuación de calidad (0&ndash;100) es una combinación ponderada de cuatro métricas:</p>
+                            <ul>
+                                <li><strong>FWHM</strong> (40%) &mdash; nitidez estelar (menor es mejor)</li>
+                                <li><strong>SNR</strong> (30%) &mdash; relación señal-ruido (mayor es mejor)</li>
+                                <li><strong>Recuento de estrellas</strong> (20%) &mdash; número de estrellas detectadas (rango óptimo)</li>
+                                <li><strong>Excentricidad</strong> (10%) &mdash; redondez estelar (menor es mejor)</li>
+                            </ul>
+                            <p>Bandas de puntuación: Descartar (&lt;30), Necesita trabajo (30&ndash;50), Lista (50&ndash;75), Buena (75&ndash;90), Excepcional (90+).</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>How does AstroIndexer compare to PixInsight SubframeSelector?</summary>
+                    <summary>
+                        <span data-lang-content="en">How does AstroIndexer compare to PixInsight SubframeSelector?</span>
+                        <span data-lang-content="de" style="display:none">Wie schneidet AstroIndexer im Vergleich zu PixInsight SubframeSelector ab?</span>
+                        <span data-lang-content="es" style="display:none">¿Cómo se compara AstroIndexer con PixInsight SubframeSelector?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>AstroIndexer's Quality Analysis uses Moffat PSF fitting and produces FWHM, HFR, eccentricity, and SNR measurements that are within ~5% of PixInsight SubframeSelector values. It processes frames in batch automatically, whereas SubframeSelector requires manual setup per session.</p>
+                        <div data-lang-content="en">
+                            <p>AstroIndexer's Quality Analysis uses Moffat PSF fitting and produces FWHM, HFR, eccentricity, and SNR measurements that are within ~5% of PixInsight SubframeSelector values. It processes frames in batch automatically, whereas SubframeSelector requires manual setup per session.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Die Qualitätsanalyse von AstroIndexer nutzt Moffat-PSF-Fitting und liefert FWHM-, HFR-, Exzentrizitäts- und SNR-Messungen, die innerhalb von ~5% der Werte von PixInsight SubframeSelector liegen. Sie verarbeitet Frames automatisch im Stapel, während SubframeSelector eine manuelle Einrichtung pro Session erfordert.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>El análisis de calidad de AstroIndexer usa ajuste de PSF de Moffat y produce medidas de FWHM, HFR, excentricidad y SNR que están dentro de ~5% de los valores de PixInsight SubframeSelector. Procesa los frames por lotes automáticamente, mientras que SubframeSelector requiere configuración manual por sesión.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Why does quality analysis fail on some images?</summary>
+                    <summary>
+                        <span data-lang-content="en">Why does quality analysis fail on some images?</span>
+                        <span data-lang-content="de" style="display:none">Warum schlägt die Qualitätsanalyse bei manchen Bildern fehl?</span>
+                        <span data-lang-content="es" style="display:none">¿Por qué falla el análisis de calidad en algunas imágenes?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Common reasons:</p>
-                        <ul>
-                            <li>Image has no stars (clouds, daylight, calibration frames)</li>
-                            <li>Extremely out of focus (no detectable star shapes)</li>
-                            <li>Very short exposure (insufficient signal)</li>
-                            <li>Corrupted file data</li>
-                        </ul>
-                        <p>Calibration frames (darks, flats, bias) are automatically detected and skipped.</p>
+                        <div data-lang-content="en">
+                            <p>Common reasons:</p>
+                            <ul>
+                                <li>Image has no stars (clouds, daylight, calibration frames)</li>
+                                <li>Extremely out of focus (no detectable star shapes)</li>
+                                <li>Very short exposure (insufficient signal)</li>
+                                <li>Corrupted file data</li>
+                            </ul>
+                            <p>Calibration frames (darks, flats, bias) are automatically detected and skipped.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Häufige Gründe:</p>
+                            <ul>
+                                <li>Bild hat keine Sterne (Wolken, Tageslicht, Kalibrationsframes)</li>
+                                <li>Extrem unscharf (keine erkennbaren Sternformen)</li>
+                                <li>Sehr kurze Belichtung (unzureichendes Signal)</li>
+                                <li>Beschädigte Dateidaten</li>
+                            </ul>
+                            <p>Kalibrationsframes (Darks, Flats, Bias) werden automatisch erkannt und übersprungen.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Razones habituales:</p>
+                            <ul>
+                                <li>La imagen no tiene estrellas (nubes, luz diurna, frames de calibración)</li>
+                                <li>Muy desenfocada (sin formas de estrella detectables)</li>
+                                <li>Exposición muy corta (señal insuficiente)</li>
+                                <li>Datos de archivo corruptos</li>
+                            </ul>
+                            <p>Los frames de calibración (darks, flats, bias) se detectan y omiten automáticamente.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Imaging Intelligence -->
             <div class="faq-category">
-                <h2>Imaging Intelligence</h2>
+                <h2>
+                    <span data-lang-content="en">Imaging Intelligence</span>
+                    <span data-lang-content="de" style="display:none">Bild-Intelligenz</span>
+                    <span data-lang-content="es" style="display:none">Inteligencia de Imagen</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>What Imaging Intelligence modules are included?</summary>
+                    <summary>
+                        <span data-lang-content="en">What Imaging Intelligence modules are included?</span>
+                        <span data-lang-content="de" style="display:none">Welche Bild-Intelligenz-Module sind enthalten?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué módulos de Inteligencia de Imagen se incluyen?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>AstroIndexer includes 6 specialized Imaging Intelligence modules:</p>
-                        <ol>
-                            <li><strong>Environmental Patterns</strong> &mdash; correlates quality with temperature, humidity, altitude</li>
-                            <li><strong>Exposure Optimization</strong> &mdash; recommends sub-exposure times based on your equipment and conditions</li>
-                            <li><strong>Sensor Heatmap</strong> &mdash; maps quality across your sensor to find vignetting, dust, aberrations</li>
-                            <li><strong>Session Analysis</strong> &mdash; identifies quality trends within and across imaging sessions</li>
-                            <li><strong>Pattern Predictions</strong> &mdash; predicts quality based on conditions</li>
-                            <li><strong>AI Insights</strong> &mdash; generates personalized improvement recommendations</li>
-                        </ol>
-                        <p>Plus a <strong>Stacking Advisor</strong> that recommends optimal frame selection for each target.</p>
+                        <div data-lang-content="en">
+                            <p>AstroIndexer includes 6 specialized Imaging Intelligence modules:</p>
+                            <ol>
+                                <li><strong>Environmental Patterns</strong> &mdash; correlates quality with temperature, humidity, altitude</li>
+                                <li><strong>Exposure Optimization</strong> &mdash; recommends sub-exposure times based on your equipment and conditions</li>
+                                <li><strong>Sensor Heatmap</strong> &mdash; maps quality across your sensor to find vignetting, dust, aberrations</li>
+                                <li><strong>Session Analysis</strong> &mdash; identifies quality trends within and across imaging sessions</li>
+                                <li><strong>Pattern Predictions</strong> &mdash; predicts quality based on conditions</li>
+                                <li><strong>AI Insights</strong> &mdash; generates personalized improvement recommendations</li>
+                            </ol>
+                            <p>Plus a <strong>Stacking Advisor</strong> that recommends optimal frame selection for each target.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>AstroIndexer enthält 6 spezialisierte Bild-Intelligenz-Module:</p>
+                            <ol>
+                                <li><strong>Umgebungsmuster</strong> &mdash; korreliert Qualität mit Temperatur, Luftfeuchtigkeit, Höhe</li>
+                                <li><strong>Belichtungsoptimierung</strong> &mdash; empfiehlt Sub-Belichtungszeiten basierend auf Ihrem Equipment und den Bedingungen</li>
+                                <li><strong>Sensor-Heatmap</strong> &mdash; bildet die Qualität über Ihren Sensor ab, um Vignettierung, Staub und Aberrationen zu finden</li>
+                                <li><strong>Session-Analyse</strong> &mdash; erkennt Qualitätstrends innerhalb und über Aufnahmesessions hinweg</li>
+                                <li><strong>Muster-Vorhersagen</strong> &mdash; sagt Qualität anhand der Bedingungen voraus</li>
+                                <li><strong>KI-Insights</strong> &mdash; erstellt personalisierte Verbesserungsempfehlungen</li>
+                            </ol>
+                            <p>Plus ein <strong>Stacking Advisor</strong>, der die optimale Frame-Auswahl für jedes Ziel empfiehlt.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>AstroIndexer incluye 6 módulos especializados de Inteligencia de Imagen:</p>
+                            <ol>
+                                <li><strong>Patrones ambientales</strong> &mdash; correlaciona la calidad con temperatura, humedad y altitud</li>
+                                <li><strong>Optimización de exposición</strong> &mdash; recomienda tiempos de subexposición según tu equipo y las condiciones</li>
+                                <li><strong>Mapa de calor del sensor</strong> &mdash; mapea la calidad por todo el sensor para encontrar viñeteo, polvo y aberraciones</li>
+                                <li><strong>Análisis de sesión</strong> &mdash; identifica tendencias de calidad dentro de las sesiones y entre ellas</li>
+                                <li><strong>Predicciones de patrones</strong> &mdash; predice la calidad según las condiciones</li>
+                                <li><strong>Insights de IA</strong> &mdash; genera recomendaciones de mejora personalizadas</li>
+                            </ol>
+                            <p>Además de un <strong>Stacking Advisor</strong> que recomienda la selección óptima de frames para cada objetivo.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>How much data does Imaging Intelligence need to be useful?</summary>
+                    <summary>
+                        <span data-lang-content="en">How much data does Imaging Intelligence need to be useful?</span>
+                        <span data-lang-content="de" style="display:none">Wie viele Daten braucht die Bild-Intelligenz, um nützlich zu sein?</span>
+                        <span data-lang-content="es" style="display:none">¿Cuántos datos necesita la Inteligencia de Imagen para ser útil?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Imaging Intelligence becomes increasingly useful as your library grows. Basic patterns emerge with 100+ analyzed frames. Environmental correlations and equipment recommendations are most accurate with 500+ frames across multiple sessions and conditions.</p>
+                        <div data-lang-content="en">
+                            <p>Imaging Intelligence becomes increasingly useful as your library grows. Basic patterns emerge with 100+ analyzed frames. Environmental correlations and equipment recommendations are most accurate with 500+ frames across multiple sessions and conditions.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Die Bild-Intelligenz wird mit wachsender Bibliothek immer nützlicher. Erste Muster zeigen sich ab 100+ analysierten Frames. Umgebungskorrelationen und Equipment-Empfehlungen sind mit 500+ Frames über mehrere Sessions und Bedingungen hinweg am genauesten.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>La Inteligencia de Imagen es cada vez más útil a medida que crece tu biblioteca. Los patrones básicos aparecen con 100+ frames analizados. Las correlaciones ambientales y las recomendaciones de equipo son más precisas con 500+ frames en varias sesiones y condiciones.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Session Planner -->
             <div class="faq-category">
-                <h2>Session Planner</h2>
+                <h2>
+                    <span data-lang-content="en">Session Planner</span>
+                    <span data-lang-content="de" style="display:none">Session Planner</span>
+                    <span data-lang-content="es" style="display:none">Planificador de sesiones</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>What is the project lifecycle?</summary>
+                    <summary>
+                        <span data-lang-content="en">What is the project lifecycle?</span>
+                        <span data-lang-content="de" style="display:none">Was ist der Projekt-Lebenszyklus?</span>
+                        <span data-lang-content="es" style="display:none">¿Cuál es el ciclo de vida de un proyecto?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Every imaging project moves through 5 states:</p>
-                        <ol>
-                            <li><strong>Queued</strong> &mdash; on your wishlist, not yet configured</li>
-                            <li><strong>Planned</strong> &mdash; equipment, framing, exposure plan, and goal hours set</li>
-                            <li><strong>Scheduled</strong> &mdash; has specific night blocks on your calendar</li>
-                            <li><strong>Active</strong> &mdash; currently being imaged</li>
-                            <li><strong>Completed</strong> &mdash; imaging goal reached</li>
-                        </ol>
+                        <div data-lang-content="en">
+                            <p>Every imaging project moves through 5 states:</p>
+                            <ol>
+                                <li><strong>Queued</strong> &mdash; on your wishlist, not yet configured</li>
+                                <li><strong>Planned</strong> &mdash; equipment, framing, exposure plan, and goal hours set</li>
+                                <li><strong>Scheduled</strong> &mdash; has specific night blocks on your calendar</li>
+                                <li><strong>Active</strong> &mdash; currently being imaged</li>
+                                <li><strong>Completed</strong> &mdash; imaging goal reached</li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Jedes Aufnahmeprojekt durchläuft 5 Zustände:</p>
+                            <ol>
+                                <li><strong>In Warteschlange</strong> &mdash; auf Ihrer Wunschliste, noch nicht konfiguriert</li>
+                                <li><strong>Geplant</strong> &mdash; Equipment, Bildausschnitt, Belichtungsplan und Zielstunden festgelegt</li>
+                                <li><strong>Terminiert</strong> &mdash; hat konkrete Nachtblöcke in Ihrem Kalender</li>
+                                <li><strong>Aktiv</strong> &mdash; wird gerade aufgenommen</li>
+                                <li><strong>Abgeschlossen</strong> &mdash; Aufnahmeziel erreicht</li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Cada proyecto de captura pasa por 5 estados:</p>
+                            <ol>
+                                <li><strong>En cola</strong> &mdash; en tu lista de deseos, aún sin configurar</li>
+                                <li><strong>Planificado</strong> &mdash; equipo, encuadre, plan de exposición y horas objetivo definidos</li>
+                                <li><strong>Programado</strong> &mdash; tiene bloques de noche concretos en tu calendario</li>
+                                <li><strong>Activo</strong> &mdash; actualmente en captura</li>
+                                <li><strong>Completado</strong> &mdash; objetivo de captura alcanzado</li>
+                            </ol>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Can I export to N.I.N.A?</summary>
+                    <summary>
+                        <span data-lang-content="en">Can I export to N.I.N.A?</span>
+                        <span data-lang-content="de" style="display:none">Kann ich nach N.I.N.A exportieren?</span>
+                        <span data-lang-content="es" style="display:none">¿Puedo exportar a N.I.N.A?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Yes. The Session Planner can export projects as N.I.N.A sequence files, including target coordinates, exposure plans, and filter sequences. Set up your project in AstroIndexer, then export and load in N.I.N.A for automated imaging.</p>
+                        <div data-lang-content="en">
+                            <p>Yes. The Session Planner can export projects as N.I.N.A sequence files, including target coordinates, exposure plans, and filter sequences. Set up your project in AstroIndexer, then export and load in N.I.N.A for automated imaging.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Ja. Der Session Planner kann Projekte als N.I.N.A-Sequenzdateien exportieren, inklusive Zielkoordinaten, Belichtungsplänen und Filtersequenzen. Richten Sie Ihr Projekt in AstroIndexer ein, exportieren Sie es und laden Sie es in N.I.N.A für die automatisierte Aufnahme.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Sí. El Planificador de sesiones puede exportar proyectos como archivos de secuencia de N.I.N.A, incluyendo coordenadas del objetivo, planes de exposición y secuencias de filtros. Configura tu proyecto en AstroIndexer, expórtalo y cárgalo en N.I.N.A para la captura automatizada.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Integration -->
             <div class="faq-category">
-                <h2>Integration</h2>
+                <h2>
+                    <span data-lang-content="en">Integration</span>
+                    <span data-lang-content="de" style="display:none">Integration</span>
+                    <span data-lang-content="es" style="display:none">Integración</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>Can I use AstroIndexer with PixInsight?</summary>
+                    <summary>
+                        <span data-lang-content="en">Can I use AstroIndexer with PixInsight?</span>
+                        <span data-lang-content="de" style="display:none">Kann ich AstroIndexer mit PixInsight verwenden?</span>
+                        <span data-lang-content="es" style="display:none">¿Puedo usar AstroIndexer con PixInsight?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Yes. You can export file lists for BatchPreprocessing, import PixInsight's SubframeSelector measurements, compare quality scores, and export selected frames to specific folders for processing.</p>
+                        <div data-lang-content="en">
+                            <p>Yes. You can export file lists for BatchPreprocessing, import PixInsight's SubframeSelector measurements, compare quality scores, and export selected frames to specific folders for processing.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Ja. Sie können Dateilisten für BatchPreprocessing exportieren, SubframeSelector-Messungen aus PixInsight importieren, Qualitäts-Scores vergleichen und ausgewählte Frames zur Bearbeitung in bestimmte Ordner exportieren.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Sí. Puedes exportar listas de archivos para BatchPreprocessing, importar las medidas de SubframeSelector de PixInsight, comparar puntuaciones de calidad y exportar los frames seleccionados a carpetas concretas para su procesado.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>What other software works with AstroIndexer?</summary>
+                    <summary>
+                        <span data-lang-content="en">What other software works with AstroIndexer?</span>
+                        <span data-lang-content="de" style="display:none">Welche andere Software funktioniert mit AstroIndexer?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué otro software funciona con AstroIndexer?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>AstroIndexer is compatible with any software that writes standard FITS headers. Tested with N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, Siril, and PixInsight. CSV export lets you use data in Excel, Google Sheets, or any analysis tool.</p>
+                        <div data-lang-content="en">
+                            <p>AstroIndexer is compatible with any software that writes standard FITS headers. Tested with N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, Siril, and PixInsight. CSV export lets you use data in Excel, Google Sheets, or any analysis tool.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>AstroIndexer ist mit jeder Software kompatibel, die Standard-FITS-Header schreibt. Getestet mit N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, Siril und PixInsight. Der CSV-Export ermöglicht die Nutzung der Daten in Excel, Google Sheets oder jedem Analysewerkzeug.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>AstroIndexer es compatible con cualquier software que escriba cabeceras FITS estándar. Probado con N.I.N.A, SGPro, APT, Voyager, Seestar S50, ASIair, Siril y PixInsight. La exportación a CSV te permite usar los datos en Excel, Google Sheets o cualquier herramienta de análisis.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Licensing -->
             <div class="faq-category">
-                <h2>Licensing &amp; Pricing</h2>
+                <h2>
+                    <span data-lang-content="en">Licensing &amp; Pricing</span>
+                    <span data-lang-content="de" style="display:none">Lizenzierung &amp; Preise</span>
+                    <span data-lang-content="es" style="display:none">Licencias y precios</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>Is there a free trial?</summary>
+                    <summary>
+                        <span data-lang-content="en">Is there a free trial?</span>
+                        <span data-lang-content="de" style="display:none">Gibt es eine kostenlose Testversion?</span>
+                        <span data-lang-content="es" style="display:none">¿Hay una prueba gratuita?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>Yes. AstroIndexer offers a 14-day free trial with full access to all features. No account or credit card required. Just download and start using it.</p>
+                        <div data-lang-content="en">
+                            <p>Yes. AstroIndexer offers a 14-day free trial with full access to all features. No account or credit card required. Just download and start using it.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Ja. AstroIndexer bietet eine 14-tägige kostenlose Testversion mit vollem Zugriff auf alle Funktionen. Kein Konto und keine Kreditkarte erforderlich. Einfach herunterladen und loslegen.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Sí. AstroIndexer ofrece una prueba gratuita de 14 días con acceso completo a todas las funciones. Sin cuenta ni tarjeta de crédito. Solo descárgalo y empieza a usarlo.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>What happens when the trial expires?</summary>
+                    <summary>
+                        <span data-lang-content="en">What happens when the trial expires?</span>
+                        <span data-lang-content="de" style="display:none">Was passiert, wenn die Testversion abläuft?</span>
+                        <span data-lang-content="es" style="display:none">¿Qué ocurre cuando expira la prueba?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>The application enters read-only mode. You can still view and export your existing data, but new imports and analysis are disabled. All your data remains intact &mdash; nothing is deleted. Purchase a license to restore full access.</p>
+                        <div data-lang-content="en">
+                            <p>The application enters read-only mode. You can still view and export your existing data, but new imports and analysis are disabled. All your data remains intact &mdash; nothing is deleted. Purchase a license to restore full access.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Die Anwendung wechselt in den schreibgeschützten Modus. Sie können Ihre vorhandenen Daten weiterhin ansehen und exportieren, aber neue Importe und Analysen sind deaktiviert. Alle Ihre Daten bleiben erhalten &mdash; nichts wird gelöscht. Kaufen Sie eine Lizenz, um den vollen Zugriff wiederherzustellen.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>La aplicación pasa a modo de solo lectura. Puedes seguir viendo y exportando tus datos existentes, pero las nuevas importaciones y análisis quedan desactivados. Todos tus datos permanecen intactos &mdash; no se elimina nada. Compra una licencia para restaurar el acceso completo.</p>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Are licenses one-time or subscription?</summary>
+                    <summary>
+                        <span data-lang-content="en">Are licenses one-time or subscription?</span>
+                        <span data-lang-content="de" style="display:none">Sind Lizenzen einmalig oder ein Abo?</span>
+                        <span data-lang-content="es" style="display:none">¿Las licencias son de pago único o suscripción?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <p>All licenses are <strong>one-time purchases</strong>. No subscription, no recurring fees.</p>
+                        <div data-lang-content="en">
+                            <p>All licenses are <strong>one-time purchases</strong>. No subscription, no recurring fees.</p>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <p>Alle Lizenzen sind <strong>Einmalkäufe</strong>. Kein Abo, keine wiederkehrenden Gebühren.</p>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <p>Todas las licencias son <strong>compras únicas</strong>. Sin suscripción, sin cuotas recurrentes.</p>
+                        </div>
                     </div>
                 </details>
             </div>
 
             <!-- Troubleshooting -->
             <div class="faq-category">
-                <h2>Troubleshooting</h2>
+                <h2>
+                    <span data-lang-content="en">Troubleshooting</span>
+                    <span data-lang-content="de" style="display:none">Fehlerbehebung</span>
+                    <span data-lang-content="es" style="display:none">Solución de problemas</span>
+                </h2>
 
                 <details class="faq-item">
-                    <summary>AstroIndexer won't start</summary>
+                    <summary>
+                        <span data-lang-content="en">AstroIndexer won't start</span>
+                        <span data-lang-content="de" style="display:none">AstroIndexer startet nicht</span>
+                        <span data-lang-content="es" style="display:none">AstroIndexer no arranca</span>
+                    </summary>
                     <div class="faq-answer">
-                        <ol>
-                            <li>Check that your license is valid (or you're within the trial period)</li>
-                            <li>Run as Administrator (Windows) or check Security settings (macOS)</li>
-                            <li>Check if antivirus software is blocking the application</li>
-                            <li>Delete <code>config.json</code> in the data directory to reset settings</li>
-                            <li>Reinstall if the issue persists</li>
-                        </ol>
+                        <div data-lang-content="en">
+                            <ol>
+                                <li>Check that your license is valid (or you're within the trial period)</li>
+                                <li>Run as Administrator (Windows) or check Security settings (macOS)</li>
+                                <li>Check if antivirus software is blocking the application</li>
+                                <li>Delete <code>config.json</code> in the data directory to reset settings</li>
+                                <li>Reinstall if the issue persists</li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <ol>
+                                <li>Prüfen Sie, ob Ihre Lizenz gültig ist (oder Sie sich im Testzeitraum befinden)</li>
+                                <li>Als Administrator ausführen (Windows) oder Sicherheitseinstellungen prüfen (macOS)</li>
+                                <li>Prüfen Sie, ob eine Antivirensoftware die Anwendung blockiert</li>
+                                <li>Löschen Sie <code>config.json</code> im Datenverzeichnis, um die Einstellungen zurückzusetzen</li>
+                                <li>Neu installieren, falls das Problem bestehen bleibt</li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <ol>
+                                <li>Comprueba que tu licencia sea válida (o que estés dentro del periodo de prueba)</li>
+                                <li>Ejecuta como administrador (Windows) o revisa los ajustes de seguridad (macOS)</li>
+                                <li>Comprueba si un antivirus está bloqueando la aplicación</li>
+                                <li>Elimina <code>config.json</code> en el directorio de datos para restablecer los ajustes</li>
+                                <li>Reinstala si el problema persiste</li>
+                            </ol>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>The application is running slowly</summary>
+                    <summary>
+                        <span data-lang-content="en">The application is running slowly</span>
+                        <span data-lang-content="de" style="display:none">Die Anwendung läuft langsam</span>
+                        <span data-lang-content="es" style="display:none">La aplicación funciona lenta</span>
+                    </summary>
                     <div class="faq-answer">
-                        <ul>
-                            <li>Go to Tools &rarr; Maintenance &rarr; Optimize to compact the database</li>
-                            <li>Reduce thumbnail size in preferences</li>
-                            <li>Limit gallery to 4&ndash;6 columns</li>
-                            <li>Close unused tabs</li>
-                            <li>Ensure adequate free disk space</li>
-                        </ul>
+                        <div data-lang-content="en">
+                            <ul>
+                                <li>Go to Tools &rarr; Maintenance &rarr; Optimize to compact the database</li>
+                                <li>Reduce thumbnail size in preferences</li>
+                                <li>Limit gallery to 4&ndash;6 columns</li>
+                                <li>Close unused tabs</li>
+                                <li>Ensure adequate free disk space</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <ul>
+                                <li>Gehen Sie zu Werkzeuge &rarr; Wartung &rarr; Optimieren, um die Datenbank zu komprimieren</li>
+                                <li>Reduzieren Sie die Thumbnail-Größe in den Einstellungen</li>
+                                <li>Begrenzen Sie die Galerie auf 4&ndash;6 Spalten</li>
+                                <li>Schließen Sie ungenutzte Tabs</li>
+                                <li>Sorgen Sie für ausreichend freien Speicherplatz</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <ul>
+                                <li>Ve a Herramientas &rarr; Mantenimiento &rarr; Optimizar para compactar la base de datos</li>
+                                <li>Reduce el tamaño de las miniaturas en las preferencias</li>
+                                <li>Limita la galería a 4&ndash;6 columnas</li>
+                                <li>Cierra las pestañas que no uses</li>
+                                <li>Asegúrate de tener suficiente espacio libre en disco</li>
+                            </ul>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>Quality analysis takes a long time</summary>
+                    <summary>
+                        <span data-lang-content="en">Quality analysis takes a long time</span>
+                        <span data-lang-content="de" style="display:none">Die Qualitätsanalyse dauert lange</span>
+                        <span data-lang-content="es" style="display:none">El análisis de calidad tarda mucho</span>
+                    </summary>
                     <div class="faq-answer">
-                        <ul>
-                            <li>Reduce "Max stars to analyze" in QA settings (500&ndash;1000 is usually sufficient)</li>
-                            <li>Process in smaller batches</li>
-                            <li>Close other resource-intensive applications</li>
-                            <li>AstroIndexer uses adaptive thread pooling &mdash; more CPU cores = faster analysis</li>
-                        </ul>
+                        <div data-lang-content="en">
+                            <ul>
+                                <li>Reduce "Max stars to analyze" in QA settings (500&ndash;1000 is usually sufficient)</li>
+                                <li>Process in smaller batches</li>
+                                <li>Close other resource-intensive applications</li>
+                                <li>AstroIndexer uses adaptive thread pooling &mdash; more CPU cores = faster analysis</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <ul>
+                                <li>Reduzieren Sie „Max. zu analysierende Sterne“ in den QA-Einstellungen (500&ndash;1000 reichen meist)</li>
+                                <li>Verarbeiten Sie in kleineren Stapeln</li>
+                                <li>Schließen Sie andere ressourcenintensive Anwendungen</li>
+                                <li>AstroIndexer nutzt adaptives Thread-Pooling &mdash; mehr CPU-Kerne = schnellere Analyse</li>
+                            </ul>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <ul>
+                                <li>Reduce «Máx. estrellas a analizar» en los ajustes de QA (500&ndash;1000 suele bastar)</li>
+                                <li>Procesa en lotes más pequeños</li>
+                                <li>Cierra otras aplicaciones que consuman muchos recursos</li>
+                                <li>AstroIndexer usa agrupación de hilos adaptativa &mdash; más núcleos de CPU = análisis más rápido</li>
+                            </ul>
+                        </div>
                     </div>
                 </details>
 
                 <details class="faq-item">
-                    <summary>How do I report a bug?</summary>
+                    <summary>
+                        <span data-lang-content="en">How do I report a bug?</span>
+                        <span data-lang-content="de" style="display:none">Wie melde ich einen Fehler?</span>
+                        <span data-lang-content="es" style="display:none">¿Cómo informo de un error?</span>
+                    </summary>
                     <div class="faq-answer">
-                        <ol>
-                            <li>Note the exact steps to reproduce the issue</li>
-                            <li>Include any error messages shown</li>
-                            <li>Attach the log file from <code>logs/astroindexer.log</code> in your data directory</li>
-                            <li>Email <a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
-                        </ol>
+                        <div data-lang-content="en">
+                            <ol>
+                                <li>Note the exact steps to reproduce the issue</li>
+                                <li>Include any error messages shown</li>
+                                <li>Attach the log file from <code>logs/astroindexer.log</code> in your data directory</li>
+                                <li>Email <a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="de" style="display:none">
+                            <ol>
+                                <li>Notieren Sie die genauen Schritte zur Reproduktion des Problems</li>
+                                <li>Fügen Sie alle angezeigten Fehlermeldungen bei</li>
+                                <li>Hängen Sie die Log-Datei aus <code>logs/astroindexer.log</code> in Ihrem Datenverzeichnis an</li>
+                                <li>E-Mail an <a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                            </ol>
+                        </div>
+                        <div data-lang-content="es" style="display:none">
+                            <ol>
+                                <li>Anota los pasos exactos para reproducir el problema</li>
+                                <li>Incluye cualquier mensaje de error mostrado</li>
+                                <li>Adjunta el archivo de registro de <code>logs/astroindexer.log</code> en tu directorio de datos</li>
+                                <li>Escribe a <a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                            </ol>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -364,9 +858,21 @@
     <!-- CTA -->
     <section class="doc-section alt-bg" style="text-align:center">
         <div class="container" style="max-width:600px">
-            <h2>Still have questions?</h2>
-            <p style="color:var(--text-secondary);margin-bottom:24px">Email us at <a href="mailto:support@astroindexer.com" style="color:var(--teal)">support@astroindexer.com</a> and we'll get back to you.</p>
-            <a href="index.html#download" class="btn-primary btn-large">Download AstroIndexer</a>
+            <h2>
+                <span data-lang-content="en">Still have questions?</span>
+                <span data-lang-content="de" style="display:none">Noch Fragen?</span>
+                <span data-lang-content="es" style="display:none">¿Aún tienes preguntas?</span>
+            </h2>
+            <p style="color:var(--text-secondary);margin-bottom:24px">
+                <span data-lang-content="en">Email us at <a href="mailto:support@astroindexer.com" style="color:var(--teal)">support@astroindexer.com</a> and we'll get back to you.</span>
+                <span data-lang-content="de" style="display:none">Schreiben Sie uns an <a href="mailto:support@astroindexer.com" style="color:var(--teal)">support@astroindexer.com</a> und wir melden uns bei Ihnen.</span>
+                <span data-lang-content="es" style="display:none">Escríbenos a <a href="mailto:support@astroindexer.com" style="color:var(--teal)">support@astroindexer.com</a> y te responderemos.</span>
+            </p>
+            <a href="index.html#download" class="btn-primary btn-large">
+                <span data-lang-content="en">Download AstroIndexer</span>
+                <span data-lang-content="de" style="display:none">AstroIndexer herunterladen</span>
+                <span data-lang-content="es" style="display:none">Descargar AstroIndexer</span>
+            </a>
         </div>
     </section>
 
