@@ -154,19 +154,15 @@
                     <span class="version-date">July 24, 2026</span>
                 </div>
                 <p class="version-summary">
-                    Another step toward the full 1.0 release. RC2 tunes what RC1 introduced rather than
-                    adding new tools &mdash; stability, clearer workflow behavior, stacking reliability, and
-                    issues reported through user feedback. Existing installations keep working; if you have
-                    been running several beta or release-candidate builds, temporarily moving aside your
-                    AstroIndexer user folder before first launch gives the cleanest test. Improving migration
-                    from older user folders is a main focus for RC3.
+                    Another step toward the full 1.0 release &mdash; RC2 tunes what RC1 introduced rather than
+                    adding new tools, focusing on stability, workflow clarity and stacking reliability.
                 </p>
 
                 <div class="change-category">
                     <h3>Improvements</h3>
                     <ul>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking and external-tool handoff</strong> &mdash; Autopilot and the Stacking Queue now show a clear preview before Siril or PixInsight launches, including the selected engine, files, and settings. Running both engines together produces one clean final image instead of duplicate or missing results, PixInsight queue stacking picks up your calibration masters, and the final stacked output is linked correctly even when PixInsight saves it in a nested folder. CosmicClarity Denoise and Sharpen now report when the tool is not installed instead of silently skipping that step, and the setup wizard summary shows which Siril tool was selected.</li>
-                        <li><span class="tag tag-improved">Improved</span> <strong>Stability and presentation across long runs</strong> &mdash; a broad stability pass across scanning, stacking, plate solving, external-tool handoff, cancellation, and shutdown, so background jobs start, report progress, cancel, and close predictably instead of appearing stuck or showing the wrong status. Multi-panel mosaics captured in a single folder are detected automatically while single-session folders are no longer split into false panels, plate-solve previews draw the WCS grid and distortion view correctly right after solving, and the Backfocus Telescope Manager gains updated 3D renders throughout.</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking and external-tool handoff</strong> &mdash; Autopilot and the Stacking Queue preview the engine, files and settings before Siril or PixInsight launches, and both engines together now produce one clean final image</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stability across long runs</strong> &mdash; a broad pass over scanning, stacking, plate solving, cancellation and shutdown, plus updated 3D renders throughout the Backfocus Manager</li>
                     </ul>
                 </div>
             </div>
@@ -179,16 +175,14 @@
                 </div>
                 <p class="version-summary">
                     The first release candidate, opening the final validation phase before the full 1.0
-                    launch &mdash; and the biggest step yet: a plate solver built into AstroIndexer, a
-                    QA-driven stacking workflow that drives Siril and PixInsight, an object detector,
-                    iOS and Android companion apps, the Inspect Loupe, and an expanded Backfocus Manager.
+                    launch &mdash; and the biggest step yet.
                 </p>
 
                 <div class="change-category">
                     <h3>New Features</h3>
                     <ul>
-                        <li><span class="tag tag-new">New</span> <strong>A plate solver, an Inspect Loupe and an Object Detector, built in</strong> &mdash; AstroIndexer's own plate solver detects the star field, computes the WCS solution and stores native SIP distortion coefficients right alongside your frame, at 18.6% lower median solve time than ASTAP in the latest raw-light benchmark and with no external solver to install. The Inspect Loupe pixel-peeps any sub at 1:1 with live FWHM, HFR, PSF and histogram readouts, and the Object Detector annotates every catalogued object in a solved frame &mdash; galaxies, clusters and more &mdash; cross-matched against LEDA, SDSS, MCG and 2MASX with a keep / reject findings table.</li>
-                        <li><span class="tag tag-new">New</span> <strong>One-click stacking, mobile companions and filter lifecycle tools</strong> &mdash; AstroIndexer sorts your subs by QA score, balances your filters and hands the keepers straight to a stacker: PixInsight AutoIntegrate with RC Astro tool detection, or Siril via AstroIndexer's own workflow scripts, each with ready-made sequences for OSC, broadband and narrowband. Alongside it, iOS and Android companion apps for your catalogue on the go, Image Overlay Export for share-ready images, filter lifecycle tools that keep filter-aware quality and stacking accurate over time, and an expanded Backfocus Manager with an under / within / over tolerance band.</li>
+                        <li><span class="tag tag-new">New</span> <strong>Plate solver, Inspect Loupe and Object Detector, built in</strong> &mdash; native WCS with SIP distortion at 18.6% lower median solve time than ASTAP, 1:1 pixel-peeping with live FWHM, HFR and PSF, and object annotation cross-matched against LEDA, SDSS, MCG and 2MASX</li>
+                        <li><span class="tag tag-new">New</span> <strong>One-click stacking, mobile companions and filter lifecycle tools</strong> &mdash; QA-sorted, filter-balanced stacking into PixInsight AutoIntegrate or Siril, plus iOS and Android companion apps, Image Overlay Export and an expanded Backfocus Manager</li>
                     </ul>
                 </div>
             </div>
