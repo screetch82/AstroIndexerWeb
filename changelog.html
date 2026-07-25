@@ -147,6 +147,30 @@
     <section class="doc-section">
         <div class="container changelog-container">
 
+            <!-- 1.0 Release Candidate 2 -->
+            <div class="version-block">
+                <div class="version-header">
+                    <h2>1.0 Release Candidate 2</h2>
+                    <span class="version-date">July 24, 2026</span>
+                </div>
+                <p class="version-summary">
+                    Another step toward the full 1.0 release. RC2 tunes what RC1 introduced rather than
+                    adding new tools &mdash; stability, clearer workflow behavior, stacking reliability, and
+                    issues reported through user feedback. Existing installations keep working; if you have
+                    been running several beta or release-candidate builds, temporarily moving aside your
+                    AstroIndexer user folder before first launch gives the cleanest test. Improving migration
+                    from older user folders is a main focus for RC3.
+                </p>
+
+                <div class="change-category">
+                    <h3>Improvements</h3>
+                    <ul>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stacking and external-tool handoff</strong> &mdash; Autopilot and the Stacking Queue now show a clear preview before Siril or PixInsight launches, including the selected engine, files, and settings. Running both engines together produces one clean final image instead of duplicate or missing results, PixInsight queue stacking picks up your calibration masters, and the final stacked output is linked correctly even when PixInsight saves it in a nested folder. CosmicClarity Denoise and Sharpen now report when the tool is not installed instead of silently skipping that step, and the setup wizard summary shows which Siril tool was selected.</li>
+                        <li><span class="tag tag-improved">Improved</span> <strong>Stability and presentation across long runs</strong> &mdash; a broad stability pass across scanning, stacking, plate solving, external-tool handoff, cancellation, and shutdown, so background jobs start, report progress, cancel, and close predictably instead of appearing stuck or showing the wrong status. Multi-panel mosaics captured in a single folder are detected automatically while single-session folders are no longer split into false panels, plate-solve previews draw the WCS grid and distortion view correctly right after solving, and the Backfocus Telescope Manager gains updated 3D renders throughout.</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- Beta 6 -->
             <div class="version-block">
                 <div class="version-header">
