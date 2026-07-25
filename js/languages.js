@@ -5,6 +5,7 @@ const translations = {
         nav: {
             whatis: "What Is AstroIndexer?",
             features: "Features",
+            mobile: "Mobile App",
             whatsnew: "What's New",
             pricing: "Pricing",
             documentation: "Documentation",
@@ -530,7 +531,7 @@ const translations = {
                 duration: "14 days",
                 features: [
                     "Full feature access",
-                    "Up to 1000 images",
+                    "Up to 10 astronomical objects",
                     "Basic support",
                     "All analysis tools"
                 ],
@@ -615,6 +616,7 @@ const translations = {
         nav: {
             whatis: "Was ist AstroIndexer?",
             features: "Funktionen",
+            mobile: "Mobile-App",
             whatsnew: "Neuheiten",
             pricing: "Preise",
             documentation: "Dokumentation",
@@ -1139,7 +1141,7 @@ const translations = {
                 duration: "14 Tage",
                 features: [
                     "Voller Funktionsumfang",
-                    "Bis zu 1000 Bilder",
+                    "Bis zu 10 astronomische Objekte",
                     "Basis-Support",
                     "Alle Analysetools"
                 ],
@@ -1224,6 +1226,7 @@ const translations = {
         nav: {
             whatis: "¿Qué es AstroIndexer?",
             features: "Funciones",
+            mobile: "App Móvil",
             whatsnew: "Novedades",
             pricing: "Precios",
             documentation: "Documentación",
@@ -1748,7 +1751,7 @@ const translations = {
                 duration: "14 días",
                 features: [
                     "Acceso completo a todas las funciones",
-                    "Hasta 1000 imágenes",
+                    "Hasta 10 objetos astronómicos",
                     "Soporte básico",
                     "Todas las herramientas de análisis"
                 ],
@@ -1954,7 +1957,15 @@ class LanguageManager {
     }
 
     setupLanguageSwitcher() {
-        // Create language switcher if it doesn't exist
+        // Creates the switcher that actually renders, inside <nav>. It sets
+        // id="language-switcher" on itself, so this guard is what stops it
+        // being built twice.
+        //
+        // Note: every page ALSO ships a hand-written .language-switcher as a
+        // direct child of <body>. That copy is intentionally hidden by
+        // `body > .language-switcher { display: none }` in css/style.css —
+        // do not "fix" this by pointing the guard at the class, or the visible
+        // switcher stops being generated and disappears entirely.
         if (!document.getElementById('language-switcher')) {
             this.createLanguageSwitcher();
         }
@@ -1967,6 +1978,23 @@ class LanguageManager {
                 this.switchLanguage(lang);
             });
         });
+
+        this.updateLanguageDisplay();
+    }
+
+    // Keeps both switcher shapes in sync: the generated one uses .current-lang,
+    // the hidden markup one uses #currentLang plus a #currentFlag emoji.
+    updateLanguageDisplay() {
+        const flags = { en: '🇬🇧', de: '🇩🇪', es: '🇪🇸' };
+        const code = this.currentLang.toUpperCase();
+
+        document.querySelectorAll('.current-lang').forEach(el => {
+            el.textContent = code;
+        });
+        const langCode = document.getElementById('currentLang');
+        if (langCode) langCode.textContent = code;
+        const flag = document.getElementById('currentFlag');
+        if (flag && flags[this.currentLang]) flag.textContent = flags[this.currentLang];
     }
 
     createLanguageSwitcher() {
@@ -1987,13 +2015,22 @@ class LanguageManager {
                 <a href="#" class="language-option" data-lang="de">
                     <span class="flag">🇩🇪</span> Deutsch
                 </a>
+                <a href="#" class="language-option" data-lang="es">
+                    <span class="flag">🇪🇸</span> Español
+                </a>
             </div>
         `;
 
-        // Add to navigation or header
-        const nav = document.querySelector('nav') || document.querySelector('header');
-        if (nav) {
-            nav.appendChild(switcher);
+        // Mount INSIDE the navbar's flex container so the browser lays the
+        // switcher out alongside the menu. It used to be appended to <nav> and
+        // positioned fixed to the viewport, with .nav-menu reserving a guessed
+        // 60px for it — which only ever fitted English. Longer German and
+        // Spanish labels pushed the Download button under the floating chip.
+        const host = document.querySelector('.navbar .container')
+                  || document.querySelector('nav')
+                  || document.querySelector('header');
+        if (host) {
+            host.appendChild(switcher);
         }
 
         // Toggle dropdown
@@ -2020,17 +2057,14 @@ class LanguageManager {
             url.searchParams.set('lang', lang);
             window.history.pushState({}, '', url);
 
-            // Update current language display
-            const currentLangDisplay = document.querySelector('.current-lang');
-            if (currentLangDisplay) {
-                currentLangDisplay.textContent = lang.toUpperCase();
-            }
+            // Update current language display (handles both switcher shapes)
+            this.updateLanguageDisplay();
 
-            // Close dropdown
-            const switcher = document.getElementById('language-switcher');
-            if (switcher) {
-                switcher.classList.remove('active');
-            }
+            // Close dropdown. Matched on class, not id — the markup switcher
+            // has no id, so the old id lookup never found anything to close.
+            document.querySelectorAll('.language-switcher').forEach(el => {
+                el.classList.remove('active');
+            });
         }
     }
 

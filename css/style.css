@@ -117,10 +117,18 @@ h1, h2, h3,
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 24px;
+    /* Scales down as the viewport narrows. German and Spanish menu labels are
+       materially longer than English, and a fixed 24px gap overflowed the
+       1200px container in both. */
+    gap: clamp(12px, 1.5vw, 24px);
     align-items: center;
     flex-wrap: nowrap;
-    margin-right: 60px; /* space for language switcher */
+    /* Absorbs the free space so the menu and the switcher stay grouped at the
+       right. Without it, space-between strands the menu mid-bar now that the
+       switcher is a third flex item. */
+    margin-left: auto;
+    /* margin-right removed: the language switcher is a real flex item now,
+       so it no longer needs a guessed reservation of space. */
 }
 
 .nav-menu a {

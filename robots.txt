@@ -1,10 +1,17 @@
 # Robots.txt for AstroIndexer.com
 
+# NOTE: robots.txt groups do not merge. A crawler obeys ONLY the group whose
+# User-agent matches it most specifically, so every Disallow that should apply
+# to Googlebot/Bingbot/Slurp/DuckDuckBot has to be repeated in their groups
+# below. (/admin/, /private/ and *.json$ are currently in this group only, so
+# the four named crawlers are not covered by them.)
+
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: *.json$
+Disallow: /index.source.html
 
 # Sitemap location
 Sitemap: https://astroindexer.com/sitemap.xml
@@ -15,12 +22,16 @@ Crawl-delay: 1
 # Search engine specific rules
 User-agent: Googlebot
 Allow: /
+Disallow: /index.source.html
 
 User-agent: Bingbot
 Allow: /
+Disallow: /index.source.html
 
 User-agent: Slurp
 Allow: /
+Disallow: /index.source.html
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /index.source.html

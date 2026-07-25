@@ -15,3 +15,43 @@ node_modules/
 # Installed agent skills (HyperFrames etc.) — not part of the site
 .agents/
 skills-lock.json
+
+# Derived image intermediates. The site serves the .jpg versions; these PNGs
+# are regenerable and together weigh ~11MB.
+#   mobile_hero_composite.png       -> rebuild: python3 tools/composite-hero.py
+#   mobile_companion_tablet*.png    -> masters for the committed .jpg crops
+#   mobile_companion.png            -> superseded by mobile_companion_phone.jpg
+# The two INPUTS to composite-hero.py are deliberately NOT ignored:
+#   screenshots/mobile_app_hand.png         (the green-screen plate)
+#   screenshots/mobile_companion_phone.png  (the screenshot keyed into it)
+screenshots/mobile_hero_composite.png
+screenshots/mobile_companion_tablet.png
+screenshots/mobile_companion_tablet_landscape.png
+screenshots/mobile_companion.png
+
+# ── Never publish. This repo is PUBLIC and Pages serves the whole tree, so
+# anything committed here is a fetchable URL on astroindexer.com. ──────────
+
+# Private-evaluation outreach: personalised pitch drafts naming real creators.
+# Not for publication in any form.
+newsletter/rc1/outreach/
+newsletter/rc1/Archive.zip
+
+# Video working files (~23MB). The rendered outputs that the site actually
+# serves are committed; these are the sources they are built from.
+video/public/music/
+video/public/clips/
+video/out/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Reviewer build of the homepage: regenerate on demand with
+#   python3 build-motion-mockup.py --review
+# It carries noindex plus the notes panel, so it must never ship.
+motion-mockup.html
+
+# Stray editor copies
+* copy.md
+* copy.html

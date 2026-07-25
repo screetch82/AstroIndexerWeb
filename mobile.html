@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroIndexer Companion for iOS and Android — browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or from the couch.">
+
+    <meta property="og:title" content="AstroIndexer Companion — your library, in your pocket">
+    <meta property="og:description" content="The mobile companion to the AstroIndexer desktop app. Your indexed catalogue, capture stats and pipeline status, on iOS and Android.">
+    <meta property="og:image" content="https://astroindexer.com/screenshots/mobile_app_hand_composited.jpg">
+    <meta property="og:url" content="https://astroindexer.com/mobile.html">
+    <meta property="og:type" content="website">
+
+    <title>Mobile Companion - AstroIndexer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Mobile Companion page.
+   Built on the shared tokens in css/style.css — this block only adds
+   what is specific to a device-led page.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─── Hero ────────────────────────────────────────────────────── */
+/* Capped in px as well as vh. A pure vh height makes the cover-fitted
+   photograph scale with the window, which on a wide display blew the phone up
+   until it swallowed the copy. */
+.mc-hero{
+    position: relative;
+    min-height: 620px;
+    height: 78vh;
+    max-height: 820px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #04070E;
+}
+/* The composite is the hero image, not a backdrop — the phone in the
+   photograph is showing the real app, so it carries most of the message. */
+.mc-hero-bg{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    /* Bias right so the phone and telescope sit in the right half and the
+       left third stays clear sky for the copy. */
+    object-position: 64% center;
+    opacity: 0.92;
+}
+/* Darkens hard on the left for the copy, then opens up across the middle so
+   the phone screen in the photograph stays readable. */
+.mc-hero::after{
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg,
+        rgba(10,16,28,0.97) 0%,
+        rgba(10,16,28,0.93) 32%,
+        rgba(10,16,28,0.55) 46%,
+        rgba(10,16,28,0.12) 60%,
+        rgba(10,16,28,0.40) 100%);
+}
+/* width:100% is load-bearing. .mc-hero is a flex container, so .container
+   becomes a flex item and shrinks to fit its content — its own `margin: 0 auto`
+   then centred that collapsed box, which is why the copy sat mid-screen
+   instead of hard left. */
+.mc-hero .container{ position: relative; z-index: 2; width: 100%; }
+/* Single column. The photograph already carries a phone running the app, so a
+   second device column only competed with it. */
+.mc-hero-grid{
+    max-width: 46ch;
+    padding: 120px 0 80px;
+}
+.mc-eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+.mc-hero h1{
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.mc-hero-lead{
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 44ch;
+    margin-bottom: 32px;
+}
+
+/* ─── Store badges ────────────────────────────────────────────── */
+.mc-badges{ display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.mc-badges img{ height: 52px; width: auto; display: block; }
+.mc-badges a{ transition: opacity 0.25s ease; }
+.mc-badges a:hover{ opacity: 0.82; }
+.mc-badge-note{
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--mut);
+}
+
+/* ─── Device composition ──────────────────────────────────────
+   Tablet sits behind and slightly left; phone overlaps in front and
+   lower — the standard two-device product shot. Both screenshots
+   already ship with their own hardware frame, so nothing here draws
+   a bezel; this only handles placement, scale and shadow.
+   ────────────────────────────────────────────────────────────── */
+/* No devices are overlaid on the hero. The photograph already contains a
+   phone running the app, so a second device only competed with it — and a
+   cover-fitted background plus an absolutely-positioned overlay scale on
+   different rules, which is what threw the proportions off. */
+
+/* ─── Two-app relationship band ───────────────────────────────── */
+.mc-pair{ padding: 90px 0; border-top: 1px solid var(--line); }
+.mc-pair-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 44px;
+}
+.mc-pair-card{
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 30px 28px;
+    background: var(--card);
+}
+.mc-pair-card.is-mobile{ border-color: rgba(200,165,92,0.30); }
+.mc-pair-kicker{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+.mc-pair-card h3{ font-size: 22px; margin-bottom: 12px; }
+.mc-pair-card p{ color: var(--text-secondary); font-size: 15px; line-height: 1.65; }
+
+/* ─── Feature rows ────────────────────────────────────────────── */
+.mc-features{ padding: 20px 0 90px; }
+.mc-row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 56px;
+    align-items: center;
+    padding: 60px 0;
+    border-top: 1px solid var(--line);
+}
+.mc-row:first-of-type{ border-top: none; }
+.mc-row h3{ font-size: clamp(22px, 2.2vw, 30px); margin-bottom: 14px; }
+.mc-row > div > p{ color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; }
+.mc-list{ list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.mc-list li{
+    position: relative;
+    padding-left: 24px;
+    font-size: 14.5px;
+    color: var(--text-secondary);
+}
+.mc-list li::before{
+    content: '\2713';
+    position: absolute; left: 0;
+    color: var(--hl);
+    font-weight: bold;
+}
+.mc-shot{ display: flex; justify-content: center; }
+.mc-shot img{
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 22px 50px rgba(0,0,0,0.6));
+}
+/* Every capture is a raw screenshot with no hardware frame, so the bezel is
+   drawn here. Same treatment as the hero, sized per device. */
+.mc-shot.is-tablet img,
+.mc-shot.is-phone img{
+    background: linear-gradient(155deg, #333944 0%, #14181F 42%, #232833 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.10),
+        0 26px 60px rgba(0,0,0,0.62);
+    filter: none;
+}
+.mc-shot.is-tablet img{
+    max-width: 420px;
+    padding: 2.2%;
+    border-radius: 22px;
+}
+/* Landscape captures need more width to stay legible at the same height. */
+.mc-shot.is-tablet.is-landscape{ flex: 1; }
+.mc-shot.is-tablet.is-landscape img{ max-width: 560px; }
+.mc-shot.is-phone img{
+    max-width: 250px;
+    padding: 2.4%;
+    border-radius: 30px;
+}
+
+/* Tab-bar strip, mirroring the app's own five sections. */
+.mc-tabs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 44px;
+}
+.mc-tab{
+    background: var(--bg0);
+    padding: 24px 20px;
+}
+.mc-tab .t{ font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.mc-tab .d{ font-size: 13px; color: var(--mut); line-height: 1.5; }
+
+/* ─── Closing CTA ─────────────────────────────────────────────── */
+.mc-cta{
+    padding: 80px 0 100px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+.mc-cta h2{ font-size: clamp(26px, 3vw, 38px); margin-bottom: 14px; }
+.mc-cta p{ color: var(--text-secondary); max-width: 52ch; margin: 0 auto 30px; }
+.mc-cta .mc-badges{ justify-content: center; }
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px){
+    .mc-hero{ min-height: 0; }
+    .mc-hero-grid{ max-width: none; padding: 100px 0 60px; }
+    .mc-hero::after{
+        background: linear-gradient(180deg,
+            rgba(10,16,28,0.92) 0%,
+            rgba(10,16,28,0.75) 50%,
+            rgba(10,16,28,0.92) 100%);
+    }
+    /* Narrow screens: shift the photo so the phone stays in frame behind the
+       copy rather than being cropped out at the right edge. */
+    .mc-hero-bg{ object-position: 58% center; }
+    .mc-row{ gap: 32px; padding: 44px 0; }
+    .mc-badges img{ height: 46px; }
+}
+</style>
+</head>
+<body>
+
+    <!-- Language Switcher (hidden copy; js/languages.js renders the live one) -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">
+            <span class="flag" id="currentFlag">&#127468;&#127463;</span>
+            <span class="lang-code" id="currentLang">EN</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" class="language-option" data-lang="en">
+                <span class="flag">&#127468;&#127463;</span><span>English</span>
+            </a>
+            <a href="#" class="language-option" data-lang="de">
+                <span class="flag">&#127465;&#127466;</span><span>Deutsch</span>
+            </a>
+            <a href="#" class="language-option" data-lang="es">
+                <span class="flag">&#127466;&#127480;</span><span>Espanol</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+                    <img src="images/logo.png" alt="AstroIndexer" class="logo">
+                    <span>AstroIndexer</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="mobile.html" class="active" data-i18n="nav.mobile">Mobile App</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="pixinsight-plate-solver.html">PixInsight</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══════ HERO ═══════════════════════════════════════════════ -->
+    <header class="mc-hero">
+        <!-- Chroma-key composite: mobile_app_hand.png is the green-screen plate;
+             the NGC1931 screenshot is perspective-warped into the screen and the
+             green spill removed. Rebuild with tools/composite-hero.py. -->
+        <img class="mc-hero-bg" src="screenshots/mobile_hero_composite.jpg"
+             alt="A hand holding a phone running the AstroIndexer companion app at night, showing the NGC1931 object page, with a telescope rig under a starry sky">
+        <div class="container">
+            <div class="mc-hero-grid">
+                <div>
+                    <div class="mc-eyebrow">AstroIndexer Companion &middot; iOS &amp; Android</div>
+                    <h1>Your library, in your pocket</h1>
+                    <p class="mc-hero-lead">
+                        The desktop app indexes and analyses your archive. The companion app
+                        puts the result in your hand &mdash; every object, every capture stat,
+                        every pipeline status, from the field or from the couch.
+                    </p>
+                    <div class="mc-badges">
+                        <a href="https://apps.apple.com/app/astroindexercompanion/id6772704017">
+                            <img class="badge-appstore" src="images/badges/appstore_badge_en.svg" alt="Download on the App Store">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.deepskyanalytics.astroindexercompanion">
+                            <img class="badge-gplay" src="images/badges/gplay_badge_en.svg" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                    <p class="mc-badge-note">Free with your AstroIndexer library &middot; phone and tablet</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ══════ TWO APPS, ONE LIBRARY ══════════════════════════════ -->
+    <section class="mc-pair">
+        <div class="container">
+            <h2 class="section-title">Two apps, one library</h2>
+            <p class="section-subtitle">
+                AstroIndexer is a desktop application. The companion app is a window onto
+                the same indexed data &mdash; it does not re-analyse anything, it shows you
+                what your desktop already worked out.
+            </p>
+
+            <div class="mc-pair-grid">
+                <div class="mc-pair-card">
+                    <div class="mc-pair-kicker">Desktop</div>
+                    <h3>Where the work happens</h3>
+                    <p>
+                        Scanning, plate solving, quality analysis, stacking and the
+                        machine-learning modules all run locally on your computer, against
+                        your FITS and XISF files.
+                    </p>
+                </div>
+                <div class="mc-pair-card is-mobile">
+                    <div class="mc-pair-kicker">Mobile</div>
+                    <h3>Where you check it</h3>
+                    <p>
+                        Browse the catalogue, pull up any object, and read its capture
+                        summary and pipeline state &mdash; while you are setting up under
+                        the sky, or nowhere near your desk.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mc-tabs">
+                <div class="mc-tab"><div class="t">Overview</div><div class="d">Your archive at a glance.</div></div>
+                <div class="mc-tab"><div class="t">Library</div><div class="d">Every indexed object, searchable.</div></div>
+                <div class="mc-tab"><div class="t">Equipment</div><div class="d">Rigs, and how each one performs.</div></div>
+                <div class="mc-tab"><div class="t">Insights</div><div class="d">Patterns found in your history.</div></div>
+                <div class="mc-tab"><div class="t">Settings</div><div class="d">Sync and preferences.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════ FEATURE ROWS ═══════════════════════════════════════ -->
+    <section class="mc-features">
+        <div class="container">
+
+            <div class="mc-row">
+                <div>
+                    <h3>Your whole catalogue, in one view</h3>
+                    <p>
+                        Search by object or catalogue, filter the list, and see the totals
+                        for everything you have indexed &mdash; objects, accumulated exposure,
+                        and how much has been through quality analysis.
+                    </p>
+                    <ul class="mc-list">
+                        <li>Search across objects and catalogues</li>
+                        <li>Filter by catalogue or by filter used</li>
+                        <li>Library totals: objects, exposure hours, QA coverage</li>
+                        <li>A featured target surfaced from your own archive</li>
+                    </ul>
+                </div>
+                <div class="mc-shot is-tablet is-landscape">
+                    <img src="screenshots/mobile_companion_tablet_landscape.jpg"
+                         alt="Tablet Library view with sidebar navigation, a search field, M13 as the featured target and a grid of indexed objects">
+                </div>
+            </div>
+
+            <div class="mc-row">
+                <div>
+                    <h3>Every object, with the numbers that matter</h3>
+                    <p>
+                        Open any target and see what you have actually accumulated on it &mdash;
+                        not a folder listing, but the totals your desktop computed. Scan,
+                        Rig, QA, ML and Image each carry their own state, so one look tells
+                        you whether an object is finished or still waiting.
+                    </p>
+                    <ul class="mc-list">
+                        <li>Total exposure, frame count and how many nights it took</li>
+                        <li>The rig that captured it, named</li>
+                        <li>Date range from first to most recent session</li>
+                        <li>Coordinates and calibration sets on record</li>
+                        <li>Per-stage pipeline indicators and the quality verdict</li>
+                        <li>Object previews synced from your indexed library</li>
+                    </ul>
+                </div>
+                <div class="mc-shot is-phone">
+                    <img src="screenshots/mobile_companion_phone.jpg"
+                         alt="Phone object detail view for NGC1931 showing total exposure, frames, nights, rig, date range, coordinates and calibration">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════ CLOSING CTA ════════════════════════════════════════ -->
+    <section class="mc-cta">
+        <div class="container">
+            <h2>Take your archive outside</h2>
+            <p>
+                Available now on the App Store and Google Play. Requires an AstroIndexer
+                library on your desktop.
+            </p>
+            <div class="mc-badges">
+                <a href="https://apps.apple.com/app/astroindexercompanion/id6772704017">
+                    <img class="badge-appstore" src="images/badges/appstore_badge_en.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.deepskyanalytics.astroindexercompanion">
+                    <img class="badge-gplay" src="images/badges/gplay_badge_en.svg" alt="Get it on Google Play">
+                </a>
+            </div>
+            <p class="mc-badge-note">Don't have the desktop app yet? <a href="index.html#download" style="color:var(--hl)">Start the free trial</a>.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 data-i18n="footer.product.title">Product</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-i18n="footer.product.links.features">Features</a></li>
+                        <li><a href="mobile.html">Mobile Companion</a></li>
+                        <li><a href="index.html#pricing" data-i18n="footer.product.links.pricing">Pricing</a></li>
+                        <li><a href="changelog.html" data-i18n="footer.product.links.changelog">Changelog</a></li>
+                        <li><a href="index.html#roadmap" data-i18n="footer.product.links.roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.support.title">Support</h4>
+                    <ul>
+                        <li><a href="docs.html" data-i18n="footer.support.links.documentation">Documentation</a></li>
+                        <li><a href="faq.html" data-i18n="footer.support.links.faq">FAQ</a></li>
+                        <li><a href="#contact" onclick="openContactForm('Contact Us'); return false;" data-i18n="footer.support.links.contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <ul>
+                        <li><a href="impressum.html" data-i18n="footer.legal.links.impressum">Legal Notice</a></li>
+                        <li><a href="datenschutz.html" data-i18n="footer.legal.links.privacy">Privacy Policy</a></li>
+                        <li><a href="agb.html" data-i18n="footer.legal.links.terms">Terms &amp; Conditions</a></li>
+                        <li><a href="eula.html" data-i18n="footer.legal.links.eula">License Agreement (EULA)</a></li>
+                        <li><a href="widerruf.html" data-i18n="footer.legal.links.withdrawal">Right of Withdrawal</a></li>
+                        <li><a href="mailto:support@astroindexer.com">support@astroindexer.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 DeepSky Analytics UG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/languages.js"></script>
+    <script src="js/contact-form.js"></script>
+</body>
+</html>

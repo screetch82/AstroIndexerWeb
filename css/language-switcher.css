@@ -136,12 +136,16 @@ html[lang="en"] .language-option[data-lang="en"] {
     opacity: 0.7;
 }
 
-/* Position in navigation bar */
+/* Position in navigation bar.
+   Laid out as a flex item inside .navbar .container, NOT pinned to the
+   viewport. The previous `position: fixed; right: 20px` floated the chip over
+   the nav, so it overlapped the Download button in any language whose menu is
+   wider than English. `position: relative` is also required for the dropdown,
+   which is absolutely positioned against this element. */
 nav .language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 10;
 }
 
 /* Alternative inline style */
