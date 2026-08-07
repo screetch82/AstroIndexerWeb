@@ -6,6 +6,6 @@
     "check:contact-api": "node --check api/contact.mjs"
   },
   "dependencies": {
-    "nodemailer": "^8.0.8"
+    "nodemailer": "^9.0.1"
   }
 }
