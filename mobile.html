@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AstroIndexer Companion for iOS and Android — browse your catalogue, check per-object capture stats, and see Scan, QA and ML status from the field or from the couch.">
+    <meta name="description" content="AstroIndexer Companion for iPhone, iPad, Android and Apple TV &mdash; browse your catalogue, check per-object capture stats, and put your processed images on the big screen.">
 
     <meta property="og:title" content="AstroIndexer Companion — your library, in your pocket">
-    <meta property="og:description" content="The mobile companion to the AstroIndexer desktop app. Your indexed catalogue, capture stats and pipeline status, on iOS and Android.">
+    <meta property="og:description" content="The companion to the AstroIndexer desktop app. Your indexed catalogue, capture stats and processed images &mdash; on iPhone, iPad, Android and Apple TV.">
     <meta property="og:image" content="https://astroindexer.com/screenshots/mobile_app_hand_composited.jpg">
     <meta property="og:url" content="https://astroindexer.com/mobile.html">
     <meta property="og:type" content="website">
@@ -244,6 +244,77 @@
     .mc-row{ gap: 32px; padding: 44px 0; }
     .mc-badges img{ height: 46px; }
 }
+
+/* --- Device switcher --------------------------------------------
+   The bezel treatment is copied from .mc-shot deliberately: every clip
+   is a raw screen recording with no hardware frame, exactly like the
+   stills, so the frame has to be drawn here or the video would sit
+   naked next to framed screenshots.
+   ---------------------------------------------------------------- */
+.mc-devices{ padding: 90px 0; border-top: 1px solid var(--line); }
+.mc-devtabs{
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin: 36px 0 40px;
+}
+.mc-devtab{
+    font-family: var(--font-mono);
+    font-size: 11.5px; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--mut);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 18px;
+    min-height: 44px;                 /* tap-target floor */
+    cursor: pointer;
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+.mc-devtab:hover{ color: var(--text-secondary); border-color: rgba(200,165,92,0.35); }
+.mc-devtab.is-active{
+    color: var(--accent);
+    border-color: rgba(200,165,92,0.55);
+    background: var(--card);
+}
+.mc-devtab:focus-visible{ outline: 2px solid var(--hl); outline-offset: 3px; }
+
+.mc-devstage{ display: flex; justify-content: center; }
+.mc-devpanel[hidden]{ display: none; }
+.mc-devpanel video{
+    display: block; width: 100%; height: auto;
+    background: linear-gradient(155deg, #333944 0%, #14181F 42%, #232833 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.10),
+        0 26px 60px rgba(0,0,0,0.62);
+}
+.mc-devpanel.is-phone  video{ max-width: 250px; padding: 2.4%; border-radius: 30px; }
+.mc-devpanel.is-tablet video{ max-width: 420px; padding: 2.2%; border-radius: 22px; }
+.mc-devpanel.is-tv     video{ max-width: 760px; padding: 1.1%; border-radius: 10px; }
+.mc-devnote{
+    margin-top: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 11.5px;
+    letter-spacing: 0.06em; color: var(--mut);
+}
+
+/* Apple TV still: a 16:9 panel, so it needs the row width a phone does not. */
+.mc-shot.is-tv{ flex: 1; }
+.mc-shot.is-tv img{
+    max-width: 560px;
+    background: linear-gradient(155deg, #333944 0%, #14181F 42%, #232833 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.10),
+        0 26px 60px rgba(0,0,0,0.62);
+    padding: 1.1%;
+    border-radius: 10px;
+    filter: none;
+}
+
+@media (max-width: 640px){
+    .mc-devices{ padding: 64px 0; }
+    .mc-devtab{ font-size: 10.5px; padding: 12px 13px; letter-spacing: 0.06em; }
+    .mc-devpanel.is-tv video{ max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce){
+    .mc-devtab{ transition: none; }
+}
 </style>
 </head>
 <body>
@@ -298,12 +369,13 @@
         <div class="container">
             <div class="mc-hero-grid">
                 <div>
-                    <div class="mc-eyebrow">AstroIndexer Companion &middot; iOS &amp; Android</div>
+                    <div class="mc-eyebrow">AstroIndexer Companion &middot; iPhone &middot; iPad &middot; Android &middot; Apple TV</div>
                     <h1>Your library, in your pocket</h1>
                     <p class="mc-hero-lead">
                         The desktop app indexes and analyses your archive. The companion app
                         puts the result in your hand &mdash; every object, every capture stat,
-                        every pipeline status, from the field or from the couch.
+                        every pipeline status, from the field or from the couch. On Apple TV
+                        it puts your processed images on the largest screen you own.
                     </p>
                     <div class="mc-badges">
                         <a href="https://apps.apple.com/app/astroindexercompanion/id6772704017">
@@ -313,7 +385,7 @@
                             <img class="badge-gplay" src="images/badges/gplay_badge_en.svg" alt="Get it on Google Play">
                         </a>
                     </div>
-                    <p class="mc-badge-note">Free with your AstroIndexer library &middot; phone and tablet</p>
+                    <p class="mc-badge-note">Free with your AstroIndexer library &middot; phone, tablet and Apple TV</p>
                 </div>
 
             </div>
@@ -361,6 +433,53 @@
         </div>
     </section>
 
+    <!-- DEVICE SWITCHER
+         One player, three devices. The site standard is that motion serves the
+         subject and that a single orchestrated moment beats scattered effects,
+         so only the selected clip plays; the other two stay paused and are not
+         fetched at all until chosen. Every clip is a real screen recording of
+         the shipping app against a real 27-object library. -->
+    <section class="mc-devices">
+        <div class="container">
+            <h2 class="section-title">The same library, on every screen</h2>
+            <p class="section-subtitle">
+                One sync, three form factors. Browse on the phone in the field, spread
+                the grid out on a tablet, then put the results on the television.
+            </p>
+
+            <div class="mc-devtabs" role="tablist" aria-label="Choose a device">
+                <button class="mc-devtab is-active" role="tab" id="tab-iphone"
+                        aria-selected="true" aria-controls="panel-iphone">iPhone</button>
+                <button class="mc-devtab" role="tab" id="tab-ipad" tabindex="-1"
+                        aria-selected="false" aria-controls="panel-ipad">iPad &amp; Android tablet</button>
+                <button class="mc-devtab" role="tab" id="tab-appletv" tabindex="-1"
+                        aria-selected="false" aria-controls="panel-appletv">Apple TV</button>
+            </div>
+
+            <div class="mc-devstage">
+                <div class="mc-devpanel is-active is-phone" id="panel-iphone" role="tabpanel" aria-labelledby="tab-iphone">
+                    <video muted loop playsinline preload="metadata"
+                           poster="video/companion/poster-iphone.jpg"
+                           data-src="video/companion/companion-iphone.mp4"
+                           aria-label="Screen recording of the companion app on iPhone: the library grid, filtering by year, sorting, an object page and the full-screen image viewer"></video>
+                </div>
+                <div class="mc-devpanel is-tablet" id="panel-ipad" role="tabpanel" aria-labelledby="tab-ipad" hidden>
+                    <video muted loop playsinline preload="none"
+                           poster="video/companion/poster-ipad.jpg"
+                           data-src="video/companion/companion-ipad.mp4"
+                           aria-label="Screen recording of the companion app on iPad: a four-column library grid, filters and the full-screen image viewer"></video>
+                </div>
+                <div class="mc-devpanel is-tv" id="panel-appletv" role="tabpanel" aria-labelledby="tab-appletv" hidden>
+                    <video muted loop playsinline preload="none"
+                           poster="video/companion/poster-appletv.jpg"
+                           data-src="video/companion/companion-appletv.mp4"
+                           aria-label="Screen recording of the companion app on Apple TV: the gallery wall of targets and a full-screen image with its capture details"></video>
+                </div>
+            </div>
+            <p class="mc-devnote">Recorded on a real library &mdash; 27 targets, 168 hours of integration.</p>
+        </div>
+    </section>
+
     <!-- ══════ FEATURE ROWS ═══════════════════════════════════════ -->
     <section class="mc-features">
         <div class="container">
@@ -382,7 +501,8 @@
                 </div>
                 <div class="mc-shot is-tablet is-landscape">
                     <img src="screenshots/mobile_companion_tablet_landscape.jpg"
-                         alt="Tablet Library view with sidebar navigation, a search field, M13 as the featured target and a grid of indexed objects">
+                         alt="Android tablet Library view with the navigation rail, a search field and a four-column grid of indexed objects with exposure totals and filters"
+                         loading="lazy" width="1400" height="876">
                 </div>
             </div>
 
@@ -406,7 +526,32 @@
                 </div>
                 <div class="mc-shot is-phone">
                     <img src="screenshots/mobile_companion_phone.jpg"
-                         alt="Phone object detail view for NGC1931 showing total exposure, frames, nights, rig, date range, coordinates and calibration">
+                         alt="Phone object detail view for NGC2237 showing total exposure, frames, nights, the rig that captured it, date range, coordinates and calibration"
+                         loading="lazy" width="660" height="1434">
+                </div>
+            </div>
+
+
+            <div class="mc-row">
+                <div>
+                    <h3>And on the television</h3>
+                    <p>
+                        The Apple TV app is a viewer, not a spreadsheet. It shows the
+                        targets you have actually processed as a wall of photographs, and
+                        puts any one of them full-screen with the numbers underneath
+                        &mdash; the way you would show them to someone standing in the room.
+                    </p>
+                    <ul class="mc-list">
+                        <li>Your imaged targets as a focus-driven gallery wall</li>
+                        <li>Full-screen viewing with exposure, frames and filters</li>
+                        <li>The rig that captured each frame, named on screen</li>
+                        <li>Pairs from the desktop with an on-screen Allow &mdash; nothing to type</li>
+                    </ul>
+                </div>
+                <div class="mc-shot is-tv">
+                    <img src="screenshots/mobile_companion_appletv.jpg"
+                         alt="Apple TV gallery showing a wall of imaged targets with exposure times, nights and filters, above a header reading 27 objects and 168.6 hours"
+                         loading="lazy" width="1400" height="788">
                 </div>
             </div>
 
@@ -418,7 +563,8 @@
         <div class="container">
             <h2>Take your archive outside</h2>
             <p>
-                Available now on the App Store and Google Play. Requires an AstroIndexer
+                Available now on the App Store and Google Play &mdash; iPhone, iPad,
+                Android phone and tablet, and Apple TV. Requires an AstroIndexer
                 library on your desktop.
             </p>
             <div class="mc-badges">
@@ -477,5 +623,93 @@
 
     <script src="js/languages.js"></script>
     <script src="js/contact-form.js"></script>
+    <script>
+    /* Device switcher.
+       Deliberate choices:
+        - only the selected clip is fetched (data-src -> src on activate), so the
+          page does not pull three videos on load for a component where two are
+          hidden;
+        - prefers-reduced-motion gets controls instead of autoplay, never motion
+          the visitor did not ask for;
+        - an autoplay rejection also falls back to controls rather than leaving a
+          dead poster;
+        - offscreen pauses playback - a looping clip below the fold is pure battery.
+    */
+    (function(){
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.mc-devtab'));
+        if (!tabs.length) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var stage  = document.querySelector('.mc-devstage');
+
+        function panelOf(tab){ return document.getElementById(tab.getAttribute('aria-controls')); }
+
+        function activate(tab, moveFocus){
+            tabs.forEach(function(t){
+                var panel = panelOf(t);
+                var video = panel ? panel.querySelector('video') : null;
+                var on    = (t === tab);
+
+                t.classList.toggle('is-active', on);
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                t.tabIndex = on ? 0 : -1;
+                if (panel){
+                    panel.hidden = !on;
+                    panel.classList.toggle('is-active', on);
+                }
+                if (!video) return;
+
+                if (on){
+                    var justFetched = false;
+                    if (!video.getAttribute('src') && video.dataset.src){
+                        video.setAttribute('src', video.dataset.src);
+                        justFetched = true;
+                    }
+                    if (reduce){
+                        video.controls = true;
+                    } else if (justFetched){
+                        // Trap: calling play() in the same tick as setting src on a
+                        // preload="none" element rejects - there are no frames yet -
+                        // and the catch below would then expose controls for no reason.
+                        // Wait for the first decodable frame instead.
+                        video.addEventListener('canplay', function once(){
+                            video.removeEventListener('canplay', once);
+                            var q = video.play();
+                            if (q && q.catch) q.catch(function(){ video.controls = true; });
+                        });
+                    } else {
+                        var p = video.play();
+                        if (p && p.catch) p.catch(function(){ video.controls = true; });
+                    }
+                } else {
+                    video.pause();
+                }
+            });
+            if (moveFocus) tab.focus();
+        }
+
+        tabs.forEach(function(tab, i){
+            tab.addEventListener('click', function(){ activate(tab, false); });
+            tab.addEventListener('keydown', function(e){
+                var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+                if (!step) return;
+                e.preventDefault();
+                activate(tabs[(i + step + tabs.length) % tabs.length], true);
+            });
+        });
+
+        activate(tabs[0], false);
+
+        if (stage && 'IntersectionObserver' in window && !reduce){
+            new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    var v = entry.target.querySelector('.mc-devpanel:not([hidden]) video');
+                    if (!v) return;
+                    if (entry.isIntersecting){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+                    else { v.pause(); }
+                });
+            }, { threshold: 0.25 }).observe(stage);
+        }
+    })();
+    </script>
 </body>
 </html>
