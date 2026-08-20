@@ -290,13 +290,34 @@
 .mc-devpanel.is-tv     video{ max-width: 760px; padding: 1.1%; border-radius: 10px; }
 .mc-devnote{
     margin-top: 24px; text-align: center;
-    font-family: var(--font-mono); font-size: 11.5px;
-    letter-spacing: 0.06em; color: var(--mut);
+    font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.05em; color: var(--text-secondary);
 }
+
+/* Revealed only when autoplay is refused. */
+.mc-devpanel{ position: relative; }
+.mc-devplay{
+    position: absolute; inset: 0; margin: auto;
+    width: 88px; height: 88px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(10,16,28,0.78);
+    border: 1px solid rgba(255,255,255,0.38);
+    color: #fff;
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer;
+}
+.mc-devplay[hidden]{ display: none; }
+.mc-devplay:hover{ background: rgba(10,16,28,0.9); border-color: var(--hl); }
+.mc-devplay:focus-visible{ outline: 2px solid var(--hl); outline-offset: 3px; }
+
+/* Apple TV row carries two stills stacked. */
+.mc-tvpair{ display: flex; flex-direction: column; gap: 16px; width: 100%; align-items: center; }
 
 /* Apple TV still: a 16:9 panel, so it needs the row width a phone does not. */
 .mc-shot.is-tv{ flex: 1; }
-.mc-shot.is-tv img{
+.mc-shot.is-tv img,
+.mc-tvpair img{
     max-width: 560px;
     background: linear-gradient(155deg, #333944 0%, #14181F 42%, #232833 100%);
     box-shadow:
@@ -451,32 +472,44 @@
                 <button class="mc-devtab is-active" role="tab" id="tab-iphone"
                         aria-selected="true" aria-controls="panel-iphone">iPhone</button>
                 <button class="mc-devtab" role="tab" id="tab-ipad" tabindex="-1"
-                        aria-selected="false" aria-controls="panel-ipad">iPad &amp; Android tablet</button>
+                        aria-selected="false" aria-controls="panel-ipad">Tablet</button>
                 <button class="mc-devtab" role="tab" id="tab-appletv" tabindex="-1"
                         aria-selected="false" aria-controls="panel-appletv">Apple TV</button>
             </div>
 
             <div class="mc-devstage">
+                <!-- A Play control is injected into each panel by the script below;
+                     it is only revealed when autoplay is actually refused, so the
+                     visitor never faces a still frame with no way to start it. -->
                 <div class="mc-devpanel is-active is-phone" id="panel-iphone" role="tabpanel" aria-labelledby="tab-iphone">
                     <video muted loop playsinline preload="metadata"
                            poster="video/companion/poster-iphone.jpg"
                            data-src="video/companion/companion-iphone.mp4"
+                           data-device="iPhone"
                            aria-label="Screen recording of the companion app on iPhone: the library grid, filtering by year, sorting, an object page and the full-screen image viewer"></video>
                 </div>
                 <div class="mc-devpanel is-tablet" id="panel-ipad" role="tabpanel" aria-labelledby="tab-ipad" hidden>
+                    <!-- The other two posters are their clip's first frame; this one is
+                         deliberately taken from 4s in. The opening of the tablet clip has
+                         SH2-240 rendering as a blown-white tile (an export defect in the
+                         desktop app, not in the page), and that tile is the brightest thing
+                         on screen. 4s also happens to show the sort menu open, so the
+                         resting frame sells a 1.6.0 feature. Do not "restore" frame 0. -->
                     <video muted loop playsinline preload="none"
                            poster="video/companion/poster-ipad.jpg"
                            data-src="video/companion/companion-ipad.mp4"
+                           data-device="tablet"
                            aria-label="Screen recording of the companion app on iPad: a four-column library grid, filters and the full-screen image viewer"></video>
                 </div>
                 <div class="mc-devpanel is-tv" id="panel-appletv" role="tabpanel" aria-labelledby="tab-appletv" hidden>
                     <video muted loop playsinline preload="none"
                            poster="video/companion/poster-appletv.jpg"
                            data-src="video/companion/companion-appletv.mp4"
+                           data-device="Apple TV"
                            aria-label="Screen recording of the companion app on Apple TV: the gallery wall of targets and a full-screen image with its capture details"></video>
                 </div>
             </div>
-            <p class="mc-devnote">Recorded on a real library &mdash; 27 targets, 168 hours of integration.</p>
+            <p class="mc-devnote">Tablet layouts ship on iPad and Android. Recorded on a real library &mdash; 27 targets, 168 hours of integration.</p>
         </div>
     </section>
 
@@ -526,7 +559,7 @@
                 </div>
                 <div class="mc-shot is-phone">
                     <img src="screenshots/mobile_companion_phone.jpg"
-                         alt="Phone object detail view for NGC2237 showing total exposure, frames, nights, the rig that captured it, date range, coordinates and calibration"
+                         alt="Phone object detail view for NGC2237 showing total exposure, frame count, nights, the rig that captured it with focal length and f-ratio, date range and coordinates"
                          loading="lazy" width="660" height="1434">
                 </div>
             </div>
@@ -540,6 +573,8 @@
                         targets you have actually processed as a wall of photographs, and
                         puts any one of them full-screen with the numbers underneath
                         &mdash; the way you would show them to someone standing in the room.
+                        Move through your targets with the remote and the gallery
+                        atmosphere follows your selection.
                     </p>
                     <ul class="mc-list">
                         <li>Your imaged targets as a focus-driven gallery wall</li>
@@ -549,9 +584,17 @@
                     </ul>
                 </div>
                 <div class="mc-shot is-tv">
-                    <img src="screenshots/mobile_companion_appletv.jpg"
-                         alt="Apple TV gallery showing a wall of imaged targets with exposure times, nights and filters, above a header reading 27 objects and 168.6 hours"
-                         loading="lazy" width="1400" height="788">
+                    <!-- Two stills, not one: the gallery explains the shape of the app,
+                         but the full-screen frame is the reason anyone would want it on
+                         a television. -->
+                    <div class="mc-tvpair">
+                        <img src="screenshots/mobile_companion_appletv.jpg"
+                             alt="Apple TV gallery showing a wall of imaged targets with exposure times, nights and filters, above a header reading 27 objects and 168.6 hours"
+                             loading="lazy" width="1400" height="788">
+                        <img src="screenshots/mobile_companion_appletv_fullscreen.jpg"
+                             alt="Apple TV full-screen view of the bright nebula LBN622, with its name, 5.8 hours of exposure, 70 frames and the telescope and camera that captured it"
+                             loading="lazy" width="1400" height="788">
+                    </div>
                 </div>
             </div>
 
@@ -643,6 +686,48 @@
 
         function panelOf(tab){ return document.getElementById(tab.getAttribute('aria-controls')); }
 
+        // Every panel gets a Play control up front; it stays hidden unless needed.
+        function playButtonOf(panel){
+            var btn = panel.querySelector('.mc-devplay');
+            if (btn) return btn;
+            var video = panel.querySelector('video');
+            btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'mc-devplay';
+            btn.hidden = true;
+            btn.textContent = 'Play';
+            btn.setAttribute('aria-label',
+                'Play the ' + (video && video.dataset.device ? video.dataset.device : '') + ' screen recording');
+            btn.addEventListener('click', function(){
+                if (!video) return;
+                video.controls = true;
+                var p = video.play();
+                if (p && p.then) p.then(function(){ btn.hidden = true; });
+                else btn.hidden = true;
+            });
+            // Trap: the button used to be driven purely from the call sites that
+            // ask for playback, but the IntersectionObserver below calls play()
+            // and pause() straight on the element. So an observer-driven resume
+            // after an autoplay rejection left a Play button sitting on top of a
+            // clip that was already running. The element is the source of truth -
+            // once it is actually playing, the offer to start it is wrong.
+            if (video) video.addEventListener('playing', function(){ btn.hidden = true; });
+            panel.appendChild(btn);
+            return btn;
+        }
+
+        function showPlayButton(panel, show){
+            if (panel) playButtonOf(panel).hidden = !show;
+        }
+
+        function attemptPlay(video, panel){
+            var p = video.play();
+            if (p && p.catch){
+                p.then(function(){ showPlayButton(panel, false); })
+                 .catch(function(){ showPlayButton(panel, true); });
+            }
+        }
+
         function activate(tab, moveFocus){
             tabs.forEach(function(t){
                 var panel = panelOf(t);
@@ -659,29 +744,22 @@
                 if (!video) return;
 
                 if (on){
-                    var justFetched = false;
+                    // Trap: setting src on a preload="none" element fetches NOTHING.
+                    // An earlier version then waited for 'canplay', which therefore
+                    // never fired and left the clip frozen on its poster - load() is
+                    // what actually starts the fetch, and play() drives it from there.
                     if (!video.getAttribute('src') && video.dataset.src){
                         video.setAttribute('src', video.dataset.src);
-                        justFetched = true;
+                        video.load();
                     }
                     if (reduce){
-                        video.controls = true;
-                    } else if (justFetched){
-                        // Trap: calling play() in the same tick as setting src on a
-                        // preload="none" element rejects - there are no frames yet -
-                        // and the catch below would then expose controls for no reason.
-                        // Wait for the first decodable frame instead.
-                        video.addEventListener('canplay', function once(){
-                            video.removeEventListener('canplay', once);
-                            var q = video.play();
-                            if (q && q.catch) q.catch(function(){ video.controls = true; });
-                        });
+                        showPlayButton(panel, true);
                     } else {
-                        var p = video.play();
-                        if (p && p.catch) p.catch(function(){ video.controls = true; });
+                        attemptPlay(video, panel);
                     }
                 } else {
                     video.pause();
+                    showPlayButton(panel, false);
                 }
             });
             if (moveFocus) tab.focus();
@@ -704,7 +782,8 @@
                 entries.forEach(function(entry){
                     var v = entry.target.querySelector('.mc-devpanel:not([hidden]) video');
                     if (!v) return;
-                    if (entry.isIntersecting){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+                    var panel = v.closest('.mc-devpanel');
+                    if (entry.isIntersecting){ attemptPlay(v, panel); }
                     else { v.pause(); }
                 });
             }, { threshold: 0.25 }).observe(stage);
