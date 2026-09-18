@@ -5,17 +5,29 @@
          AstroIndexer PixInsight plate-solver driver repository.
       </p>
    </description>
-   <platform os="all" arch="noarch" version="1.9.4:2.9.99">
+   <platform os="all" arch="noarch" version="1.9.4:1.9.4">
       <package fileName="astroindexer-pixinsight-solver-1.1.0-20260626095901.zip" sha1="e1c27cea6274f74a37eabbf1e466f95495fde770" type="script" releaseDate="20260626095901">
          <title>
             AstroIndexer PixInsight plate-solver driver v1.1.0
          </title>
          <description>
             <p>
-               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. Requires PixInsight 1.9.4 or newer (v8 script engine) and a local Gaia DR3/XPSD database.
+               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. For PixInsight 1.9.4, whose core cannot verify a 1.9.5-scheme code signature. Requires a local Gaia DR3/XPSD database.
+            </p>
+         </description>
+      </package>
+   </platform>
+   <platform os="all" arch="noarch" version="1.9.5:2.9.99">
+      <package fileName="astroindexer-pixinsight-solver-1.4.0-20260918.zip" sha1="cba7f575e6f66a559ac05df4675268aff44b6f71" type="script" releaseDate="20260918">
+         <title>
+            AstroIndexer PixInsight plate-solver driver v1.4.0
+         </title>
+         <description>
+            <p>
+               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. For PixInsight 1.9.5 and newer. Requires a local Gaia DR3/XPSD database.
             </p>
          </description>
       </package>
    </platform>
 </xri>
-<Signature developerId="DeepSkyAnalytics" timestamp="2026-06-26T10:00:09.807Z" encoding="Base64">+3KO+sIhXXRMnJXquspz1Eh8hwfHFUw1ZffNDLmXCfxC/ZU45nOlTn5Ny8hRrDDmjAIKyGZv6xh8MdUn21ibDQ==</Signature>
+<Signature developerId="DeepSkyAnalytics" timestamp="2026-09-18T05:16:27.228Z" encoding="Base64">Id8EvISIXK+UIVH5E+wly9ISSz20XePtiawMcQVyv6Wc+kEXN7kKOa8klL/m/SeWPWy+Kv1ZrfthFSldUiO6Dg==</Signature>
