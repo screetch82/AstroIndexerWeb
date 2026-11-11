@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xri version="1.0">
    <description>
-      <p>
-         AstroIndexer PixInsight plate-solver driver repository.
-      </p>
+      <p>AstroIndexer plate-solve adapter repository for PixInsight.</p>
    </description>
-   <platform os="all" arch="noarch" version="1.9.4:1.9.4">
-      <package fileName="astroindexer-pixinsight-solver-1.1.0-20260626095901.zip" sha1="e1c27cea6274f74a37eabbf1e466f95495fde770" type="script" releaseDate="20260626095901">
-         <title>
-            AstroIndexer PixInsight plate-solver driver v1.1.0
-         </title>
-         <description>
-            <p>
-               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. For PixInsight 1.9.4, whose core cannot verify a 1.9.5-scheme code signature. Requires a local Gaia DR3/XPSD database.
-            </p>
-         </description>
-      </package>
-   </platform>
-   <platform os="all" arch="noarch" version="1.9.5:1.9.5">
-      <package fileName="astroindexer-pixinsight-solver-1.4.0-20260918.zip" sha1="cba7f575e6f66a559ac05df4675268aff44b6f71" type="script" releaseDate="20260918">
-         <title>
-            AstroIndexer PixInsight plate-solver driver v1.4.0
-         </title>
-         <description>
-            <p>
-               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. For PixInsight 1.9.5, whose core cannot verify a 1.9.6-scheme code signature. Requires a local Gaia DR3/XPSD database.
-            </p>
-         </description>
-      </package>
-   </platform>
    <platform os="all" arch="noarch" version="1.9.6:2.9.99">
-      <package fileName="astroindexer-pixinsight-solver-1.4.0-20261109.zip" sha1="b732631dd6280a7c38588791ce4455383a40267b" type="script" releaseDate="20261109">
-         <title>
-            AstroIndexer PixInsight plate-solver driver v1.4.0
-         </title>
+      <package fileName="astroindexer-pixinsight-solver-1.5.0-20261111.zip" sha1="7c32d4788e6294f7bbe13a293a2bdba006c35d1a" type="script" releaseDate="20261111">
+         <title>AstroIndexer Plate Solve Adapter v1.5.0</title>
+         <remove>
+            src/scripts/AstroIndexer/ai_imagesolver_driver.js
+            src/scripts/AstroIndexer/ai_imagesolver_driver.xsgn
+         </remove>
          <description>
-            <p>
-               Installs the AstroIndexer headless plate-solver driver (src/scripts/AstroIndexer/ai_imagesolver_driver.js) used by AstroIndexer as a last-resort plate-solving backend for processed/final frames. The driver is CPD-signed, so AstroIndexer can run it headlessly via --startup-script with no per-user signing. For PixInsight 1.9.6 and newer. Requires a local Gaia DR3/XPSD database.
-            </p>
+            <p>Update AstroIndexer before applying this PixInsight update. It replaces the previous
+            AstroIndexer plate-solve driver with src/scripts/AstroIndexer/astroindexer_plate_solve_adapter.js.
+            Requires a local Gaia DR3/XPSD database.</p>
          </description>
       </package>
    </platform>
 </xri>
-<Signature developerId="DeepSkyAnalytics" timestamp="2026-11-09T17:06:50.625Z" encoding="Base64">8ms/rI4ETIcvIdqzG/3CBErOe7RGE9ZDzgu3Idn5D+gv2tfCbIZp5bugM93rN+N0lw5lkbf6rZNnXaL6tAMHCA==</Signature>
+<Signature developerId="DeepSkyAnalytics" timestamp="2026-11-11T10:37:25.637Z" encoding="Base64">mp83Qx28CAak7yX/pbfdQQ7HjjHVubHYrYecnZwNiPvvOf1Kl6CAKJRxoMq+LsaptRWIHenTKXf3cGdDZnl9BA==</Signature>

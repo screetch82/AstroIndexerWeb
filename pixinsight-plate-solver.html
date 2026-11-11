@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AstroIndexer PixInsight plate-solver plugin - a CPD-signed headless ImageSolver driver that plate-solves processed and final frames ASTAP cannot match. Install in one click via the AstroIndexer PixInsight update repository.">
-    <title>PixInsight Plate Solver - AstroIndexer</title>
+    <title>AstroIndexer Plate Solve Adapter for PixInsight</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <link rel="stylesheet" href="css/pages.css">
@@ -92,7 +92,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>PixInsight Plate Solver</h1>
+            <h1>AstroIndexer Plate Solve Adapter</h1>
             <p class="page-subtitle">A CPD-signed PixInsight plugin that lets AstroIndexer plate-solve the processed and final frames ordinary solvers cannot - installed in one click from a signed update repository.</p>
         </div>
     </section>
@@ -130,8 +130,8 @@
             <h2>Requirements</h2>
             <div class="integration-grid">
                 <div class="integration-item">
-                    <h4>PixInsight 1.9.4 or newer</h4>
-                    <p>The driver uses PixInsight's current v8 script engine and ImageSolver 6.4.2. Older cores are not supported.</p>
+                    <h4>PixInsight 1.9.6</h4>
+                    <p>The current package was verified on PixInsight 1.9.6 build 1713. If you already installed the driver on PixInsight 1.9.4 or 1.9.5, you can keep using that installation.</p>
                 </div>
                 <div class="integration-item">
                     <h4>Local Gaia DR3 database</h4>
@@ -156,6 +156,8 @@
                 <button class="repo-copy-btn" id="repoCopyBtn" type="button">Copy URL</button>
             </div>
             <p style="color:#9aa4b2;font-size:13px;margin:-6px 0 0">Paste the URL exactly as shown (the trailing <code>/</code> matters) - PixInsight adds <code>updates.xri</code> itself.</p>
+
+            <p><strong>Update AstroIndexer before applying the PixInsight update.</strong> The updated app recognizes the renamed adapter.</p>
 
             <ol class="repo-steps">
                 <li>In PixInsight, open <strong>Resources &rarr; Updates &rarr; Manage Repositories</strong>.</li>
